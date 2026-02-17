@@ -1,0 +1,72 @@
+import React from "react";
+
+const services = [
+    {
+        title: "婚禮妝髮造型",
+        subtitle: "Wedding Makeup & Hair",
+        description: "為海外婚禮新娘提供定制妝髮服務，根據婚紗、場地與婚禮流程設計整體造型，自然精緻、上鏡持久。包含整體妝髮設計，可安排試妝及預約全天跟妝服務。",
+        price: "HK$ 4,800 起",
+    },
+    {
+        title: "旅拍 / 婚紗攝影妝髮",
+        subtitle: "Pre-Wedding & Photoshoot Styling",
+        description: "適合普吉島海島旅拍及婚紗攝影，妝容清透高級，在自然光下依然立体清晰。包含妝髮設計，可更換造型及提供補妝支援。",
+        price: "HK$ 3,800 起",
+    },
+    {
+        title: "活動及晚宴妝髮",
+        subtitle: "Event & Evening Styling",
+        description: "適合晚宴、派對及品牌活動等重要場合，妝容優雅得體，兼顧現場與拍攝效果。可按場合定制妝容，並提供上門服務。",
+        price: "HK$ 2,800 起",
+    }
+];
+
+const ServicesAtelier = () => {
+    return (
+        <section className="py-32 bg-atelier-bg border-t border-atelier-border" id="services-atelier">
+            <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-12">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                    <div className="max-w-2xl">
+                        <span className="text-atelier-muted text-xs tracking-[0.4em] uppercase font-display mb-6 block">My Services</span>
+                        <h2 className="text-3xl md:text-4xl font-chinese text-atelier-text leading-tight font-normal">
+                            私人定制 <span className="italic font-serif">妝髮服務</span>
+                        </h2>
+                    </div>
+                    <div className="md:text-right">
+                        <p className="text-atelier-muted font-chinese text-sm max-w-xs leading-relaxed">
+                            為不同場合提供精緻、自然且持久的妝髮方案，展現您最真實動人的一面。
+                        </p>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
+                    {services.map((service, index) => (
+                        <div key={index} className="flex flex-col items-start transition-all duration-700">
+                            <div className="w-full h-px bg-atelier-border mb-10"></div>
+                            <div className="mb-8 overflow-hidden">
+                                <span className="text-atelier-muted text-2xl font-serif italic opacity-30">0{index + 1}</span>
+                            </div>
+
+                            <h3 className="text-xl font-chinese text-atelier-text mb-3 font-medium">{service.title}</h3>
+                            <p className="text-[10px] text-atelier-muted font-medium mb-6 uppercase tracking-[0.2em] font-display">{service.subtitle}</p>
+
+                            <p className="text-atelier-muted text-sm leading-[1.8] mb-10 font-chinese font-light">
+                                {service.description}
+                            </p>
+
+                            <div className="mt-auto pt-4 flex items-center justify-between w-full border-t border-atelier-border/50">
+                                <span className="text-[10px] text-atelier-muted uppercase tracking-widest font-display">{service.price}</span>
+                                <a className="text-atelier-text text-sm font-medium transition-opacity duration-300 hover:opacity-50 flex items-center gap-2 group" href="#contact">
+                                    查詢檔期
+                                    <span className="material-icons-round text-sm group-hover:translate-x-1 transition-transform">east</span>
+                                </a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default ServicesAtelier;

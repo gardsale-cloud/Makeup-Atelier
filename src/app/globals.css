@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+:root {
+  --foreground-rgb: 31, 31, 31;
+  --background-start-rgb: 248, 247, 246;
+  --background-end-rgb: 248, 247, 246;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+  font-family: var(--font-manrope), var(--font-noto-sans-sc), sans-serif;
+}
+
+h1, h2, h3, h4, .chinese-text {
+  font-family: var(--font-noto-sans-sc), sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Original animations from stitch.html */
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] summary ~ * {
+  animation: sweep .3s ease-in-out;
+}
+
+@keyframes sweep {
+  0%    {opacity: 0; margin-top: -10px}
+  100%  {opacity: 1; margin-top: 0px}
+}
+
+.xhs-mockup {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(10px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.group:hover .xhs-mockup {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.quote-content {
+  transition: filter 0.4s ease, opacity 0.4s ease;
+}
+
+.group:hover .quote-content {
+  filter: blur(2px);
+  opacity: 0.5;
+}
