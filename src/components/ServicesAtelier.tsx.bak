@@ -27,9 +27,9 @@ const ServicesAtelier = () => {
             <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-12">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
                     <div className="max-w-2xl">
-                        <span className="text-atelier-accent text-xs tracking-[0.4em] uppercase font-display mb-6 block">My Services</span>
+                        <span className="text-atelier-muted text-xs tracking-[0.4em] uppercase font-display mb-6 block">My Services</span>
                         <h2 className="text-3xl md:text-4xl font-chinese text-atelier-text leading-tight font-normal">
-                            私人定制 <span className="italic font-serif text-atelier-accent">妝髮服務</span>
+                            私人定制 <span className="italic font-serif">妝髮服務</span>
                         </h2>
                     </div>
                     <div className="md:text-right">
@@ -44,11 +44,11 @@ const ServicesAtelier = () => {
                         <div key={index} className="flex flex-col items-start transition-opacity duration-300 ease-out">
                             <div className="w-full h-px bg-atelier-border mb-10"></div>
                             <div className="mb-8 overflow-hidden">
-                                <span className="text-atelier-accent text-xl font-serif italic opacity-20">0{index + 1}</span>
+                                <span className="text-atelier-muted text-xl font-serif italic opacity-20">0{index + 1}</span>
                             </div>
 
                             <h3 className="text-xl font-chinese text-atelier-text mb-3 font-medium">{service.title}</h3>
-                            <p className="text-[10px] text-atelier-muted font-medium mb-6 uppercase tracking-[0.2em] font-display">{service.subtitle}</p>
+                            <p className="text-[11px] text-atelier-muted font-medium mb-6 uppercase tracking-[0.15em] font-display opacity-60">{service.subtitle}</p>
 
                             <p className="text-atelier-muted text-sm leading-[1.8] mb-10 font-chinese font-light">
                                 {service.description}
@@ -56,9 +56,9 @@ const ServicesAtelier = () => {
 
                             <div className="mt-auto pt-4 flex items-center justify-between w-full border-t border-atelier-border/50">
                                 <span className="text-[10px] text-atelier-muted uppercase tracking-widest font-display">{service.price}</span>
-                                <a className="text-atelier-text text-sm font-medium transition-opacity duration-300 hover:opacity-50 flex items-center gap-2 group" href="#contact">
+                                <a className="text-atelier-text text-sm font-medium transition-opacity duration-300 ease-out hover:opacity-60 flex items-center gap-2 group" href="#contact-atelier">
                                     查詢檔期
-                                    <span className="material-icons-round text-sm group-hover:translate-x-1 transition-transform">east</span>
+                                    <span className="text-sm">→</span>
                                 </a>
                             </div>
                         </div>

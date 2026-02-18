@@ -54,9 +54,9 @@ const TestimonialsAtelier = () => {
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
                     <div className="lg:col-span-4 lg:sticky lg:top-32 lg:h-fit">
-                        <span className="text-atelier-muted text-xs tracking-[0.4em] uppercase font-display mb-6 block">Edotorial Reviews</span>
+                        <span className="text-atelier-accent text-xs tracking-[0.4em] uppercase font-display mb-6 block">Editorial Reviews</span>
                         <h2 className="text-3xl lg:text-4xl font-chinese text-atelier-text leading-tight font-normal mb-8">
-                            她們的信任，<br />是最真實的肯定
+                            她們的信任，<br />是 <span className="italic font-serif text-atelier-accent">最真實</span> 的肯定
                         </h2>
                         <p className="text-atelier-muted font-chinese text-sm leading-relaxed max-w-sm">
                             來自婚禮、旅拍及活動客戶的真實分享。自然、精緻且持久的妝髮，陪伴每個重要時刻。
@@ -67,9 +67,9 @@ const TestimonialsAtelier = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                             {testimonials.map((item, index) => (
                                 <div key={index} className={`group relative flex flex-col ${item.className || ""}`}>
-                                    <div className="relative bg-atelier-bg p-8 h-full border border-atelier-border transition-all duration-500 overflow-hidden">
+                                    <div className="relative bg-atelier-bg p-10 aspect-[4/3] border border-atelier-border transition-all duration-300 ease-out overflow-hidden">
                                         {/* Background Decoration */}
-                                        <div className="absolute top-0 left-2 font-serif text-[10rem] leading-none text-atelier-text opacity-[0.03] pointer-events-none italic">“</div>
+                                        <div className="absolute top-0 left-2 font-serif text-[10rem] leading-none text-atelier-accent opacity-[0.05] pointer-events-none italic">“</div>
 
                                         {/* Main Content (Quote) */}
                                         <div className="relative z-10 flex flex-col h-full justify-between">
@@ -79,49 +79,18 @@ const TestimonialsAtelier = () => {
                                                     {item.text}
                                                 </p>
                                             </div>
-                                            <div className="mt-8 flex items-center gap-4 border-t border-atelier-border pt-6">
-                                                <img alt={item.name} className="w-8 h-8 rounded-full object-cover grayscale opacity-60" src={item.avatar} />
-                                                <div>
-                                                    <p className="text-[10px] font-medium text-atelier-text font-display uppercase tracking-[0.2em]">{item.name}</p>
-                                                    <p className="text-[9px] text-atelier-muted uppercase tracking-wider mt-0.5">{item.location}</p>
-                                                </div>
-                                            </div>
                                         </div>
 
-                                        {/* XHS Mockup Layer (Show on hover) */}
-                                        <div className="xhs-mockup absolute inset-0 z-20 bg-atelier-bg p-6 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                            <div className="flex items-center gap-3 mb-4">
-                                                <div className="w-8 h-8 rounded-full bg-atelier-border/30 flex items-center justify-center overflow-hidden">
-                                                    <img alt={item.xhsHandle} className="w-full h-full object-cover" src={item.avatar} />
-                                                </div>
-                                                <span className="text-xs font-medium text-atelier-text tracking-tight">{item.xhsHandle}</span>
-                                                <span className="ml-auto text-[9px] text-atelier-muted font-display uppercase tracking-widest">1d ago</span>
+                                        {/* Image Overlay with internal padding */}
+                                        <div className="absolute inset-0 z-20 bg-atelier-bg opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out overflow-hidden p-6">
+                                            <div className="w-full h-full overflow-hidden">
+                                                <img
+                                                    src={item.images[0]}
+                                                    alt="Review Highlight"
+                                                    className="w-full h-full object-cover grayscale-[40%] contrast-[110%] brightness-[95%]"
+                                                />
                                             </div>
-
-                                            <div className="flex-grow overflow-hidden">
-                                                <p className="text-xs font-chinese text-atelier-muted leading-relaxed mb-4 font-light line-clamp-4">
-                                                    {item.xhsText}
-                                                </p>
-                                                <div className="flex gap-2 mb-2">
-                                                    {item.images.map((img, i) => (
-                                                        <div key={i} className="h-16 w-16 bg-atelier-border/20 overflow-hidden ring-1 ring-inset ring-atelier-text/5">
-                                                            <img alt="Post" className="w-full h-full object-cover grayscale-[20%]" src={img} />
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            </div>
-
-                                            <div className="flex items-center justify-between pt-4 border-t border-atelier-border/50 mt-4">
-                                                <div className="flex gap-4">
-                                                    <span className="flex items-center gap-1.5 text-[10px] text-atelier-muted">
-                                                        <span className="material-icons-round text-base opacity-40">favorite_border</span> {item.hearts}
-                                                    </span>
-                                                    <span className="flex items-center gap-1.5 text-[10px] text-atelier-muted">
-                                                        <span className="material-icons-round text-base opacity-40">chat_bubble_outline</span> {item.comments}
-                                                    </span>
-                                                </div>
-                                                <span className="material-icons-round text-base text-atelier-muted opacity-40">bookmark_border</span>
-                                            </div>
+                                            <div className="absolute inset-6 bg-atelier-bg/5 pointer-events-none"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -129,12 +98,12 @@ const TestimonialsAtelier = () => {
 
                             {/* View More Card */}
                             <div className="group relative flex flex-col md:translate-y-16 hidden md:flex">
-                                <div className="bg-atelier-bg p-8 h-full border border-atelier-border flex flex-col justify-center text-left">
+                                <div className="bg-atelier-bg p-10 aspect-[4/3] border border-atelier-border flex flex-col justify-center text-left">
                                     <h3 className="font-chinese font-medium text-lg text-atelier-text mb-3">查看更多妝髮作品紀錄</h3>
-                                    <p className="text-atelier-muted text-xs font-chinese leading-relaxed mb-8 font-light">更多不同場景與風格的妝髮呈現，<br />收錄於小紅書。</p>
-                                    <a className="text-xs font-medium text-atelier-text hover:opacity-50 transition-opacity tracking-widest uppercase flex items-center gap-2 group" href="#">
+                                    <p className="text-atelier-muted text-xs font-chinese leading-relaxed mb-8 font-light">更多不同場景與風格 of 妝髮呈現，<br />收錄於小紅書。</p>
+                                    <a className="text-xs font-medium text-atelier-text hover:opacity-60 transition-opacity duration-300 ease-out tracking-widest uppercase flex items-center gap-2 group" href="#">
                                         前往小紅書瀏覽
-                                        <span className="material-icons-round text-sm group-hover:translate-x-1 transition-transform">east</span>
+                                        <span className="text-sm">→</span>
                                     </a>
                                 </div>
                             </div>

@@ -28,7 +28,7 @@ const ProcessAtelier = () => {
         <section className="py-32 bg-atelier-bg border-t border-atelier-border" id="process-atelier">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 <div className="mb-24 text-center">
-                    <span className="text-atelier-muted text-xs tracking-[0.4em] uppercase font-display mb-6 block">Service Process</span>
+                    <span className="text-atelier-accent text-xs tracking-[0.4em] uppercase font-display mb-6 block">Service Process</span>
                     <h2 className="text-3xl lg:text-4xl font-chinese text-atelier-text leading-tight font-normal mb-8">
                         預約流程
                     </h2>
@@ -40,15 +40,14 @@ const ProcessAtelier = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
                     {steps.map((step, index) => (
                         <div key={index} className="flex flex-col items-center text-center">
-                            <div className="mb-8 relative">
-                                <span className="text-4xl lg:text-5xl font-serif italic text-atelier-text opacity-[0.08]">
+                            <div className="mb-10">
+                                <span className="text-6xl lg:text-7xl font-serif italic text-atelier-accent opacity-[0.08] leading-none tracking-tight">
                                     {step.number}
                                 </span>
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-px bg-atelier-text opacity-20"></div>
                             </div>
 
                             <h3 className="text-lg font-chinese text-atelier-text mb-4 font-medium">{step.title}</h3>
-                            <p className="text-sm text-atelier-muted leading-relaxed font-chinese font-light max-w-[200px]">
+                            <p className="text-sm text-atelier-muted leading-relaxed font-chinese font-light max-w-[240px]">
                                 {step.description}
                             </p>
                         </div>

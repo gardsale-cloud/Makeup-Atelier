@@ -36,15 +36,12 @@ const FooterAtelier = () => {
                         </div>
                         <div>
                             <span className="text-[10px] text-atelier-text uppercase tracking-[0.4em] font-display font-medium mb-8 block opacity-40">Social</span>
-                            <div className="flex gap-6 items-center">
-                                <a href="#" className="text-atelier-muted hover:text-atelier-text transition-colors">
-                                    <span className="material-icons-round text-xl">camera_alt</span>
+                            <div className="flex gap-8 items-center">
+                                <a href="#" className="text-atelier-muted hover:text-atelier-text text-xs tracking-widest uppercase transition-colors duration-300 ease-out">
+                                    小紅書
                                 </a>
-                                <a href="#" className="text-atelier-muted hover:text-atelier-text transition-colors">
-                                    <span className="material-symbols-outlined text-xl">public</span>
-                                </a>
-                                <a href="#" className="text-atelier-muted hover:text-atelier-text transition-colors">
-                                    <span className="material-symbols-outlined text-xl">chat</span>
+                                <a href="#" className="text-atelier-muted hover:text-atelier-text text-xs tracking-widest uppercase transition-colors duration-300 ease-out">
+                                    Instagram
                                 </a>
                             </div>
                         </div>

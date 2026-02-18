@@ -24,7 +24,7 @@ const FAQAtelier = () => {
         <section className="py-32 bg-atelier-bg border-t border-atelier-border" id="faq-atelier">
             <div className="max-w-3xl mx-auto px-6 lg:px-8">
                 <div className="mb-20 text-center">
-                    <span className="text-atelier-muted text-xs tracking-[0.4em] uppercase font-display mb-6 block">FAQ</span>
+                    <span className="text-atelier-accent text-xs tracking-[0.4em] uppercase font-display mb-6 block">FAQ</span>
                     <h2 className="text-3xl lg:text-4xl font-chinese text-atelier-text leading-tight font-normal mb-8">
                         常見問題解答
                     </h2>
@@ -40,8 +40,8 @@ const FAQAtelier = () => {
                                 <h3 className="font-chinese text-lg text-atelier-text font-medium group-hover:opacity-60 transition-opacity">
                                     {faq.question}
                                 </h3>
-                                <span className="text-atelier-text opacity-40 group-open:rotate-45 transition-transform duration-300">
-                                    <span className="material-icons-round text-2xl">add</span>
+                                <span className="text-atelier-text opacity-40 group-open:rotate-45 transition-transform duration-300 ease-out">
+                                    <span className="text-lg font-light">+</span>
                                 </span>
                             </summary>
                             <div className="pt-4 pr-12">
