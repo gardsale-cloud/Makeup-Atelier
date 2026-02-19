@@ -22,7 +22,7 @@ const config: Config = {
         "atelier-border": "#EDEBE7",
         "atelier-cta": "#2B2A28",
         "atelier-cta-hover": "#3A3836",
-        "atelier-accent": "#811331",
+        "atelier-accent": "var(--accent)",
       },
       fontFamily: {
         "display": ["var(--font-manrope)", "sans-serif"],

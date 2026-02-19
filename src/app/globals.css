@@ -5,6 +5,7 @@
   --foreground-rgb: 31, 31, 31;
   --background-start-rgb: 248, 247, 246;
   --background-end-rgb: 248, 247, 246;
+  --accent: #811331;
 }
 
 body {

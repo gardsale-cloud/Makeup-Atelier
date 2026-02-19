@@ -19,6 +19,8 @@ export const metadata: Metadata = {
     description: "常駐普吉島的華人專業私人妝髮造型師，專為亞洲女性打造清透自然的高級妝感。專注婚禮、旅拍及活動妝髮服務。",
 };
 
+import ThemeSwitcherAtelier from "@/components/ThemeSwitcherAtelier";
+
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -32,6 +34,7 @@ export default function RootLayout({
             </head>
             <body className={`${manrope.variable} ${notoVariant.variable} antialiased font-display`}>
                 {children}
+                <ThemeSwitcherAtelier />
             </body>
         </html>
     );

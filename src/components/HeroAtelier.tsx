@@ -28,7 +28,7 @@ const HeroAtelier = () => {
                     <div className="w-full lg:w-1/2 flex flex-col justify-center z-10 relative order-2 lg:order-1">
                         <div className="inline-flex items-center gap-3 mb-10">
                             <div className="h-px w-8 bg-atelier-text opacity-30"></div>
-                            <span className="text-atelier-accent text-xs tracking-[0.3em] uppercase font-display">Phuket Based Makeup Artist</span>
+                            <span className="text-atelier-accent text-xs tracking-[0.3em] uppercase font-display">Phuket Makeup Artist</span>
                         </div>
 
                         <h1 className="font-chinese text-4xl lg:text-5xl xl:text-6xl font-normal leading-[1.2] mb-10 text-atelier-text tracking-tight">

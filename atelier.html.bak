@@ -25,7 +25,6 @@
                         "atelier-border": "#EDEBE7",
                         "atelier-cta": "#2B2A28",
                         "atelier-cta-hover": "#3A3836",
-                        "atelier-accent": "var(--accent)",
                     },
                     fontFamily: {
                         "display": ["'Manrope'", "sans-serif"],
@@ -38,9 +37,6 @@
     </script>
 
     <style>
-        :root {
-            --accent: #811331;
-        }
         body {
             background-color: #F6F4F1;
             color: #2A2A2A;
@@ -93,57 +89,6 @@
             display: none;
         }
         
-        /* Hero Slider Styles */
-        #hero-slider .slide {
-            opacity: 0;
-            pointer-events: none;
-        }
-        #hero-slider .slide.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        
-
-        /* Portfolio Filter Controls */
-        .filter-controls {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            z-index: 1000;
-            display: none; /* Hidden by default */
-        }
-        
-        .filter-control-group {
-            margin-bottom: 10px;
-        }
-        
-        .filter-control-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 12px;
-            color: #333;
-        }
-        
-        .filter-control-group input[type="range"] {
-            width: 150px;
-        }
-        
-        .portfolio-item {
-            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-        }
-        
-        .portfolio-item img {
-            filter: contrast(98%) brightness(101%) saturate(98%);
-        }
-        
-        .portfolio-item img:hover {
-            transform: scale(1.02);
-        }
-        
         html {
             scroll-behavior: smooth;
         }
@@ -180,12 +125,12 @@
                 <div class="w-full lg:w-1/2 flex flex-col justify-center z-10 relative order-2 lg:order-1">
                     <div class="inline-flex items-center gap-3 mb-10">
                         <div class="h-px w-8 bg-atelier-text opacity-30"></div>
-                        <span class="text-atelier-accent text-xs tracking-[0.3em] uppercase font-display">Phuket Based Makeup Artist</span>
+                        <span class="text-atelier-muted text-xs tracking-[0.3em] uppercase font-display">Phuket Based Makeup Artist</span>
                     </div>
 
                     <h1 class="font-chinese text-4xl lg:text-5xl xl:text-6xl font-normal leading-[1.2] mb-10 text-atelier-text tracking-tight">
                         普吉島專業<br />
-                        <span class="italic font-serif text-atelier-accent">私人妝髮造型師</span>
+                        <span class="italic font-serif">私人妝髮造型師</span>
                     </h1>
 
                     <p class="text-lg text-atelier-muted mb-12 font-chinese tracking-normal max-w-lg leading-relaxed font-light">
@@ -205,29 +150,7 @@
 
                 <div class="w-full lg:w-1/2 relative aspect-[4/5] overflow-hidden order-1 lg:order-2 lg:pr-8">
                     <div id="hero-slider" class="relative w-full h-full">
-                        <img src="public/images/hero/hero_01.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide active">
-                        <img src="public/images/hero/hero_02.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_03.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_04.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_05.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_06.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_07.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_08.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_09.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_10.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/unnamed.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        
-                        <!-- Slider Navigation Controls -->
-                        <div class="absolute bottom-8 right-8 flex items-center gap-6 z-20">
-                            <button id="prev-slide" class="text-atelier-text opacity-40 hover:opacity-100 transition-opacity duration-300 ease-out" aria-label="Previous">
-                                <span class="text-2xl">←</span>
-                            </button>
-                            <span id="slide-counter" class="text-atelier-text text-xs tracking-widest font-display opacity-40">1 / 12</span>
-                            <button id="next-slide" class="text-atelier-text opacity-40 hover:opacity-100 transition-opacity duration-300 ease-out" aria-label="Next">
-                                <span class="text-2xl">→</span>
-                            </button>
-                        </div>
+                        <img src="/images/hero/hero.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out">
                     </div>
                 </div>
             </div>
@@ -239,9 +162,9 @@
         <div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-12">
             <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
                 <div class="max-w-2xl">
-                    <span class="text-atelier-accent text-xs tracking-[0.4em] uppercase font-display mb-6 block">My Services</span>
+                    <span class="text-atelier-muted text-xs tracking-[0.4em] uppercase font-display mb-6 block">My Services</span>
                     <h2 class="text-3xl md:text-4xl font-chinese text-atelier-text leading-tight font-normal">
-                        私人定制 <span class="italic font-serif text-atelier-accent">妝髮服務</span>
+                        私人定制 <span class="italic font-serif">妝髮服務</span>
                     </h2>
                 </div>
                 <div class="md:text-right">
@@ -256,7 +179,7 @@
                 <div class="flex flex-col items-start transition-all duration-700">
                     <div class="w-full h-px bg-atelier-border mb-10"></div>
                     <div class="mb-8 overflow-hidden">
-                        <span class="text-atelier-accent text-xl font-serif italic opacity-20">01</span>
+                        <span class="text-atelier-muted text-xl font-serif italic opacity-20">01</span>
                     </div>
                     <h3 class="text-xl font-chinese text-atelier-text mb-3 font-medium">婚禮妝髮造型</h3>
                     <p class="text-[11px] text-atelier-muted font-medium mb-6 uppercase tracking-[0.15em] font-display opacity-60">Wedding Makeup & Hair</p>
@@ -276,7 +199,7 @@
                 <div class="flex flex-col items-start transition-all duration-700">
                     <div class="w-full h-px bg-atelier-border mb-10"></div>
                     <div class="mb-8 overflow-hidden">
-                        <span class="text-atelier-accent text-xl font-serif italic opacity-20">02</span>
+                        <span class="text-atelier-muted text-xl font-serif italic opacity-20">02</span>
                     </div>
                     <h3 class="text-xl font-chinese text-atelier-text mb-3 font-medium">旅拍 / 婚紗攝影妝髮</h3>
                     <p class="text-[11px] text-atelier-muted font-medium mb-6 uppercase tracking-[0.15em] font-display opacity-60">Pre-Wedding & Photoshoot Styling</p>
@@ -296,7 +219,7 @@
                 <div class="flex flex-col items-start transition-all duration-700">
                     <div class="w-full h-px bg-atelier-border mb-10"></div>
                     <div class="mb-8 overflow-hidden">
-                        <span class="text-atelier-accent text-xl font-serif italic opacity-20">03</span>
+                        <span class="text-atelier-muted text-xl font-serif italic opacity-20">03</span>
                     </div>
                     <h3 class="text-xl font-chinese text-atelier-text mb-3 font-medium">活動及晚宴妝髮</h3>
                     <p class="text-[11px] text-atelier-muted font-medium mb-6 uppercase tracking-[0.15em] font-display opacity-60">Event & Evening Styling</p>
@@ -319,111 +242,85 @@
     <section class="py-32 bg-atelier-bg" id="portfolio">
         <div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-12">
             <div class="mb-20">
-                <span class="text-atelier-accent text-xs tracking-[0.4em] uppercase font-display mb-6 block">Selected Portfolio</span>
+                <span class="text-atelier-muted text-xs tracking-[0.4em] uppercase font-display mb-6 block">Selected Portfolio</span>
                 <h2 class="text-3xl md:text-4xl font-chinese text-atelier-text leading-tight font-normal mb-6">婚禮與妝髮作品</h2>
                 <p class="text-atelier-muted font-chinese text-sm max-w-xl leading-relaxed font-light">自然細緻的妝髮呈現</p>
-                <div class="h-px w-20 bg-atelier-accent mt-8"></div>
+                <div class="h-px w-20 bg-atelier-text opacity-20 mt-8"></div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12 lg:gap-x-20">
-                <!-- Item 1 - Portfolio Image 1 -->
+                <!-- Item 1 -->
                 <div class="flex flex-col">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="public/images/portfolio/portfolio_01.jpg" alt="Portfolio Look 1" class="w-full h-full object-cover">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img src="/images/hero-main.jpg" alt="Bridal Look" class="w-full h-full object-cover atelier-img">
                     </div>
                     <div class="mt-6">
-                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">作品 1</h3>
-                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Look 1</p>
+                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">自然清透新娘妝</h3>
+                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Natural Bridal Look</p>
                     </div>
                 </div>
-                
-                <!-- Item 2 - Portfolio Image 2 -->
+                <!-- Item 2 -->
                 <div class="flex flex-col">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="public/images/portfolio/portfolio_02.jpg" alt="Portfolio Look 2" class="w-full h-full object-cover">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img src="/images/avatars/avatar-2.jpg" alt="Beach Pre-wedding" class="w-full h-full object-cover atelier-img">
                     </div>
                     <div class="mt-6">
-                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">作品 2</h3>
-                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Look 2</p>
+                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">海島戶外婚紗照</h3>
+                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Beach Pre-wedding</p>
                     </div>
                 </div>
-                
-                <!-- Item 3 - Portfolio Image 4 -->
+                <!-- Item 3 -->
                 <div class="flex flex-col">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="public/images/portfolio/portfolio_03.jpg" alt="Portfolio Look 4" class="w-full h-full object-cover">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img src="/images/avatars/avatar-3.jpg" alt="Evening Glamour" class="w-full h-full object-cover atelier-img">
                     </div>
                     <div class="mt-6">
-                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">作品 4</h3>
-                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Look 4</p>
+                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">晚宴精緻妝容</h3>
+                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Evening Glamour</p>
                     </div>
                 </div>
-                
-                <!-- Item 4 - Portfolio Image 6 -->
+                <!-- Item 4 -->
                 <div class="flex flex-col">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="public/images/portfolio/portfolio_04.jpg" alt="Portfolio Look 6" class="w-full h-full object-cover">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img src="/images/avatars/avatar-1.jpg" alt="Korean Fresh Look" class="w-full h-full object-cover atelier-img">
                     </div>
                     <div class="mt-6">
-                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">作品 6</h3>
-                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Look 6</p>
+                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">韓式清新妝感</h3>
+                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Korean Fresh Look</p>
                     </div>
                 </div>
-                
-                <!-- Item 5 - Portfolio Image 5 -->
+                <!-- Item 5 -->
                 <div class="flex flex-col">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="public/images/portfolio/portfolio_05.jpg" alt="Portfolio Look 5" class="w-full h-full object-cover">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img src="/images/hero-main.jpg" alt="Thai Traditional" class="w-full h-full object-cover atelier-img">
                     </div>
                     <div class="mt-6">
-                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">作品 5</h3>
-                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Look 5</p>
+                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">泰式傳統婚禮</h3>
+                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Thai Traditional Ceremony</p>
                     </div>
                 </div>
-                
-                <!-- Item 6 - Portfolio Image 7 -->
+                <!-- Item 6 -->
                 <div class="flex flex-col">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="public/images/portfolio/portfolio_06.jpg" alt="Portfolio Look 7" class="w-full h-full object-cover">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img src="/images/avatars/avatar-2.jpg" alt="Editorial Fashion" class="w-full h-full object-cover atelier-img">
                     </div>
                     <div class="mt-6">
-                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">作品 7</h3>
-                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Look 7</p>
+                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">時尚雜誌拍攝</h3>
+                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Editorial Fashion</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Filter Controls Panel -->
-    <div id="filterControls" class="filter-controls">
-        <h3 style="margin: 0 0 10px 0; font-size: 14px;">Adjust Filters</h3>
-        <div class="filter-control-group">
-            <label for="contrastSlider">Contrast: <span id="contrastValue">98%</span></label>
-            <input type="range" id="contrastSlider" min="50" max="150" value="98">
-        </div>
-        <div class="filter-control-group">
-            <label for="brightnessSlider">Brightness: <span id="brightnessValue">101%</span></label>
-            <input type="range" id="brightnessSlider" min="50" max="150" value="101">
-        </div>
-        <div class="filter-control-group">
-            <label for="saturateSlider">Saturation: <span id="saturateValue">98%</span></label>
-            <input type="range" id="saturateSlider" min="0" max="200" value="98">
-        </div>
-        <button id="toggleFilterControls" style="margin-top: 10px; padding: 5px 10px; font-size: 12px;">Hide</button>
-    </div>
-    
-    <!-- Button to show filter controls -->
-    <button id="showFilterControls" style="position: fixed; bottom: 20px; right: 20px; z-index: 1001; padding: 8px 12px; background: #f0f0f0; border: none; border-radius: 4px; cursor: pointer; display: block;">Filters</button>
-    
+
     <!-- TESTIMONIALS -->
     <section class="py-32 bg-atelier-bg border-t border-atelier-border" id="testimonials">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
                 <div class="lg:col-span-4 lg:sticky lg:top-32 lg:h-fit">
-                    <span class="text-atelier-accent text-xs tracking-[0.4em] uppercase font-display mb-6 block">Editorial Reviews</span>
+                    <span class="text-atelier-muted text-xs tracking-[0.4em] uppercase font-display mb-6 block">Editorial Reviews</span>
                     <h2 class="text-3xl lg:text-4xl font-chinese text-atelier-text leading-tight font-normal mb-8">
-                        她們的信任，<br />是 <span class="italic font-serif text-atelier-accent">最真實</span> 的肯定
+                        她們的信任，<br />是最真實的肯定
                     </h2>
                     <p class="text-atelier-muted font-chinese text-sm leading-relaxed max-w-sm">
                         來自婚禮、旅拍及活動客戶的真實分享。自然、精緻且持久的妝髮，陪伴每個重要時刻。
@@ -435,7 +332,7 @@
                         <!-- Review 1 -->
                         <div class="group relative flex flex-col">
                             <div class="relative bg-atelier-bg p-10 aspect-[4/3] border border-atelier-border overflow-hidden">
-                                <div class="absolute top-0 left-2 font-serif text-[10rem] leading-none text-atelier-accent opacity-[0.05] pointer-events-none italic">“</div>
+                                <div class="absolute top-0 left-2 font-serif text-[10rem] leading-none text-atelier-text opacity-[0.03] pointer-events-none italic">“</div>
                                 <div class="relative z-10 flex flex-col h-full justify-between">
                                     <div>
                                         <h3 class="font-chinese font-medium text-lg text-atelier-text mb-4 italic">“妝面太高級了”</h3>
@@ -447,7 +344,7 @@
                                 <!-- Image Overlay with internal padding -->
                                 <div class="absolute inset-0 z-20 bg-atelier-bg opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out overflow-hidden p-6">
                                    <div class="w-full h-full overflow-hidden">
-                                       <img src="public/images/hero-main.jpg" alt="Review Highlight" class="w-full h-full object-cover grayscale-[40%] contrast-[110%] brightness-[95%]">
+                                       <img src="/images/hero-main.jpg" alt="Review Highlight" class="w-full h-full object-cover grayscale-[40%] contrast-[110%] brightness-[95%]">
                                    </div>
                                 </div>
                             </div>
@@ -456,7 +353,7 @@
                         <!-- Review 2 -->
                         <div class="group relative flex flex-col md:translate-y-16">
                             <div class="relative bg-atelier-bg p-10 aspect-[4/3] border border-atelier-border overflow-hidden">
-                                <div class="absolute top-0 left-2 font-serif text-[10rem] leading-none text-atelier-accent opacity-[0.05] pointer-events-none italic">“</div>
+                                <div class="absolute top-0 left-2 font-serif text-[10rem] leading-none text-atelier-text opacity-[0.03] pointer-events-none italic">“</div>
                                 <div class="relative z-10 flex flex-col h-full justify-between">
                                     <div>
                                         <h3 class="font-chinese font-medium text-lg text-atelier-text mb-4 italic">“像朋友一樣貼心”</h3>
@@ -468,7 +365,7 @@
                                 <!-- Image Overlay with internal padding -->
                                 <div class="absolute inset-0 z-20 bg-atelier-bg opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out overflow-hidden p-6">
                                    <div class="w-full h-full overflow-hidden">
-                                       <img src="public/images/avatars/avatar-2.jpg" alt="Review Highlight" class="w-full h-full object-cover grayscale-[40%] contrast-[110%] brightness-[95%]">
+                                       <img src="/images/avatars/avatar-2.jpg" alt="Review Highlight" class="w-full h-full object-cover grayscale-[40%] contrast-[110%] brightness-[95%]">
                                    </div>
                                 </div>
                             </div>
@@ -477,7 +374,7 @@
                         <!-- Review 3 -->
                         <div class="group relative flex flex-col">
                             <div class="relative bg-atelier-bg p-10 aspect-[4/3] border border-atelier-border overflow-hidden">
-                                <div class="absolute top-0 left-2 font-serif text-[10rem] leading-none text-atelier-accent opacity-[0.05] pointer-events-none italic">“</div>
+                                <div class="absolute top-0 left-2 font-serif text-[10rem] leading-none text-atelier-text opacity-[0.03] pointer-events-none italic">“</div>
                                 <div class="relative z-10 flex flex-col h-full justify-between">
                                     <div>
                                         <h3 class="font-chinese font-medium text-lg text-atelier-text mb-4 italic">“自然又高級”</h3>
@@ -489,7 +386,7 @@
                                 <!-- Image Overlay with internal padding -->
                                 <div class="absolute inset-0 z-20 bg-atelier-bg opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out overflow-hidden p-6">
                                    <div class="w-full h-full overflow-hidden">
-                                       <img src="public/images/avatars/avatar-3.jpg" alt="Review Highlight" class="w-full h-full object-cover grayscale-[40%] contrast-[110%] brightness-[95%]">
+                                       <img src="/images/avatars/avatar-3.jpg" alt="Review Highlight" class="w-full h-full object-cover grayscale-[40%] contrast-[110%] brightness-[95%]">
                                    </div>
                                 </div>
                             </div>
@@ -516,7 +413,7 @@
     <section class="py-32 bg-atelier-bg border-t border-atelier-border" id="process">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="mb-24 text-center">
-                <span class="text-atelier-accent text-xs tracking-[0.4em] uppercase font-display mb-6 block">Service Process</span>
+                <span class="text-atelier-muted text-xs tracking-[0.4em] uppercase font-display mb-6 block">Service Process</span>
                 <h2 class="text-3xl lg:text-4xl font-chinese text-atelier-text leading-tight font-normal mb-8">預約流程</h2>
                 <p class="text-atelier-muted font-chinese text-sm max-w-xl mx-auto leading-relaxed font-light">由初步查詢至服務當天，每個步驟清晰安排，讓您安心準備重要時刻。</p>
             </div>
@@ -525,7 +422,7 @@
                 <!-- Step 1 -->
                 <div class="flex flex-col items-center text-center">
                     <div class="mb-10">
-                        <span class="text-6xl lg:text-7xl font-serif italic text-atelier-accent opacity-[0.08] leading-none tracking-tight">01</span>
+                        <span class="text-6xl lg:text-7xl font-serif italic text-atelier-text opacity-[0.04] leading-none tracking-tight">01</span>
                     </div>
                     <h3 class="text-lg font-chinese text-atelier-text mb-4 font-medium">微信查詢檔期</h3>
                     <p class="text-sm text-atelier-muted leading-relaxed font-chinese font-light max-w-[240px]">透過微信提供日期、地點及服務類型，以確認檔期安排。</p>
@@ -533,7 +430,7 @@
                 <!-- Step 2 -->
                 <div class="flex flex-col items-center text-center">
                     <div class="mb-10">
-                        <span class="text-6xl lg:text-7xl font-serif italic text-atelier-accent opacity-[0.08] leading-none tracking-tight">02</span>
+                        <span class="text-6xl lg:text-7xl font-serif italic text-atelier-text opacity-[0.04] leading-none tracking-tight">02</span>
                     </div>
                     <h3 class="text-lg font-chinese text-atelier-text mb-4 font-medium">確認造型方向</h3>
                     <p class="text-sm text-atelier-muted leading-relaxed font-chinese font-light max-w-[240px]">溝通需求、風格偏好及時間安排，確定服務內容與費用。</p>
@@ -541,7 +438,7 @@
                 <!-- Step 3 -->
                 <div class="flex flex-col items-center text-center">
                     <div class="mb-10">
-                        <span class="text-6xl lg:text-7xl font-serif italic text-atelier-accent opacity-[0.08] leading-none tracking-tight">03</span>
+                        <span class="text-6xl lg:text-7xl font-serif italic text-atelier-text opacity-[0.04] leading-none tracking-tight">03</span>
                     </div>
                     <h3 class="text-lg font-chinese text-atelier-text mb-4 font-medium">支付訂金預約</h3>
                     <p class="text-sm text-atelier-muted leading-relaxed font-chinese font-light max-w-[240px]">收到訂金後正式保留檔期。</p>
@@ -549,7 +446,7 @@
                 <!-- Step 4 -->
                 <div class="flex flex-col items-center text-center">
                     <div class="mb-10">
-                        <span class="text-6xl lg:text-7xl font-serif italic text-atelier-accent opacity-[0.08] leading-none tracking-tight">04</span>
+                        <span class="text-6xl lg:text-7xl font-serif italic text-atelier-text opacity-[0.04] leading-none tracking-tight">04</span>
                     </div>
                     <h3 class="text-lg font-chinese text-atelier-text mb-4 font-medium">服務當天</h3>
                     <p class="text-sm text-atelier-muted leading-relaxed font-chinese font-light max-w-[240px]">按約定時間提供專業妝髮服務。</p>
@@ -562,7 +459,7 @@
     <section class="py-32 bg-atelier-bg border-t border-atelier-border" id="faq">
         <div class="max-w-3xl mx-auto px-6 lg:px-8">
             <div class="mb-20 text-center">
-                <span class="text-atelier-accent text-xs tracking-[0.4em] uppercase font-display mb-6 block">FAQ</span>
+                <span class="text-atelier-muted text-xs tracking-[0.4em] uppercase font-display mb-6 block">FAQ</span>
                 <h2 class="text-3xl lg:text-4xl font-chinese text-atelier-text leading-tight font-normal mb-8">常見問題解答</h2>
                 <p class="text-atelier-muted font-chinese text-sm max-w-xl mx-auto leading-relaxed font-light">關於預約、試妝及服務細節的說明</p>
             </div>
@@ -570,8 +467,8 @@
             <div class="space-y-6">
                 <details class="group border-b border-atelier-border pb-6">
                     <summary class="flex items-center justify-between cursor-pointer list-none py-2">
-                        <h3 class="font-chinese text-lg text-atelier-text font-medium group-hover:text-atelier-accent transition-colors duration-300 ease-out">是否可以安排試妝？</h3>
-                        <span class="text-atelier-accent opacity-40 group-open:rotate-45 transition-transform duration-300 ease-out"><span class="text-lg font-light">+</span></span>
+                        <h3 class="font-chinese text-lg text-atelier-text font-medium group-hover:opacity-60 transition-opacity duration-300 ease-out">是否可以安排試妝？</h3>
+                        <span class="text-atelier-text opacity-40 group-open:rotate-45 transition-transform duration-300 ease-out"><span class="text-lg font-light">+</span></span>
                     </summary>
                     <div class="pt-4 pr-12"><p class="text-atelier-muted font-chinese text-sm leading-relaxed font-light">可以安排試妝。一般建議於婚禮前1–2天進行，方便根據禮服與場地調整妝髮細節。</p></div>
                 </details>
@@ -604,8 +501,8 @@
     <section class="py-40 bg-atelier-bg border-t border-atelier-border" id="contact">
         <div class="max-w-5xl mx-auto px-6 lg:px-12 text-center">
             <div class="flex flex-col items-center">
-                <span class="text-atelier-accent text-xs tracking-[0.5em] uppercase font-display mb-10 block">預約查詢</span>
-                <h2 class="text-4xl lg:text-6xl font-chinese text-atelier-text leading-tight font-normal mb-8 max-w-3xl">預約您的 <span class="italic font-serif text-atelier-accent">妝髮服務</span></h2>
+                <span class="text-atelier-muted text-xs tracking-[0.5em] uppercase font-display mb-10 block">預約查詢</span>
+                <h2 class="text-4xl lg:text-6xl font-chinese text-atelier-text leading-tight font-normal mb-8 max-w-3xl">預約您的妝髮服務</h2>
                 <p class="text-atelier-muted font-chinese text-base lg:text-lg mb-16 max-w-xl leading-relaxed font-light">婚禮旺季（11月–3月）檔期通常較早預約，建議提早查詢確認。</p>
                 <div class="flex justify-center">
                     <a class="bg-atelier-cta hover:bg-atelier-cta-hover text-atelier-bg px-16 py-5 rounded-none font-medium text-sm tracking-[0.2em] transition-all text-center uppercase shadow-none border border-atelier-cta" href="#">微信查詢檔期</a>
@@ -642,159 +539,5 @@
         </div>
     </footer>
 
-    <!-- Dynamic Theme Switcher -->
-    <div id="theme-switcher-container" class="fixed bottom-8 right-8 z-[100] transition-all duration-500 ease-in-out">
-        <div id="theme-panel" class="bg-[#F6F4F1]/80 backdrop-blur-md border border-[#EDEBE7] p-4 shadow-2xl flex flex-col gap-4">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-[10px] uppercase tracking-[0.2em] font-sans text-[#6C6A67]">Accent Theme</span>
-                <button onclick="toggleThemePanel(false)" class="text-[#6C6A67] hover:text-[#2A2A2A] transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </button>
-            </div>
-            
-            <div class="flex gap-4">
-                <button onclick="setTheme('#811331', 'Burgundy')" class="w-8 h-8 rounded-full border-2 border-transparent transition-transform hover:scale-110 active-theme" style="background-color: #811331;" title="Burgundy"></button>
-                <button onclick="setTheme('#5D6D5E', 'Sage')" class="w-8 h-8 rounded-full border-2 border-transparent transition-transform hover:scale-110" style="background-color: #5D6D5E;" title="Sage"></button>
-                <button onclick="setTheme('#A67C52', 'Ochre')" class="w-8 h-8 rounded-full border-2 border-transparent transition-transform hover:scale-110" style="background-color: #A67C52;" title="Ochre"></button>
-            </div>
-            
-            <p id="theme-status" class="text-[9px] text-[#6C6A67] text-center mt-2 italic">Burgundy Mode Active</p>
-        </div>
-        
-        <button id="theme-toggle-btn" onclick="toggleThemePanel(true)" class="hidden fixed bottom-8 right-8 w-10 h-10 bg-[#F6F4F1] border border-[#EDEBE7] shadow-lg flex items-center justify-center hover:bg-[#EDEBE7] transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
-        </button>
-    </div>
-
-    <script>
-        function setTheme(color, name) {
-            document.documentElement.style.setProperty('--accent', color);
-            document.getElementById('theme-status').innerText = name + " Mode Active";
-            
-            // Update active state visuals
-            const buttons = document.querySelectorAll('#theme-panel button[style]');
-            buttons.forEach(btn => {
-                btn.style.borderColor = btn.style.backgroundColor === color ? '#2A2A2A' : 'transparent';
-            });
-        }
-
-        function toggleThemePanel(show) {
-            const panel = document.getElementById('theme-panel');
-            const btn = document.getElementById('theme-toggle-btn');
-            
-            if (show) {
-                panel.classList.remove('hidden');
-                btn.classList.add('hidden');
-            } else {
-                panel.classList.add('hidden');
-                btn.classList.remove('hidden');
-            }
-        }
-        
-        // Initial state
-        setTheme('#811331', 'Burgundy');
-        
-
-        
-        // Hero Slider Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const slides = document.querySelectorAll('.slide');
-            const prevBtn = document.getElementById('prev-slide');
-            const nextBtn = document.getElementById('next-slide');
-            const slideCounter = document.getElementById('slide-counter');
-            let currentIndex = 0;
-            
-            // Show slide function
-            function showSlide(index) {
-                slides.forEach((slide, i) => {
-                    if (i === index) {
-                        slide.classList.add('active');
-                        slide.style.opacity = '1';
-                    } else {
-                        slide.classList.remove('active');
-                        slide.style.opacity = '0';
-                    }
-                });
-                
-                // Update counter
-                slideCounter.textContent = `${index + 1} / ${slides.length}`;
-            }
-            
-            // Next slide function
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % slides.length;
-                showSlide(currentIndex);
-            }
-            
-            // Previous slide function
-            function prevSlide() {
-                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                showSlide(currentIndex);
-            }
-            
-            // Event listeners for buttons
-            nextBtn.addEventListener('click', nextSlide);
-            prevBtn.addEventListener('click', prevSlide);
-            
-            // Initialize slider
-            showSlide(currentIndex);
-            
-
-        });
-        
-        // Portfolio Filter Controls
-        document.addEventListener('DOMContentLoaded', function() {
-            const contrastSlider = document.getElementById('contrastSlider');
-            const brightnessSlider = document.getElementById('brightnessSlider');
-            const saturateSlider = document.getElementById('saturateSlider');
-            const contrastValue = document.getElementById('contrastValue');
-            const brightnessValue = document.getElementById('brightnessValue');
-            const saturateValue = document.getElementById('saturateValue');
-            const filterControls = document.getElementById('filterControls');
-            const toggleFilterControls = document.getElementById('toggleFilterControls');
-            const showFilterControls = document.getElementById('showFilterControls');
-            
-            function updatePortfolioFilters() {
-                const contrast = contrastSlider.value + '%';
-                const brightness = brightnessSlider.value + '%';
-                const saturate = saturateSlider.value + '%';
-                
-                // Apply filter to all portfolio images
-                const portfolioImages = document.querySelectorAll('.portfolio-item img');
-                portfolioImages.forEach(img => {
-                    img.style.filter = `contrast(${contrast}) brightness(${brightness}) saturate(${saturate})`;
-                });
-                
-                // Update value displays
-                contrastValue.textContent = contrast;
-                brightnessValue.textContent = brightness;
-                saturateValue.textContent = saturate;
-            }
-            
-            // Initialize values
-            contrastValue.textContent = contrastSlider.value + '%';
-            brightnessValue.textContent = brightnessSlider.value + '%';
-            saturateValue.textContent = saturateSlider.value + '%';
-            
-            // Apply initial filter
-            updatePortfolioFilters();
-            
-            // Add event listeners
-            contrastSlider.addEventListener('input', updatePortfolioFilters);
-            brightnessSlider.addEventListener('input', updatePortfolioFilters);
-            saturateSlider.addEventListener('input', updatePortfolioFilters);
-            
-            // Toggle filter controls visibility
-            toggleFilterControls.addEventListener('click', function() {
-                filterControls.style.display = 'none';
-                showFilterControls.style.display = 'block';
-            });
-            
-            showFilterControls.addEventListener('click', function() {
-                filterControls.style.display = 'block';
-                showFilterControls.style.display = 'none';
-            });
-        });
-    </script>
 </body>
 </html>
