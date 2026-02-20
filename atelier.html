@@ -104,44 +104,51 @@
         }
         
 
-        /* Portfolio Filter Controls */
-        .filter-controls {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            z-index: 1000;
-            display: none; /* Hidden by default */
-        }
-        
-        .filter-control-group {
-            margin-bottom: 10px;
-        }
-        
-        .filter-control-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 12px;
-            color: #333;
-        }
-        
-        .filter-control-group input[type="range"] {
-            width: 150px;
-        }
         
         .portfolio-item {
             box-shadow: 0 6px 18px rgba(0,0,0,0.04);
         }
         
         .portfolio-item img {
-            filter: contrast(98%) brightness(101%) saturate(98%);
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        .portfolio-item img:hover {
-            transform: scale(1.02);
+        .portfolio-image-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-image-wrapper img {
+            filter: contrast(98%) brightness(101%) saturate(98%);
+        }
+
+        /* Uniform overlay: #ECE0D5 at 7% opacity */
+        .portfolio-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: #ECE0D5;
+            opacity: 0.07;
+            pointer-events: none;
+            z-index: 10;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.04);
+        }
+
+        /* Editorial Section Specifics */
+        .portfolio-editorial-item {
+            position: relative;
+            background: #F6F4F1;
+        }
+        
+        .portfolio-editorial-item img {
+            transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        
+        .portfolio-editorial-item:hover img {
+            transform: scale(1.03);
         }
         
         html {
@@ -203,27 +210,19 @@
                     </p>
                 </div>
 
-                <div class="w-full lg:w-1/2 relative aspect-[4/5] overflow-hidden order-1 lg:order-2 lg:pr-8">
-                    <div id="hero-slider" class="relative w-full h-full">
+                <div class="w-full lg:w-1/2 relative aspect-[4/5] overflow-hidden order-1 lg:order-2">
+                    <div id="hero-slider" class="relative w-full h-full portfolio-image-wrapper">
                         <img src="public/images/hero/hero_01.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide active">
                         <img src="public/images/hero/hero_02.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_03.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_04.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_05.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_06.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_07.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_08.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_09.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_10.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/unnamed.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
+                        <img src="public/images/hero/hero_020.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
+                        <img src="public/images/hero/hero_024.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
                         
                         <!-- Slider Navigation Controls -->
                         <div class="absolute bottom-8 right-8 flex items-center gap-6 z-20">
                             <button id="prev-slide" class="text-atelier-text opacity-40 hover:opacity-100 transition-opacity duration-300 ease-out" aria-label="Previous">
                                 <span class="text-2xl">←</span>
                             </button>
-                            <span id="slide-counter" class="text-atelier-text text-xs tracking-widest font-display opacity-40">1 / 12</span>
+                            <span id="slide-counter" class="text-atelier-text text-xs tracking-widest font-display opacity-40">1 / 4</span>
                             <button id="next-slide" class="text-atelier-text opacity-40 hover:opacity-100 transition-opacity duration-300 ease-out" aria-label="Next">
                                 <span class="text-2xl">→</span>
                             </button>
@@ -315,106 +314,54 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO -->
+    <!-- 
     <section class="py-32 bg-atelier-bg" id="portfolio">
-        <div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-12">
-            <div class="mb-20">
+        ... (Existing Grid Portfolio)
+    </section>
+    -->
+
+    <!-- 
+    <section class="py-32 bg-atelier-bg border-t border-atelier-border" id="portfolio-editorial">
+        ... (Existing Editorial Portfolio)
+    </section>
+    -->
+
+    <!-- FEATURED PORTFOLIO SECTION (1 Large, 4 Small) -->
+    <section class="py-32 bg-atelier-bg" id="portfolio-featured">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full">
+             <div class="mb-20">
                 <span class="text-atelier-accent text-xs tracking-[0.4em] uppercase font-display mb-6 block">Selected Portfolio</span>
                 <h2 class="text-3xl md:text-4xl font-chinese text-atelier-text leading-tight font-normal mb-6">婚禮與妝髮作品</h2>
                 <p class="text-atelier-muted font-chinese text-sm max-w-xl leading-relaxed font-light">自然細緻的妝髮呈現</p>
                 <div class="h-px w-20 bg-atelier-accent mt-8"></div>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12 lg:gap-x-20">
-                <!-- Item 1 - Portfolio Image 1 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-start">
+                <!-- Left: 1 Large Image -->
                 <div class="flex flex-col">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="public/images/portfolio/portfolio_01.jpg" alt="Portfolio Look 1" class="w-full h-full object-cover">
-                    </div>
-                    <div class="mt-6">
-                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">作品 1</h3>
-                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Look 1</p>
+                    <div class="aspect-[4/5] relative overflow-hidden portfolio-image-wrapper">
+                        <img src="public/images/portfolio/portfolio_05.jpg" alt="Featured Look" class="w-full h-full object-cover">
                     </div>
                 </div>
                 
-                <!-- Item 2 - Portfolio Image 2 -->
-                <div class="flex flex-col">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="public/images/portfolio/portfolio_02.jpg" alt="Portfolio Look 2" class="w-full h-full object-cover">
+                <!-- Right: 4 Small Images in a 2x2 Grid -->
+                <div class="grid grid-cols-2 gap-4 lg:gap-10">
+                    <div class="aspect-[4/5] relative overflow-hidden portfolio-image-wrapper">
+                        <img src="public/images/portfolio/portfolio_01.jpg" alt="Detail Look 1" class="w-full h-full object-cover">
                     </div>
-                    <div class="mt-6">
-                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">作品 2</h3>
-                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Look 2</p>
+                    <div class="aspect-[4/5] relative overflow-hidden portfolio-image-wrapper">
+                        <img src="public/images/portfolio/portfolio_02.jpg" alt="Detail Look 2" class="w-full h-full object-cover">
                     </div>
-                </div>
-                
-                <!-- Item 3 - Portfolio Image 4 -->
-                <div class="flex flex-col">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="public/images/portfolio/portfolio_03.jpg" alt="Portfolio Look 4" class="w-full h-full object-cover">
+                    <div class="aspect-[4/5] relative overflow-hidden portfolio-image-wrapper">
+                        <img src="public/images/portfolio/portfolio_03.jpg" alt="Detail Look 3" class="w-full h-full object-cover">
                     </div>
-                    <div class="mt-6">
-                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">作品 4</h3>
-                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Look 4</p>
-                    </div>
-                </div>
-                
-                <!-- Item 4 - Portfolio Image 6 -->
-                <div class="flex flex-col">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="public/images/portfolio/portfolio_04.jpg" alt="Portfolio Look 6" class="w-full h-full object-cover">
-                    </div>
-                    <div class="mt-6">
-                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">作品 6</h3>
-                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Look 6</p>
-                    </div>
-                </div>
-                
-                <!-- Item 5 - Portfolio Image 5 -->
-                <div class="flex flex-col">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="public/images/portfolio/portfolio_05.jpg" alt="Portfolio Look 5" class="w-full h-full object-cover">
-                    </div>
-                    <div class="mt-6">
-                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">作品 5</h3>
-                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Look 5</p>
-                    </div>
-                </div>
-                
-                <!-- Item 6 - Portfolio Image 7 -->
-                <div class="flex flex-col">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="public/images/portfolio/portfolio_06.jpg" alt="Portfolio Look 7" class="w-full h-full object-cover">
-                    </div>
-                    <div class="mt-6">
-                        <h3 class="text-lg font-chinese text-atelier-text mb-2 font-medium">作品 7</h3>
-                        <p class="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">Look 7</p>
+                    <div class="aspect-[4/5] relative overflow-hidden portfolio-image-wrapper">
+                        <img src="public/images/portfolio/portfolio_04.jpg" alt="Detail Look 4" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Filter Controls Panel -->
-    <div id="filterControls" class="filter-controls">
-        <h3 style="margin: 0 0 10px 0; font-size: 14px;">Adjust Filters</h3>
-        <div class="filter-control-group">
-            <label for="contrastSlider">Contrast: <span id="contrastValue">98%</span></label>
-            <input type="range" id="contrastSlider" min="50" max="150" value="98">
-        </div>
-        <div class="filter-control-group">
-            <label for="brightnessSlider">Brightness: <span id="brightnessValue">101%</span></label>
-            <input type="range" id="brightnessSlider" min="50" max="150" value="101">
-        </div>
-        <div class="filter-control-group">
-            <label for="saturateSlider">Saturation: <span id="saturateValue">98%</span></label>
-            <input type="range" id="saturateSlider" min="0" max="200" value="98">
-        </div>
-        <button id="toggleFilterControls" style="margin-top: 10px; padding: 5px 10px; font-size: 12px;">Hide</button>
-    </div>
-    
-    <!-- Button to show filter controls -->
-    <button id="showFilterControls" style="position: fixed; bottom: 20px; right: 20px; z-index: 1001; padding: 8px 12px; background: #f0f0f0; border: none; border-radius: 4px; cursor: pointer; display: block;">Filters</button>
     
     <!-- TESTIMONIALS -->
     <section class="py-32 bg-atelier-bg border-t border-atelier-border" id="testimonials">
@@ -666,6 +613,9 @@
         </button>
     </div>
 
+
+
+
     <script>
         function setTheme(color, name) {
             document.documentElement.style.setProperty('--accent', color);
@@ -693,9 +643,7 @@
         
         // Initial state
         setTheme('#811331', 'Burgundy');
-        
 
-        
         // Hero Slider Functionality
         document.addEventListener('DOMContentLoaded', function() {
             const slides = document.querySelectorAll('.slide');
@@ -717,7 +665,7 @@
                 });
                 
                 // Update counter
-                slideCounter.textContent = `${index + 1} / ${slides.length}`;
+                if (slideCounter) slideCounter.textContent = `${index + 1} / ${slides.length}`;
             }
             
             // Next slide function
@@ -733,68 +681,13 @@
             }
             
             // Event listeners for buttons
-            nextBtn.addEventListener('click', nextSlide);
-            prevBtn.addEventListener('click', prevSlide);
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
             
             // Initialize slider
             showSlide(currentIndex);
-            
-
-        });
-        
-        // Portfolio Filter Controls
-        document.addEventListener('DOMContentLoaded', function() {
-            const contrastSlider = document.getElementById('contrastSlider');
-            const brightnessSlider = document.getElementById('brightnessSlider');
-            const saturateSlider = document.getElementById('saturateSlider');
-            const contrastValue = document.getElementById('contrastValue');
-            const brightnessValue = document.getElementById('brightnessValue');
-            const saturateValue = document.getElementById('saturateValue');
-            const filterControls = document.getElementById('filterControls');
-            const toggleFilterControls = document.getElementById('toggleFilterControls');
-            const showFilterControls = document.getElementById('showFilterControls');
-            
-            function updatePortfolioFilters() {
-                const contrast = contrastSlider.value + '%';
-                const brightness = brightnessSlider.value + '%';
-                const saturate = saturateSlider.value + '%';
-                
-                // Apply filter to all portfolio images
-                const portfolioImages = document.querySelectorAll('.portfolio-item img');
-                portfolioImages.forEach(img => {
-                    img.style.filter = `contrast(${contrast}) brightness(${brightness}) saturate(${saturate})`;
-                });
-                
-                // Update value displays
-                contrastValue.textContent = contrast;
-                brightnessValue.textContent = brightness;
-                saturateValue.textContent = saturate;
-            }
-            
-            // Initialize values
-            contrastValue.textContent = contrastSlider.value + '%';
-            brightnessValue.textContent = brightnessSlider.value + '%';
-            saturateValue.textContent = saturateSlider.value + '%';
-            
-            // Apply initial filter
-            updatePortfolioFilters();
-            
-            // Add event listeners
-            contrastSlider.addEventListener('input', updatePortfolioFilters);
-            brightnessSlider.addEventListener('input', updatePortfolioFilters);
-            saturateSlider.addEventListener('input', updatePortfolioFilters);
-            
-            // Toggle filter controls visibility
-            toggleFilterControls.addEventListener('click', function() {
-                filterControls.style.display = 'none';
-                showFilterControls.style.display = 'block';
-            });
-            
-            showFilterControls.addEventListener('click', function() {
-                filterControls.style.display = 'block';
-                showFilterControls.style.display = 'none';
-            });
         });
     </script>
+
 </body>
 </html>
