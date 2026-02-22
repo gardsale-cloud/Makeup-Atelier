@@ -1,58 +1,777 @@
-<main class="flex-grow w-full max-w-[1600px] mx-auto px-6 py-24 md:py-32 lg:px-20 relative">
-<header class="mb-20 md:mb-32 max-w-2xl relative z-10 pl-4 md:pl-0">
-<div class="flex flex-col items-start gap-4">
-<span class="text-primary tracking-[0.3em] text-xs font-medium uppercase animate-[fadeIn_1s_ease-out]">
-                    Selected Portfolio
-                </span>
-<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-gray-900 dark:text-gray-100 font-light tracking-wide leading-tight animate-[fadeIn_1.2s_ease-out_0.2s_forwards] opacity-0">
-                    婚禮與妝髮作品
-                </h1>
-<p class="font-sans font-light text-sm text-gray-500 dark:text-gray-400 tracking-wider mt-2 animate-[fadeIn_1.4s_ease-out_0.4s_forwards] opacity-0">
-                    自然細緻的妝髮呈現 · Natural &amp; Exquisite
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>普吉岛专业化妆师 | Phuket Makeup Artist</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;family=Noto+Serif+SC:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e0b329",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#1f1f1f",
+                        "neutral-dark": "#1f1f1f",
+                        "neutral-medium": "#6b7280",
+                        "border-light": "#e5e5e5",
+                        "ivory": "#F9F6F0",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "chinese": ["Noto Sans SC", "sans-serif"],
+                        "serif": ["Noto Serif SC", "serif"],
+                        "times": ["Times New Roman", "serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", 
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "soft": "0 1px 2px rgba(0, 0, 0, 0.05)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', 'Noto Sans SC', sans-serif;
+            color: #1f1f1f;
+        }
+        h1, h2, h3, h4, .chinese-text {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: sweep .3s ease-in-out;
+        }
+        @keyframes sweep {
+            0%    {opacity: 0; margin-top: -10px}
+            100%  {opacity: 1; margin-top: 0px}
+        }
+        .xhs-mockup {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            transform: translateY(10px);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .group:hover .xhs-mockup {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .quote-content {
+            transition: filter 0.4s ease, opacity 0.4s ease;
+        }
+        .group:hover .quote-content {
+            filter: blur(2px);
+            opacity: 0.5;
+        }.popup-overlay {
+            background-color: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+<body class="bg-background-light text-neutral-dark antialiased flex flex-col min-h-screen relative">
+<div class="fixed inset-0 z-[100] flex items-center justify-center popup-overlay p-4">
+<div class="relative w-full max-w-[800px] bg-ivory shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col md:flex-row overflow-hidden">
+<button class="absolute top-4 right-4 text-neutral-400 hover:text-neutral-dark transition-colors z-10">
+<span class="material-icons-round">close</span>
+</button>
+<div class="w-full md:w-5/12 bg-[#F2EFE9] flex flex-col items-center justify-center p-10 border-r border-neutral-200/50">
+<div class="bg-white p-3 shadow-sm mb-4">
+<img alt="WeChat QR Code" class="w-32 h-32 object-contain grayscale opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpjrTXDiw1ZM_14ro2VbfeYom76K7QYyF67Z47RpgPQu0AJHIQ9en8ozawe4700cxpta0GouSrV9GMS15yNFzhkGqRBVIQ792eA1fniArW6dyPO9dOR6jHZ645LEayZROGPMzhNphd-GKsbED2NL-dZWVEJDNEroXgKpox8fafQymivVO0giG2RBq1XS_C9s8FMkM_xZgOTjB2f1BPXD7w7EWyz8GPbh_kaR_6s0_-CVJtkD__WW7HJipmX5jOVIN44x0CYWFnT58"/>
+</div>
+<span class="text-xs font-display tracking-widest text-neutral-500 uppercase">扫码添加微信</span>
+</div>
+<div class="w-full md:w-7/12 p-10 md:p-12 flex flex-col justify-center">
+<h2 class="font-serif text-2xl md:text-3xl text-neutral-dark mb-2 font-medium">预约档期咨询</h2>
+<p class="font-display text-sm text-neutral-500 mb-8 font-light">
+                    请留下您的微信号，我们会尽快与您联系确认档期。
                 </p>
-<div class="h-[1px] w-16 bg-primary mt-6 animate-[fadeIn_1.6s_ease-out_0.6s_forwards] opacity-0"></div>
+<form class="space-y-8" onsubmit="event.preventDefault();">
+<div class="relative group">
+<input class="block w-full px-0 py-2 text-neutral-dark bg-transparent border-0 border-b border-neutral-300 focus:ring-0 focus:border-neutral-dark placeholder-neutral-400 font-display transition-colors" id="wechat_id" placeholder=" " required="" type="text"/>
+<label class="absolute duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 text-neutral-500 font-display text-sm" for="wechat_id">
+                        您的微信号 (WeChat ID)
+                    </label>
 </div>
-</header>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-y-16 md:gap-x-12 lg:gap-x-24 items-start">
-<div class="md:col-span-5 md:pt-24 lg:pt-32 relative group">
-<div class="aspect-[4/5] w-full overflow-hidden bg-gray-100 dark:bg-gray-800 relative image-fade-in" style="animation-delay: 0.2s;">
-<img alt="Close up of a smiling bride with veil looking naturally radiant" class="w-full h-full object-cover transition-transform duration-[1.5s] ease-in-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpmhfF9L-rEXUS3NN1_xUi_V6R9JW8rjc37zQf3ucuSPbpQPWM45tw1L29TKgyI8X_iWDhB12Axo7ZIx5h4STjqnOqurmZA5c1mgIuqQV8h4oUuvZMXbg7DB9hCSTVsD_8Sq93MUHrCaK-erbPXEFDvG06_uFxvW75WeMaMnQqwwGo-JLxWUPGkdXxkU0oagfvv8AEOf03JH-XpsDcUaOj7zhwqTeQkxofPJOyaNRqzxHTPMGZPUddok8NzehYz1XVXsSd1TsDTI0"/>
-<div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 dark:group-hover:bg-white/5 transition-colors duration-500"></div>
+<div class="relative group">
+<input class="block w-full px-0 py-2 text-neutral-dark bg-transparent border-0 border-b border-neutral-300 focus:ring-0 focus:border-neutral-dark placeholder-neutral-400 font-display transition-colors" id="wedding_date" placeholder=" " type="text"/>
+<label class="absolute duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 text-neutral-500 font-display text-sm" for="wedding_date">
+                        婚期/拍摄日期 (Date)
+                    </label>
 </div>
-<div class="mt-4 flex justify-between items-baseline opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-<span class="font-serif text-lg italic text-gray-800 dark:text-gray-200">Grace</span>
-<span class="text-xs text-gray-400 font-sans tracking-widest">PHUKET, 2023</span>
-</div>
-</div>
-<div class="hidden md:block md:col-span-1"></div>
-<div class="md:col-span-6 flex flex-col gap-12 md:gap-16">
-<div class="w-full pl-0 md:pl-8 lg:pl-16 group">
-<div class="aspect-[3/4] md:aspect-[4/5] w-full overflow-hidden bg-gray-100 dark:bg-gray-800 relative image-fade-in" style="animation-delay: 0.4s;">
-<img alt="Bride in side profile looking away with elegant updo hairstyle" class="w-full h-full object-cover transition-transform duration-[1.5s] ease-in-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsnkiUaijiXbCk-zqVrPjo-96ZcM0MMrV42RrcLXX7h_ObToqj0nuGxBCqmgHJTHBsSZPPYDrie8XquEijar6kKz8ClBItebqwxHOhUEe3ieZ2b6zcrMog3h0y6rJtNFM8XBnA6Hrl-pXUo5WOm_7waBUywPNPDUTM-6sB4ccdnMIl2yZDjzAIhkCbdwxXu5B9n6MQj5kSintP_fJadGzeCsuVJRP4Wq7Xxl_9libcQO6cmHPk1SjhLN5fTjPImQYZt16tqt5E110"/>
-</div>
-<div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-<span class="font-serif text-lg italic text-gray-800 dark:text-gray-200">Eleanor &amp; James</span>
-</div>
-</div>
-<div class="flex flex-col sm:flex-row gap-6 md:gap-8 mt-4 md:-ml-12 lg:-ml-24">
-<div class="w-full sm:w-1/2 group">
-<div class="aspect-[3/4] overflow-hidden bg-gray-100 dark:bg-gray-800 relative image-fade-in" style="animation-delay: 0.6s;">
-<img alt="Detail shot of bridal makeup with natural lighting" class="w-full h-full object-cover transition-transform duration-[1.5s] ease-in-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNrwPkKh2GzXV8x4-fWEPQpalNghGcHo9ZWGR4G3nGdsBOq9uToDjpfNiM9kx29-xGitm9f0uQyycNNPKXvFerFJ4RuuM4npPjaqK0EBgmqy5A8flLr-PemPpQNJ7-hGbfFn8ktVQPwT5ojgG0PTIdOymzEwwRJB7uyllNNnOojxzI3_fr4GnSP4WfqFZKO7KUdu0eYchdYf5ZnYeRuEsZ8RzBJ9TZMS5-FlqX8If7wdXB1ffTmQ8dz5K9Mmn1-GYUF-fPbnWXDRg"/>
-</div>
-</div>
-<div class="w-full sm:w-1/2 sm:mt-12 group">
-<div class="aspect-[3/4] overflow-hidden bg-gray-100 dark:bg-gray-800 relative image-fade-in" style="animation-delay: 0.8s;">
-<img alt="Bride in white dress holding bouquet looking at camera" class="w-full h-full object-cover transition-transform duration-[1.5s] ease-in-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT5MI6vcuNMIKkxW5A_VLjMEV-cJF26k7j7z0cO_YlTI1fWnrmqs2Nr3J0PW4ywDRxTGlnisyMSgHdOjTtfrrhcZbwbPBfCEegFX4Y5spxgml5bRmGEVoUWJBasAsi_0kK2iTAfJeWnhAH6HafeuV15t0G1cyv3eMzHMItALW__X_UYEPaYfHLrydqHcXJSTp9RBudpFTAeAvDT0m436powb4aqSACoqmLfS0R8ytsOShtq46WQuZMnFbN-AoLSOSjBeGykbi5DRI"/>
+<button class="w-full bg-black hover:bg-neutral-800 text-white font-display text-sm font-medium py-4 px-6 tracking-wide transition-colors mt-4" type="submit">
+                        提交咨询 SUBMIT
+                    </button>
+</form>
+<p class="text-[10px] text-neutral-400 mt-6 text-center font-display">
+                    *您的信息将被严格保密，仅用于咨询联系
+                </p>
 </div>
 </div>
 </div>
+<nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-border-light">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-20 items-center">
+<div class="flex-shrink-0 flex items-center gap-2">
+<span class="material-icons-round text-primary text-3xl">brush</span>
+<span class="font-display font-bold text-xl tracking-tight text-neutral-dark">PHUKET MUA</span>
+</div>
+<div class="hidden md:flex space-x-8">
+<a class="text-neutral-medium hover:text-neutral-dark transition-colors font-chinese" href="#services">服务</a>
+<a class="text-neutral-medium hover:text-neutral-dark transition-colors font-chinese" href="#portfolio">作品</a>
+<a class="text-neutral-medium hover:text-neutral-dark transition-colors font-chinese" href="#testimonials">评价</a>
+<a class="text-neutral-medium hover:text-neutral-dark transition-colors font-chinese" href="#process">流程</a>
+</div>
+<div>
+<a class="bg-neutral-dark hover:bg-neutral-medium text-white px-6 py-2.5 rounded-full font-medium transition-colors shadow-none flex items-center gap-2" href="#contact">
+<span class="material-icons-round text-sm">chat_bubble</span>
+                        联系我
+                    </a>
 </div>
 </div>
-<div class="absolute top-0 right-12 h-64 w-[1px] bg-gray-200 dark:bg-gray-800 hidden lg:block"></div>
-<div class="mt-24 md:mt-32 text-center md:text-right">
-<a class="inline-flex items-center group text-sm tracking-[0.2em] font-light uppercase text-gray-600 dark:text-gray-400 hover:text-primary transition-colors" href="#">
-                View All Collections
-                <span class="material-icons text-base ml-2 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</nav>
+<section class="relative bg-background-light overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col lg:flex-row min-h-[600px] lg:h-[85vh]">
+<div class="w-full lg:w-1/2 flex flex-col justify-center px-6 lg:pl-20 py-20 lg:py-0 z-10 relative">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-border-light text-neutral-medium text-sm font-medium mb-6 w-fit">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                        Phuket Based Makeup Artist
+                    </div>
+<h1 class="font-chinese text-5xl lg:text-6xl font-bold leading-tight mb-6 text-neutral-dark">
+                        普吉岛<br/>
+<span class="text-neutral-dark relative inline-block">
+                            专业化妆师
+                            <svg class="absolute w-full h-3 -bottom-1 left-0 text-primary opacity-40" fill="none" viewBox="0 0 200 9" xmlns="http://www.w3.org/2000/svg"><path d="M2.00025 6.99997C25.7201 5.20035 81.318 2.00013 197.999 4.00005" stroke="currentColor" stroke-width="3"></path></svg>
+</span>
+</h1>
+<p class="text-lg text-neutral-medium mb-2 font-chinese">专为亚洲面部轮廓设计，拒绝厚重泰妆，打造清透高级感妆容。</p>
+<p class="text-base text-neutral-medium mb-10 font-display">
+                        Specializing in clean, natural aesthetics for Asian features. Fluent in Chinese &amp; English.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="bg-neutral-dark hover:bg-neutral-medium text-white px-8 py-4 rounded-full font-bold text-lg shadow-none transition-all text-center flex items-center justify-center gap-2 hover:opacity-90" href="#contact">
+<span class="material-icons-round">calendar_month</span>
+                            咨询档期 (Inquire)
+                        </a>
+<a class="bg-white border border-border-light text-neutral-dark hover:bg-neutral-50 px-8 py-4 rounded-full font-bold text-lg transition-all text-center" href="#portfolio">
+                            查看作品集
+                        </a>
+</div>
+<div class="mt-12 flex items-center gap-4 text-sm text-neutral-medium">
+<div class="flex -space-x-3">
+<img alt="Client Avatar" class="w-10 h-10 rounded-full border-2 border-white object-cover" data-alt="Small avatar of a happy client" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKs2ugJ80kJVjgIJOVmzLP6U2e76laNPmv5ayIvc4WZEfcQg4fTj4LEpPtGL_2y_braQZRhYwZYlCiQGLDM_Pm18SU8XZKfVDxLE2vF5EhL0jtb3VtxTlpMiA2Xf_0gjiY4PPiWGnTU3YPcvzh6z2wcMFbSdGMRQRLrbDAMbpxmcjWvqWDOn7yYurcg_pi1djuUGYUxsUzjDOHklIr81pX5R59vD7t_tAYX6cBE_fOIukBpW8FqLJPzM0xPW6MS8odaPeK78RsuRI"/>
+<img alt="Client Avatar" class="w-10 h-10 rounded-full border-2 border-white object-cover" data-alt="Small avatar of a happy client" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkBDTYGUDRZzw-0MxqEgYBPSyBTOQ2upYRMxBP3dvM8JAq_-p0exR5PuIZyUMFJfpTRJTXIarmYd4AAcyklr32cjPFM_POrXwsjV4Md24ztCAwfMzNCtvjPQgoEyU_TGMtJaGc3XbIr_1GtssyqUX57sM6Ycrwoa1qyk2T9jat7MRbiwPBI8JA9n5Y7MiyGGpwra5UYyL-V1R7yB8yrW4L0gIq5xqPUCQlZCnlWQqX0le-a03NteEBxQVeaAwS-3pB-sjtKk5s-Jg"/>
+<img alt="Client Avatar" class="w-10 h-10 rounded-full border-2 border-white object-cover" data-alt="Small avatar of a happy client" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJMb_s-TBuytowv885XAh4-Q7qblEm00mmkXPDePqjHizlAHdSZima5gR-XfuSXPmfZU3fI0nCLUj_dYgjnze9Q1cwbtRwfP0z1jDYpnXrsHHQoim5lPKQxtVMZlwfQ14SM4wvM3Vx4FuFWQVWVrI-_O8xZPZL2DfPx-XJKGu8JSnvdgYeC9Y-gueA1e7jpvnd38_goo0MBU4rRpY97TE6by_3BkZeX7E4Vei220xcezvDuZWZqEznhWDSxrWQDtSNO8IaqZqQaok"/>
+</div>
+<p>已有 500+ 位美丽新娘选择了我</p>
+</div>
+</div>
+<div class="w-full lg:w-1/2 relative h-[500px] lg:h-auto">
+<img alt="Asian bride with natural makeup looking elegant" class="absolute inset-0 w-full h-full object-cover" data-alt="Close up of asian bride with clean natural makeup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAMILc2VLqn1VuhceWJaBIKVvqUhaMXY-DVaGIa1uTO97-SGvtrbPoXhBeoqycU2NhI-goHvv6UDGmLbuvyamjAaQmZmuU5BYTgw4VDMN1rV--4iGeAlVto6y4Dmx5KqyOkCVF-lcN-mwToFdZDaV3fOMuoZjFok7xyUG9l-cnYbjv3t2Lx1oyzR8VZ1qbVGUXI6HrigM7I19-kQLg8eCU0lSaq355W58c32wSWsGkkdy4oTNluS5j6roVDdinODoU760waHSMj9Y"/>
+</div>
+</div>
+</div>
+</section>
+<section class="py-28 bg-background-light" id="services">
+<div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<h2 class="text-sm font-bold text-primary tracking-wider uppercase mb-2 font-display">My Services</h2>
+<h3 class="text-3xl md:text-4xl font-bold font-chinese text-neutral-dark mb-4">定制服务</h3>
+<p class="text-neutral-medium mb-16">专业技术，只为打造最美的你</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-transparent p-0 rounded-none shadow-none hover:shadow-none transition-opacity duration-300 group border-0">
+<div class="w-14 h-14 bg-white border border-border-light rounded-full flex items-center justify-center mb-6">
+<span class="material-icons-round text-primary text-3xl">face</span>
+</div>
+<h4 class="text-xl font-bold text-neutral-dark mb-2 font-chinese">新娘跟妆服务</h4>
+<p class="text-sm text-neutral-medium font-medium mb-4 uppercase tracking-wide font-display">Bridal Makeup</p>
+<p class="text-neutral-medium text-sm leading-relaxed mb-8">
+                        全天候跟妆服务，包含仪式、晚宴等多个造型变换。针对亚洲肤质定制的清透底妆，确保持久不脱妆。
+                    </p>
+<a class="inline-flex items-center text-sm font-bold text-neutral-dark hover:text-primary transition-colors hover:opacity-70" href="#contact">
+                        了解详情
+                        <span class="material-icons-round text-sm ml-1">arrow_forward</span>
 </a>
 </div>
-</main>
+<div class="bg-transparent p-0 rounded-none shadow-none hover:shadow-none transition-opacity duration-300 group border-0">
+<div class="w-14 h-14 bg-white border border-border-light rounded-full flex items-center justify-center mb-6">
+<span class="material-icons-round text-primary text-3xl">camera_alt</span>
+</div>
+<h4 class="text-xl font-bold text-neutral-dark mb-2 font-chinese">婚纱摄影造型</h4>
+<p class="text-sm text-neutral-medium font-medium mb-4 uppercase tracking-wide font-display">Pre-wedding Shoot</p>
+<p class="text-neutral-medium text-sm leading-relaxed mb-8">
+                        配合普吉岛外景光线特点，设计立体且上镜的妆容。全程跟拍补妆，确保每一张照片都完美无瑕。
+                    </p>
+<a class="inline-flex items-center text-sm font-bold text-neutral-dark hover:text-primary transition-colors hover:opacity-70" href="#contact">
+                        了解详情
+                        <span class="material-icons-round text-sm ml-1">arrow_forward</span>
+</a>
+</div>
+<div class="bg-transparent p-0 rounded-none shadow-none hover:shadow-none transition-opacity duration-300 group border-0">
+<div class="w-14 h-14 bg-white border border-border-light rounded-full flex items-center justify-center mb-6">
+<span class="material-icons-round text-primary text-3xl">auto_awesome</span>
+</div>
+<h4 class="text-xl font-bold text-neutral-dark mb-2 font-chinese">宴会活动妆造</h4>
+<p class="text-sm text-neutral-medium font-medium mb-4 uppercase tracking-wide font-display">Party &amp; Event</p>
+<p class="text-neutral-medium text-sm leading-relaxed mb-8">
+                        为参加婚礼宾客、年会晚宴或特殊场合提供的精致妆造服务。根据服装风格与个人气质，打造闪耀全场的造型。
+                    </p>
+<a class="inline-flex items-center text-sm font-bold text-neutral-dark hover:text-primary transition-colors hover:opacity-70" href="#contact">
+                        了解详情
+                        <span class="material-icons-round text-sm ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-28 bg-white" id="portfolio">
+<div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<h2 class="text-sm font-bold text-primary tracking-wider uppercase mb-2 font-display">Selected Portfolio</h2>
+<h3 class="font-chinese text-3xl md:text-4xl font-bold text-neutral-dark mb-4">精选作品集</h3>
+<p class="text-neutral-medium mb-16">探索不同风格的妆容艺术</p>
+</div>
+<div class="flex justify-center flex-wrap gap-2 md:gap-4 mb-16">
+<button class="px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-neutral-dark text-white hover:opacity-80">
+                    全部 All
+                </button>
+<button class="px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-background-light text-neutral-medium border border-border-light hover:bg-white hover:border-neutral-medium">
+                    婚礼 Wedding
+                </button>
+<button class="px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-background-light text-neutral-medium border border-border-light hover:bg-white hover:border-neutral-medium">
+                    婚纱照 Pre-wedding
+                </button>
+<button class="px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-background-light text-neutral-medium border border-border-light hover:bg-white hover:border-neutral-medium">
+                    活动 Event
+                </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="group relative overflow-hidden rounded-sm bg-background-light aspect-[4/5] cursor-pointer">
+<img alt="Clean natural bridal makeup close up" class="w-full h-full object-cover transition-opacity duration-700 hover:opacity-90" data-alt="Elegant asian bride close up with natural makeup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAMILc2VLqn1VuhceWJaBIKVvqUhaMXY-DVaGIa1uTO97-SGvtrbPoXhBeoqycU2NhI-goHvv6UDGmLbuvyamjAaQmZmuU5BYTgw4VDMN1rV--4iGeAlVto6y4Dmx5KqyOkCVF-lcN-mwToFdZDaV3fOMuoZjFok7xyUG9l-cnYbjv3t2Lx1oyzR8VZ1qbVGUXI6HrigM7I19-kQLg8eCU0lSaq355W58c32wSWsGkkdy4oTNluS5j6roVDdinODoU760waHSMj9Y"/>
+<div class="absolute bottom-0 left-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm">
+<p class="text-neutral-dark font-chinese text-lg font-bold mb-1">自然清透新娘妆</p>
+<p class="text-neutral-medium text-sm font-display">Natural Bridal Look</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-sm bg-background-light aspect-[4/5] cursor-pointer">
+<img alt="Elegant outdoor pre-wedding makeup" class="w-full h-full object-cover transition-opacity duration-700 hover:opacity-90" data-alt="Outdoor bridal photoshoot with soft makeup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkBDTYGUDRZzw-0MxqEgYBPSyBTOQ2upYRMxBP3dvM8JAq_-p0exR5PuIZyUMFJfpTRJTXIarmYd4AAcyklr32cjPFM_POrXwsjV4Md24ztCAwfMzNCtvjPQgoEyU_TGMtJaGc3XbIr_1GtssyqUX57sM6Ycrwoa1qyk2T9jat7MRbiwPBI8JA9n5Y7MiyGGpwra5UYyL-V1R7yB8yrW4L0gIq5xqPUCQlZCnlWQqX0le-a03NteEBxQVeaAwS-3pB-sjtKk5s-Jg"/>
+<div class="absolute bottom-0 left-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm">
+<p class="text-neutral-dark font-chinese text-lg font-bold mb-1">海岛户外婚纱照</p>
+<p class="text-neutral-medium text-sm font-display">Beach Pre-wedding</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-sm bg-background-light aspect-[4/5] cursor-pointer">
+<img alt="Glamorous evening event makeup" class="w-full h-full object-cover transition-opacity duration-700 hover:opacity-90" data-alt="Sophisticated evening makeup look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJMb_s-TBuytowv885XAh4-Q7qblEm00mmkXPDePqjHizlAHdSZima5gR-XfuSXPmfZU3fI0nCLUj_dYgjnze9Q1cwbtRwfP0z1jDYpnXrsHHQoim5lPKQxtVMZlwfQ14SM4wvM3Vx4FuFWQVWVrI-_O8xZPZL2DfPx-XJKGu8JSnvdgYeC9Y-gueA1e7jpvnd38_goo0MBU4rRpY97TE6by_3BkZeX7E4Vei220xcezvDuZWZqEznhWDSxrWQDtSNO8IaqZqQaok"/>
+<div class="absolute bottom-0 left-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm">
+<p class="text-neutral-dark font-chinese text-lg font-bold mb-1">晚宴精致妆容</p>
+<p class="text-neutral-medium text-sm font-display">Evening Glamour</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-sm bg-background-light aspect-[4/5] cursor-pointer">
+<img alt="Korean style fresh bridal makeup" class="w-full h-full object-cover transition-opacity duration-700 hover:opacity-90" data-alt="Fresh korean style makeup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKs2ugJ80kJVjgIJOVmzLP6U2e76laNPmv5ayIvc4WZEfcQg4fTj4LEpPtGL_2y_braQZRhYwZYlCiQGLDM_Pm18SU8XZKfVDxLE2vF5EhL0jtb3VtxTlpMiA2Xf_0gjiY4PPiWGnTU3YPcvzh6z2wcMFbSdGMRQRLrbDAMbpxmcjWvqWDOn7yYurcg_pi1djuUGYUxsUzjDOHklIr81pX5R59vD7t_tAYX6cBE_fOIukBpW8FqLJPzM0xPW6MS8odaPeK78RsuRI"/>
+<div class="absolute bottom-0 left-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm">
+<p class="text-neutral-dark font-chinese text-lg font-bold mb-1">韩式清新妆感</p>
+<p class="text-neutral-medium text-sm font-display">Korean Fresh Look</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-sm bg-background-light aspect-[4/5] cursor-pointer">
+<img alt="Thai traditional wedding makeup" class="w-full h-full object-cover transition-opacity duration-700 hover:opacity-90" data-alt="Traditional thai wedding makeup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAMILc2VLqn1VuhceWJaBIKVvqUhaMXY-DVaGIa1uTO97-SGvtrbPoXhBeoqycU2NhI-goHvv6UDGmLbuvyamjAaQmZmuU5BYTgw4VDMN1rV--4iGeAlVto6y4Dmx5KqyOkCVF-lcN-mwToFdZDaV3fOMuoZjFok7xyUG9l-cnYbjv3t2Lx1oyzR8VZ1qbVGUXI6HrigM7I19-kQLg8eCU0lSaq355W58c32wSWsGkkdy4oTNluS5j6roVDdinODoU760waHSMj9Y"/>
+<div class="absolute bottom-0 left-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm">
+<p class="text-neutral-dark font-chinese text-lg font-bold mb-1">泰式传统婚礼</p>
+<p class="text-neutral-medium text-sm font-display">Thai Traditional Ceremony</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-sm bg-background-light aspect-[4/5] cursor-pointer">
+<img alt="Fashion editorial makeup shoot" class="w-full h-full object-cover transition-opacity duration-700 hover:opacity-90" data-alt="High fashion makeup editorial" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkBDTYGUDRZzw-0MxqEgYBPSyBTOQ2upYRMxBP3dvM8JAq_-p0exR5PuIZyUMFJfpTRJTXIarmYd4AAcyklr32cjPFM_POrXwsjV4Md24ztCAwfMzNCtvjPQgoEyU_TGMtJaGc3XbIr_1GtssyqUX57sM6Ycrwoa1qyk2T9jat7MRbiwPBI8JA9n5Y7MiyGGpwra5UYyL-V1R7yB8yrW4L0gIq5xqPUCQlZCnlWQqX0le-a03NteEBxQVeaAwS-3pB-sjtKk5s-Jg"/>
+<div class="absolute bottom-0 left-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm">
+<p class="text-neutral-dark font-chinese text-lg font-bold mb-1">时尚杂志拍摄</p>
+<p class="text-neutral-medium text-sm font-display">Editorial Fashion</p>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<a class="inline-flex items-center gap-2 border-b border-neutral-dark text-neutral-dark pb-1 font-bold hover:text-primary hover:border-primary transition-colors" href="#contact">
+                    查看更多 Instagram 作品 
+                    <span class="material-icons-round text-sm">north_east</span>
+</a>
+</div>
+</div>
+</section>
+<section class="py-28 bg-background-light relative">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<span class="inline-block text-primary font-bold tracking-[0.2em] text-sm uppercase mb-2 font-display">Why Choose Me</span>
+<h2 class="text-3xl lg:text-4xl font-bold font-chinese text-neutral-dark leading-tight mb-4">
+                    为什么选择我的服务
+                </h2>
+<p class="text-neutral-medium font-chinese text-lg leading-relaxed mb-16">
+                    不仅仅是化妆，更是为您量身定制的专属美丽体验。在人生最重要的时刻，给您最安心的陪伴。
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+<div class="bg-transparent p-6 rounded-none shadow-none transition-all duration-300 group flex flex-col items-center text-center gap-6 border-0">
+<div class="flex-shrink-0 w-16 h-16 bg-white border border-border-light rounded-full flex items-center justify-center">
+<span class="material-icons-round text-primary text-3xl">verified_user</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-neutral-dark font-chinese mb-3">多年普吉岛跟妆经验</h3>
+<p class="text-neutral-medium leading-relaxed font-chinese text-sm">
+                            熟悉普吉岛各大婚礼场地、光线条件及气候特点，能精准把控不同环境下的妆容持久度与上镜效果。
+                        </p>
+</div>
+</div>
+<div class="bg-transparent p-6 rounded-none shadow-none transition-all duration-300 group flex flex-col items-center text-center gap-6 border-0">
+<div class="flex-shrink-0 w-16 h-16 bg-white border border-border-light rounded-full flex items-center justify-center">
+<span class="material-icons-round text-primary text-3xl">translate</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-neutral-dark font-chinese mb-3">中英双语沟通无障碍</h3>
+<p class="text-neutral-medium leading-relaxed font-chinese text-sm">
+                            全程中文无障碍沟通，准确理解您的审美需求；流利英语对接当地摄影团队与婚礼策划，确保流程顺畅。
+                        </p>
+</div>
+</div>
+<div class="bg-transparent p-6 rounded-none shadow-none transition-all duration-300 group flex flex-col items-center text-center gap-6 border-0">
+<div class="flex-shrink-0 w-16 h-16 bg-white border border-border-light rounded-full flex items-center justify-center">
+<span class="material-icons-round text-primary text-3xl">face_retouching_natural</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-neutral-dark font-chinese mb-3">专研亚洲审美高级妆感</h3>
+<p class="text-neutral-medium leading-relaxed font-chinese text-sm">
+                            拒绝千篇一律的流水线妆容。擅长根据亚洲人骨相调整修容，打造清透、自然、高级的“妈生皮”质感。
+                        </p>
+</div>
+</div>
+<div class="bg-transparent p-6 rounded-none shadow-none transition-all duration-300 group flex flex-col items-center text-center gap-6 border-0">
+<div class="flex-shrink-0 w-16 h-16 bg-white border border-border-light rounded-full flex items-center justify-center">
+<span class="material-icons-round text-primary text-3xl">inventory_2</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-neutral-dark font-chinese mb-3">一线大牌专业彩妆产品</h3>
+<p class="text-neutral-medium leading-relaxed font-chinese text-sm">
+                            坚持使用顶级一线国际品牌及专业线化妆品，确保妆面精致且养肤。
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-background-light" id="testimonials">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+<div class="lg:col-span-4 lg:sticky lg:top-32 lg:h-fit">
+<span class="inline-block text-primary font-bold tracking-[0.2em] text-sm uppercase mb-6 font-display">Editorial Reviews</span>
+<h2 class="text-3xl lg:text-4xl font-bold font-chinese text-neutral-dark mb-6 leading-tight">
+                        真实新娘的<br/>幸福分享
+                    </h2>
+<p class="text-neutral-medium font-chinese text-lg mb-10 leading-relaxed">
+                        来自 Xiaohongshu (小红书) 的真实反馈。感谢每一位新娘的信任，让我在普吉岛见证了你们的高光时刻。
+                    </p>
+<div class="hidden lg:block">
+<div class="flex items-center gap-2 text-sm font-medium text-neutral-dark border-b border-neutral-dark w-fit pb-1 cursor-pointer hover:text-primary hover:border-primary transition-colors">
+<span>Read more on Socials</span>
+<span class="material-icons-round text-sm">north_east</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+<div class="group relative flex flex-col md:translate-y-0">
+<div class="relative bg-white p-6 md:p-8 h-full border border-border-light/50 transition-all duration-500 overflow-hidden">
+<div class="absolute top-4 left-4 font-serif text-[6rem] leading-none text-primary opacity-15 pointer-events-none">“</div>
+<div class="quote-content relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="mb-4"></div>
+<h3 class="font-chinese font-semibold text-lg text-neutral-dark mb-4">“妆面太高级了！”</h3>
+<p class="text-neutral-medium font-chinese leading-relaxed text-sm">
+                                            完全是我想要的泰式轻混血感，眼妆超级精致。在普吉岛这么热的天气下，底妆居然一天都没脱...
+                                        </p>
+</div>
+<div class="mt-8 flex items-center gap-4 border-t border-border-light/50 pt-6">
+<img alt="Client photo" class="w-10 h-10 rounded-full object-cover grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKs2ugJ80kJVjgIJOVmzLP6U2e76laNPmv5ayIvc4WZEfcQg4fTj4LEpPtGL_2y_braQZRhYwZYlCiQGLDM_Pm18SU8XZKfVDxLE2vF5EhL0jtb3VtxTlpMiA2Xf_0gjiY4PPiWGnTU3YPcvzh6z2wcMFbSdGMRQRLrbDAMbpxmcjWvqWDOn7yYurcg_pi1djuUGYUxsUzjDOHklIr81pX5R59vD7t_tAYX6cBE_fOIukBpW8FqLJPzM0xPW6MS8odaPeK78RsuRI"/>
+<div>
+<p class="font-medium text-neutral-dark font-display text-sm">Chloe Zhang</p>
+<p class="text-[10px] text-neutral-medium uppercase tracking-wider">Sri Panwa</p>
+</div>
+</div>
+</div>
+<div class="xhs-mockup absolute inset-0 z-20 bg-white p-6 flex flex-col justify-between">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center overflow-hidden">
+<img alt="Client photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKs2ugJ80kJVjgIJOVmzLP6U2e76laNPmv5ayIvc4WZEfcQg4fTj4LEpPtGL_2y_braQZRhYwZYlCiQGLDM_Pm18SU8XZKfVDxLE2vF5EhL0jtb3VtxTlpMiA2Xf_0gjiY4PPiWGnTU3YPcvzh6z2wcMFbSdGMRQRLrbDAMbpxmcjWvqWDOn7yYurcg_pi1djuUGYUxsUzjDOHklIr81pX5R59vD7t_tAYX6cBE_fOIukBpW8FqLJPzM0xPW6MS8odaPeK78RsuRI"/>
+</div>
+<span class="text-xs font-bold text-neutral-dark">Chloe.Z</span>
+<span class="ml-auto text-xs text-neutral-400 font-display">2h ago</span>
+</div>
+<div class="flex-grow">
+<p class="text-sm font-chinese text-neutral-dark leading-relaxed mb-3">
+                                            姐妹们！普吉岛跟妆直接闭眼冲这家！💯 化妆老师太专业了，完全get到了我想要的泰式轻混血妆容，眼妆超级精致，而且底妆在普吉岛这么热的天气下居然一天都没脱，太厉害了！ #普吉岛婚礼 #新娘跟妆
+                                        </p>
+<div class="flex gap-2 mb-2">
+<div class="h-20 w-20 bg-neutral-100 rounded overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAMILc2VLqn1VuhceWJaBIKVvqUhaMXY-DVaGIa1uTO97-SGvtrbPoXhBeoqycU2NhI-goHvv6UDGmLbuvyamjAaQmZmuU5BYTgw4VDMN1rV--4iGeAlVto6y4Dmx5KqyOkCVF-lcN-mwToFdZDaV3fOMuoZjFok7xyUG9l-cnYbjv3t2Lx1oyzR8VZ1qbVGUXI6HrigM7I19-kQLg8eCU0lSaq355W58c32wSWsGkkdy4oTNluS5j6roVDdinODoU760waHSMj9Y"/>
+</div>
+<div class="h-20 w-20 bg-neutral-100 rounded overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJMb_s-TBuytowv885XAh4-Q7qblEm00mmkXPDePqjHizlAHdSZima5gR-XfuSXPmfZU3fI0nCLUj_dYgjnze9Q1cwbtRwfP0z1jDYpnXrsHHQoim5lPKQxtVMZlwfQ14SM4wvM3Vx4FuFWQVWVrI-_O8xZPZL2DfPx-XJKGu8JSnvdgYeC9Y-gueA1e7jpvnd38_goo0MBU4rRpY97TE6by_3BkZeX7E4Vei220xcezvDuZWZqEznhWDSxrWQDtSNO8IaqZqQaok"/>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-gray-100">
+<div class="flex gap-4">
+<span class="flex items-center gap-1 text-xs text-neutral-500 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-lg">favorite</span> 128
+                                            </span>
+<span class="flex items-center gap-1 text-xs text-neutral-500 hover:text-neutral-dark transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-lg">chat_bubble</span> 32
+                                            </span>
+</div>
+<span class="flex items-center gap-1 text-xs text-neutral-500 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-lg">bookmark</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col md:translate-y-16">
+<div class="relative bg-white p-6 md:p-8 h-full border border-border-light/50 transition-all duration-500 overflow-hidden">
+<div class="absolute top-4 left-4 font-serif text-[6rem] leading-none text-primary opacity-15 pointer-events-none">“</div>
+<div class="quote-content relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="mb-4"></div>
+<h3 class="font-chinese font-semibold text-lg text-neutral-dark mb-4">“像朋友一样贴心”</h3>
+<p class="text-neutral-medium font-chinese leading-relaxed text-sm">
+                                            沟通非常顺畅，试妆的时候就觉得很细心。婚礼当天早上不仅化得好，还一直帮我调整状态...
+                                        </p>
+</div>
+<div class="mt-8 flex items-center gap-4 border-t border-border-light/50 pt-6">
+<img alt="Client photo" class="w-10 h-10 rounded-full object-cover grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkBDTYGUDRZzw-0MxqEgYBPSyBTOQ2upYRMxBP3dvM8JAq_-p0exR5PuIZyUMFJfpTRJTXIarmYd4AAcyklr32cjPFM_POrXwsjV4Md24ztCAwfMzNCtvjPQgoEyU_TGMtJaGc3XbIr_1GtssyqUX57sM6Ycrwoa1qyk2T9jat7MRbiwPBI8JA9n5Y7MiyGGpwra5UYyL-V1R7yB8yrW4L0gIq5xqPUCQlZCnlWQqX0le-a03NteEBxQVeaAwS-3pB-sjtKk5s-Jg"/>
+<div>
+<p class="font-medium text-neutral-dark font-display text-sm">Emily Chen</p>
+<p class="text-[10px] text-neutral-medium uppercase tracking-wider">The Shore</p>
+</div>
+</div>
+</div>
+<div class="xhs-mockup absolute inset-0 z-20 bg-white p-6 flex flex-col justify-between">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center overflow-hidden">
+<img alt="Client photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkBDTYGUDRZzw-0MxqEgYBPSyBTOQ2upYRMxBP3dvM8JAq_-p0exR5PuIZyUMFJfpTRJTXIarmYd4AAcyklr32cjPFM_POrXwsjV4Md24ztCAwfMzNCtvjPQgoEyU_TGMtJaGc3XbIr_1GtssyqUX57sM6Ycrwoa1qyk2T9jat7MRbiwPBI8JA9n5Y7MiyGGpwra5UYyL-V1R7yB8yrW4L0gIq5xqPUCQlZCnlWQqX0le-a03NteEBxQVeaAwS-3pB-sjtKk5s-Jg"/>
+</div>
+<span class="text-xs font-bold text-neutral-dark">Emily_C</span>
+<span class="ml-auto text-xs text-neutral-400 font-display">1d ago</span>
+</div>
+<div class="flex-grow">
+<p class="text-sm font-chinese text-neutral-dark leading-relaxed mb-3">
+                                            真的是神仙化妆师！🧚‍♀️ 沟通非常顺畅，试妆的时候就觉得很细心。婚礼当天早上不仅化得好，还一直帮我调整状态，像朋友一样贴心。强烈推荐给来普吉岛备婚的姐妹！ #普吉岛旅拍 #海外婚礼
+                                        </p>
+<div class="w-full h-32 bg-neutral-100 rounded overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkBDTYGUDRZzw-0MxqEgYBPSyBTOQ2upYRMxBP3dvM8JAq_-p0exR5PuIZyUMFJfpTRJTXIarmYd4AAcyklr32cjPFM_POrXwsjV4Md24ztCAwfMzNCtvjPQgoEyU_TGMtJaGc3XbIr_1GtssyqUX57sM6Ycrwoa1qyk2T9jat7MRbiwPBI8JA9n5Y7MiyGGpwra5UYyL-V1R7yB8yrW4L0gIq5xqPUCQlZCnlWQqX0le-a03NteEBxQVeaAwS-3pB-sjtKk5s-Jg"/>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-gray-100">
+<div class="flex gap-4">
+<span class="flex items-center gap-1 text-xs text-neutral-500 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-lg">favorite</span> 89
+                                            </span>
+<span class="flex items-center gap-1 text-xs text-neutral-500 hover:text-neutral-dark transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-lg">chat_bubble</span> 14
+                                            </span>
+</div>
+<span class="flex items-center gap-1 text-xs text-neutral-500 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-lg">bookmark</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col md:translate-y-0">
+<div class="relative bg-white p-6 md:p-8 h-full border border-border-light/50 transition-all duration-500 overflow-hidden">
+<div class="absolute top-4 left-4 font-serif text-[6rem] leading-none text-primary opacity-15 pointer-events-none">“</div>
+<div class="quote-content relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="mb-4"></div>
+<h3 class="font-chinese font-semibold text-lg text-neutral-dark mb-4">“自然又高级”</h3>
+<p class="text-neutral-medium font-chinese leading-relaxed text-sm">
+                                            非常喜欢老师化的妆，自然又高级，完全不是那种假面的感觉。朋友们都夸我那天美呆了...
+                                        </p>
+</div>
+<div class="mt-8 flex items-center gap-4 border-t border-border-light/50 pt-6">
+<img alt="Client photo" class="w-10 h-10 rounded-full object-cover grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJMb_s-TBuytowv885XAh4-Q7qblEm00mmkXPDePqjHizlAHdSZima5gR-XfuSXPmfZU3fI0nCLUj_dYgjnze9Q1cwbtRwfP0z1jDYpnXrsHHQoim5lPKQxtVMZlwfQ14SM4wvM3Vx4FuFWQVWVrI-_O8xZPZL2DfPx-XJKGu8JSnvdgYeC9Y-gueA1e7jpvnd38_goo0MBU4rRpY97TE6by_3BkZeX7E4Vei220xcezvDuZWZqEznhWDSxrWQDtSNO8IaqZqQaok"/>
+<div>
+<p class="font-medium text-neutral-dark font-display text-sm">Sarah Liu</p>
+<p class="text-[10px] text-neutral-medium uppercase tracking-wider">Amanpuri</p>
+</div>
+</div>
+</div>
+<div class="xhs-mockup absolute inset-0 z-20 bg-white p-6 flex flex-col justify-between">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center overflow-hidden">
+<img alt="Client photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJMb_s-TBuytowv885XAh4-Q7qblEm00mmkXPDePqjHizlAHdSZima5gR-XfuSXPmfZU3fI0nCLUj_dYgjnze9Q1cwbtRwfP0z1jDYpnXrsHHQoim5lPKQxtVMZlwfQ14SM4wvM3Vx4FuFWQVWVrI-_O8xZPZL2DfPx-XJKGu8JSnvdgYeC9Y-gueA1e7jpvnd38_goo0MBU4rRpY97TE6by_3BkZeX7E4Vei220xcezvDuZWZqEznhWDSxrWQDtSNO8IaqZqQaok"/>
+</div>
+<span class="text-xs font-bold text-neutral-dark">Sarah.Liu</span>
+<span class="ml-auto text-xs text-neutral-400 font-display">5h ago</span>
+</div>
+<div class="flex-grow">
+<p class="text-sm font-chinese text-neutral-dark leading-relaxed mb-3">
+                                            终于圆满礼成！非常喜欢老师化的妆，自然又高级，完全不是那种假面的感觉。朋友们都夸我那天美呆了。而且老师用的化妆品都是大牌，敏感肌用在脸上很放心 ✨ #Amanpuri #普吉岛婚礼
+                                        </p>
+<div class="flex gap-2 mb-2">
+<div class="h-20 w-20 bg-neutral-100 rounded overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJMb_s-TBuytowv885XAh4-Q7qblEm00mmkXPDePqjHizlAHdSZima5gR-XfuSXPmfZU3fI0nCLUj_dYgjnze9Q1cwbtRwfP0z1jDYpnXrsHHQoim5lPKQxtVMZlwfQ14SM4wvM3Vx4FuFWQVWVrI-_O8xZPZL2DfPx-XJKGu8JSnvdgYeC9Y-gueA1e7jpvnd38_goo0MBU4rRpY97TE6by_3BkZeX7E4Vei220xcezvDuZWZqEznhWDSxrWQDtSNO8IaqZqQaok"/>
+</div>
+<div class="h-20 w-20 bg-neutral-100 rounded overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAMILc2VLqn1VuhceWJaBIKVvqUhaMXY-DVaGIa1uTO97-SGvtrbPoXhBeoqycU2NhI-goHvv6UDGmLbuvyamjAaQmZmuU5BYTgw4VDMN1rV--4iGeAlVto6y4Dmx5KqyOkCVF-lcN-mwToFdZDaV3fOMuoZjFok7xyUG9l-cnYbjv3t2Lx1oyzR8VZ1qbVGUXI6HrigM7I19-kQLg8eCU0lSaq355W58c32wSWsGkkdy4oTNluS5j6roVDdinODoU760waHSMj9Y"/>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-gray-100">
+<div class="flex gap-4">
+<span class="flex items-center gap-1 text-xs text-neutral-500 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-lg">favorite</span> 204
+                                            </span>
+<span class="flex items-center gap-1 text-xs text-neutral-500 hover:text-neutral-dark transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-lg">chat_bubble</span> 45
+                                            </span>
+</div>
+<span class="flex items-center gap-1 text-xs text-neutral-500 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-lg">bookmark</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col md:translate-y-16 hidden md:flex">
+<div class="relative bg-neutral-50 p-6 md:p-8 h-full border border-border-light/50 flex flex-col justify-center items-center text-center">
+<span class="material-icons-round text-primary text-4xl mb-4">auto_awesome</span>
+<h3 class="font-chinese font-bold text-lg text-neutral-dark mb-2">更多真实评价</h3>
+<p class="text-neutral-medium text-xs mb-6">More reviews on Social Media</p>
+<a class="text-xs font-bold uppercase tracking-widest border-b border-neutral-dark pb-1 hover:text-primary hover:border-primary transition-colors" href="#contact">
+                                    View Xiaohongshu
+                                </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-28 bg-background-light" id="process">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<span class="inline-block text-primary font-bold tracking-[0.2em] text-sm uppercase mb-2 font-display">Service Process</span>
+<h2 class="text-3xl lg:text-4xl font-bold font-chinese text-neutral-dark mb-4">
+                    服务流程
+                </h2>
+<p class="text-neutral-medium font-chinese text-lg mb-16">
+                    简单清晰的预定流程，为您提供最专业的服务体验
+                </p>
+</div>
+<div class="relative">
+<div class="absolute top-1/2 left-0 w-full h-px bg-border-light -translate-y-1/2 hidden md:block z-0"></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+<div class="bg-white p-6 rounded-lg text-center group border border-border-light shadow-soft">
+<div class="w-16 h-16 mx-auto bg-background-light text-primary rounded-full flex items-center justify-center text-2xl font-bold mb-6 ring-8 ring-white">
+                            01
+                        </div>
+<h3 class="text-lg font-bold text-neutral-dark font-chinese mb-3">咨询档期</h3>
+<p class="text-sm text-neutral-medium leading-relaxed font-chinese">
+                            联系确认婚礼日期是否有空档，建议提前3-6个月咨询
+                        </p>
+</div>
+<div class="bg-white p-6 rounded-lg text-center group border border-border-light shadow-soft">
+<div class="w-16 h-16 mx-auto bg-background-light text-primary rounded-full flex items-center justify-center text-2xl font-bold mb-6 ring-8 ring-white">
+                            02
+                        </div>
+<h3 class="text-lg font-bold text-neutral-dark font-chinese mb-3">支付定金</h3>
+<p class="text-sm text-neutral-medium leading-relaxed font-chinese">
+                            确定服务内容及价格后，支付定金锁定档期
+                        </p>
+</div>
+<div class="bg-white p-6 rounded-lg text-center group border border-border-light shadow-soft">
+<div class="w-16 h-16 mx-auto bg-background-light text-primary rounded-full flex items-center justify-center text-2xl font-bold mb-6 ring-8 ring-white">
+                            03
+                        </div>
+<h3 class="text-lg font-bold text-neutral-dark font-chinese mb-3">沟通造型</h3>
+<p class="text-sm text-neutral-medium leading-relaxed font-chinese">
+                            发送婚纱礼服照片，沟通妆容风格偏好，制定专属方案
+                        </p>
+</div>
+<div class="bg-white p-6 rounded-lg text-center group border border-border-light shadow-soft">
+<div class="w-16 h-16 mx-auto bg-background-light text-primary rounded-full flex items-center justify-center text-2xl font-bold mb-6 ring-8 ring-white">
+                            04
+                        </div>
+<h3 class="text-lg font-bold text-neutral-dark font-chinese mb-3">婚礼当天</h3>
+<p class="text-sm text-neutral-medium leading-relaxed font-chinese">
+                            按约定时间到达，提供专业跟妆服务，打造完美新娘
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-28 bg-white" id="faq">
+<div class="max-w-4xl mx-auto px-6 lg:px-8">
+<div class="text-center mb-16">
+<span class="inline-block text-primary font-bold tracking-[0.2em] text-sm uppercase mb-2 font-display">FAQ</span>
+<h2 class="text-3xl lg:text-4xl font-bold font-chinese text-neutral-dark mb-4">
+                    常见问题解答
+                </h2>
+<p class="text-neutral-medium font-chinese text-lg mb-16">
+                    关于预定、服务和流程，您想了解的都在这里
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<details class="group bg-background-light rounded-lg border border-border-light overflow-hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none">
+<div class="flex items-center gap-4">
+<span class="flex-shrink-0 w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary border border-border-light">
+<span class="material-icons-round">calendar_month</span>
+</span>
+<h3 class="font-chinese font-bold text-lg text-neutral-dark">如何预定您的档期？</h3>
+</div>
+<span class="material-icons-round text-neutral-medium group-open:rotate-180 transition-all duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-2 pl-[4.5rem] ml-6 mb-4 mr-6 border-t border-border-light/50">
+<p class="text-neutral-medium font-chinese leading-relaxed">
+                            建议您至少提前 3-6 个月进行咨询和预定，特别是在普吉岛的婚礼旺季（11月至次年4月）。您可以通过页面下方的联系方式或社交媒体与我取得联系，确认日期空档后，支付定金即可锁定档期。
+                        </p>
+</div>
+</details>
+<details class="group bg-background-light rounded-lg border border-border-light overflow-hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none">
+<div class="flex items-center gap-4">
+<span class="flex-shrink-0 w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary border border-border-light">
+<span class="material-icons-round">payments</span>
+</span>
+<h3 class="font-chinese font-bold text-lg text-neutral-dark">付款方式有哪些？</h3>
+</div>
+<span class="material-icons-round text-neutral-medium group-open:rotate-180 transition-all duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-2 pl-[4.5rem] ml-6 mb-4 mr-6 border-t border-border-light/50">
+<p class="text-neutral-medium font-chinese leading-relaxed">
+                            支持多种付款方式，包括微信支付 (WeChat Pay)、支付宝 (Alipay)、泰国银行转账以及 Wise 国际汇款。定金通常为总费用的 50%，余款请在服务当天或婚礼前结清。
+                        </p>
+</div>
+</details>
+<details class="group bg-background-light rounded-lg border border-border-light overflow-hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none">
+<div class="flex items-center gap-4">
+<span class="flex-shrink-0 w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary border border-border-light">
+<span class="material-icons-round">local_taxi</span>
+</span>
+<h3 class="font-chinese font-bold text-lg text-neutral-dark">是否包含上门服务和交通费？</h3>
+</div>
+<span class="material-icons-round text-neutral-medium group-open:rotate-180 transition-all duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-2 pl-[4.5rem] ml-6 mb-4 mr-6 border-t border-border-light/50">
+<p class="text-neutral-medium font-chinese leading-relaxed">
+                            普吉岛全岛范围内均提供上门化妆服务。对于主要海滩区域（如芭东、卡塔、卡伦、邦涛等）的酒店，交通费已包含在套餐内。如果是较偏远地区或离岛婚礼，可能会产生额外的交通补贴，具体请在咨询时确认。
+                        </p>
+</div>
+</details>
+<details class="group bg-background-light rounded-lg border border-border-light overflow-hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer select-none">
+<div class="flex items-center gap-4">
+<span class="flex-shrink-0 w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary border border-border-light">
+<span class="material-icons-round">brush</span>
+</span>
+<h3 class="font-chinese font-bold text-lg text-neutral-dark">您使用什么品牌的化妆品？</h3>
+</div>
+<span class="material-icons-round text-neutral-medium group-open:rotate-180 transition-all duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 pt-2 pl-[4.5rem] ml-6 mb-4 mr-6 border-t border-border-light/50">
+<p class="text-neutral-medium font-chinese leading-relaxed">
+                            为了保证妆容的质感和持久度，我坚持使用国际一线大牌及专业彩妆产品，包括但不限于 Chanel, Dior, Tom Ford, NARS, Charlotte Tilbury, MAC, Bobbi Brown 等。如果您有特定的过敏源或产品偏好，请提前告知。
+                        </p>
+</div>
+</details>
+</div>
+</div>
+</section>
+<section class="py-28 bg-background-light" id="contact">
+<div class="max-w-5xl mx-auto px-6 lg:px-8 text-center">
+<div class="flex flex-col items-center justify-center space-y-8">
+<div class="space-y-4 max-w-2xl">
+<h2 class="text-4xl lg:text-5xl font-bold font-chinese text-neutral-dark leading-tight">
+                        开启您的专属美丽之旅
+                    </h2>
+<p class="text-xl font-medium font-chinese text-neutral-dark">
+                        让最美的你在普吉岛绽放
+                    </p>
+<p class="text-neutral-medium font-display text-lg tracking-wide">
+                        Secure your date for an unforgettable celebration.
+                    </p>
+</div>
+<div class="pt-6">
+<a class="inline-flex items-center justify-center px-12 py-5 text-lg font-bold text-white transition-opacity duration-300 bg-neutral-dark rounded-full hover:opacity-90 shadow-soft" href="https://wa.me/yourwhatsapplink" target="_blank">
+                        立即预约咨询 (Book Now)
+                    </a>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-background-light py-28 border-t border-border-light">
+<div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col items-center text-center">
+<div class="mb-8 flex flex-col items-center">
+<span class="material-icons-round text-primary text-4xl mb-2">brush</span>
+<span class="font-display font-bold text-2xl tracking-tight text-neutral-dark">PHUKET MUA</span>
+<span class="font-chinese text-sm text-neutral-medium mt-1">普吉岛专业化妆师</span>
+</div>
+<nav class="mb-10">
+<ul class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<li><a class="text-neutral-medium hover:text-neutral-dark font-medium text-sm transition-colors" href="#services">服务 (Services)</a></li>
+<li><a class="text-neutral-medium hover:text-neutral-dark font-medium text-sm transition-colors" href="#portfolio">作品 (Portfolio)</a></li>
+<li><a class="text-neutral-medium hover:text-neutral-dark font-medium text-sm transition-colors" href="#testimonials">评价 (Reviews)</a></li>
+<li><a class="text-neutral-medium hover:text-neutral-dark font-medium text-sm transition-colors" href="#process">流程 (Process)</a></li>
+<li><a class="text-neutral-medium hover:text-neutral-dark font-medium text-sm transition-colors" href="#faq">常见问题 (FAQ)</a></li>
+</ul>
+</nav>
+<div class="flex gap-4 mb-8">
+<a class="w-10 h-10 rounded-full bg-white border border-border-light flex items-center justify-center text-primary hover:bg-neutral-50 transition-colors duration-300 shadow-soft" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white border border-border-light flex items-center justify-center text-primary hover:bg-neutral-50 transition-colors duration-300 shadow-soft" href="#">
+<span class="material-icons-round text-lg">camera_alt</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white border border-border-light flex items-center justify-center text-primary hover:bg-neutral-50 transition-colors duration-300 shadow-soft" href="#">
+<span class="material-symbols-outlined text-lg">chat</span>
+</a>
+</div>
+<div class="mb-12 flex flex-col sm:flex-row gap-4 sm:gap-8 text-sm text-neutral-medium font-display">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>WeChat: PhuketMakeupArtist</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>WhatsApp: +66 81 234 5678</span>
+</div>
+</div>
+<div class="border-t border-border-light w-full max-w-xs pt-8">
+<p class="text-xs text-neutral-medium">
+                    © 2023 Phuket Professional Makeup Artist.<br/>All Rights Reserved.
+                </p>
+</div>
+</div>
+</footer>
+</body></html>
