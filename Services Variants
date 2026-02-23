@@ -1,0 +1,182 @@
+   <section class="py-24 bg-atelier-bg" id="services-v2">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <!-- Header -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-20">
+                <div>
+                    <div class="text-xs tracking-[0.15em] text-atelier-accent uppercase font-display mb-4">Styling Services</div>
+                    <h2 class="text-3xl md:text-4xl font-chinese text-atelier-text leading-tight font-normal">
+                        妝髮服務項目
+                    </h2>
+                </div>
+                <div class="mt-8 lg:mt-0 lg:max-w-xs">
+                    <p class="text-atelier-muted font-chinese text-base leading-relaxed">
+                        根據不同場合與拍攝需求，設計合適的妝髮造型。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border-t border-atelier-border">
+
+                <!-- Left: Featured Service -->
+                <div class="lg:col-span-7 lg:pr-20 py-12 lg:py-16 relative">
+                    <div class="hidden lg:block absolute right-0 top-12 bottom-12 w-px bg-atelier-border"></div>
+
+                    <h3 class="text-3xl md:text-4xl font-chinese text-atelier-text mb-3 font-normal">婚禮妝髮造型</h3>
+                    <div class="text-xs tracking-[0.1em] text-atelier-accent uppercase font-display mb-10 opacity-70">Wedding Makeup &amp; Hair</div>
+
+                    <p class="text-atelier-muted font-chinese text-base leading-[1.8] mb-10 max-w-lg">
+                        服務海外婚禮新娘，根據禮服、場地與儀式流程設計整體妝髮方向。可預約試妝與全天跟妝服務。
+                    </p>
+
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 mb-12 text-atelier-muted font-chinese text-sm">
+                        <li class="flex items-center gap-4"><span class="w-6 h-px bg-atelier-accent flex-shrink-0"></span>專屬新娘妝前保養</li>
+                        <li class="flex items-center gap-4"><span class="w-6 h-px bg-atelier-accent flex-shrink-0"></span>多套造型更換</li>
+                        <li class="flex items-center gap-4"><span class="w-6 h-px bg-atelier-accent flex-shrink-0"></span>全程跟妝補妝</li>
+                        <li class="flex items-center gap-4"><span class="w-6 h-px bg-atelier-accent flex-shrink-0"></span>飾品搭配建議</li>
+                    </ul>
+
+                    <div class="flex items-center justify-between pt-6 border-t border-dashed border-atelier-border max-w-lg">
+                        <span class="text-sm font-display italic text-atelier-text">HK$ 4,800 起</span>
+                        <a class="flex items-center gap-2 text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity uppercase font-display btn-trigger-modal" href="javascript:void(0)">查詢檔期 →</a>
+                    </div>
+                </div>
+
+                <!-- Right: Two secondary services -->
+                <div class="lg:col-span-5 flex flex-col">
+                    <div class="lg:pl-16 py-12 lg:py-16 border-b border-atelier-border flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-chinese text-atelier-text mb-2 font-normal">旅拍 / 婚紗攝影妝髮</h3>
+                            <div class="text-xs tracking-[0.1em] text-atelier-accent uppercase font-display mb-6 opacity-70">Pre-Wedding &amp; Photoshoot Styling</div>
+                            <p class="text-atelier-muted font-chinese text-base leading-relaxed mb-8">
+                                適合婚紗攝影與旅拍拍攝。妝髮設計會考慮拍攝光線、場景與鏡頭呈現效果。可提供造型更換與補妝。
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4">
+                            <span class="text-sm font-display italic text-atelier-text">HK$ 3,800 起</span>
+                            <a class="flex items-center gap-2 text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity uppercase font-display btn-trigger-modal" href="javascript:void(0)">查詢檔期 →</a>
+                        </div>
+                    </div>
+
+                    <div class="lg:pl-16 py-12 lg:py-16 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-chinese text-atelier-text mb-2 font-normal">活動及晚宴妝髮</h3>
+                            <div class="text-xs tracking-[0.1em] text-atelier-accent uppercase font-display mb-6 opacity-70">Event &amp; Evening Styling</div>
+                            <p class="text-atelier-muted font-chinese text-base leading-relaxed mb-8">
+                                適用於晚宴、品牌活動與正式場合。妝容方向依活動性質與服裝風格調整。可提供上門妝髮服務。
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4">
+                            <span class="text-sm font-display italic text-atelier-text">HK$ 2,800 起</span>
+                            <a class="flex items-center gap-2 text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity uppercase font-display btn-trigger-modal" href="javascript:void(0)">查詢檔期 →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full h-px bg-atelier-border"></div>
+
+        </div>
+    </section>
+    
+
+    <main class="pt-32 pb-24">
+<section class="max-w-7xl mx-auto px-6 mb-24 relative">
+<div class="flex flex-col items-center justify-center text-center">
+<span class="text-xs tracking-[0.3em] uppercase text-primary mb-4 font-medium">Styling Services</span>
+<h2 class="text-4xl md:text-5xl font-serif font-light text-text-main-light dark:text-text-main-dark mb-6">妝髮服務項目</h2>
+<p class="text-text-muted-light dark:text-text-muted-dark font-light max-w-md mx-auto leading-relaxed">
+                    根據不同場合與拍攝需求，設計合適的妝髮造型。我們追求的不僅是美麗，更是一種從容優雅的質感。
+                </p>
+<div class="h-16 w-px bg-primary/30 mt-12"></div>
+</div>
+</section>
+<section class="max-w-6xl mx-auto px-6 relative">
+<div class="group relative py-16 md:py-24 border-t border-primary/20 flex flex-col md:flex-row items-start gap-8 md:gap-24">
+<div class="md:w-1/4 flex flex-col items-start md:items-end md:sticky md:top-32 self-start">
+<span class="font-serif text-8xl md:text-9xl text-primary/20 dark:text-primary/10 leading-none group-hover:text-primary/40 transition-colors duration-500">01</span>
+</div>
+<div class="md:w-3/4 flex flex-col md:flex-row gap-12 relative">
+<div class="hidden md:block absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-primary/0 via-primary/30 to-primary/0 h-full -ml-12"></div>
+<div class="flex-1 pt-4">
+<span class="block text-xs tracking-[0.2em] text-primary uppercase mb-2">Wedding Makeup &amp; Hair</span>
+<h3 class="text-3xl font-serif mb-6 text-text-main-light dark:text-text-main-dark">婚禮妝髮造型</h3>
+<p class="text-text-muted-light dark:text-text-muted-dark font-light leading-relaxed mb-8 max-w-lg">
+                            服務海外婚禮新娘，根據禮服、場地與儀式流程設計整體妝髮方向。強調肌膚的光澤感與五官的立體度，打造自然而不失隆重的完美形象。可預約試妝與全天跟妝服務，確保您在最重要的時刻完美無瑕。
+                        </p>
+<div class="flex items-center gap-8 text-sm font-light">
+<span class="text-text-main-light dark:text-text-main-dark">HK$ 4,800 起</span>
+<a class="group/link flex items-center gap-2 text-primary hover:text-primary/80 transition-colors" href="#">
+<span class="tracking-widest uppercase text-xs border-b border-transparent group-hover/link:border-primary transition-all">查詢檔期</span>
+<span class="material-symbols-outlined text-[16px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="hidden md:block w-48 h-64 bg-surface-light dark:bg-surface-dark overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 absolute right-0 top-0 grayscale group-hover:grayscale-0">
+<img alt="Bridal makeup detail" class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXeo525mIesjtumyneRc5LjA0GT9A6Jvp4-a-RUZ65clmFc-JdntX58QzcztMbdGoDNsrKFpT5i0AIwwvH-bVQWrlMrAjMzNabzebxtjRxsjD0H4qA7N3d0drHRrolwV_dm3kIMKYlgHfMkrVAD5af7fjCw5e_uiVF906v402IDhpMBEAuOtLjiRV-CqxHYT-j1ALCW1yWvrHvFuA3pUXFicWR4uY9XExRJUB0NRxy8sqeI-iZ1ifnBrqsN1Ttn9gjyg73usgSQg"/>
+</div>
+</div>
+</div>
+<div class="group relative py-16 md:py-24 border-t border-primary/20 flex flex-col md:flex-row-reverse items-start gap-8 md:gap-24">
+<div class="md:w-1/4 flex flex-col items-start md:items-start md:sticky md:top-32 self-start">
+<span class="font-serif text-8xl md:text-9xl text-primary/20 dark:text-primary/10 leading-none group-hover:text-primary/40 transition-colors duration-500">02</span>
+</div>
+<div class="md:w-3/4 flex flex-col md:flex-row-reverse gap-12 relative">
+<div class="hidden md:block absolute right-0 top-0 bottom-0 w-px bg-gradient-to-b from-primary/0 via-primary/30 to-primary/0 h-full -mr-12"></div>
+<div class="flex-1 pt-4 md:text-right flex flex-col md:items-end">
+<span class="block text-xs tracking-[0.2em] text-primary uppercase mb-2">Pre-wedding &amp; Photoshoot Styling</span>
+<h3 class="text-3xl font-serif mb-6 text-text-main-light dark:text-text-main-dark">旅拍 / 婚紗攝影妝髮</h3>
+<p class="text-text-muted-light dark:text-text-muted-dark font-light leading-relaxed mb-8 max-w-lg text-left md:text-right">
+                            適合婚紗攝影與旅拍拍攝。妝髮設計會考慮拍攝光線、場景與鏡頭呈現效果。無論是海島的自然風，還是復古的電影感，我們都能精準捕捉。可提供造型更換與補妝服務，讓每一張照片都成為經典。
+                        </p>
+<div class="flex items-center gap-8 text-sm font-light flex-row-reverse md:flex-row">
+<a class="group/link flex items-center gap-2 text-primary hover:text-primary/80 transition-colors flex-row-reverse md:flex-row" href="#">
+<span class="material-symbols-outlined text-[16px] group-hover/link:-translate-x-1 md:group-hover/link:translate-x-1 rotate-180 md:rotate-0 transition-transform">arrow_forward</span>
+<span class="tracking-widest uppercase text-xs border-b border-transparent group-hover/link:border-primary transition-all">查詢檔期</span>
+</a>
+<span class="text-text-main-light dark:text-text-main-dark">HK$ 3,800 起</span>
+</div>
+</div>
+<div class="hidden md:block w-48 h-64 bg-surface-light dark:bg-surface-dark overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 absolute left-0 top-12 grayscale group-hover:grayscale-0">
+<img alt="Pre-wedding shoot styling" class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlIynjQEeH8WyC3Iq3kMKATMNiQyndFeljuFjDAsADoAlH7UOpFBuCNLYlxJ_pcY4RRiEiVUjOyuPLTIPtrr-omhPkTMg3HSFsxhoc9EexmyJxJwot_dCcTCBagEURAd2ZDf2bJVwGcRx7nlfsYBPUVKE5PYQnnSH3I52UiA0tBPvx4O_9qz9enF5sQwc4Fne39T7iqwr79De7sonhZUaJVfTWjnyEaNhag2Kfl8aMe7N-X-yqzDKOIoNI4i2H-eKFPtYYmQAzVg"/>
+</div>
+</div>
+</div>
+<div class="group relative py-16 md:py-24 border-t border-b border-primary/20 flex flex-col md:flex-row items-start gap-8 md:gap-24">
+<div class="md:w-1/4 flex flex-col items-start md:items-end md:sticky md:top-32 self-start">
+<span class="font-serif text-8xl md:text-9xl text-primary/20 dark:text-primary/10 leading-none group-hover:text-primary/40 transition-colors duration-500">03</span>
+</div>
+<div class="md:w-3/4 flex flex-col md:flex-row gap-12 relative">
+<div class="hidden md:block absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-primary/0 via-primary/30 to-primary/0 h-full -ml-12"></div>
+<div class="flex-1 pt-4">
+<span class="block text-xs tracking-[0.2em] text-primary uppercase mb-2">Event &amp; Evening Styling</span>
+<h3 class="text-3xl font-serif mb-6 text-text-main-light dark:text-text-main-dark">活動及晚宴妝髮</h3>
+<p class="text-text-muted-light dark:text-text-muted-dark font-light leading-relaxed mb-8 max-w-lg">
+                            適用於晚宴、品牌活動與正式場合。妝容方向依活動性質與服裝風格調整，強調優雅與自信的氣場。无论是清新淡雅還是時尚前衛，均可提供上門妝髮服務，讓您輕鬆赴約。
+                        </p>
+<div class="flex items-center gap-8 text-sm font-light">
+<span class="text-text-main-light dark:text-text-main-dark">HK$ 2,800 起</span>
+<a class="group/link flex items-center gap-2 text-primary hover:text-primary/80 transition-colors" href="#">
+<span class="tracking-widest uppercase text-xs border-b border-transparent group-hover/link:border-primary transition-all">查詢檔期</span>
+<span class="material-symbols-outlined text-[16px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="hidden md:block w-48 h-64 bg-surface-light dark:bg-surface-dark overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 absolute right-12 top-8 grayscale group-hover:grayscale-0">
+<img alt="Evening makeup styling" class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATAIJ6PPIeue_nv7C1XPFgmATUNzVSjlVqd5I9EoNWIarbXKRVZqDz7ku0J5Jl1zJ2bDH7hgbtle0Jk8qyZsyyWQ5yYVPbfscARkbhsIO6ls32AJ0wJtgD_x_6KIsT7Jj3qEi-FvU0Al3GNJEhueOELgaBjs2m-kGdCba1tkVEKotZw6teNhnEfXUbYJbx2DwmWSm4HNmJ7HIuVLGJcdOcE0q-Ql4ZLHqqAANfYwopOVtKQyyCWXhAcJ5PTB5GyyxII8nGFeoOCw"/>
+</div>
+</div>
+</div>
+</section>
+<section class="max-w-4xl mx-auto px-6 py-32 text-center">
+<h4 class="text-2xl font-serif italic text-text-main-light dark:text-text-main-dark mb-8 opacity-80">"Beauty begins the moment you decide to be yourself."</h4>
+<div class="h-12 w-px bg-primary mx-auto mb-8"></div>
+<p class="text-text-muted-light dark:text-text-muted-dark font-light mb-12">
+                不確定哪種服務適合您？歡迎直接與我聯繫，討論您的需求。<br/>
+                所有服務均包含妝前保養與精緻髮飾搭配。
+            </p>
+<button class="bg-primary hover:bg-[#bfa790] text-white px-10 py-4 text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-lg shadow-primary/20">
+                開始諮詢
+            </button>
+</section>
+</main>
