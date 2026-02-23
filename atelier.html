@@ -19,13 +19,16 @@
             theme: {
                 extend: {
                     colors: {
-                        "atelier-bg": "#F6F4F1",
-                        "atelier-text": "#2A2A2A",
-                        "atelier-muted": "#6C6A67",
-                        "atelier-border": "#EDEBE7",
-                        "atelier-cta": "#2B2A28",
-                        "atelier-cta-hover": "#3A3836",
-                        "atelier-accent": "var(--accent)",
+                        "atelier-bg": "var(--color-bg-base)",
+                        "atelier-layer": "var(--color-bg-layer-1)",
+                        "atelier-surface": "var(--color-surface)",
+                        "atelier-text": "var(--color-text-primary)",
+                        "atelier-muted": "var(--color-text-secondary)",
+                        "atelier-border": "var(--color-border-soft)",
+                        "atelier-accent": "var(--color-accent)",
+                        "atelier-accent-soft": "var(--color-accent-soft)",
+                        "atelier-cta": "var(--color-cta-bg)",
+                        "atelier-cta-text": "var(--color-cta-text)",
                     },
                     fontFamily: {
                         "display": ["'Manrope'", "sans-serif"],
@@ -39,7 +42,91 @@
 
     <style>
         :root {
-            --accent: #811331;
+            --color-bg-base: #F6F4F1;
+            --color-bg-layer-1: #F1ECE7;
+            --color-bg-layer-2: #EDE6DF;
+            --color-surface: #F9F6F0;
+            --color-border-soft: #EDEBE7;
+            --color-text-primary: #2A2A2A;
+            --color-text-secondary: #6C6A67;
+            --color-accent: #811331;
+            --color-accent-soft: #F1ECE7;
+            --color-cta-bg: #2B2A28;
+            --color-cta-text: #F6F4F1;
+        }
+
+        [data-theme="mono-depth"] {
+            --color-bg-base: #F6F4F1;
+            --color-bg-layer-1: #F1ECE7;
+            --color-bg-layer-2: #EDE6DF;
+            --color-surface: #EFE9E3;
+            --color-border-soft: #E4DBD2;
+            --color-text-primary: #3C3530;
+            --color-text-secondary: #7A7068;
+            --color-accent: #3C3530;
+            --color-accent-soft: #EDE6DF;
+            --color-cta-bg: #3C3530;
+            --color-cta-text: #F6F4F1;
+        }
+
+        [data-theme="warm-sand"] {
+            --color-bg-base: #F6F4F1;
+            --color-bg-layer-1: #F2ECE6;
+            --color-bg-layer-2: #EEE6DE;
+            --color-surface: #EFE7DF;
+            --color-border-soft: #E3D7CC;
+            --color-text-primary: #3A332E;
+            --color-text-secondary: #7C7168;
+            --color-accent: #CBB7A6;
+            --color-accent-soft: #E8DED5;
+            --color-cta-bg: #CBB7A6;
+            --color-cta-text: #3A332E;
+        }
+
+        [data-theme="ochre-warm"] {
+            --color-bg-base: #F6F4F1;
+            --color-bg-layer-1: #F2EBE5;
+            --color-bg-layer-2: #EDE4DB;
+            --color-surface: #F4EFE9;
+            --color-border-soft: #E3D9CD;
+            --color-text-primary: #3D352E;
+            --color-text-secondary: #7D7065;
+            --color-accent: #A67C52;
+            --color-accent-soft: #EEE1D1;
+            --color-cta-bg: #A67C52;
+            --color-cta-text: #F6F4F1;
+        }
+
+        [data-theme="editorial-contrast"] {
+            --color-bg-base: #F6F4F1;
+            --color-bg-layer-1: #F1ECE7;
+            --color-bg-layer-2: #EDE6DF;
+            --color-surface: #EFE9E3;
+            --color-border-soft: #E2D8CF;
+            --color-text-primary: #3B342F;
+            --color-text-secondary: #786F67;
+            --color-accent: #3F3732;
+            --color-accent-soft: #4A423C;
+            --color-cta-bg: #3F3732;
+            --color-cta-text: #F1ECE7;
+        }
+
+        .section-editorial {
+            background-color: var(--color-accent);
+            color: var(--color-cta-text);
+        }
+
+        .section-editorial * {
+            color: inherit;
+        }
+
+        .section-editorial .text-atelier-muted {
+            opacity: 0.7;
+        }
+
+        .section-editorial .atelier-border, 
+        .section-editorial .border-atelier-border {
+            border-color: rgba(255,255,255,0.1);
         }
         body {
             background-color: #F6F4F1;
@@ -65,16 +152,14 @@
 
         /* Portfolio hover effect */
         .portfolio-card .overlay {
-            transform: translateY(100%);
             opacity: 0;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 0.4s ease-out;
         }
         .portfolio-card:hover .overlay {
-            transform: translateY(0);
             opacity: 1;
         }
         .portfolio-card:hover img {
-            opacity: 0.9;
+            opacity: 0.96;
         }
 
         /* XHS Mockup hover */
@@ -150,7 +235,7 @@
         }
         
         .portfolio-editorial-item:hover img {
-            transform: scale(1.03);
+            opacity: 0.96;
         }
         
         html {
@@ -296,7 +381,7 @@
                     </h1>
 
                     <p class="text-lg text-atelier-muted mb-16 font-chinese tracking-normal max-w-lg leading-[1.9] font-light">
-                        主要服務海外婚禮、旅拍與重要場合。<br />採一對一預約制，提供細緻而從容的妝髮体验。
+                        主要服務海外婚禮、旅拍與重要場合。<br />一對一服務，細緻完成妝髮造型。
                     </p>
 
                     <div class="flex items-center mb-12">
@@ -307,22 +392,8 @@
                 </div>
 
                 <div class="relative aspect-[4/5] overflow-hidden order-1 lg:order-2">
-                    <div id="hero-slider" class="relative w-full h-full portfolio-image-wrapper">
-                        <img src="public/images/hero/hero_01.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide active">
-                        <img src="public/images/hero/hero_02.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_020.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        <img src="public/images/hero/hero_024.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-300 ease-out slide">
-                        
-                        <!-- Slider Navigation Controls -->
-                        <div class="absolute bottom-8 right-8 flex items-center gap-6 z-20">
-                            <button id="prev-slide" class="text-atelier-text opacity-40 hover:opacity-100 transition-opacity duration-300 ease-out" aria-label="Previous">
-                                <span class="text-2xl">←</span>
-                            </button>
-                            <span id="slide-counter" class="text-atelier-text text-xs tracking-widest font-display opacity-40">1 / 4</span>
-                            <button id="next-slide" class="text-atelier-text opacity-40 hover:opacity-100 transition-opacity duration-300 ease-out" aria-label="Next">
-                                <span class="text-2xl">→</span>
-                            </button>
-                        </div>
+                    <div class="relative w-full h-full portfolio-image-wrapper">
+                        <img src="public/images/hero/hero_020.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img">
                     </div>
                 </div>
             </div>
@@ -344,7 +415,7 @@
             </h2>
             
             <p class="text-atelier-muted font-chinese text-sm max-w-xl leading-relaxed font-light">
-                針對不同場合與拍攝需求，提供有條理的妝髮規劃。
+                根據不同場合與拍攝需求，設計合適的妝髮造型。
             </p>
             <div class="h-px w-20 bg-atelier-accent mt-8"></div>
         </div>
@@ -393,9 +464,7 @@
                 </p>
 
                 <p class="text-atelier-muted text-sm leading-[1.9] mb-12 font-chinese font-light text-left">
-                    適合婚紗攝影與旅拍拍攝。<br />
-                    妝髮設計會考慮拍攝光線、場景與鏡頭呈現效果。<br />
-                    可安排造型更換與補妝。
+                    適合婚紗攝影與旅拍拍攝。<br />妝髮設計會考慮拍攝光線、場景與鏡頭呈現效果。<br />可提供造型更換與補妝。
                 </p>
 
                 <div class="mt-auto pt-6 flex items-center justify-between border-t border-atelier-border/40">
@@ -537,9 +606,9 @@
                 <!-- Item 3 -->
                 <div class="group flex flex-col items-start bg-transparent">
                     <div class="w-8 h-px bg-atelier-accent mb-8 opacity-60"></div>
-                    <h3 class="text-xl md:text-2xl font-chinese text-atelier-text mb-6 font-medium tracking-wide">一對一預約制服務</h3>
+                    <h3 class="text-xl md:text-2xl font-chinese text-atelier-text mb-6 font-medium tracking-wide">一對一服務</h3>
                     <p class="text-atelier-muted font-chinese text-sm leading-[1.8] font-light tracking-wide max-w-md text-left">
-                        採一對一溝通方式，<br />根據服裝與場合細緻調整妝髮細節。
+                        一對一溝通，根據服裝與場合細緻調整妝髮細節。
                     </p>
                 </div>
 
@@ -565,7 +634,7 @@
                         客戶回饋
                     </h2>
                     <p class="text-atelier-muted font-chinese text-sm leading-relaxed max-w-sm">
-                        來自婚禮與旅拍客戶的真實評價，關於溝通、安排與整體妝髮體驗。
+                        來自婚禮與旅拍客戶的真實回饋，關於溝通與妝髮服務。
                     </p>
                 </div>
 
@@ -652,12 +721,12 @@
     </section>
 
     <!-- PROCESS -->
-    <section class="py-28 bg-atelier-bg border-t border-atelier-border" id="process">
+    <section class="py-32 bg-atelier-bg border-t border-atelier-border section-editorial" id="process">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="mb-24 text-center">
                 <span class="text-atelier-accent text-xs tracking-[0.4em] uppercase font-display mb-6 block">Booking Process</span>
                 <h2 class="text-3xl lg:text-4xl font-chinese text-atelier-text leading-tight font-normal mb-8">預約流程</h2>
-                <p class="text-atelier-muted font-chinese text-sm max-w-xl mx-auto leading-relaxed font-light">由初步查詢至服務當天，每個步驟依序確認，讓您安心準備重要時刻。</p>
+                <p class="text-atelier-muted font-chinese text-sm max-w-xl mx-auto leading-relaxed font-light">由初步查詢至服務當天，流程清晰明確。</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
@@ -712,7 +781,7 @@
                         <h3 class="font-chinese text-lg text-atelier-text font-medium group-hover:opacity-60 transition-opacity duration-300 ease-out">是否可以安排試妝？</h3>
                         <span class="text-atelier-accent opacity-40 group-open:rotate-45 transition-transform duration-300 ease-out"><span class="text-lg font-light">+</span></span>
                     </summary>
-                    <div class="pt-4 pr-12"><p class="text-atelier-muted font-chinese text-sm leading-relaxed font-light">可安排試妝。一般建議於婚禮前1–2天進行，以便根據禮服與場地確認妝髮方向。</p></div>
+                    <div class="pt-4 pr-12"><p class="text-atelier-muted font-chinese text-sm leading-relaxed font-light">可安排試妝。一般建議於婚禮前7–10天進行，以便根據禮服與場地確認妝髮方向。</p></div>
                 </details>
                 <details class="group border-b border-atelier-border pb-6">
                     <summary class="flex items-center justify-between cursor-pointer list-none py-2">
@@ -733,7 +802,7 @@
                         <h3 class="font-chinese text-lg text-atelier-text font-medium group-hover:opacity-60 transition-opacity duration-300 ease-out">是否提供伴娘或家人妝髮？</h3>
                         <span class="text-atelier-text opacity-40 group-open:rotate-45 transition-transform duration-300 ease-out"><span class="text-lg font-light">+</span></span>
                     </summary>
-                    <div class="pt-4 pr-12"><p class="text-atelier-muted font-chinese text-sm leading-relaxed font-light">可安排伴娘或家人妝髮服務。如需多人造型，請提前說明以便安排時間。</p></div>
+                    <div class="pt-4 pr-12"><p class="text-atelier-muted font-chinese text-sm leading-relaxed font-light">可提供伴娘或家人妝髮服務。如需多人造型，請提前說明以便確認時間。</p></div>
                 </details>
             </div>
         </div>
@@ -797,21 +866,33 @@
 
     <!-- Dynamic Theme Switcher -->
     <div id="theme-switcher-container" class="fixed bottom-8 right-8 z-[100] transition-all duration-500 ease-in-out">
-        <div id="theme-panel" class="bg-[#F6F4F1]/80 backdrop-blur-md border border-[#EDEBE7] p-4 shadow-2xl flex flex-col gap-4">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-[10px] uppercase tracking-[0.2em] font-sans text-[#6C6A67]">Accent Theme</span>
-                <button onclick="toggleThemePanel(false)" class="text-[#6C6A67] hover:text-[#2A2A2A] transition-colors">
+        <div id="theme-panel" class="bg-[#F6F4F1]/80 backdrop-blur-md border border-[#EDEBE7] p-5 shadow-2xl flex flex-col gap-5 min-w-[200px]">
+            <div class="flex justify-between items-center mb-1">
+                <span class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-atelier-muted">Editorial Themes</span>
+                <button onclick="toggleThemePanel(false)" class="text-atelier-muted hover:text-atelier-text transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                 </button>
             </div>
             
-            <div class="flex gap-4">
-                <button onclick="setTheme('#811331', 'Burgundy')" class="w-8 h-8 rounded-full border-2 border-transparent transition-transform hover:scale-110 active-theme" style="background-color: #811331;" title="Burgundy"></button>
-                <button onclick="setTheme('#5D6D5E', 'Sage')" class="w-8 h-8 rounded-full border-2 border-transparent transition-transform hover:scale-110" style="background-color: #5D6D5E;" title="Sage"></button>
-                <button onclick="setTheme('#A67C52', 'Ochre')" class="w-8 h-8 rounded-full border-2 border-transparent transition-transform hover:scale-110" style="background-color: #A67C52;" title="Ochre"></button>
+            <div class="grid grid-cols-2 gap-4">
+                <button onclick="setTheme('default', 'Atelier')" data-theme-id="default" class="w-full h-10 bg-[#811331] rounded-none transition-opacity hover:opacity-80 flex items-center justify-center group" title="Atelier Default">
+                    <span class="text-[8px] text-white opacity-0 group-hover:opacity-100 uppercase tracking-tighter">Default</span>
+                </button>
+                <button onclick="setTheme('mono-depth', 'Monochrome')" data-theme-id="mono-depth" class="w-full h-10 bg-[#3C3530] rounded-none transition-opacity hover:opacity-80 flex items-center justify-center group" title="Monochrome Depth">
+                    <span class="text-[8px] text-white opacity-0 group-hover:opacity-100 uppercase tracking-tighter">Mono</span>
+                </button>
+                <button onclick="setTheme('warm-sand', 'Warm Sand')" data-theme-id="warm-sand" class="w-full h-10 bg-[#CBB7A6] rounded-none transition-opacity hover:opacity-80 flex items-center justify-center group" title="Warm Sand">
+                    <span class="text-[8px] text-[#3A332E] opacity-0 group-hover:opacity-100 uppercase tracking-tighter text-center leading-none">Sand</span>
+                </button>
+                <button onclick="setTheme('ochre-warm', 'Ochre')" data-theme-id="ochre-warm" class="w-full h-10 bg-[#A67C52] rounded-none transition-opacity hover:opacity-80 flex items-center justify-center group" title="Ochre Warm">
+                    <span class="text-[8px] text-white opacity-0 group-hover:opacity-100 uppercase tracking-tighter">Ochre</span>
+                </button>
+                <button onclick="setTheme('editorial-contrast', 'Editorial')" data-theme-id="editorial-contrast" class="w-full h-10 bg-[#3F3732] rounded-none transition-opacity hover:opacity-80 col-span-2 flex items-center justify-center group" title="Editorial Contrast">
+                    <span class="text-[8px] text-[#F1ECE7] opacity-0 group-hover:opacity-100 uppercase tracking-tighter">Editorial Contrast</span>
+                </button>
             </div>
             
-            <p id="theme-status" class="text-[9px] text-[#6C6A67] text-center mt-2 italic">Burgundy Mode Active</p>
+            <p id="theme-status" class="text-[9px] text-atelier-muted text-center mt-1 italic tracking-widest uppercase">Atelier Mode Active</p>
         </div>
         
         <button id="theme-toggle-btn" onclick="toggleThemePanel(true)" class="hidden fixed bottom-8 right-8 w-10 h-10 bg-[#F6F4F1] border border-[#EDEBE7] shadow-lg flex items-center justify-center hover:bg-[#EDEBE7] transition-colors">
@@ -856,7 +937,7 @@
                         </div>
                         
                         <button type="submit" class="w-full bg-atelier-cta hover:bg-atelier-cta-hover text-atelier-bg font-display text-[12px] font-medium py-5 px-8 tracking-[0.3em] transition-all uppercase">
-                            提交預約
+                            提交
                         </button>
                     </form>
 
@@ -869,13 +950,20 @@
     </div>
 
     <script>
-        function setTheme(color, name) {
-            document.documentElement.style.setProperty('--accent', color);
+        function setTheme(themeId, themeName) {
+            if (themeId === 'default') {
+                document.documentElement.removeAttribute('data-theme');
+            } else {
+                document.documentElement.setAttribute('data-theme', themeId);
+            }
+            
             const status = document.getElementById('theme-status');
-            if(status) status.innerText = name + " Mode Active";
-            const buttons = document.querySelectorAll('#theme-panel button[style]');
+            if(status) status.innerText = themeName + " Mode Active";
+            
+            const buttons = document.querySelectorAll('#theme-panel button[data-theme-id]');
             buttons.forEach(btn => {
-                btn.style.borderColor = btn.style.backgroundColor === color ? '#2A2A2A' : 'transparent';
+                btn.classList.toggle('ring-2', btn.getAttribute('data-theme-id') === themeId);
+                btn.classList.toggle('ring-atelier-text', btn.getAttribute('data-theme-id') === themeId);
             });
         }
 
@@ -896,49 +984,7 @@
         // Initial state
         setTheme('#811331', 'Burgundy');
 
-        // Hero Slider Functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const slides = document.querySelectorAll('.slide');
-            const prevBtn = document.getElementById('prev-slide');
-            const nextBtn = document.getElementById('next-slide');
-            const slideCounter = document.getElementById('slide-counter');
-            let currentIndex = 0;
-            
-            // Show slide function
-            function showSlide(index) {
-                slides.forEach((slide, i) => {
-                    if (i === index) {
-                        slide.classList.add('active');
-                        slide.style.opacity = '1';
-                    } else {
-                        slide.classList.remove('active');
-                        slide.style.opacity = '0';
-                    }
-                });
-                
-                // Update counter
-                if (slideCounter) slideCounter.textContent = `${index + 1} / ${slides.length}`;
-            }
-            
-            // Next slide function
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % slides.length;
-                showSlide(currentIndex);
-            }
-            
-            // Previous slide function
-            function prevSlide() {
-                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                showSlide(currentIndex);
-            }
-            
-            // Event listeners for buttons
-            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-            
-            // Initialize slider
-            showSlide(currentIndex);
-
             // Modal Logic
             const overlay = document.getElementById('contact-modal-overlay');
             const closeBtn = document.getElementById('close-modal');
