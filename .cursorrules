@@ -1,0 +1,11 @@
+# Persistent Rules for Phuket Atelier Project
+
+Always follow the constraints defined in:
+[/Users/gardsale/Projects/Makeup - YELLOW - 2/.agent/rules.md](file:///Users/gardsale/Projects/Makeup%20-%20YELLOW%20-%202/.agent/rules.md)
+
+Key Highlights:
+- **DOM/Structure LOCK**: No HTML changes without approval.
+- **Desktop Protection**: Visual parity (100%) for desktop is mandatory.
+- **Mobile-First**: Base classes = Mobile, `md:` = Desktop restore.
+- **Priority**: Emotional safety and calm rhythm.
+- **No Verification**: Final verification steps/tools are no longer required at the end of tasks.
