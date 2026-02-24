@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phuket Atelier Makeup | 普吉島專業私人妝髮造型師</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Noto+Sans+HK:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN with Atelier Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "atelier-bg": "var(--color-bg-base)",
+                        "atelier-layer": "var(--color-bg-layer-1)",
+                        "atelier-surface": "var(--color-surface)",
+                        "atelier-text": "var(--color-text-primary)",
+                        "atelier-muted": "var(--color-text-secondary)",
+                        "atelier-border": "var(--color-border-soft)",
+                        "atelier-accent": "var(--color-accent)",
+                        "atelier-accent-soft": "var(--color-accent-soft)",
+                        "atelier-cta": "var(--color-cta-bg)",
+                        "atelier-cta-text": "var(--color-cta-text)",
+                    },
+                    fontFamily: {
+                        "display": ["'Manrope'", "sans-serif"],
+                        "chinese": ["'Noto Sans HK'", "sans-serif"],
+                        "serif": ["'Times New Roman'", "serif"],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --color-bg-base: #F6F4F1;
+            --color-bg-layer-1: #F2ECE6;
+            --color-bg-layer-2: #EEE6DE;
+            --color-surface: #EFE7DF;
+            --color-border-soft: #EDEBE7;
+            --color-text-primary: #3A332E;
+            --color-text-secondary: #7C7168;
+            --color-accent: #CBB7A6;
+            --color-accent-soft: #E8DED5;
+            --color-cta-bg: #CBB7A6;
+            --color-cta-text: #3A332E;
+        }
+
+        [data-theme="burgundy"] {
+            --color-bg-base: #F6F4F1;
+            --color-bg-layer-1: #F1ECE7;
+            --color-bg-layer-2: #EDE6DF;
+            --color-surface: #F9F6F0;
+            --color-border-soft: #EDEBE7;
+            --color-text-primary: #2A2A2A;
+            --color-text-secondary: #5A5855;
+            --color-accent: #811331;
+            --color-accent-soft: #F1ECE7;
+            --color-cta-bg: #2B2A28;
+            --color-cta-text: #F6F4F1;
+        }
+
+        [data-theme="mono-depth"] {
+            --color-bg-base: #F6F4F1;
+            --color-bg-layer-1: #F1ECE7;
+            --color-bg-layer-2: #EDE6DF;
+            --color-surface: #EFE9E3;
+            --color-border-soft: #E4DBD2;
+            --color-text-primary: #3C3530;
+            --color-text-secondary: #7A7068;
+            --color-accent: #3C3530;
+            --color-accent-soft: #EDE6DF;
+            --color-cta-bg: #3C3530;
+            --color-cta-text: #F6F4F1;
+        }
+
+        [data-theme="ochre-warm"] {
+            --color-bg-base: #F6F4F1;
+            --color-bg-layer-1: #F2EBE5;
+            --color-bg-layer-2: #EDE4DB;
+            --color-surface: #F4EFE9;
+            --color-border-soft: #E3D9CD;
+            --color-text-primary: #3D352E;
+            --color-text-secondary: #7D7065;
+            --color-accent: #A67C52;
+            --color-accent-soft: #EEE1D1;
+            --color-cta-bg: #A67C52;
+            --color-cta-text: #F6F4F1;
+        }
+
+        [data-theme="editorial-contrast"] {
+            --color-bg-base: #F6F4F1;
+            --color-bg-layer-1: #F1ECE7;
+            --color-bg-layer-2: #EDE6DF;
+            --color-surface: #EFE9E3;
+            --color-border-soft: #E2D8CF;
+            --color-text-primary: #3B342F;
+            --color-text-secondary: #786F67;
+            --color-accent: #3F3732;
+            --color-accent-soft: #4A423C;
+            --color-cta-bg: #3F3732;
+            --color-cta-text: #F1ECE7;
+        }
+
+        .section-editorial {
+            background-color: var(--color-accent);
+            color: var(--color-cta-text);
+        }
+
+        .section-editorial * {
+            color: inherit;
+        }
+
+        .section-editorial .text-atelier-muted {
+            opacity: 0.7;
+        }
+
+        .section-editorial .atelier-border, 
+        .section-editorial .border-atelier-border {
+            border-color: rgba(255,255,255,0.1);
+        }
+        body {
+            background-color: #F6F4F1;
+            color: #2A2A2A;
+            font-family: 'Noto Sans HK', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Smooth transitions */
+        .transition-opacity { transition: opacity 0.3s ease-out; }
+        .transition-transform { transition: transform 0.3s ease-out; }
+        .transition-colors { transition: color 0.3s ease-out; }
+        
+        /* Hide scrollbars for cleaner look */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
+        
+        /* Custom image filters */
+        .atelier-img {
+            filter: grayscale(15%) contrast(95%) brightness(102%);
+        }
+
+        /* Portfolio hover effect */
+        .portfolio-card .overlay {
+            opacity: 0;
+            transition: opacity 0.4s ease-out;
+        }
+        .portfolio-card:hover .overlay {
+            opacity: 1;
+        }
+        .portfolio-card:hover img {
+            opacity: 0.96;
+        }
+
+        /* XHS Mockup hover */
+        .xhs-card .xhs-mockup {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+        .xhs-card:hover .xhs-mockup {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* FAQ Detail cleanup */
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        /* Hero Slider Styles */
+        #hero-slider .slide {
+            opacity: 0;
+            pointer-events: none;
+        }
+        #hero-slider .slide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+
+        
+        .portfolio-item {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+        }
+        
+        .portfolio-item img {
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .portfolio-image-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-image-wrapper img {
+            /* Atelier Signature Filter: Warmth, Softness, and Curated Saturation */
+            filter: 
+                brightness(1.04) 
+                contrast(0.94) 
+                saturate(0.86) 
+                sepia(0.12);
+            transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        /* Luxury Tonal Overlay - Neutral Cream */
+        .portfolio-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: #F8F5F0; /* Soft Warm Neutral */
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .portfolio-editorial-item {
+            position: relative;
+            background: #F6F4F1;
+        }
+
+        
+        .portfolio-editorial-item img {
+            transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        
+        .portfolio-editorial-item:hover img {
+            opacity: 0.96;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Contact Popup Styles */
+        #contact-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(26, 25, 24, 0.7); /* Deeper overlay for focus */
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex; /* Centering helper */
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        #contact-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        #contact-modal-container {
+            background-color: #F9F6F0; /* Solid Ivory */
+            width: 100%;
+            box-shadow: 0 40px 100px -20px rgba(0,0,0,0.2);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        #contact-modal-overlay.active #contact-modal-container {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Mobile Positioning - Bottom Sheet Override */
+        @media (max-width: 767px) {
+            #contact-modal-overlay {
+                align-items: flex-end;
+                padding: 0;
+            }
+            #contact-modal-container {
+                max-width: 100%;
+                transform: translateY(100%);
+                border-radius: 20px 20px 0 0; /* Soft top for mobile sheet */
+            }
+            #contact-modal-overlay.active #contact-modal-container {
+                transform: translateY(0);
+            }
+        }
+
+        /* Custom Input Styling (Refined Atelier Style) */
+        .modal-input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #EDEBE7;
+            padding: 16px 0;
+            width: 100%;
+            font-size: 15px;
+            color: #2B2A28;
+            transition: all 0.4s ease;
+        }
+        .modal-input:focus {
+            outline: none;
+            border-bottom-color: #2A2A2A;
+        }
+        .modal-input::placeholder {
+            color: #A3A19E;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Toast Styling */
+        #copy-toast {
+            position: fixed;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background-color: #2B2A28;
+            color: #F6F4F1;
+            padding: 10px 24px;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            z-index: 1100;
+        }
+        #copy-toast.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-atelier-bg">
+
+    <!-- NAVIGATION -->
+    <nav class="w-full bg-atelier-bg border-b border-atelier-border/40 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between h-24 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-display font-medium text-lg tracking-[0.25em] text-atelier-text uppercase">PHUKET MUA</span>
+                </div>
+                <div class="hidden md:flex items-center gap-x-14">
+                    <a class="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#services">服務</a>
+                    <a class="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#portfolio-featured">作品</a>
+                    <a class="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#testimonials">評價</a>
+                    <a class="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#process">流程</a>
+                </div>
+                <div>
+                    <a class="text-atelier-text font-chinese text-[15px] tracking-wide font-medium border-b border-transparent transition-colors duration-300 ease-out hover:text-atelier-muted pb-0.5 btn-trigger-modal" href="javascript:void(0)">
+                        微信查詢
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-atelier-bg overflow-hidden py-0 flex items-stretch min-h-[calc(100vh-6rem)] shadow-none border-0">
+        <div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-12 w-full flex items-stretch">
+            <div class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] items-center gap-12 lg:gap-20 w-full">
+                <div class="flex flex-col justify-center z-10 relative order-2 lg:order-1 py-20">
+                    <div class="inline-flex items-center gap-3 mb-12">
+                        <div class="h-px w-8 bg-atelier-text opacity-30"></div>
+                        <span class="text-atelier-accent text-xs tracking-[0.25em] uppercase font-display">Phuket Makeup Artist</span>
+                    </div>
+
+                    <h1 class="font-chinese text-4xl lg:text-5xl xl:text-6xl font-normal leading-[1.3] mb-12 text-atelier-text tracking-tight">
+                        普吉島私人<br />
+                        <span class="font-serif text-atelier-accent">妝髮造型師</span>
+                    </h1>
+
+                    <p class="text-lg text-atelier-muted mb-16 font-chinese tracking-normal max-w-lg leading-[1.9]">
+                        主要服務海外婚禮、旅拍與重要場合。<br />一對一服務，細緻完成妝髮造型。
+                    </p>
+
+                    <div class="flex items-center mb-12">
+                        <a class="bg-atelier-cta text-atelier-bg px-10 py-5 font-medium text-[15px] text-center btn-trigger-modal" href="javascript:void(0)">
+                            微信查詢檔期
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative order-1 lg:order-2 my-8">
+                    <div class="relative aspect-square overflow-hidden portfolio-image-wrapper">
+                        <img src="public/images/hero/hero_020.jpg" alt="Selected look" class="absolute inset-0 w-full h-full object-cover object-center atelier-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- SERVICES V4 (from Services V3 file) -->
+    <section class="py-24 bg-atelier-bg" id="services-v4">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <!-- Header -->
+            <div class="mb-28">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-xs tracking-[0.25em] text-atelier-accent uppercase font-display">Styling Services</span>
+                </div>
+                <h2 class="ttext-4xl md:text-5xl font-chinese text-atelier-text leading-tight font-normal mb-6">妝髮服務項目</h2>
+                <p class="text-atelier-muted font-chinese text-base max-w-xl leading-relaxed">根據不同場合與拍攝需求，設計合適的妝髮造型。</p>
+                <div class="h-px w-20 bg-atelier-accent mt-8"></div>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-12 gap-y-20 lg:gap-y-0">
+
+                <!-- Left: Main Service (7 cols) -->
+                <div class="lg:col-span-7 flex flex-col pr-0 lg:pr-16 relative">
+                    <div class="hidden lg:block absolute right-0 top-0 h-full w-px bg-atelier-border/40"></div>
+                    <div class="mb-0">
+                        <span class="block text-6xl md:text-7xl font-serif text-atelier-accent opacity-[0.15] mb-4 font-normal select-none italic">01</span>
+                        <h3 class="text-3xl md:text-4xl font-chinese text-atelier-text mb-3 font-normal">婚禮妝髮造型</h3>
+                        <div class="text-xs tracking-[0.15em] text-atelier-accent uppercase font-display mb-10">Wedding Makeup &amp; Hair</div>
+                        <p class="text-atelier-muted font-chinese text-base leading-[1.9] mb-12 max-w-lg">
+                            服務海外婚禮新娘，根據禮服、場地與儀式流程設計整體妝髮方向。<br />可預約試妝與全天跟妝服務。
+                        </p>
+                        <!-- <ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 mb-12 text-atelier-muted font-chinese text-sm">
+                            <li class="flex items-center gap-3"><span class="w-5 h-px bg-atelier-accent flex-shrink-0"></span>專屬新娘妝前保養</li>
+                            <li class="flex items-center gap-3"><span class="w-5 h-px bg-atelier-accent flex-shrink-0"></span>多套造型更換</li>
+                            <li class="flex items-center gap-3"><span class="w-5 h-px bg-atelier-accent flex-shrink-0"></span>全程跟妝補妝</li>
+                            <li class="flex items-center gap-3"><span class="w-5 h-px bg-atelier-accent flex-shrink-0"></span>飾品搭配建議</li>
+                        </ul> -->
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pt-8 border-t border-atelier-border w-full lg:w-[90%]">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] uppercase tracking-widest text-atelier-muted opacity-60 mb-1 font-display">Starting From</span>
+                            <span class="text-lg font-display italic text-atelier-text">HK$ 4,800 <span class="text-xs font-chinese text-atelier-muted ml-1">起</span></span>
+                        </div>
+                        <a class="group inline-flex items-center text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity pb-1 border-b border-atelier-border font-display uppercase btn-trigger-modal" href="javascript:void(0)">
+                            查詢檔期 →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Two secondary services (5 cols) -->
+                <div class="lg:col-span-5 flex flex-col gap-16 lg:gap-20 pl-0 lg:pl-12 pt-8 lg:pt-0 lg:-mt-20">
+
+                    <!-- Service 2 -->
+                    <div class="flex flex-col justify-between">
+                        <div>
+                            <span class="block text-4xl font-serif text-atelier-accent opacity-[0.15] mb-4 font-normal select-none italic">02</span>
+                            <h3 class="text-2xl font-chinese text-atelier-text mb-2 font-normal">旅拍 / 婚紗攝影妝髮</h3>
+                            <div class="text-xs tracking-[0.15em] text-atelier-accent uppercase font-display mb-6">Pre-Wedding &amp; Photoshoot Styling</div>
+                            <p class="text-atelier-muted font-chinese text-base leading-relaxed mb-8">
+                                適合婚紗攝影與旅拍拍攝。妝髮設計會考慮拍攝光線、場景與鏡頭呈現效果。可提供造型更換與補妝。
+                            </p>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-6 border-t border-atelier-border">
+                            <div class="flex flex-col">
+                                <span class="text-[10px] uppercase tracking-widest text-atelier-muted opacity-60 mb-1 font-display">Starting From</span>
+                                <span class="text-base font-display italic text-atelier-text">HK$ 3,800 <span class="text-xs font-chinese text-atelier-muted ml-1">起</span></span>
+                            </div>
+                            <a class="inline-flex items-center text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity pb-1 border-b border-atelier-border font-display uppercase btn-trigger-modal" href="javascript:void(0)">
+                                查詢檔期 →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="flex flex-col justify-between">
+                        <div>
+                            <span class="block text-4xl font-serif text-atelier-accent opacity-[0.15] mb-4 font-normal select-none italic">03</span>
+                            <h3 class="text-2xl font-chinese text-atelier-text mb-2 font-normal">活動及晚宴妝髮</h3>
+                            <div class="text-xs tracking-[0.15em] text-atelier-accent uppercase font-display mb-6">Event &amp; Evening Styling</div>
+                            <p class="text-atelier-muted font-chinese text-base leading-relaxed mb-8">
+                                適用於晚宴、品牌活動與正式場合。妝容方向依活動性質與服裝風格調整。可提供上門妝髮服務。
+                            </p>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-6 border-t border-atelier-border">
+                            <div class="flex flex-col">
+                                <span class="text-[10px] uppercase tracking-widest text-atelier-muted opacity-60 mb-1 font-display">Starting From</span>
+                                <span class="text-base font-display italic text-atelier-text">HK$ 2,800 <span class="text-xs font-chinese text-atelier-muted ml-1">起</span></span>
+                            </div>
+                            <a class="inline-flex items-center text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity pb-1 border-b border-atelier-border font-display uppercase btn-trigger-modal" href="javascript:void(0)">
+                                查詢檔期 →
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FEATURED PORTFOLIO SECTION (Precision Proportional Grid) -->
+    <section class="py-28 bg-atelier-bg" id="portfolio-featured">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full">
+             <div class="mb-24">
+                <span class="text-atelier-accent text-xs tracking-[0.25em] uppercase font-display mb-6 block">Selected Portfolio</span>
+                <h2 class="text-4xl md:text-5xl font-chinese text-atelier-text leading-tight font-normal mb-6">精選作品</h2>
+                <p class="text-atelier-muted font-chinese text-base max-w-xl leading-relaxed">實際新娘妝髮呈現。</p>
+                <div class="h-px w-20 bg-atelier-accent mt-8"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-[5.8fr_4.2fr] gap-12 lg:gap-x-24 items-start">
+                <!-- Left: Anchor Column (Curated Primary - 58%) -->
+                <div class="flex flex-col">
+                    <div class="aspect-[4/5] relative overflow-hidden portfolio-image-wrapper w-full">
+                        <img src="public/images/portfolio/portfolio_02.jpg" alt="Minimal Bridal Portrait" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Right: Curated Column (Gallery Stack - 42%) -->
+                <div class="flex flex-col gap-y-12 lg:gap-y-16">
+                    <!-- Top Image (Clean Secondary Presence) -->
+                    <div class="w-full">
+                        <div class="aspect-[4/4.7] relative overflow-hidden portfolio-image-wrapper w-full">
+                            <img src="public/images/portfolio/portfolio_01.jpg" alt="Selected Look 1" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    
+                    <!-- Bottom Row (Symmetrical Pair) -->
+                    <div class="grid grid-cols-2 gap-x-8 lg:gap-x-12 items-stretch">
+                        <!-- Bottom-Left (Aligned to clean architectural lines) -->
+                        <div class="relative overflow-hidden portfolio-image-wrapper aspect-[4/5]">
+                            <img src="public/images/portfolio/portfolio_03.jpg" alt="Support Look 1" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Bottom-Right (Aligned to clean architectural lines) -->
+                        <div class="relative overflow-hidden portfolio-image-wrapper aspect-[4/5]">
+                            <img src="public/images/portfolio/portfolio_04.jpg" alt="Support Look 2" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+    <!-- WHY CHOOSE ME (Architectural Refinement - Re-restored) -->
+    <section class="py-32 bg-atelier-bg" id="why-choose-me">
+        <div class="max-w-5xl mx-auto px-6 lg:px-12">
+            <!-- Header standardized to match other sections with dot separators -->
+            <div class="text-center mb-24">
+                <span class="text-atelier-accent text-xs tracking-[0.25em] uppercase font-display mb-6 block">Why Me</span>
+                <h2 class="text-4xl md:text-5xl font-chinese text-atelier-text leading-tight font-normal mb-8">
+                    合作的理由
+                </h2>
+                <p class="text-atelier-muted font-chinese text-base max-w-xl mx-auto leading-relaxed">
+                    針對海外婚禮與重要場合，提供細緻而有條理的妝髮服務。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-x-32 md:gap-y-24">
+                <!-- Item 1 -->
+                                 <div class="group flex flex-col items-start bg-transparent">
+                    <div class="w-8 h-px bg-atelier-accent mb-8 opacity-60"></div>
+                    <h3 class="text-2xl md:text-3xl font-chinese text-atelier-text mb-6 font-medium">一對一服務</h3>
+                    <p class="text-atelier-muted font-chinese text-base leading-[1.8] tracking-normal max-w-md text-left">
+                        一對一溝通，<br />根據服裝與場合細緻調整妝髮細節.
+                    </p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="group flex flex-col items-start bg-transparent">
+                    <div class="w-8 h-px bg-atelier-accent mb-8 opacity-60"></div>
+                    <h3 class="text-2xl md:text-3xl font-chinese text-atelier-text mb-6 font-medium">熟悉普吉島婚禮與拍攝環境</h3>
+                    <p class="text-atelier-muted font-chinese text-base leading-[1.8] tracking-normal max-w-md text-left">
+                        熟悉普吉島婚禮場地與自然光線條件，<br />能根據不同環境調整妝髮方向。
+                    </p>
+                </div>
+
+                <!-- Item 3 -->
+                                 <div class="group flex flex-col items-start bg-transparent">
+                    <div class="w-8 h-px bg-atelier-accent mb-8 opacity-60"></div>
+                    <h3 class="text-2xl md:text-3xl font-chinese text-atelier-text mb-6 font-medium">熟悉亞洲女性審美與文化</h3>
+                    <p class="text-atelier-muted font-chinese text-base leading-[1.8] tracking-normal max-w-md text-left">
+                        熟悉亞洲女性臉型比例與審美方向。以中文溝通，熟悉華人婚禮流程與妝髮細節需求。
+                    </p>
+                </div>
+
+
+                <!-- Item 4 -->
+                <div class="group flex flex-col  items-start bg-transparent">
+                    <div class="w-8 h-px bg-atelier-accent mb-8 opacity-60"></div>
+                    <h3 class="text-2xl md:text-3xl font-chinese text-atelier-text mb-6 font-medium">提供上門服務</h3>
+                    <p class="text-atelier-muted font-chinese text-base leading-[1.8] tracking-normal max-w-md text-left">
+                        可前往酒店、別墅或活動場地提供妝髮服務，<br />讓整體流程更為安心與從容。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-32 bg-atelier-bg border-t border-atelier-border" id="testimonials">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+                <div class="lg:col-span-4 lg:sticky lg:top-32 lg:h-fit">
+                    <span class="text-atelier-accent text-xs tracking-[0.25em] uppercase font-display mb-6 block">Client Reviews</span>
+                    <h2 class="text-4xl lg:text-5xl font-chinese text-atelier-text leading-tight font-normal mb-8">
+                        客戶回饋
+                    </h2>
+                    <p class="text-atelier-muted font-chinese text-base leading-relaxed max-w-sm">
+                        來自婚禮與旅拍客戶的真實回饋，關於溝通與妝髮服務。
+                    </p>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <!-- Review 1 -->
+                        <div class="group relative flex flex-col">
+                            <div class="relative bg-atelier-bg p-10 aspect-[4/3] overflow-hidden">
+                                <div class="absolute top-0 left-2 font-serif text-[10rem] leading-none text-atelier-accent opacity-[0.05] pointer-events-none italic">“</div>
+                                <div class="relative z-10 flex flex-col h-full justify-between">
+                                    <div>
+                                        <h3 class="font-chinese font-medium text-xl text-atelier-text mb-4 italic">“妝面太高級了”</h3>
+                                        <p class="text-atelier-muted font-chinese leading-relaxed text-base">
+                                            完全是我想要的泰式輕混血感，眼妝超級精緻。在普吉島這麼熱的天氣下，底妝居然一天都沒脫...
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Image Overlay with internal padding -->
+                                <div class="absolute inset-0 z-20 bg-atelier-bg opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out overflow-hidden p-6">
+                                   <div class="w-full h-full overflow-hidden">
+                                       <img src="public/images/hero-main.jpg" alt="Review Highlight" class="w-full h-full object-cover grayscale-[40%] contrast-[110%] brightness-[95%]">
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review 2 -->
+                        <div class="group relative flex flex-col md:translate-y-16">
+                            <div class="relative bg-atelier-bg p-10 aspect-[4/3] overflow-hidden">
+                                <div class="absolute top-0 left-2 font-serif text-[10rem] leading-none text-atelier-accent opacity-[0.05] pointer-events-none italic">“</div>
+                                <div class="relative z-10 flex flex-col h-full justify-between">
+                                    <div>
+                                        <h3 class="font-chinese font-medium text-xl text-atelier-text mb-4 italic">“像朋友一樣貼心”</h3>
+                                        <p class="text-atelier-muted font-chinese leading-relaxed text-base">
+                                            溝通非常順暢，試妝的時候就覺得很細心。婚禮當天早上不僅化得好，還一直幫我調整狀態...
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Image Overlay with internal padding -->
+                                <div class="absolute inset-0 z-20 bg-atelier-bg opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out overflow-hidden p-6">
+                                   <div class="w-full h-full overflow-hidden">
+                                       <img src="public/images/avatars/avatar-2.jpg" alt="Review Highlight" class="w-full h-full object-cover grayscale-[40%] contrast-[110%] brightness-[95%]">
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review 3 -->
+                        <div class="group relative flex flex-col">
+                            <div class="relative bg-atelier-bg p-10 aspect-[4/3] overflow-hidden">
+                                <div class="absolute top-0 left-2 font-serif text-[10rem] leading-none text-atelier-accent opacity-[0.05] pointer-events-none italic">“</div>
+                                <div class="relative z-10 flex flex-col h-full justify-between">
+                                    <div>
+                                        <h3 class="font-chinese font-medium text-xl text-atelier-text mb-4 italic">“自然又高級”</h3>
+                                        <p class="text-atelier-muted font-chinese leading-relaxed text-base">
+                                            非常喜歡老師化的妝，自然又高級，完全不是那種假面的感覺。朋友們都夸我那天美呆了...
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Image Overlay with internal padding -->
+                                <div class="absolute inset-0 z-20 bg-atelier-bg opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out overflow-hidden p-6">
+                                   <div class="w-full h-full overflow-hidden">
+                                       <img src="public/images/avatars/avatar-3.jpg" alt="Review Highlight" class="w-full h-full object-cover grayscale-[40%] contrast-[110%] brightness-[95%]">
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- View More Card -->
+                        <div class="group relative flex flex-col md:translate-y-16 hidden md:flex">
+                            <div class="bg-atelier-bg p-10 aspect-[4/3] flex flex-col justify-center text-left">
+                                <h3 class="font-chinese font-medium text-lg text-atelier-text mb-4">更多妝髮紀錄</h3>
+                                <p class="text-atelier-muted text-base font-chinese leading-relaxed mb-8">不同場景與妝髮呈現，<br />完整收錄於小紅書。</p>
+                                <a class="text-sm font-medium text-atelier-text hover:opacity-60 transition-opacity duration-300 ease-out tracking-wide uppercase flex items-center gap-2" href="#">
+                                    前往小紅書瀏覽
+                                    <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- PROCESS V3 (Curve Layout) -->
+    <section class="py-32 relative overflow-hidden" id="process-v3" class="py-32 relative bg-atelier-bg overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+    <div class="absolute left-[20%] top-0 h-full w-px bg-atelier-border/40"></div>
+    <div class="absolute left-[50%] top-0 h-full w-px bg-atelier-border/40"></div>
+    <div class="absolute left-[80%] top-0 h-full w-px bg-atelier-border/40"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-32 relative">
+    <span class="text-xs tracking-[0.25em] text-atelier-accent uppercase font-display block mb-6">Booking Process</span>
+    <h2 class="text-4xl lg:text-5xl font-chinese text-atelier-text font-normal mb-6">預約流程</h2>
+    <p class="text-atelier-muted font-chinese text-sm font-light tracking-wide">由初步查詢至服務當天，流程清晰明確。</p>
+    </div>
+    <div class="relative w-full max-w-5xl mx-auto">
+    <div class="flex flex-col relative mb-12 md:mb-0 md:ml-0 md:w-1/3 group">
+    <div class="absolute -top-16 -left-8 md:-top-24 md:-left-12 font-serif italic text-[120px] md:text-[180px] text-atelier-accent opacity-[0.1] leading-none select-none pointer-events-none transition-opacity duration-500 group-hover:opacity-[0.2]">01</div>
+    <div class="relative z-10 pl-6 md:pl-8 pt-8 border-l border-atelier-border hover:border-atelier-accent transition-colors duration-500">
+    <h3 class="text-xl font-medium text-atelier-text font-chinese font-normal mb-3">微信查詢檔期</h3>
+    <p class="text-base text-atelier-muted font-chinese font-light leading-relaxed">
+                                    提供日期、地點與服務類型，<br />確認可預約的檔期。
+                                </p>
+    </div>
+    </div>
+    <div class="flex flex-col relative mb-12 md:mb-0 md:translate-x-[120%] md:translate-y-16 md:w-1/3 group">
+    <div class="absolute -top-16 -left-8 md:-top-24 md:-left-12 font-serif italic text-[120px] md:text-[180px] text-atelier-accent opacity-[0.1] leading-none select-none pointer-events-none transition-opacity duration-500 group-hover:opacity-[0.2]">02</div>
+    <div class="relative z-10 pl-6 md:pl-8 pt-8 border-l border-atelier-border hover:border-atelier-accent transition-colors duration-500">
+    <h3 class="text-xl font-medium text-atelier-text font-chinese font-normal mb-3">確認服務內容與造型方向</h3>
+    <p class="text-base text-atelier-muted font-chinese font-light leading-relaxed">
+                                    溝通妝髮需求、風格偏好及時間安排，<br />確定服務內容與費用。
+                                </p>
+    </div>
+    </div>
+    <div class="flex flex-col relative mb-12 md:mb-0 md:translate-x-[40%] md:translate-y-32 md:w-1/3 group">
+    <div class="absolute -top-16 -left-8 md:-top-24 md:-left-12 font-serif italic text-[120px] md:text-[180px] text-atelier-accent opacity-[0.1] leading-none select-none pointer-events-none transition-opacity duration-500 group-hover:opacity-[0.2]">03</div>
+    <div class="relative z-10 pl-6 md:pl-8 pt-8 border-l border-atelier-border hover:border-atelier-accent transition-colors duration-500">
+    <h3 class="text-xl font-medium text-atelier-text font-chinese font-normal mb-3">支付訂金確認預約</h3>
+    <p class="text-base text-atelier-muted font-chinese font-light leading-relaxed">
+                                    確認訂金後，正式保留當日服務檔期。
+                                </p>
+    </div>
+    </div>
+    <div class="flex flex-col relative md:translate-x-[180%] md:translate-y-48 md:w-1/3 group">
+    <div class="absolute -top-16 -left-8 md:-top-24 md:-left-12 font-serif italic text-[120px] md:text-[180px] text-atelier-accent opacity-[0.1] leading-none select-none pointer-events-none transition-opacity duration-500 group-hover:opacity-[0.2]">04</div>
+    <div class="relative z-10 pl-6 md:pl-8 pt-8 border-l border-atelier-border hover:border-atelier-accent transition-colors duration-500">
+    <h3 class="text-xl font-medium text-atelier-text font-chinese font-normal mb-3">服務當天</h3>
+    <p class="text-base text-atelier-muted font-chinese font-light leading-relaxed">
+                                    依約定時間到達，完成當天妝髮造型服務。
+                                </p>
+    </div>
+    </div>
+    <svg class="absolute top-0 left-0 w-full h-full pointer-events-none hidden md:block opacity-20 dark:opacity-10 z-0" style="height: 140%;">
+    <path class="text-atelier-border" d="M 160 100 C 160 250, 600 200, 600 350 S 300 450, 300 600 S 800 700, 800 850" fill="none" stroke="currentColor" stroke-dasharray="4 4" stroke-width="1"></path>
+    </svg>
+    </div>
+    </div>
+    <div class="h-24 md:h-64"></div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="py-24 bg-atelier-bg border-t border-atelier-border" id="faq">
+        <div class="max-w-3xl mx-auto px-6 lg:px-8">
+            <div class="mb-20 text-center">
+                <span class="text-atelier-accent text-xs tracking-[0.25em] uppercase font-display mb-6 block">Frequently Asked Questions</span>
+                <h2 class="text-4xl lg:text-5xl font-chinese text-atelier-text leading-tight font-normal mb-8">常見問題解答</h2>
+                <p class="text-atelier-muted font-chinese text-base max-w-xl mx-auto leading-relaxed">關於預約與服務細節的說明。</p>
+            </div>
+
+            <div class="space-y-6">
+                <details class="group border-b border-atelier-border pb-6" open>
+                    <summary class="flex items-center justify-between cursor-pointer list-none py-2">
+                        <h3 class="font-chinese text-xl text-atelier-text font-medium group-hover:opacity-60 transition-opacity duration-300 ease-out">是否可以安排試妝？</h3>
+                        <span class="text-atelier-accent opacity-40 group-open:rotate-45 transition-transform duration-300 ease-out"><span class="text-lg font-light">+</span></span>
+                    </summary>
+                    <div class="pt-4 pr-12"><p class="text-atelier-muted font-chinese text-base leading-relaxed">可安排試妝。一般建議於婚禮前7–10天進行，以便根據禮服與場地確認妝髮方向。</p></div>
+                </details>
+                <details class="group border-b border-atelier-border pb-6">
+                    <summary class="flex items-center justify-between cursor-pointer list-none py-2">
+                        <h3 class="font-chinese text-xl text-atelier-text font-medium group-hover:opacity-60 transition-opacity duration-300 ease-out">是否只服務普吉島地區？</h3>
+                        <span class="text-atelier-text opacity-40 group-open:rotate-45 transition-transform duration-300 ease-out"><span class="text-lg font-light">+</span></span>
+                    </summary>
+                    <div class="pt-4 pr-12"><p class="text-atelier-muted font-chinese text-base leading-relaxed">主要服務於普吉島。如需前往其他島嶼或城市，可提前溝通。</p></div>
+                </details>
+                <details class="group border-b border-atelier-border pb-6">
+                    <summary class="flex items-center justify-between cursor-pointer list-none py-2">
+                        <h3 class="font-chinese text-xl text-atelier-text font-medium group-hover:opacity-60 transition-opacity duration-300 ease-out">是否可以只預約單一妝髮服務？</h3>
+                        <span class="text-atelier-text opacity-40 group-open:rotate-45 transition-transform duration-300 ease-out"><span class="text-lg font-light">+</span></span>
+                    </summary>
+                    <div class="pt-4 pr-12"><p class="text-atelier-muted font-chinese text-base leading-relaxed">可按實際需求預約單一造型或全天跟妝服務，形式可靈活調整。</p></div>
+                </details>
+                <details class="group border-b border-atelier-border pb-6">
+                    <summary class="flex items-center justify-between cursor-pointer list-none py-2">
+                        <h3 class="font-chinese text-xl text-atelier-text font-medium group-hover:opacity-60 transition-opacity duration-300 ease-out">是否提供伴娘或家人妝髮？</h3>
+                        <span class="text-atelier-text opacity-40 group-open:rotate-45 transition-transform duration-300 ease-out"><span class="text-lg font-light">+</span></span>
+                    </summary>
+                    <div class="pt-4 pr-12"><p class="text-atelier-muted font-chinese text-base leading-relaxed">可提供伴娘或家人妝髮服務。如需多人造型，請提前說明以便確認時間。</p></div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="py-36 bg-atelier-bg border-t border-atelier-border" id="contact">
+        <div class="max-w-5xl mx-auto px-6 lg:px-12 text-center">
+            <div class="flex flex-col items-center">
+                <span class="text-atelier-accent text-xs tracking-[0.25em] uppercase font-display mb-10 block">INQUIRY</span>
+                <h2 class="text-4xl lg:text-6xl font-chinese text-atelier-text leading-tight font-normal mb-8 max-w-3xl">確認您的
+                    <span class="font-serif text-atelier-accent">妝髮檔期</span></h2>
+                <p class="text-atelier-muted font-chinese text-base lg:text-lg mb-16 max-w-xl leading-relaxed">婚禮旺季（11月–3月）檔期較為集中，建議提前確認。</p>
+                <div class="flex justify-center">
+                    <a class="bg-atelier-cta hover:bg-atelier-cta-hover text-atelier-bg px-16 py-5 rounded-none font-medium text-[15px] tracking-wide transition-all text-center uppercase shadow-none border border-atelier-cta btn-trigger-modal" href="javascript:void(0)">微信查詢檔期</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-atelier-bg pt-32 pb-16 border-t border-atelier-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start mb-24">
+                <div class="lg:col-span-4">
+                    <div class="flex flex-col items-start">
+                        <span class="font-display font-medium text-xl tracking-[0.2em] text-atelier-text uppercase mb-4">PHUKET MUA</span>
+                        <span class="font-chinese text-[15px] text-atelier-muted tracking-wide mb-10">普吉島妝髮造型師</span>
+                    </div>
+                </div>
+                <!-- Nav / Social -->
+                <div class="lg:col-span-8 grid grid-cols-2 lg:grid-cols-3 gap-12 text-xs tracking-widest uppercase">
+                        <div>
+                            <span class="opacity-40 mb-8 block">導覽</span>
+                            <ul class="space-y-4 text-atelier-muted font-chinese text-sm tracking-wide">
+                                <li><a href="#services" class="hover:text-atelier-text transition-colors duration-300 ease-out">服務</a></li>
+                                <li><a href="#portfolio-featured" class="hover:text-atelier-text transition-colors duration-300 ease-out">作品</a></li>
+                                <li><a href="#testimonials" class="hover:text-atelier-text transition-colors duration-300 ease-out">評價</a></li>
+                                <li><a href="#process" class="hover:text-atelier-text transition-colors duration-300 ease-out">流程</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="opacity-40 mb-8 block">社交平台</span>
+                            <ul class="space-y-4 text-atelier-muted font-chinese text-sm tracking-wide">
+                                <li><a href="#" class="hover:text-atelier-text transition-colors duration-300 ease-out">小紅書</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="opacity-40 mb-8 block">聯絡方式</span>
+                            <ul class="space-y-4 text-atelier-muted font-chinese text-sm tracking-wide">
+                                <li class="leading-relaxed">微信：<span class="text-atelier-text">PhuketMUA</span></li>
+                                <li class="mt-8 pt-4 border-t border-atelier-border/50 text-xs opacity-60">2026 年檔期開放預約</li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-atelier-border flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-xs text-atelier-muted uppercase tracking-[0.15em] font-display">© 2026 Phuket Atelier Makeup. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dynamic Theme Switcher -->
+    <div id="theme-switcher-container" class="fixed bottom-8 right-8 z-[100] transition-all duration-500 ease-in-out">
+        <div id="theme-panel" class="bg-[#F6F4F1]/80 backdrop-blur-md border border-[#EDEBE7] p-5 shadow-2xl flex flex-col gap-5 min-w-[200px]">
+            <div class="flex justify-between items-center mb-1">
+                <span class="text-[10px] uppercase tracking-[0.2em] font-display font-medium text-atelier-muted">Editorial Themes</span>
+                <button onclick="toggleThemePanel(false)" class="text-atelier-muted hover:text-atelier-text transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4">
+                <button onclick="setTheme('default', 'Atelier')" data-theme-id="default" class="w-full h-10 bg-[#CBB7A6] rounded-none transition-opacity hover:opacity-80 flex items-center justify-center group" title="Atelier Sand">
+                    <span class="text-[8px] text-[#3A332E] opacity-0 group-hover:opacity-100 uppercase tracking-tighter text-center leading-none">Sand</span>
+                </button>
+                <button onclick="setTheme('mono-depth', 'Monochrome')" data-theme-id="mono-depth" class="w-full h-10 bg-[#3C3530] rounded-none transition-opacity hover:opacity-80 flex items-center justify-center group" title="Monochrome Depth">
+                    <span class="text-[8px] text-white opacity-0 group-hover:opacity-100 uppercase tracking-tighter">Mono</span>
+                </button>
+                <button onclick="setTheme('burgundy', 'Classic')" data-theme-id="burgundy" class="w-full h-10 bg-[#811331] rounded-none transition-opacity hover:opacity-80 flex items-center justify-center group" title="Burgundy Classic">
+                    <span class="text-[8px] text-white opacity-0 group-hover:opacity-100 uppercase tracking-tighter">Burgundy</span>
+                </button>
+                <button onclick="setTheme('ochre-warm', 'Ochre')" data-theme-id="ochre-warm" class="w-full h-10 bg-[#A67C52] rounded-none transition-opacity hover:opacity-80 flex items-center justify-center group" title="Ochre Warm">
+                    <span class="text-[8px] text-white opacity-0 group-hover:opacity-100 uppercase tracking-tighter">Ochre</span>
+                </button>
+                <button onclick="setTheme('editorial-contrast', 'Editorial')" data-theme-id="editorial-contrast" class="w-full h-10 bg-[#3F3732] rounded-none transition-opacity hover:opacity-80 col-span-2 flex items-center justify-center group" title="Editorial Contrast">
+                    <span class="text-[8px] text-[#F1ECE7] opacity-0 group-hover:opacity-100 uppercase tracking-tighter">Editorial Contrast</span>
+                </button>
+            </div>
+            
+            <p id="theme-status" class="text-[9px] text-atelier-muted text-center mt-1 italic tracking-widest uppercase">Atelier Mode Active</p>
+        </div>
+        
+        <button id="theme-toggle-btn" onclick="toggleThemePanel(true)" class="hidden fixed bottom-8 right-8 w-10 h-10 bg-[#F6F4F1] border border-[#EDEBE7] shadow-lg flex items-center justify-center hover:bg-[#EDEBE7] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+        </button>
+    </div>
+
+    <!-- CONVERSION POPUP SYSTEM (Balanced & Simplified) -->
+    <div id="contact-modal-overlay">
+        <div id="contact-modal-container" class="max-w-[720px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)]">
+            <!-- Close Button -->
+            <button id="close-modal" class="absolute top-6 right-6 text-atelier-text opacity-30 hover:opacity-100 transition-opacity z-20 p-2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+
+            <div class="flex flex-col md:flex-row overflow-hidden bg-ivory text-center md:text-left">
+                <!-- Left: Identity & QR -->
+                <div class="w-full md:w-[42%] bg-[#F2EFE9] flex flex-col items-center justify-center p-10 lg:p-12 border-r border-[#EDEBE7]">
+                    <div class="text-center mb-10">
+                        <span class="font-display text-xs tracking-[0.15em] text-atelier-muted uppercase block mb-3 font-medium">微信聯絡</span>
+                        <div class="font-serif italic text-2xl text-atelier-text">PhuketMUA</div>
+                    </div>
+                    
+                    <div class="bg-white p-4 shadow-sm mb-6 border border-atelier-border/50">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpjrTXDiw1ZM_14ro2VbfeYom76K7QYyF67Z47RpgPQu0AJHIQ9en8ozawe4700cxpta0GouSrV9GMS15yNFzhkGqRBVIQ792eA1fniArW6dyPO9dOR6jHZ645LEayZROGPMzhNphd-GKsbED2NL-dZWVEJDNEroXgKpox8fafQymivVO0giG2RBq1XS_C9s8FMkM_xZgOTjB2f1BPXD7w7EWyz8GPbh_kaR_6s0_-CVJtkD__WW7HJipmX5jOVIN44x0CYWFnT58" alt="WeChat QR Code" class="w-28 h-28 object-contain opacity-90">
+                    </div>
+                    <span class="text-xs font-display tracking-[0.15em] text-atelier-muted uppercase opacity-60">掃碼聯繫詳情</span>
+                </div>
+
+                <!-- Right: Direct Inquiry -->
+                <div class="w-full md:w-[58%] p-12 lg:p-16 flex flex-col justify-center">
+                    <header class="mb-10">
+                        <h2 class="font-chinese text-2xl text-atelier-text mb-4 font-normal tracking-tight">查詢服務檔期</h2>
+                        <p class="font-chinese text-base text-atelier-muted leading-relaxed">
+                            請留下微信號，以便確認服務細節。
+                        </p>
+                    </header>
+
+                    <form id="lead-form" class="space-y-12">
+                        <div class="space-y-6">
+                            <input type="text" id="wechat_id" required class="modal-input font-chinese" placeholder="您的微信號 (WeChat ID)">
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-atelier-cta hover:bg-atelier-cta-hover text-atelier-bg font-display text-[15px] font-medium py-5 px-8 tracking-wide transition-all uppercase">
+                            提交
+                        </button>
+                    </form>
+
+                    <p class="text-xs text-atelier-muted mt-10 text-center font-display tracking-wide opacity-40 uppercase">
+                        通常於 24 小時內回覆。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setTheme(themeId, themeName) {
+            if (themeId === 'default') {
+                document.documentElement.removeAttribute('data-theme');
+            } else {
+                document.documentElement.setAttribute('data-theme', themeId);
+            }
+            
+            const status = document.getElementById('theme-status');
+            if(status) status.innerText = themeName + " Mode Active";
+            
+            const buttons = document.querySelectorAll('#theme-panel button[data-theme-id]');
+            buttons.forEach(btn => {
+                btn.classList.toggle('ring-2', btn.getAttribute('data-theme-id') === themeId);
+                btn.classList.toggle('ring-atelier-text', btn.getAttribute('data-theme-id') === themeId);
+            });
+        }
+
+        function toggleThemePanel(show) {
+            const panel = document.getElementById('theme-panel');
+            const btn = document.getElementById('theme-toggle-btn');
+            if(panel && btn) {
+                if (show) {
+                    panel.style.display = 'block';
+                    btn.style.display = 'none';
+                } else {
+                    panel.style.display = 'none';
+                    btn.style.display = 'flex';
+                }
+            }
+        }
+        
+        // Initial state
+        setTheme('default', 'Atelier');
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Modal Logic
+            const overlay = document.getElementById('contact-modal-overlay');
+            const closeBtn = document.getElementById('close-modal');
+            const copyBtn = document.getElementById('btn-copy-wechat');
+            const toast = document.getElementById('copy-toast');
+            const modalTriggerBtns = document.querySelectorAll('.btn-trigger-modal');
+            const leadForm = document.getElementById('lead-form');
+
+            function openModal() {
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            modalTriggerBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openModal();
+                });
+            });
+
+            closeBtn.addEventListener('click', closeModal);
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) closeModal();
+            });
+
+            // Copy to Clipboard
+            copyBtn.addEventListener('click', () => {
+                const wechatId = document.getElementById('wechat-id-text').innerText;
+                navigator.clipboard.writeText(wechatId).then(() => {
+                    toast.classList.add('active');
+                    setTimeout(() => {
+                        toast.classList.remove('active');
+                    }, 2000);
+                });
+            });
+
+            // Form Submit Logic
+            leadForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = e.target.querySelector('button');
+                btn.innerText = "提交中...";
+                btn.disabled = true;
+                
+                setTimeout(() => {
+                    btn.innerText = "已提交，我们会尽快联系您";
+                    setTimeout(() => {
+                        closeModal();
+                        btn.innerText = "提交咨询";
+                        btn.disabled = false;
+                        e.target.reset();
+                    }, 2000);
+                }, 1000);
+            });
+        });
+    </script>
+
+</body>
+</html>

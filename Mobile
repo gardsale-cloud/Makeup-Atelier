@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Phuket MUA - Atelier Luxury</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600&amp;family=Noto+Sans+TC:wght@300;400;500&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#C4B2A3", // Muted sand/gold tone from screenshot
+                        "primary-dark": "#A39182",
+                        "background-light": "#F6F4F1", // Off-white/Cream background
+                        "background-dark": "#1A1918", // Deep warm charcoal/black
+                        "text-light": "#333333",
+                        "text-dark": "#E5E0DA",
+                        "border-light": "#E0DDD7",
+                        "border-dark": "#33312E",
+                        "secondary-text": "#888888",
+                        "secondary-text-dark": "#999999",
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', "sans-serif"],
+                        serif: ['"Noto Serif TC"', '"Playfair Display"', "serif"],
+                        display: ['"Playfair Display"', "serif"],
+                    },
+                    spacing: {
+                        '128': '32rem',
+                    }
+                },
+            },
+        };
+    </script>
+<style>html { scroll-behavior: smooth; }::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #C4B2A3;
+            border-radius: 4px;
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-sans transition-colors duration-300 antialiased selection:bg-primary selection:text-white">
+<nav class="fixed w-full z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-transparent dark:border-border-dark transition-all duration-300 py-4 px-6 md:px-12 flex justify-between items-center">
+<a class="text-xl md:text-2xl font-serif tracking-widest uppercase font-medium" href="#">Phuket MUA</a>
+<div class="hidden md:flex space-x-10 text-sm tracking-widest text-secondary-text dark:text-secondary-text-dark">
+<a class="hover:text-primary transition-colors" href="#services">服務</a>
+<a class="hover:text-primary transition-colors" href="#portfolio">作品</a>
+<a class="hover:text-primary transition-colors" href="#reviews">評價</a>
+<a class="hover:text-primary transition-colors" href="#process">流程</a>
+</div>
+<button class="bg-transparent border border-gray-300 dark:border-gray-600 px-5 py-2 text-xs md:text-sm tracking-widest hover:bg-primary hover:border-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all duration-300">
+            微信諮詢
+        </button>
+</nav>
+<header class="relative min-h-screen pt-24 pb-12 flex flex-col md:flex-row items-center justify-center gap-12 max-w-7xl mx-auto px-6 md:px-12">
+<div class="flex-1 space-y-8 fade-in-up">
+<div class="flex items-center space-x-4">
+<div class="h-[1px] w-12 bg-primary"></div>
+<span class="text-xs tracking-[0.2em] uppercase text-secondary-text dark:text-secondary-text-dark">Phuket Makeup Artist</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-serif leading-tight text-gray-800 dark:text-gray-100">
+                普吉島私人<br/>
+<span class="text-primary italic">妝髮造型師</span>
+</h1>
+<p class="text-sm md:text-base leading-loose text-secondary-text dark:text-secondary-text-dark max-w-md">
+                主要服務海外婚禮、旅拍與重要場合。<br/>
+                一對一服務，細緻完成妝髮造型。
+            </p>
+<button class="bg-primary text-white px-10 py-4 text-sm tracking-widest hover:bg-primary-dark transition-colors duration-300 shadow-sm">
+                微信諮詢
+            </button>
+</div>
+<div class="flex-1 w-full relative fade-in-up delay-200">
+<div class="relative aspect-[4/5] md:aspect-[3/4] overflow-hidden w-full max-w-lg mx-auto">
+<img alt="Asian bride with elegant makeup holding flowers" class="object-cover w-full h-full transform hover:scale-105 transition-transform duration-1000 ease-out filter brightness-95 contrast-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE1JphmYI06qHUK28jME0DTueieBLR3VZwmISzNnw4_tU9a0H-RDxBeXf5wab0cgP20RCin07iITXDVHFxhLCHq_lvXwjVLiOKHaExWJNAs1Emm6iMayNBuCg8IseWDJZw4haSqGJ9HVpiHm931BXqf789KFaFOkTA1EiFBn8N898gTMyoGCDVwCU8E0jXjHk2E3ZYPcVbNUH1f24uWveUrMqFMXLNWZ4EwkdgcxQKwUetGn7iYcc8gxhp-41r0mBQS-49xOTu7w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+</div>
+</div>
+</header>
+<section class="py-24 max-w-7xl mx-auto px-6 md:px-12" id="services">
+<div class="mb-20 space-y-4 fade-in-up">
+<span class="text-xs tracking-[0.2em] uppercase text-secondary-text dark:text-secondary-text-dark block">Styling Services</span>
+<h2 class="text-4xl font-serif text-gray-800 dark:text-gray-100">妝髮服務項目</h2>
+<p class="text-sm text-secondary-text dark:text-secondary-text-dark">根據不同場合與拍攝需求，設計合適的妝髮造型。</p>
+</div>
+<div class="grid md:grid-cols-2 gap-16 md:gap-24">
+<div class="space-y-6 relative group fade-in-up delay-100">
+<span class="text-8xl font-display italic text-primary/10 absolute -top-12 -left-4 -z-10 group-hover:text-primary/20 transition-colors">01</span>
+<h3 class="text-2xl font-serif font-medium pt-8">婚禮妝髮造型</h3>
+<span class="text-[10px] tracking-[0.15em] uppercase text-secondary-text dark:text-secondary-text-dark block">Wedding Makeup &amp; Hair</span>
+<p class="text-sm leading-relaxed text-secondary-text dark:text-secondary-text-dark">
+                    服務海外婚禮新娘，根據禮服、場地與儀式流程設計整體妝髮方向。可預約試妝與全天跟妝服務。
+                </p>
+<div class="pt-6 border-t border-border-light dark:border-border-dark flex justify-between items-end">
+<div>
+<span class="text-[10px] tracking-wider text-secondary-text dark:text-secondary-text-dark uppercase block mb-1">Starting from</span>
+<span class="font-serif italic text-lg">HK$ 4,800 <span class="text-xs not-italic text-secondary-text">起</span></span>
+</div>
+<a class="text-xs tracking-widest hover:text-primary transition-colors flex items-center gap-2 group-hover:translate-x-1 transition-transform" href="#">
+                        查詢服務檔期 <span class="material-icons-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="space-y-6 relative group fade-in-up delay-200">
+<span class="text-8xl font-display italic text-primary/10 absolute -top-12 -left-4 -z-10 group-hover:text-primary/20 transition-colors">02</span>
+<h3 class="text-2xl font-serif font-medium pt-8">旅拍 / 婚紗攝影妝髮</h3>
+<span class="text-[10px] tracking-[0.15em] uppercase text-secondary-text dark:text-secondary-text-dark block">Pre-Wedding &amp; Photoshoot Styling</span>
+<p class="text-sm leading-relaxed text-secondary-text dark:text-secondary-text-dark">
+                    適合婚紗攝影與旅拍拍攝，妝髮設計會考慮拍攝光線、場景與鏡頭呈現效果。可提供造型更換與補妝。
+                </p>
+<div class="pt-6 border-t border-border-light dark:border-border-dark flex justify-between items-end">
+<div>
+<span class="text-[10px] tracking-wider text-secondary-text dark:text-secondary-text-dark uppercase block mb-1">Starting from</span>
+<span class="font-serif italic text-lg">HK$ 3,800 <span class="text-xs not-italic text-secondary-text">起</span></span>
+</div>
+<a class="text-xs tracking-widest hover:text-primary transition-colors flex items-center gap-2 group-hover:translate-x-1 transition-transform" href="#">
+                        查詢服務檔期 <span class="material-icons-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="space-y-6 relative group md:col-start-2 fade-in-up delay-300">
+<span class="text-8xl font-display italic text-primary/10 absolute -top-12 -left-4 -z-10 group-hover:text-primary/20 transition-colors">03</span>
+<h3 class="text-2xl font-serif font-medium pt-8">活動及晚宴妝髮</h3>
+<span class="text-[10px] tracking-[0.15em] uppercase text-secondary-text dark:text-secondary-text-dark block">Event &amp; Evening Styling</span>
+<p class="text-sm leading-relaxed text-secondary-text dark:text-secondary-text-dark">
+                    適用於晚宴、派對活動與正式場合。妝容方向依活動性質與服裝風格調整。可提供上門妝髮服務。
+                </p>
+<div class="pt-6 border-t border-border-light dark:border-border-dark flex justify-between items-end">
+<div>
+<span class="text-[10px] tracking-wider text-secondary-text dark:text-secondary-text-dark uppercase block mb-1">Starting from</span>
+<span class="font-serif italic text-lg">HK$ 2,800 <span class="text-xs not-italic text-secondary-text">起</span></span>
+</div>
+<a class="text-xs tracking-widest hover:text-primary transition-colors flex items-center gap-2 group-hover:translate-x-1 transition-transform" href="#">
+                        查詢服務檔期 <span class="material-icons-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-[#1f1e1d]" id="portfolio">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="mb-16 space-y-4 text-center md:text-left fade-in-up">
+<span class="text-xs tracking-[0.2em] uppercase text-secondary-text dark:text-secondary-text-dark block">Selected Portfolio</span>
+<h2 class="text-4xl font-serif text-gray-800 dark:text-gray-100">精選作品</h2>
+<p class="text-sm text-secondary-text dark:text-secondary-text-dark">實際新娘妝髮呈現。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="aspect-[3/4] overflow-hidden fade-in-up">
+<img alt="Close up elegant makeup Asian bride" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBlJ77_SReNabVPX7V1bb8TCxUKMqGAbkLMBWftlE42R1t9dXJ-HRYBGPaPXqDTSOGt2_y1p91vVZ9NvOF9h9Kb1R_I1ik9dzR7FvzZgHGVWZkzkQbkC-xwa7agp-cTDeW8hma8wB-GInE-RIX0hN9-Btgki18G49aNTMmBubC_WYBovdr30109_084uFe7YxvV-n-5IG0Fnkr1B8uVNGYxiv4sdneOnk1wrjhuxtrp_30POk4DxJv_owuib6DJjvaJk0hSo63Ww"/>
+</div>
+<div class="grid grid-rows-2 gap-8">
+<div class="aspect-[4/3] overflow-hidden fade-in-up delay-100">
+<img alt="Bride looking away smiling" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJkjWIBpW8MJHo95zkapvBH7O3r05jxvNIBW-UDp_of4jEfqJimnjCmRJPmG7zu3RLQVLmOUvwaDF4F6O24lq5J1R34bykRFeXCxvfuDtnzh4LLS7zBY1jClz3_b2Mcmpfb0AOUi1uUysVr0-v0b5Plr7mx0jl5ovECokp2-s5ImxwTYwpONgH6lL27pZgMlL8YgHdoAgdTY48XEFaCiWE3LsYG2_mkmogPxlBtYtpA_MrJMiSCEeXeDKKJOxPyNH83JAYFRAfWA"/>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="aspect-[3/4] overflow-hidden fade-in-up delay-200">
+<img alt="Bride portrait with jewelry" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu1-_I0vVdFc0Xh6GvCggNEyy4DliErwpumn__7EVjIwYSJUt_X6IxRtXlX6-f7YeVuodZ-9m-XCeCGDA-GmblhZJ1YtmuPRRIMaRMa2pFUz729H4A7XrZ-RIPjJbwD_RE9g-lLqoELhKP5pFkmhaaf4mjjcOG5WcUg2QeC1il5ECwFRE5JfHTL-IDNPl-Qu4g1ul8tW66ySZUOcHVA1XD7OKJgUj6SZxy2qvMPY2CSs8FoahazFg9obVz56cOFtSOUk6xpWvvhQ"/>
+</div>
+<div class="aspect-[3/4] overflow-hidden fade-in-up delay-300">
+<img alt="Bride smiling at camera" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeOrTJNGxYhLvaHrymDi91miYXZpYfaLevNfvwyyas21iGhANEVgpvSt8uIVKYfJpO3A7hjILPQLD8LxpE6o5UvXHQJnXRyF-7UYrIw9l0qMCZo4nImUMKujeF0A4kGTu9ul9zEItY_B8b6LwoxqetmtpOrbitsmuo9FTbw5B8rYgMyB6XH3iKLCwcI6w7F1HoSKMb91xRuaYkS6wk2hPYGSVjMHx4PkzPI0e5CfnA7L-Wxo7Az11QJY4Xyj2sZP5nUJJLf1gqGA"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 max-w-7xl mx-auto px-6 md:px-12">
+<div class="text-center mb-20 fade-in-up">
+<span class="text-xs tracking-[0.2em] uppercase text-secondary-text dark:text-secondary-text-dark block mb-4">Why Me</span>
+<h2 class="text-4xl font-serif text-gray-800 dark:text-gray-100 mb-4">合作的理由</h2>
+<p class="text-sm text-secondary-text dark:text-secondary-text-dark">針對海外婚禮與重要場合，提供細緻而有條理的妝髮服務。</p>
+</div>
+<div class="grid md:grid-cols-2 gap-x-16 gap-y-16">
+<div class="fade-in-up">
+<div class="w-8 h-[2px] bg-primary mb-6"></div>
+<h3 class="text-xl font-medium mb-3 dark:text-gray-200">一對一服務</h3>
+<p class="text-sm text-secondary-text dark:text-secondary-text-dark leading-relaxed">
+                    一對一溝通，<br/>
+                    根據服裝與場合細微調整妝髮細節。
+                </p>
+</div>
+<div class="fade-in-up delay-100">
+<div class="w-8 h-[2px] bg-primary mb-6"></div>
+<h3 class="text-xl font-medium mb-3 dark:text-gray-200">熟悉普吉島婚禮與拍攝環境</h3>
+<p class="text-sm text-secondary-text dark:text-secondary-text-dark leading-relaxed">
+                    熟悉普吉島婚禮場地與自然光線條件，<br/>
+                    能根據不同環境調整妝髮方向。
+                </p>
+</div>
+<div class="fade-in-up delay-200">
+<div class="w-8 h-[2px] bg-primary mb-6"></div>
+<h3 class="text-xl font-medium mb-3 dark:text-gray-200">熟悉亞洲女性審美與文化</h3>
+<p class="text-sm text-secondary-text dark:text-secondary-text-dark leading-relaxed">
+                   熟悉亞洲女性臉型比例與審美方向。以中文溝通，熟悉華人婚禮流程與妝髮細節需求。
+                </p>
+</div>
+<div class="fade-in-up delay-300">
+<div class="w-8 h-[2px] bg-primary mb-6"></div>
+<h3 class="text-xl font-medium mb-3 dark:text-gray-200">提供上門服務</h3>
+<p class="text-sm text-secondary-text dark:text-secondary-text-dark leading-relaxed">
+                   可前往酒店、別墅或活動場地提供妝髮服務，<br/>
+                   讓整體流程更為安心與從容。
+                </p>
+</div>
+</div>
+</section>
+<section class="py-24 bg-primary/5 dark:bg-primary/10" id="reviews">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="grid md:grid-cols-12 gap-12">
+<div class="md:col-span-3 fade-in-up">
+<span class="text-xs tracking-[0.2em] uppercase text-secondary-text dark:text-secondary-text-dark block mb-4">Client Reviews</span>
+<h2 class="text-4xl font-serif text-gray-800 dark:text-gray-100 mb-6">客戶回饋</h2>
+<p class="text-sm text-secondary-text dark:text-secondary-text-dark leading-relaxed">
+                        來自婚禮與旅拍客戶的真實回饋，關於溝通與妝髮服務。
+                    </p>
+</div>
+<div class="md:col-span-9 grid md:grid-cols-2 gap-8">
+<div class="bg-white dark:bg-background-dark p-8 shadow-sm fade-in-up delay-100 border border-transparent dark:border-border-dark">
+<h4 class="font-serif text-lg italic mb-4 text-gray-800 dark:text-gray-200">“妝面太高級了”</h4>
+<p class="text-sm text-secondary-text dark:text-secondary-text-dark leading-loose">
+                            完全是我想要的泰式輕混血感，眼妝超級精緻。在普吉島這麼熱的天氣下，底妝居然一天都沒脫...
+                        </p>
+</div>
+<div class="bg-white dark:bg-background-dark p-8 shadow-sm fade-in-up delay-200 border border-transparent dark:border-border-dark md:translate-y-12">
+<h4 class="font-serif text-lg italic mb-4 text-gray-800 dark:text-gray-200">“像朋友一樣貼心”</h4>
+<p class="text-sm text-secondary-text dark:text-secondary-text-dark leading-loose">
+                            溝通非常順暢，試妝的時候就覺得很細心。婚禮當天早上不僅化得好，還一直幫我調整狀態...
+                        </p>
+</div>
+<div class="bg-white dark:bg-background-dark p-8 shadow-sm fade-in-up delay-300 border border-transparent dark:border-border-dark">
+<h4 class="font-serif text-lg italic mb-4 text-gray-800 dark:text-gray-200">“自然又高級”</h4>
+<p class="text-sm text-secondary-text dark:text-secondary-text-dark leading-loose">
+                            非常喜歡老師化的妝，自然又高級，完全不是那種假面的感覺。朋友們都誇我那天美呆了...
+                        </p>
+</div>
+<div class="p-8 flex flex-col justify-center items-start md:translate-y-12 fade-in-up delay-300">
+<h4 class="font-medium text-lg mb-2 text-gray-800 dark:text-gray-200">更多妝髮紀錄</h4>
+<p class="text-sm text-secondary-text dark:text-secondary-text-dark mb-4">不同場景與妝髮呈現，<br/>完整收錄於小紅書。</p>
+<a class="text-xs tracking-widest hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+                            前往小紅書瀏覽 <span class="material-icons-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 max-w-7xl mx-auto px-6 md:px-12 overflow-hidden" id="process">
+<div class="text-center mb-24 fade-in-up">
+<span class="text-xs tracking-[0.2em] uppercase text-secondary-text dark:text-secondary-text-dark block mb-4">Booking Process</span>
+<h2 class="text-4xl font-serif text-gray-800 dark:text-gray-100 mb-4">預約流程</h2>
+<p class="text-sm text-secondary-text dark:text-secondary-text-dark">由初步查詢至服務當天，流程清晰明確。</p>
+</div>
+<div class="relative">
+<div class="hidden md:block absolute top-[15%] left-[10%] right-[10%] h-[1px] bg-border-light dark:bg-border-dark -z-10"></div>
+<div class="grid md:grid-cols-4 gap-12 text-center">
+<div class="relative group fade-in-up">
+<span class="text-9xl font-display italic text-background-light dark:text-background-dark drop-shadow-sm md:absolute md:-top-20 md:left-1/2 md:-translate-x-1/2 -z-10 text-shadow text-stroke">01</span>
+<span class="text-8xl font-display italic text-primary/10 absolute -top-12 left-1/2 -translate-x-1/2 -z-10 group-hover:text-primary/20 transition-colors">01</span>
+<div class="bg-white dark:bg-background-dark md:bg-transparent md:dark:bg-transparent p-6 md:p-0 rounded-sm">
+<h3 class="text-lg font-medium mb-3">微信查詢檔期</h3>
+<p class="text-xs text-secondary-text dark:text-secondary-text-dark leading-relaxed">
+                             提供日期、地點與服務類型，<br/>確認可預約的檔期。
+                         </p>
+</div>
+</div>
+<div class="relative group fade-in-up delay-100 md:mt-24">
+<span class="text-8xl font-display italic text-primary/10 absolute -top-12 left-1/2 -translate-x-1/2 -z-10 group-hover:text-primary/20 transition-colors">02</span>
+<div class="bg-white dark:bg-background-dark md:bg-transparent md:dark:bg-transparent p-6 md:p-0 rounded-sm">
+<h3 class="text-lg font-medium mb-3">確認服務內容與造型方向</h3>
+<p class="text-xs text-secondary-text dark:text-secondary-text-dark leading-relaxed">
+                            溝通妝髮需求、 風格偏好及時間安排，<br/>確定服務內容與費用。
+                        </p>
+</div>
+</div>
+<div class="relative group fade-in-up delay-200">
+<span class="text-8xl font-display italic text-primary/10 absolute -top-12 left-1/2 -translate-x-1/2 -z-10 group-hover:text-primary/20 transition-colors">03</span>
+<div class="bg-white dark:bg-background-dark md:bg-transparent md:dark:bg-transparent p-6 md:p-0 rounded-sm">
+<h3 class="text-lg font-medium mb-3">支付訂金確認預約</h3>
+<p class="text-xs text-secondary-text dark:text-secondary-text-dark leading-relaxed">
+                            確認訂金後，正式保留當日服務檔期。
+                        </p>
+</div>
+</div>
+<div class="relative group fade-in-up delay-300 md:mt-24">
+<span class="text-8xl font-display italic text-primary/10 absolute -top-12 left-1/2 -translate-x-1/2 -z-10 group-hover:text-primary/20 transition-colors">04</span>
+<div class="bg-white dark:bg-background-dark md:bg-transparent md:dark:bg-transparent p-6 md:p-0 rounded-sm">
+<h3 class="text-lg font-medium mb-3">服務當天</h3>
+<p class="text-xs text-secondary-text dark:text-secondary-text-dark leading-relaxed">
+                            依約定時間到達，完成當天妝髮造型服務。
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-primary/5 dark:bg-primary/10">
+<div class="max-w-3xl mx-auto px-6">
+<div class="text-center mb-16 fade-in-up">
+<span class="text-xs tracking-[0.2em] uppercase text-secondary-text dark:text-secondary-text-dark block mb-4">Frequently Asked Questions</span>
+<h2 class="text-3xl md:text-4xl font-serif text-gray-800 dark:text-gray-100 mb-4">常見問題解答</h2>
+<p class="text-sm text-secondary-text dark:text-secondary-text-dark">關於預約與服務細節的說明。</p>
+</div>
+<div class="space-y-4">
+<details class="group bg-transparent border-b border-border-light dark:border-border-dark fade-in-up">
+<summary class="flex justify-between items-center cursor-pointer py-6 list-none text-sm md:text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors">
+                        是否可以只預約單一妝髮服務？
+                        <span class="transition group-open:rotate-45 text-xs">+</span>
+</summary>
+<div class="text-secondary-text dark:text-secondary-text-dark text-sm leading-relaxed pb-6 animate-fadeIn">
+                        可按實際需求預約單一造型或全天跟妝服務，形式可靈活調整。
+                    </div>
+</details>
+<details class="group bg-transparent border-b border-border-light dark:border-border-dark fade-in-up delay-100">
+<summary class="flex justify-between items-center cursor-pointer py-6 list-none text-sm md:text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors">
+                        是否提供伴娘或家人妝髮？
+                        <span class="transition group-open:rotate-45 text-xs">+</span>
+</summary>
+<div class="text-secondary-text dark:text-secondary-text-dark text-sm leading-relaxed pb-6">
+                        是的，我們提供親友妝髮服務，可以根據人數安排助理造型師協助。
+                    </div>
+</details>
+<details class="group bg-transparent border-b border-border-light dark:border-border-dark fade-in-up delay-200">
+<summary class="flex justify-between items-center cursor-pointer py-6 list-none text-sm md:text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors">
+                        是否提供試妝服務？
+                        <span class="transition group-open:rotate-45 text-xs">+</span>
+</summary>
+<div class="text-secondary-text dark:text-secondary-text-dark text-sm leading-relaxed pb-6">
+                        提供試妝服務，需提前預約檔期。試妝費用可於正式服務中部分折抵。
+                    </div>
+</details>
+<details class="group bg-transparent border-b border-border-light dark:border-border-dark fade-in-up delay-300">
+<summary class="flex justify-between items-center cursor-pointer py-6 list-none text-sm md:text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors">
+                        是否只服務普吉島地區？
+                        <span class="transition group-open:rotate-45 text-xs">+</span>
+</summary>
+<div class="text-secondary-text dark:text-secondary-text-dark text-sm leading-relaxed pb-6">
+                        主要服務普吉島全島，亦可接受泰國其他地區或海外出差邀約，差旅費用另計。
+                    </div>
+</details>
+<details class="group bg-transparent border-b border-border-light dark:border-border-dark fade-in-up">
+<summary class="flex justify-between items-center cursor-pointer py-6 list-none text-sm md:text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition-colors">
+                        建議提前多久預約？
+                        <span class="transition group-open:rotate-45 text-xs">+</span>
+</summary>
+<div class="text-secondary-text dark:text-secondary-text-dark text-sm leading-relaxed pb-6">
+                        建議至少提前 3-6 個月預約，旺季期間建議更早詢問以確保檔期。
+                    </div>
+</details>
+</div>
+</div>
+</section>
+<section class="py-32 text-center max-w-7xl mx-auto px-6 fade-in-up">
+<span class="text-xs tracking-[0.2em] uppercase text-secondary-text dark:text-secondary-text-dark block mb-6">Inquiry</span>
+<h2 class="text-4xl md:text-5xl font-serif text-gray-800 dark:text-gray-100 mb-8">私人<span class="font-normal">妝髮諮詢</span></h2>
+<p class="text-sm text-secondary-text dark:text-secondary-text-dark mb-10">如有任何妝髮造型或檔期問題，歡迎與我聯絡。</p>
+<button class="bg-primary text-white px-12 py-4 text-sm tracking-widest hover:bg-primary-dark transition-colors duration-300 shadow-sm mb-6">
+            微信諮詢
+        </button>
+<p class="text-[10px] text-secondary-text/60 dark:text-secondary-text-dark/60">一般於當日內回覆</p>
+</section>
+<footer class="bg-primary/5 dark:bg-[#151515] pt-20 pb-12 text-xs border-t border-transparent dark:border-border-dark">
+<div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-12 mb-20">
+<div class="col-span-2 md:col-span-1 space-y-4">
+<h3 class="text-lg font-serif tracking-widest uppercase">Phuket MUA</h3>
+<p class="text-secondary-text dark:text-secondary-text-dark">普吉島妝髮造型師</p>
+</div>
+<div class="space-y-4">
+<h4 class="text-secondary-text dark:text-secondary-text-dark uppercase tracking-widest opacity-60">導覽</h4>
+<ul class="space-y-3">
+<li><a class="hover:text-primary transition-colors" href="#">服務</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">作品</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">評價</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">流程</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-secondary-text dark:text-secondary-text-dark uppercase tracking-widest opacity-60">社交平台</h4>
+<ul class="space-y-3">
+<li><a class="hover:text-primary transition-colors" href="#">小紅書</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Instagram</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-secondary-text dark:text-secondary-text-dark uppercase tracking-widest opacity-60">聯絡方式</h4>
+<p class="text-secondary-text dark:text-secondary-text-dark">微信：PHUKETMUA</p>
+<p class="text-secondary-text dark:text-secondary-text-dark opacity-60 mt-4">2026 年檔期開放預約</p>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 md:px-12 pt-8 border-t border-border-light dark:border-border-dark flex flex-col md:flex-row justify-between items-center text-[10px] text-secondary-text/60 dark:text-secondary-text-dark/60 tracking-widest uppercase">
+<p>© 2026 Phuket Atelier Makeup. All rights reserved.</p>
+<div class="mt-4 md:mt-0 flex gap-4">
+<button class="hover:text-primary transition-colors"><span class="material-icons-outlined text-sm">language</span></button>
+</div>
+</div>
+</footer>
+<div class="fixed bottom-6 right-6 z-40 md:hidden">
+<button class="bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-primary-dark transition-colors">
+<span class="material-icons-outlined text-xl">chat</span>
+</button>
+</div>
+
+</body></html>
