@@ -2,6 +2,5 @@ node_modules
 .next
 out
 build
-public/images
 .DS_Store
 *.log
