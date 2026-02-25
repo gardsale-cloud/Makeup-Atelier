@@ -28,9 +28,9 @@ jobs:
         run: |
           mkdir deploy_root
           cp atelier.html deploy_root/index.html
-          # Copy images and assets
+          # Copy images and assets preserving folder structure
           if [ -d "public" ]; then
-            cp -r public/* deploy_root/
+            cp -r public deploy_root/
           fi
           
       - name: Setup Pages
