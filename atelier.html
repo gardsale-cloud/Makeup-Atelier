@@ -644,7 +644,7 @@
                 <div class="md:col-span-8">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-12">
                         <!-- Review 1 -->
-                        <div class="group relative flex flex-col testimonial-card" data-review-id="1">
+                        <div class="group relative flex flex-col">
                             <div class="relative bg-atelier-bg p-8 md:p-10 aspect-video md:aspect-[4/3] overflow-hidden">
                                 <div class="absolute top-0 left-2 font-serif text-[7rem] md:text-[10rem] leading-none text-atelier-accent opacity-[0.05] pointer-events-none italic">“</div>
                                 <div class="relative z-10 flex flex-col h-full justify-between">
@@ -654,22 +654,18 @@
                                             完全是我想要的泰式輕混血感，眼妝超級精緻。在普吉島這麼熱的天氣下，底妝居然一天都沒脫...
                                         </p>
                                     </div>
-                                    <button class="text-[10px] uppercase tracking-[0.2em] text-atelier-accent/60 hover:text-atelier-accent transition-colors flex items-center gap-2 mt-4 testimonial-toggle md:hidden">
-                                        <span>查看評價內容</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                    </button>
                                 </div>
-                                <!-- Screenshot Overlay -->
-                                <div class="absolute inset-0 z-20 bg-atelier-bg opacity-0 transition-opacity duration-500 ease-out overflow-hidden p-6 testimonial-overlay pointer-events-none">
-                                   <div class="w-full h-full overflow-hidden border border-atelier-border/40">
-                                       <img src="public/images/testimonials/screenshot_1.png" alt="Review Highlight" class="w-full h-full object-cover">
+                                <!-- Photo Overlay (Hidden on Mobile, Visible on Desktop Hover) -->
+                                <div class="absolute inset-0 z-20 bg-atelier-bg opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 ease-out overflow-hidden p-6 hidden md:block">
+                                   <div class="w-full h-full overflow-hidden">
+                                       <img src="public/images/hero-main.jpg" alt="Review Highlight" class="w-full h-full object-cover grayscale-[40%] contrast-[110%] brightness-[95%]">
                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Review 2 -->
-                        <div class="group relative flex flex-col md:translate-y-16 testimonial-card" data-review-id="2">
+                        <div class="group relative flex flex-col md:translate-y-16">
                             <div class="relative bg-atelier-bg p-8 md:p-10 aspect-video md:aspect-[4/3] overflow-hidden">
                                 <div class="absolute top-0 left-2 font-serif text-[7rem] md:text-[10rem] leading-none text-atelier-accent opacity-[0.05] pointer-events-none italic">“</div>
                                 <div class="relative z-10 flex flex-col h-full justify-between">
@@ -679,22 +675,18 @@
                                             溝通非常順暢，試妝的時候就覺得很細心。婚禮當天早上不僅化得好，還一直幫我調整狀態...
                                         </p>
                                     </div>
-                                    <button class="text-[10px] uppercase tracking-[0.2em] text-atelier-accent/60 hover:text-atelier-accent transition-colors flex items-center gap-2 mt-4 testimonial-toggle md:hidden">
-                                        <span>查看評價內容</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                    </button>
                                 </div>
-                                <!-- Screenshot Overlay -->
-                                <div class="absolute inset-0 z-20 bg-atelier-bg opacity-0 transition-opacity duration-500 ease-out overflow-hidden p-6 testimonial-overlay pointer-events-none">
-                                   <div class="w-full h-full overflow-hidden border border-atelier-border/40">
-                                       <img src="public/images/testimonials/screenshot_2.png" alt="Review Highlight" class="w-full h-full object-cover">
+                                <!-- Photo Overlay (Hidden on Mobile, Visible on Desktop Hover) -->
+                                <div class="absolute inset-0 z-20 bg-atelier-bg opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 ease-out overflow-hidden p-6 hidden md:block">
+                                   <div class="w-full h-full overflow-hidden">
+                                       <img src="public/images/avatars/avatar-2.jpg" alt="Review Highlight" class="w-full h-full object-cover grayscale-[40%] contrast-[110%] brightness-[95%]">
                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Review 3 -->
-                        <div class="group relative flex flex-col testimonial-card" data-review-id="3">
+                        <div class="group relative flex flex-col">
                             <div class="relative bg-atelier-bg p-8 md:p-10 aspect-video md:aspect-[4/3] overflow-hidden">
                                 <div class="absolute top-0 left-2 font-serif text-[7rem] md:text-[10rem] leading-none text-atelier-accent opacity-[0.05] pointer-events-none italic">“</div>
                                 <div class="relative z-10 flex flex-col h-full justify-between">
@@ -704,16 +696,32 @@
                                             非常喜歡老師化的妝，自然又高級，完全不是那種假面的感覺。朋友們都夸我那天美呆了...
                                         </p>
                                     </div>
-                                    <button class="text-[10px] uppercase tracking-[0.2em] text-atelier-accent/60 hover:text-atelier-accent transition-colors flex items-center gap-2 mt-4 testimonial-toggle md:hidden">
-                                        <span>查看評價內容</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                    </button>
                                 </div>
-                                <!-- Screenshot Overlay -->
-                                <div class="absolute inset-0 z-20 bg-atelier-bg opacity-0 transition-opacity duration-500 ease-out overflow-hidden p-6 testimonial-overlay pointer-events-none">
-                                   <div class="w-full h-full overflow-hidden border border-atelier-border/40">
-                                       <img src="public/images/portfolio/portfolio_03.jpg" alt="Review Highlight" class="w-full h-full object-cover">
+                                <!-- Photo Overlay (Hidden on Mobile, Visible on Desktop Hover) -->
+                                <div class="absolute inset-0 z-20 bg-atelier-bg opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 ease-out overflow-hidden p-6 hidden md:block">
+                                   <div class="w-full h-full overflow-hidden">
+                                       <img src="public/images/avatars/avatar-3.jpg" alt="Review Highlight" class="w-full h-full object-cover grayscale-[40%] contrast-[110%] brightness-[95%]">
                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- View More Card -->
+                        <div class="group relative flex flex-col md:translate-y-16">
+                            <div class="relative bg-atelier-bg p-8 md:p-10 aspect-video md:aspect-[4/3] flex flex-col transition-all duration-300">
+                                <div class="relative z-10 flex flex-col h-full md:justify-between">
+                                    <div class="mb-6 md:mb-0">
+                                        <h3 class="font-chinese font-medium text-xl text-atelier-text mb-4">更多妝髮紀錄</h3>
+                                        <p class="text-atelier-muted text-base font-chinese leading-relaxed opacity-90">
+                                            不同場景與妝髮呈現，完整收錄於小紅書。
+                                        </p>
+                                    </div>
+                                    <div class="mt-0 md:mt-auto pt-0 md:pt-6">
+                                        <a class="group/btn text-sm font-medium text-atelier-text hover:opacity-60 transition-opacity duration-300 ease-out tracking-wide uppercase flex items-center gap-2" href="#">
+                                            前往小紅書瀏覽
+                                            <span class="transition-transform duration-300 ease-out group-hover/btn:translate-x-1.5 group-hover:translate-x-1.5">→</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1095,45 +1103,19 @@
                 });
             }
 
-            // Mobile Testimonials Toggle
-            const testimonialCards = document.querySelectorAll('.testimonial-card');
-            testimonialCards.forEach(card => {
-                const toggle = card.querySelector('.testimonial-toggle');
-                const overlay = card.querySelector('.testimonial-overlay');
-                
-                if (toggle && overlay) {
-                    toggle.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        const isActive = overlay.classList.contains('active');
-                        
-                        // Close all others
-                        document.querySelectorAll('.testimonial-overlay').forEach(ov => ov.classList.remove('active', 'opacity-100'));
-                        
-                        if (!isActive) {
-                            overlay.classList.add('active', 'opacity-100');
-                        }
-                    });
-
-                    // Close on click outside of toggle
-                    document.addEventListener('click', (e) => {
-                        if (!toggle.contains(e.target)) {
-                            overlay.classList.remove('active', 'opacity-100');
-                        }
-                    });
-                }
-            });
-
             // Intersection Observer for Scroll Highlights (Mobile only)
             if (window.innerWidth < 768) {
                 const observerOptions = {
                     root: null,
-                    threshold: 0,
+                    threshold: [0, 0.5, 1],
                     rootMargin: '-33% 0px -33% 0px' // Center third trigger
                 };
 
                 const highlightObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
-                        if (entry.isIntersecting) {
+                        // isIntersecting alone might not be enough with 33% margins
+                        // since we want it to turn OFF in the top/bottom thirds
+                        if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
                             entry.target.classList.add('active-scroll');
                         } else {
                             entry.target.classList.remove('active-scroll');
