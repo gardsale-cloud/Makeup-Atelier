@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
+import { getAssetPath } from "@/utils/paths";
 
 const heroImages = [
-    "/images/hero/hero.jpg",
-    "/images/hero/hero_1.jpg",
-    "/images/hero/hero_2.jpg",
-    "/images/hero/hero_3.jpg",
-    "/images/hero/hero_4.jpg",
+    getAssetPath("/images/hero/hero.jpg"),
+    getAssetPath("/images/hero/hero_1.jpg"),
+    getAssetPath("/images/hero/hero_2.jpg"),
+    getAssetPath("/images/hero/hero_3.jpg"),
+    getAssetPath("/images/hero/hero_4.jpg"),
 ];
 
 const HeroAtelier = () => {

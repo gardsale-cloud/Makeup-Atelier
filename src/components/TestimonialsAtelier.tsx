@@ -1,4 +1,5 @@
 import React from "react";
+import { getAssetPath } from "@/utils/paths";
 
 const testimonials = [
     {
@@ -8,12 +9,12 @@ const testimonials = [
         text: "完全是我想要的泰式輕混血感，眼妝超級精緻。在普吉島這麼熱的天氣下，底妝居然一天都沒脫...",
         xhsHandle: "Chloe.Z",
         xhsText: "姐妹們！普吉島跟妝直接閉眼沖這家！💯 化妝老師太專業了，完全get到了我想要的泰式輕混血妝容，眼妝超級精緻，而且底妝 в 普吉島這麼熱的天氣下居然一天都沒脫，太厲害了！ #普吉島婚禮 #新娘跟妝",
-        avatar: "/images/avatars/avatar-1.jpg",
+        avatar: getAssetPath("/images/avatars/avatar-1.jpg"),
         hearts: 128,
         comments: 32,
         images: [
-            "/images/hero-main.jpg",
-            "/images/avatars/avatar-3.jpg"
+            getAssetPath("/images/hero-main.jpg"),
+            getAssetPath("/images/avatars/avatar-3.jpg")
         ]
     },
     {
@@ -23,11 +24,11 @@ const testimonials = [
         text: "溝通非常順暢，試妝的時候就覺得很細心。婚禮當天早上不僅化得好，還一直幫我調整狀態...",
         xhsHandle: "Emily_C",
         xhsText: "真的是神仙化妝師！🧚‍♀️ 溝通非常順暢，試妝的時候就覺得很細心。婚禮當天早上不僅化得好，還一直幫我調整狀態，像朋友一樣貼心. 強烈推薦給來普吉島備婚的姐妹！ #普吉島旅拍 #海外婚禮",
-        avatar: "/images/avatars/avatar-2.jpg",
+        avatar: getAssetPath("/images/avatars/avatar-2.jpg"),
         hearts: 89,
         comments: 14,
         images: [
-            "/images/avatars/avatar-2.jpg"
+            getAssetPath("/images/avatars/avatar-2.jpg")
         ],
         className: "md:translate-y-16"
     },
@@ -38,12 +39,12 @@ const testimonials = [
         text: "非常喜歡老師化的妝，自然又高級，完全不是那種假面的感覺。朋友們都夸我那天美呆了...",
         xhsHandle: "Sarah.Liu",
         xhsText: "終於圓滿禮成！非常喜歡老師化的妝，自然又高級，完全不是那種假面的感覺。朋友們都夸我那天美呆了。而且老師用的化妝品都是大牌，敏感肌用在臉上很放心 ✨ #Amanpuri #普吉島婚禮",
-        avatar: "/images/avatars/avatar-3.jpg",
+        avatar: getAssetPath("/images/avatars/avatar-3.jpg"),
         hearts: 204,
         comments: 45,
         images: [
-            "/images/avatars/avatar-3.jpg",
-            "/images/hero-main.jpg"
+            getAssetPath("/images/avatars/avatar-3.jpg"),
+            getAssetPath("/images/hero-main.jpg")
         ]
     }
 ];

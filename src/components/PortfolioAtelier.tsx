@@ -1,35 +1,36 @@
 import React from "react";
+import { getAssetPath } from "@/utils/paths";
 
 const portfolioItems = [
     {
         title: "自然清透新娘妝",
         subtitle: "Natural Bridal Look",
-        image: "/images/hero-main.jpg"
+        image: getAssetPath("/images/hero-main.jpg")
     },
     {
         title: "海島戶外婚紗照",
         subtitle: "Beach Pre-wedding",
-        image: "/images/avatars/avatar-2.jpg"
+        image: getAssetPath("/images/avatars/avatar-2.jpg")
     },
     {
         title: "晚宴精緻妝容",
         subtitle: "Evening Glamour",
-        image: "/images/avatars/avatar-3.jpg"
+        image: getAssetPath("/images/avatars/avatar-3.jpg")
     },
     {
         title: "韓式清新妝感",
         subtitle: "Korean Fresh Look",
-        image: "/images/avatars/avatar-1.jpg"
+        image: getAssetPath("/images/avatars/avatar-1.jpg")
     },
     {
         title: "泰式傳統婚禮",
         subtitle: "Thai Traditional Ceremony",
-        image: "/images/hero-main.jpg"
+        image: getAssetPath("/images/hero-main.jpg")
     },
     {
         title: "時尚雜誌拍攝",
         subtitle: "Editorial Fashion",
-        image: "/images/avatars/avatar-2.jpg"
+        image: getAssetPath("/images/avatars/avatar-2.jpg")
     }
 ];
 
