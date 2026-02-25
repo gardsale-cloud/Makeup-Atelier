@@ -355,13 +355,13 @@
             }
         }
 
-        /* Scroll Highlight Styles */
+        /* Permanent Highlights on Mobile */
         @media (max-width: 767px) {
-            .active-scroll .highlight-target {
+            .highlight-target {
                 opacity: 0.2 !important;
                 color: var(--atelier-accent) !important;
             }
-            .active-scroll .border-target {
+            .border-target {
                 border-color: var(--atelier-accent) !important;
             }
         }
@@ -655,7 +655,7 @@
                                         </p>
                                     </div>
                                 </div>
-                                <!-- Photo Overlay (Hidden on Mobile, Visible on Desktop Hover) -->
+                                <!-- Photo Overlay (Desktop only) -->
                                 <div class="absolute inset-0 z-20 bg-atelier-bg opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 ease-out overflow-hidden p-6 hidden md:block">
                                    <div class="w-full h-full overflow-hidden">
                                        <img src="public/images/hero-main.jpg" alt="Review Highlight" class="w-full h-full object-cover grayscale-[40%] contrast-[110%] brightness-[95%]">
@@ -676,7 +676,7 @@
                                         </p>
                                     </div>
                                 </div>
-                                <!-- Photo Overlay (Hidden on Mobile, Visible on Desktop Hover) -->
+                                <!-- Photo Overlay (Desktop only) -->
                                 <div class="absolute inset-0 z-20 bg-atelier-bg opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 ease-out overflow-hidden p-6 hidden md:block">
                                    <div class="w-full h-full overflow-hidden">
                                        <img src="public/images/avatars/avatar-2.jpg" alt="Review Highlight" class="w-full h-full object-cover grayscale-[40%] contrast-[110%] brightness-[95%]">
@@ -697,31 +697,11 @@
                                         </p>
                                     </div>
                                 </div>
-                                <!-- Photo Overlay (Hidden on Mobile, Visible on Desktop Hover) -->
+                                <!-- Photo Overlay (Desktop only) -->
                                 <div class="absolute inset-0 z-20 bg-atelier-bg opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 ease-out overflow-hidden p-6 hidden md:block">
                                    <div class="w-full h-full overflow-hidden">
                                        <img src="public/images/avatars/avatar-3.jpg" alt="Review Highlight" class="w-full h-full object-cover grayscale-[40%] contrast-[110%] brightness-[95%]">
                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- View More Card -->
-                        <div class="group relative flex flex-col md:translate-y-16">
-                            <div class="relative bg-atelier-bg p-8 md:p-10 aspect-video md:aspect-[4/3] flex flex-col transition-all duration-300">
-                                <div class="relative z-10 flex flex-col h-full md:justify-between">
-                                    <div class="mb-6 md:mb-0">
-                                        <h3 class="font-chinese font-medium text-xl text-atelier-text mb-4">更多妝髮紀錄</h3>
-                                        <p class="text-atelier-muted text-base font-chinese leading-relaxed opacity-90">
-                                            不同場景與妝髮呈現，完整收錄於小紅書。
-                                        </p>
-                                    </div>
-                                    <div class="mt-0 md:mt-auto pt-0 md:pt-6">
-                                        <a class="group/btn text-sm font-medium text-atelier-text hover:opacity-60 transition-opacity duration-300 ease-out tracking-wide uppercase flex items-center gap-2" href="#">
-                                            前往小紅書瀏覽
-                                            <span class="transition-transform duration-300 ease-out group-hover/btn:translate-x-1.5 group-hover:translate-x-1.5">→</span>
-                                        </a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1103,31 +1083,8 @@
                 });
             }
 
-            // Intersection Observer for Scroll Highlights (Mobile only)
-            if (window.innerWidth < 768) {
-                const observerOptions = {
-                    root: null,
-                    threshold: [0, 0.5, 1],
-                    rootMargin: '-33% 0px -33% 0px' // Center third trigger
-                };
-
-                const highlightObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        // isIntersecting alone might not be enough with 33% margins
-                        // since we want it to turn OFF in the top/bottom thirds
-                        if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
-                            entry.target.classList.add('active-scroll');
-                        } else {
-                            entry.target.classList.remove('active-scroll');
-                        }
-                    });
-                }, observerOptions);
-
-                // Add scroll-highlight to Services numbers and Process steps
-                document.querySelectorAll('.service-number, .process-step').forEach(el => {
-                    highlightObserver.observe(el);
-                });
-            }
+            // Mobile Highlights are now static via CSS media queries.
+            // No script active highlights needed.
 
             // Form Submit Logic
             leadForm.addEventListener('submit', (e) => {
