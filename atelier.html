@@ -354,10 +354,10 @@
                     <span class="font-display font-medium text-lg tracking-[0.25em] text-atelier-text uppercase">PHUKET MUA</span>
                 </div>
                 <div class="hidden md:flex items-center gap-x-14">
-                    <a class="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#services">服務</a>
+                    <a class="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#services-v4">服務</a>
                     <a class="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#portfolio-featured">作品</a>
                     <a class="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#testimonials">評價</a>
-                    <a class="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#process">流程</a>
+                    <a class="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#process-v3">流程</a>
                 </div>
                 <div>
                     <a class="text-atelier-text font-chinese text-[15px] tracking-wide font-medium border-b border-transparent transition-colors duration-300 ease-out hover:text-atelier-muted pb-0.5 btn-trigger-modal" href="javascript:void(0)">
@@ -819,58 +819,80 @@
     </section>
 
     <!-- CONTACT -->
-    <section class="py-20 md:py-32 bg-atelier-bg border-t border-atelier-border" id="contact">
-        <div class="max-w-5xl mx-auto px-6 md:px-12 text-center">
-            <div class="flex flex-col items-center">
-                <span class="text-atelier-accent text-xs tracking-[0.25em] uppercase font-display mb-10 block">INQUIRY</span>
-                <h2 class="text-[30px] md:text-6xl font-chinese text-atelier-text leading-[1.3] font-normal mb-6 max-w-3xl"><span class="text-atelier-accent">私人</span>妝髮諮詢</h2>
-                <p class="text-atelier-muted font-chinese text-base md:text-lg mb-16 max-w-xl leading-relaxed">如有任何妝髮或造型問題，歡迎與我聯絡。</p>
-                <div class="flex flex-col items-center justify-center">
-                    <a class="bg-atelier-cta hover:bg-atelier-cta-hover text-atelier-bg px-12 md:px-16 py-5 md:py-5 rounded-none font-medium text-[15px] tracking-wide transition-all text-center uppercase shadow-none border border-atelier-cta btn-trigger-modal" href="javascript:void(0)">微信諮詢</a>
-                    <span class="font-chinese text-xs text-atelier-muted opacity-60 mt-6">一般於當日內回覆</span>
-                </div>
+    <section class="py-24 px-6 md:px-12 lg:px-24 flex flex-col items-center text-center relative overflow-hidden bg-atelier-bg border-t border-atelier-border" id="contact">
+        <div class="z-10 max-w-2xl mx-auto space-y-8">
+            <p class="text-xs tracking-[0.25em] uppercase text-atelier-muted/60 mb-4 font-display">INQUIRY</p>
+            <h2 class="text-4xl md:text-5xl font-chinese text-atelier-text leading-tight font-normal mb-2">
+                <span class="text-atelier-accent italic serif-font">私人</span>妝髮諮詢
+            </h2>
+            <p class="text-sm md:text-base text-atelier-muted font-chinese font-light max-w-md mx-auto leading-relaxed">
+                如有任何妝髮造型或相關問題，歡迎與我聯絡。
+            </p>
+            <div class="pt-8">
+                <a class="inline-block bg-atelier-cta text-atelier-bg px-14 py-4 text-sm tracking-[0.2em] transition-all duration-300 hover:opacity-90 btn-trigger-modal font-medium uppercase" href="javascript:void(0)">
+                    微信諮詢
+                </a>
             </div>
+            <p class="text-[10px] text-atelier-muted/60 pt-4 tracking-widest font-display uppercase">
+                一般於當日內回覆
+            </p>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-atelier-bg pt-32 pb-16 border-t border-atelier-border">
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24 items-start mb-24">
-                <div class="md:col-span-4">
-                    <div class="flex flex-col items-start">
-                        <span class="font-display font-medium text-xl tracking-[0.2em] text-atelier-text uppercase mb-4">PHUKET MUA</span>
-                        <span class="font-chinese text-[15px] text-atelier-muted tracking-wide mb-10">普吉島妝髮造型師</span>
+    <footer class="border-t border-atelier-border py-20 px-6 md:px-12 lg:px-24 bg-atelier-bg">
+        <div class="max-w-7xl mx-auto">
+            <!-- Mobile: Stacked, Center Alignment | Desktop: Horizontal spacing -->
+            <div class="flex flex-col md:flex-row md:justify-between items-center md:items-start gap-16 md:gap-8 text-center md:text-left">
+                
+                <!-- Navigation -->
+                <div class="flex flex-col items-center md:items-start space-y-8">
+                    <p class="text-xs uppercase tracking-[0.3em] text-atelier-muted/40 font-display">Navigation</p>
+                    <nav class="flex flex-col space-y-4">
+                        <a class="text-sm tracking-widest text-atelier-muted hover:text-atelier-text transition-colors font-chinese font-light" href="#services-v4">服務</a>
+                        <a class="text-sm tracking-widest text-atelier-muted hover:text-atelier-text transition-colors font-chinese font-light" href="#portfolio-featured">作品</a>
+                        <a class="text-sm tracking-widest text-atelier-muted hover:text-atelier-text transition-colors font-chinese font-light" href="#testimonials">評價</a>
+                        <a class="text-sm tracking-widest text-atelier-muted hover:text-atelier-text transition-colors font-chinese font-light" href="#process-v3">流程</a>
+                    </nav>
+                </div>
+
+                <!-- Separator for Mobile -->
+                <div class="w-8 h-px bg-atelier-accent/40 md:hidden"></div>
+
+                <!-- Social -->
+                <div class="flex flex-col items-center md:items-start space-y-8">
+                    <p class="text-xs uppercase tracking-[0.3em] text-atelier-muted/40 font-display">Social</p>
+                    <div class="flex flex-col space-y-4">
+                        <a class="text-sm tracking-wider text-atelier-muted hover:text-atelier-text transition-colors flex items-center justify-center md:justify-start gap-2 group font-chinese font-light" href="#">
+                            <span class="w-1 h-1 bg-transparent group-hover:bg-atelier-accent rounded-full transition-colors duration-300"></span>
+                            小紅書
+                        </a>
                     </div>
                 </div>
-                <!-- Nav / Social -->
-                <div class="md:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-12 text-xs tracking-widest uppercase">
-                        <div>
-                            <span class="opacity-40 mb-8 block">導覽</span>
-                            <ul class="space-y-4 text-atelier-muted font-chinese text-sm tracking-wide">
-                                <li><a href="#services" class="hover:text-atelier-text transition-colors duration-300 ease-out">服務</a></li>
-                                <li><a href="#portfolio-featured" class="hover:text-atelier-text transition-colors duration-300 ease-out">作品</a></li>
-                                <li><a href="#testimonials" class="hover:text-atelier-text transition-colors duration-300 ease-out">評價</a></li>
-                                <li><a href="#process" class="hover:text-atelier-text transition-colors duration-300 ease-out">流程</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <span class="opacity-40 mb-8 block">社交平台</span>
-                            <ul class="space-y-4 text-atelier-muted font-chinese text-sm tracking-wide">
-                                <li><a href="#" class="hover:text-atelier-text transition-colors duration-300 ease-out">小紅書</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <span class="opacity-40 mb-8 block">聯絡方式</span>
-                            <ul class="space-y-4 text-atelier-muted font-chinese text-sm tracking-wide">
-                                <li class="leading-relaxed">微信：<span class="text-atelier-text">PhuketMUA</span></li>
-                                <li class="mt-8 pt-4 border-t border-atelier-border/50 text-xs opacity-60">2026 年檔期開放預約</li>
-                            </ul>
-                        </div>
+
+                <!-- Separator for Mobile -->
+                <div class="w-8 h-px bg-atelier-accent/40 md:hidden"></div>
+
+                <!-- Contact -->
+                <div class="flex flex-col items-center md:items-start space-y-8">
+                    <p class="text-xs uppercase tracking-[0.3em] text-atelier-muted/40 font-display">Contact</p>
+                    <div class="space-y-3 font-chinese font-light">
+                        <p class="text-sm text-atelier-muted tracking-wide">
+                            微信：<span class="text-atelier-text">PHUKETMUA</span>
+                        </p>
+                        <p class="text-[10px] text-atelier-muted/40 uppercase tracking-widest font-display pt-4">
+                             2026 年檔期預定中
+                        </p>
+                    </div>
                 </div>
+
             </div>
-            <div class="pt-12 border-t border-atelier-border flex flex-col md:flex-row justify-between items-center gap-6">
-                <p class="text-xs text-atelier-muted uppercase tracking-[0.15em] font-display">© 2026 Phuket Atelier Makeup. All Rights Reserved.</p>
+
+            <!-- Copyright -->
+            <div class="pt-24 text-center">
+                <p class="text-[10px] text-atelier-muted/40 tracking-[0.25em] font-display uppercase">
+                   © 2026 PHUKET ATELIER MAKEUP. ALL RIGHTS RESERVED.
+               </p>
             </div>
         </div>
     </footer>
