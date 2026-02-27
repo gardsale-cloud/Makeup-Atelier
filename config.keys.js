@@ -1,6 +1,6 @@
 /**
  * Configuration for sensitive keys.
- * This file is gitignored to prevent leaking secrets.
+ * Updated: 2026-02-27
  */
 window.ATELIER_CONFIG = {
     // Replace with your actual Cloudflare Turnstile Site Key
