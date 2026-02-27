@@ -14,7 +14,7 @@
 
     <!-- Config & Security Resources -->
     <script src="config.keys.js"></script>
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 
     <!-- Tailwind CDN with Atelier Config -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -1003,7 +1003,7 @@
                         </div>
                         
                         <!-- Cloudflare Turnstile -->
-                        <div id="turnstile-container" class="cf-turnstile" data-size="invisible"></div>
+                        <div id="turnstile-container" class="cf-turnstile"></div>
 
                         <div class="flex justify-center">
                             <button type="submit" id="submit-btn" class="w-[70%] max-w-[240px] md:w-full bg-atelier-cta hover:bg-atelier-cta-hover text-atelier-bg font-display text-[15px] font-medium py-5 px-10 md:px-8 tracking-wide transition-all uppercase">
@@ -1091,11 +1091,19 @@
 
             saveUTM();
 
-            // --- Turnstile Setup ---
-            const turnstileContainer = document.getElementById('turnstile-container');
-            if (turnstileContainer && window.ATELIER_CONFIG) {
-                turnstileContainer.setAttribute('data-sitekey', window.ATELIER_CONFIG.turnstileSiteKey);
+            // --- Turnstile Logic ---
+            let turnstileWidgetId = null;
+            function initTurnstile() {
+                if (window.turnstile && window.ATELIER_CONFIG) {
+                    turnstileWidgetId = turnstile.render('#turnstile-container', {
+                        sitekey: window.ATELIER_CONFIG.turnstileSiteKey,
+                        appearance: 'interaction-only',
+                    });
+                } else {
+                    setTimeout(initTurnstile, 500);
+                }
             }
+            initTurnstile();
 
             function openModal() {
                 overlay.classList.add('active');
@@ -1142,8 +1150,26 @@
                 // 3. Attach UTMs
                 Object.assign(data, getStoredUTM());
 
-                // 4. Extract Turnstile Token
-                const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
+                // 4. Secure Turnstile Token Handling
+                let turnstileToken = turnstile.getResponse(turnstileWidgetId);
+                
+                if (!turnstileToken) {
+                    // Trigger explicit execution if no token ready
+                    try {
+                        turnstileToken = await new Promise((resolve, reject) => {
+                            turnstile.execute(turnstileWidgetId, {
+                                callback: (token) => resolve(token),
+                                'error-callback': (err) => reject(err)
+                            });
+                            // Timeout after 10s
+                            setTimeout(() => reject(new Error("Turnstile timeout")), 10000);
+                        });
+                    } catch (err) {
+                        statusText.classList.add('text-red-500');
+                        statusText.textContent = "驗證失效，請重新整理頁面。";
+                        return;
+                    }
+                }
                 data.turnstile = turnstileToken;
 
                 // UI State: Loading
