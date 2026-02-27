@@ -324,16 +324,19 @@
             opacity: 1;
         }
 
-        /* Mobile Positioning - Bottom Sheet Override */
+        /* Mobile Positioning - Full Screen Override */
         @media (max-width: 767px) {
             #contact-modal-overlay {
-                align-items: flex-end;
+                align-items: stretch;
                 padding: 0;
             }
             #contact-modal-container {
                 max-width: 100%;
+                height: 100%;
+                min-height: 100dvh;
                 transform: translateY(100%);
-                border-radius: 0; /* Removed rounded corners */
+                border-radius: 0;
+                overflow-y: auto;
             }
             #contact-modal-overlay.active #contact-modal-container {
                 transform: translateY(0);
@@ -942,7 +945,7 @@
                     <p class="text-xs uppercase tracking-[0.3em] text-atelier-muted/60 font-display">Contact</p>
                     <div class="space-y-3 font-chinese font-light">
                         <p class="text-sm text-atelier-muted tracking-wide">
-                            微信：<span class="text-atelier-text">PHUKETMUA</span>
+                            微信：<span class="text-atelier-text">Bbll6789</span>
                         </p>
                     </div>
                 </div>
@@ -1002,12 +1005,12 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
 
-            <div class="flex flex-col md:flex-row overflow-hidden bg-atelier-bg text-center md:text-left">
+            <div class="flex flex-col md:flex-row overflow-hidden bg-atelier-bg text-center md:text-left min-h-full">
                 <!-- Left: Identity & QR -->
                 <div class="flex w-full md:w-[42%] bg-[#F2EFE9] flex-col items-center justify-center p-8 md:p-10 lg:p-12 border-b md:border-b-0 md:border-r border-[#EDEBE7]">
                     <div class="text-center mb-10">
                         <span class="font-display text-xs tracking-[0.15em] text-atelier-muted uppercase block mb-3 font-medium">微信聯絡</span>
-                        <div class="font-serif italic text-2xl text-atelier-text">PhuketMUA</div>
+                        <div class="font-serif italic text-2xl text-atelier-text">Bbll6789</div>
                     </div>
                     
                     <div class="bg-white p-4 shadow-sm mb-6 border border-atelier-border/50">
