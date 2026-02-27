@@ -1078,7 +1078,8 @@
                 utmKeys.forEach(key => {
                     const value = params.get(key);
                     if (value) {
-                        utmData[key] = value;
+                        const cleanKey = key.replace('utm_', '');
+                        utmData[cleanKey] = value;
                         hasUTM = true;
                     }
                 });
