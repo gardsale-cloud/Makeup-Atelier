@@ -15,6 +15,43 @@
     <!-- Config & Security Resources -->
     <script src="config.keys.js"></script>
 
+    <!-- Marketing Analytics -->
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+        ym(92936100, 'init', {webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/92936100" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '667496576361531');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=667496576361531&ev=PageView&noscript=1" /></noscript>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11100467416"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-11100467416');
+    </script>
+
 
     <!-- Tailwind CDN with Atelier Config -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -1099,6 +1136,53 @@
             }
 
             saveUTM();
+            
+            // --- Marketing Analytics Trackers ---
+            
+            // 1. 60s User Activity Tracker (Vanilla JS)
+            const activityOptions = { timer: 10, target: 6, yandexCounter: 92936100 };
+            let hasActivitySinceLastCheck = false;
+            let targetReachedCount = 0;
+            let activitySended = false;
+
+            function startUserActivityTracker() {
+                ['scroll', 'click', 'dblclick', 'mousemove', 'keydown', 'keyup'].forEach(event => {
+                    document.addEventListener(event, () => { hasActivitySinceLastCheck = true; }, { passive: true });
+                });
+
+                setInterval(() => {
+                    if (hasActivitySinceLastCheck) {
+                        hasActivitySinceLastCheck = false;
+                        checkActivityTarget();
+                    }
+                }, activityOptions.timer * 1000);
+            }
+
+            function checkActivityTarget() {
+                targetReachedCount++;
+                if (!activitySended && targetReachedCount >= activityOptions.target) {
+                    // Yandex Metrika
+                    if (window.ym) ym(activityOptions.yandexCounter, 'reachGoal', 'TargetLoad');
+                    // Meta Pixel
+                    if (typeof fbq === 'function') fbq('track', 'Search');
+                    // Google Ads
+                    if (typeof gtag === 'function') gtag('event', 'conversion', { 'send_to': 'AW-11100467416/Gw1xCO2Eg5UYENjhjq0p' });
+
+                    activitySended = true;
+                    console.log('Marketing: 60s target reached.');
+                }
+            }
+            startUserActivityTracker();
+
+            // 2. Xiaohongshu Click Tracking
+            document.addEventListener('click', (e) => {
+                const link = e.target.closest('a[href*="xiaohongshu.com/user/profile/63d5ee2b0000000026010e28"]');
+                if (!link || link.dataset.sent === '1') return;
+                link.dataset.sent = '1';
+
+                if (typeof gtag === 'function') gtag('event', 'conversion', { 'send_to': 'AW-11100467416/x6CCCODg7N8aENjhjq0p' });
+                if (window.ym) ym(92936100, 'reachGoal', 'xhs_click');
+            });
 
 
 
@@ -1170,6 +1254,14 @@
                     statusText.classList.remove('text-red-500');
                     statusText.textContent = "已收到，我們會盡快聯繫您";
                     leadForm.reset();
+
+                    // --- Analytics: Form Success Conversion ---
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'conversion', { 'send_to': 'AW-11100467416/016lCNqU7t8aENjhjq0p' });
+                    }
+                    if (window.ym) {
+                        ym(92936100, 'reachGoal', 'submit_form');
+                    }
                     
                     setTimeout(() => {
                         closeModal();
