@@ -1072,20 +1072,29 @@
             function saveUTM() {
                 const params = new URLSearchParams(window.location.search);
                 const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
+                let utmData = {};
+                let hasUTM = false;
+
                 utmKeys.forEach(key => {
                     const value = params.get(key);
-                    if (value) localStorage.setItem(key, value);
+                    if (value) {
+                        utmData[key] = value;
+                        hasUTM = true;
+                    }
                 });
+
+                if (hasUTM) {
+                    localStorage.setItem('utm_data', JSON.stringify(utmData));
+                }
             }
 
             function getStoredUTM() {
-                return {
-                    utm_source: localStorage.getItem("utm_source") || "",
-                    utm_medium: localStorage.getItem("utm_medium") || "",
-                    utm_campaign: localStorage.getItem("utm_campaign") || "",
-                    utm_term: localStorage.getItem("utm_term") || "",
-                    utm_content: localStorage.getItem("utm_content") || ""
-                };
+                const utmRaw = localStorage.getItem('utm_data');
+                try {
+                    return utmRaw ? JSON.parse(utmRaw) : null;
+                } catch (e) {
+                    return null;
+                }
             }
 
             saveUTM();
@@ -1135,7 +1144,9 @@
                 }
 
                 // 3. Attach UTMs
-                Object.assign(data, getStoredUTM());
+                const utmData = getStoredUTM();
+                data.utm = utmData;
+                console.log('Submitting UTM:', utmData);
 
 
 
