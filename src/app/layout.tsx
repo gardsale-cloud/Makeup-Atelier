@@ -9,18 +9,23 @@ import ClientTracker from "@/components/ClientTracker";
 const manrope = Manrope({
     subsets: ["latin"],
     variable: "--font-manrope",
+    display: "swap",
 });
 
 const notoVariantSC = Noto_Sans_SC({
     subsets: ["latin"],
-    weight: ["300", "400", "500", "700"],
+    weight: ["400", "500"],
     variable: "--font-noto-sc",
+    display: "swap",
+    preload: false,
 });
 
 const notoVariantHK = Noto_Sans_HK({
     subsets: ["latin"],
-    weight: ["300", "400", "500", "700"],
+    weight: ["400", "500"],
     variable: "--font-noto-hk",
+    display: "swap",
+    preload: false,
 });
 
 export const metadata: Metadata = {
@@ -36,6 +41,9 @@ export default function RootLayout({
     return (
         <html lang="zh-HK" className="scroll-smooth">
             <head>
+                {/* Preconnect for fonts */}
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
                 {/* Yandex.Metrika counter */}
                 <Script id="yandex-metrika" strategy="lazyOnload">
