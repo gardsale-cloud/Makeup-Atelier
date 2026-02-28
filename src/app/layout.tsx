@@ -31,6 +31,12 @@ const notoVariantHK = Noto_Sans_HK({
 export const metadata: Metadata = {
     title: "Phuket Private Makeup Artist | 普吉島私人妝髮造型師",
     description: "Phuket Private Makeup Artist for overseas weddings, travel shoots, and special occasions. One-on-one service with a focus on quality and detail.",
+    alternates: {
+        languages: {
+            "zh-HK": "/",
+            "en": "/en",
+        },
+    },
 };
 
 export default function RootLayout({
@@ -87,8 +93,6 @@ export default function RootLayout({
             <body className={`${manrope.variable} ${notoVariantSC.variable} ${notoVariantHK.variable} antialiased font-display`}>
                 <ClientTracker />
                 {children}
-                <ContactModalAtelier />
-                <PrivacyModalAtelier />
             </body>
         </html>
     );

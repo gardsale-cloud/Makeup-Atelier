@@ -16,14 +16,19 @@ const NavbarAtelier = () => {
                         <a onClick={handleScroll} className="cursor-pointer text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#portfolio">作品</a>
                         <a onClick={handleScroll} className="cursor-pointer text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#testimonials">評價</a>
                         <a onClick={handleScroll} className="cursor-pointer text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#process">流程</a>
-                    </div>
-                    <div>
                         <button
                             onClick={openContactModal}
-                            className="text-atelier-text font-chinese text-[15px] tracking-wide font-medium border-b border-transparent transition-colors duration-300 ease-out hover:text-atelier-muted pb-0.5"
+                            className="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide cursor-pointer"
                         >
                             微信諮詢
                         </button>
+                    </div>
+                    <div className="flex items-center">
+                        <div className="flex items-center gap-x-2 text-[11px] tracking-[0.2em] font-display uppercase">
+                            <span className="text-atelier-text font-medium">中文</span>
+                            <span className="text-atelier-border">/</span>
+                            <a href="/en/" className="text-atelier-muted hover:text-atelier-text transition-colors duration-300 cursor-pointer">EN</a>
+                        </div>
                     </div>
                 </div>
             </div>

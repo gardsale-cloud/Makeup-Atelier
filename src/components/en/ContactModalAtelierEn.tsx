@@ -12,7 +12,7 @@ declare global {
     }
 }
 
-const ContactModalAtelier = () => {
+const ContactModalAtelierEn = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error" | "empty">("idle");
     const [wechatId, setWechatId] = useState("");
@@ -32,28 +32,17 @@ const ContactModalAtelier = () => {
         e.preventDefault();
         if (status === "loading") return;
 
-        // 0. Empty field check
         if (!wechatId.trim()) {
             setStatus("empty");
             return;
         }
 
-        // 1. Honeypot check
-        if (honeypot) {
-            console.log("Honeypot caught a bot.");
-            return;
-        }
+        if (honeypot) return;
 
-        // 2. Interaction time check (min 3 seconds from modal open)
-        if (Date.now() - pageLoadTime < 3000) {
-            console.log("Submissions too fast.");
-            return;
-        }
+        if (Date.now() - pageLoadTime < 3000) return;
 
-        // Clear empty state when fetching
         setStatus("loading");
 
-        // 3. Extract UTM from current URL
         const params = new URLSearchParams(window.location.search);
 
         const payload = {
@@ -74,8 +63,6 @@ const ContactModalAtelier = () => {
 
             if (response.ok) {
                 setStatus("success");
-
-                // --- Analytics: Form Success Conversion ---
                 if (typeof window !== "undefined") {
                     if (window.gtag) {
                         window.gtag("event", "conversion", { send_to: "AW-11100467416/016lCNqU7t8aENjhjq0p" });
@@ -84,7 +71,6 @@ const ContactModalAtelier = () => {
                         window.ym(92936100, "reachGoal", "submit_form");
                     }
                 }
-
                 setWechatId("");
             } else {
                 throw new Error(`Server returned ${response.status}`);
@@ -92,8 +78,6 @@ const ContactModalAtelier = () => {
         } catch (err) {
             console.error("Submission error:", err);
             setStatus("error");
-
-            // --- Analytics: Form Error Event ---
             if (typeof window !== "undefined") {
                 if (window.ym) {
                     window.ym(92936100, "reachGoal", "submit_form_error");
@@ -102,7 +86,6 @@ const ContactModalAtelier = () => {
         }
     };
 
-    // Close on escape key
     useEffect(() => {
         const handleEsc = (e: KeyboardEvent) => {
             if (e.key === "Escape") setIsOpen(false);
@@ -144,27 +127,26 @@ const ContactModalAtelier = () => {
                     {/* Left: Identity & QR */}
                     <div className="flex w-full md:w-[42%] bg-[#F2EFE9] flex-col items-center justify-center p-8 md:p-10 lg:p-12 border-b md:border-b-0 md:border-r border-[#EDEBE7]">
                         <div className="text-center mb-10">
-                            <span className="font-display text-xs tracking-[0.15em] text-atelier-muted uppercase block mb-3 font-medium">微信聯絡</span>
+                            <span className="font-display text-xs tracking-[0.15em] text-atelier-muted uppercase block mb-3 font-medium">Connect via WeChat</span>
                             <div className="font-serif italic text-2xl text-atelier-text">Bbll6789</div>
                         </div>
 
                         <div className="bg-white p-4 shadow-sm mb-6 border border-atelier-border/50">
                             <img src={getAssetPath("/images/WeChatQR.jpg")} alt="WeChat QR Code" className="w-28 h-28 object-contain opacity-90" />
                         </div>
-                        <span className="text-xs font-display tracking-[0.15em] text-atelier-muted uppercase opacity-60">掃碼聯繫詳情</span>
+                        <span className="text-xs font-display tracking-[0.15em] text-atelier-muted uppercase opacity-60">Scan to chat</span>
                     </div>
 
                     {/* Right: Direct Inquiry */}
                     <div className="w-full md:w-[58%] p-6 pt-8 md:p-12 md:pt-20 lg:p-16 flex flex-col justify-center">
                         <header className="mb-12 md:mb-8">
-                            <h2 className="font-chinese text-2xl text-atelier-text mb-4 font-normal tracking-tight md:text-left">私人妝髮諮詢</h2>
-                            <p className="font-chinese font-light text-base text-atelier-muted leading-relaxed md:text-left">
-                                歡迎留下您的微信號，我會與您聯絡。
+                            <h2 className="font-display text-2xl text-atelier-text mb-4 font-normal tracking-tight md:text-left uppercase">Private Inquiry</h2>
+                            <p className="font-display font-light text-base text-atelier-muted leading-relaxed md:text-left">
+                                Leave your WeChat ID, and I will contact you shortly.
                             </p>
                         </header>
 
                         <form onSubmit={handleSubmit} className="space-y-8">
-                            {/* Honeypot */}
                             <input
                                 type="text"
                                 value={honeypot}
@@ -181,42 +163,41 @@ const ContactModalAtelier = () => {
                                         if (status === "empty") setStatus("idle");
                                     }}
                                     disabled={isSubmitting || isSuccess}
-                                    className="modal-input font-chinese w-[75%] max-w-[280px] md:max-w-full text-center md:text-left"
-                                    placeholder="您的微信號 (WeChat ID)"
+                                    className="modal-input font-display w-[75%] max-w-[280px] md:max-w-full text-center md:text-left"
+                                    placeholder="Your WeChat ID"
                                 />
                             </div>
 
-                            {/* Single button element — never remounted, zero layout shift */}
                             <div className="flex justify-center md:justify-start">
                                 <button
                                     type="submit"
                                     disabled={isSubmitting || isError || isSuccess}
                                     className={cn(
-                                        "w-[75%] max-w-[280px] md:w-full py-5 px-10 md:px-8 font-chinese text-[15px] font-medium transition-colors duration-200 border",
+                                        "w-[75%] max-w-[280px] md:w-full py-5 px-10 md:px-8 font-display text-[15px] font-medium transition-colors duration-200 border uppercase tracking-widest",
                                         isError
                                             ? "bg-red-50 border-red-200 text-red-600 cursor-default"
                                             : isSuccess
                                                 ? "bg-emerald-50 border-emerald-200 text-emerald-700 cursor-default"
                                                 : isEmpty
                                                     ? "bg-amber-50 border-amber-200 text-amber-700 cursor-pointer"
-                                                    : "bg-atelier-cta border-transparent text-atelier-bg hover:opacity-90 tracking-wide uppercase font-display disabled:opacity-50"
+                                                    : "bg-atelier-cta border-transparent text-atelier-bg hover:opacity-90 disabled:opacity-50"
                                     )}
                                 >
                                     {isError
-                                        ? "送出未成功，請掃碼聯繫。"
+                                        ? "Failed. Please scan QR."
                                         : isSuccess
-                                            ? "已收到諮詢 ✓"
+                                            ? "Inquiry Received ✓"
                                             : isEmpty
-                                                ? "請填寫微信號"
+                                                ? "Enter WeChat ID"
                                                 : isSubmitting
-                                                    ? "發送中..."
-                                                    : "發送"}
+                                                    ? "Sending..."
+                                                    : "Send"}
                                 </button>
                             </div>
                         </form>
 
                         <p className="text-xs text-atelier-muted mt-6 text-center font-display tracking-wide opacity-40 uppercase">
-                            一般於當日內回覆
+                            Responses generally within 24h
                         </p>
                     </div>
                 </div>
@@ -225,4 +206,4 @@ const ContactModalAtelier = () => {
     );
 };
 
-export default ContactModalAtelier;
+export default ContactModalAtelierEn;

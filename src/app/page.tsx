@@ -9,6 +9,9 @@ import FAQAtelier from "@/components/FAQAtelier";
 import ContactAtelier from "@/components/ContactAtelier";
 import FooterAtelier from "@/components/FooterAtelier";
 
+import ContactModalAtelier from "@/components/ContactModalAtelier";
+import PrivacyModalAtelier from "@/components/PrivacyModalAtelier";
+
 export default function Home() {
     return (
         <main className="flex flex-col min-h-screen">
@@ -22,6 +25,10 @@ export default function Home() {
             <FAQAtelier />
             <ContactAtelier />
             <FooterAtelier />
+
+            {/* Localized Modals */}
+            <ContactModalAtelier />
+            <PrivacyModalAtelier />
         </main>
     );
 }

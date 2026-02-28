@@ -3,20 +3,20 @@
 import React from "react";
 import { openContactModal } from "@/utils/contact";
 
-const ServicesAtelier = () => {
+const ServicesAtelierEn = () => {
     return (
         <section className="py-24 md:py-32 bg-atelier-bg" id="services">
             <div className="max-w-7xl mx-auto px-6 md:px-12">
                 {/* Header */}
                 <div className="mb-24 md:mb-24">
                     <div className="flex items-center gap-4 mb-6">
-                        <span className="text-xs tracking-[0.3em] text-atelier-accent uppercase font-display">Styling Services</span>
+                        <span className="text-xs tracking-[0.3em] text-atelier-accent uppercase font-display">Styling Expertise</span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-chinese text-atelier-text leading-tight font-normal mb-5">
-                        妝髮<span className="serif-font italic text-atelier-accent">服務</span>項目
+                    <h2 className="text-4xl md:text-5xl font-display text-atelier-text leading-tight font-normal mb-5 uppercase tracking-tight">
+                        Tailored <span className="serif-font italic text-atelier-accent">Services</span>
                     </h2>
-                    <p className="text-atelier-muted font-chinese font-light text-[15px] sm:text-base max-w-xl leading-relaxed">
-                        根據不同場合與拍攝需求，設計合適的妝髮造型。
+                    <p className="text-atelier-muted font-display font-light text-[15px] sm:text-base max-w-xl leading-relaxed">
+                        Thoughtful makeup and hair design tailored to your specific occasion and lighting environment.
                     </p>
                     <div className="h-px w-20 bg-atelier-accent mt-8"></div>
                 </div>
@@ -30,12 +30,12 @@ const ServicesAtelier = () => {
                             <span className="block text-8xl md:text-7xl font-serif text-atelier-accent opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500 mb-4 font-normal select-none italic">
                                 01
                             </span>
-                            <h3 className="text-2xl md:text-4xl font-chinese text-atelier-text mb-2 font-normal">婚禮妝髮造型</h3>
+                            <h3 className="text-2xl md:text-4xl font-display text-atelier-text mb-2 font-normal uppercase tracking-wide">Wedding Styling</h3>
                             <div className="text-[10px] sm:text-xs tracking-[0.2em] text-atelier-accent uppercase font-display mb-8">
-                                Wedding Makeup & Hair
+                                Exceptional Detail
                             </div>
-                            <p className="text-atelier-muted font-chinese font-light text-base leading-[1.9] mb-8 md:mb-12 max-w-lg">
-                                服務海外婚禮新娘，根據禮服、場地與儀式流程設計整體妝髮方向。可預約試妝與全天跟妝服務。
+                            <p className="text-atelier-muted font-display font-light text-base leading-[1.8] mb-8 md:mb-12 max-w-lg">
+                                Focused styling for ceremonies and receptions. Includes thorough consultation to refine the aesthetic direction. Full day bridal accompaniment and trial sessions available.
                             </p>
                         </div>
                         <div className="flex flex-row items-end justify-between gap-4 pt-8 border-t border-atelier-border w-full md:w-[90%]">
@@ -49,7 +49,7 @@ const ServicesAtelier = () => {
                                 onClick={openContactModal}
                                 className="inline-flex items-center text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity pb-1 border-b border-atelier-border font-display uppercase cursor-pointer"
                             >
-                                查詢服務檔期 <span className="ml-2 transition-transform duration-300 ease-out group-hover:translate-x-1.5 inline-block">→</span>
+                                Inquire <span className="ml-2 transition-transform duration-300 ease-out group-hover:translate-x-1.5 inline-block">→</span>
                             </button>
                         </div>
                     </div>
@@ -62,12 +62,12 @@ const ServicesAtelier = () => {
                                 <span className="block text-8xl md:text-4xl font-serif text-atelier-accent opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500 mb-4 font-normal select-none italic">
                                     02
                                 </span>
-                                <h3 className="text-[20px] sm:text-2xl font-chinese text-atelier-text mb-1 font-normal">旅拍 / 婚紗攝影妝髮</h3>
+                                <h3 className="text-[20px] sm:text-2xl font-display text-atelier-text mb-1 font-normal uppercase tracking-wide">Travel & Photography</h3>
                                 <div className="text-[10px] sm:text-xs tracking-[0.2em] text-atelier-accent uppercase font-display mb-5">
-                                    Pre-Wedding styling
+                                    Photography-Ready Styling
                                 </div>
-                                <p className="text-atelier-muted font-chinese font-light text-base leading-relaxed mb-8">
-                                    適合婚紗攝影與旅拍拍攝。妝髮設計會考慮拍攝光線、場景與鏡頭呈現效果。可提供造型更換與補妝。
+                                <p className="text-atelier-muted font-display font-light text-base leading-relaxed mb-8">
+                                    Ideal for pre-wedding and lifestyle shoots. Styling is optimized for natural lighting and on-camera definition.
                                 </p>
                             </div>
                             <div className="flex flex-row items-end justify-between gap-2 pt-6 border-t border-atelier-border">
@@ -81,7 +81,7 @@ const ServicesAtelier = () => {
                                     onClick={openContactModal}
                                     className="inline-flex items-center text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity pb-1 border-b border-atelier-border font-display uppercase cursor-pointer"
                                 >
-                                    查詢服務檔期 <span className="ml-2 transition-transform duration-300 ease-out group-hover:translate-x-1.5 inline-block">→</span>
+                                    Inquire <span className="ml-2 transition-transform duration-300 ease-out group-hover:translate-x-1.5 inline-block">→</span>
                                 </button>
                             </div>
                         </div>
@@ -92,12 +92,12 @@ const ServicesAtelier = () => {
                                 <span className="block text-8xl md:text-4xl font-serif text-atelier-accent opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500 mb-4 font-normal select-none italic">
                                     03
                                 </span>
-                                <h3 className="text-[20px] sm:text-2xl font-chinese text-atelier-text mb-1 font-normal">活動及晚宴妝髮</h3>
+                                <h3 className="text-[20px] sm:text-2xl font-display text-atelier-text mb-1 font-normal uppercase tracking-wide">Events & Gala</h3>
                                 <div className="text-[10px] sm:text-xs tracking-[0.2em] text-atelier-accent uppercase font-display mb-5">
-                                    Event & Evening Styling
+                                    Professional Appearance
                                 </div>
-                                <p className="text-atelier-muted font-chinese font-light text-base leading-relaxed mb-8">
-                                    適用於晚宴、品牌活動與正式場合。妝容方向依活動性質與服裝風格調整。可提供上門妝髮服務。
+                                <p className="text-atelier-muted font-display font-light text-base leading-relaxed mb-8">
+                                    Custom styling for dinners, brand events, and formal occasions. On-site service available at your villa or hotel.
                                 </p>
                             </div>
                             <div className="flex flex-row items-end justify-between gap-2 pt-6 border-t border-atelier-border">
@@ -111,7 +111,7 @@ const ServicesAtelier = () => {
                                     onClick={openContactModal}
                                     className="inline-flex items-center text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity pb-1 border-b border-atelier-border font-display uppercase cursor-pointer"
                                 >
-                                    查詢服務檔期 <span className="ml-2 transition-transform duration-300 ease-out group-hover:translate-x-1.5 inline-block">→</span>
+                                    Inquire <span className="ml-2 transition-transform duration-300 ease-out group-hover:translate-x-1.5 inline-block">→</span>
                                 </button>
                             </div>
                         </div>
@@ -122,4 +122,4 @@ const ServicesAtelier = () => {
     );
 };
 
-export default ServicesAtelier;
+export default ServicesAtelierEn;
