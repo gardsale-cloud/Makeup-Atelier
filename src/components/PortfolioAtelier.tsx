@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import { getAssetPath } from "@/utils/paths";
+import Image from "next/image";
 
 const PortfolioAtelier = () => {
     return (
@@ -22,10 +21,12 @@ const PortfolioAtelier = () => {
                     {/* Left: Anchor Column (Curated Primary - 58%) */}
                     <div className="flex flex-col">
                         <div className="aspect-[4/5] relative overflow-hidden portfolio-image-wrapper w-full">
-                            <img
-                                src={getAssetPath("/images/portfolio/portfolio_02.jpg")}
+                            <Image
+                                src="/images/portfolio/portfolio_02.jpg"
                                 alt="Minimal Bridal Portrait"
-                                className="w-full h-full object-cover"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, 50vw"
                             />
                         </div>
                     </div>
@@ -36,10 +37,12 @@ const PortfolioAtelier = () => {
                             {/* Top Image (Clean Secondary Presence) */}
                             <div className="w-full">
                                 <div className="aspect-[4/4.7] relative overflow-hidden portfolio-image-wrapper w-full">
-                                    <img
-                                        src={getAssetPath("/images/portfolio/portfolio_01.jpg")}
+                                    <Image
+                                        src="/images/portfolio/portfolio_01.jpg"
                                         alt="Selected Look 1"
-                                        className="w-full h-full object-cover"
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 768px) 100vw, 40vw"
                                     />
                                 </div>
                             </div>
@@ -48,18 +51,22 @@ const PortfolioAtelier = () => {
                             <div className="grid grid-cols-2 gap-8 items-stretch">
                                 {/* Bottom-Left */}
                                 <div className="relative overflow-hidden portfolio-image-wrapper aspect-[4/5]">
-                                    <img
-                                        src={getAssetPath("/images/portfolio/portfolio_03.jpg")}
+                                    <Image
+                                        src="/images/portfolio/portfolio_03.jpg"
                                         alt="Support Look 1"
-                                        className="w-full h-full object-cover"
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 768px) 50vw, 20vw"
                                     />
                                 </div>
                                 {/* Bottom-Right */}
                                 <div className="relative overflow-hidden portfolio-image-wrapper aspect-[4/5]">
-                                    <img
-                                        src={getAssetPath("/images/portfolio/portfolio_04.jpg")}
+                                    <Image
+                                        src="/images/portfolio/portfolio_04.jpg"
                                         alt="Support Look 2"
-                                        className="w-full h-full object-cover"
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 768px) 50vw, 20vw"
                                     />
                                 </div>
                             </div>

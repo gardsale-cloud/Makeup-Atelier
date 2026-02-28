@@ -36,11 +36,9 @@ export default function RootLayout({
     return (
         <html lang="zh-HK" className="scroll-smooth">
             <head>
-                <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
-                <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
                 {/* Yandex.Metrika counter */}
-                <Script id="yandex-metrika" strategy="afterInteractive">
+                <Script id="yandex-metrika" strategy="lazyOnload">
                     {`
                         (function(m,e,t,r,i,k,a){
                             m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -53,7 +51,7 @@ export default function RootLayout({
                 </Script>
 
                 {/* Meta Pixel Code */}
-                <Script id="fb-pixel" strategy="afterInteractive">
+                <Script id="fb-pixel" strategy="lazyOnload">
                     {`
                         !function(f,b,e,v,n,t,s)
                         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -68,9 +66,8 @@ export default function RootLayout({
                     `}
                 </Script>
 
-                {/* Google Tag */}
-                <Script src="https://www.googletagmanager.com/gtag/js?id=AW-11100467416" strategy="afterInteractive" />
-                <Script id="google-tag" strategy="afterInteractive">
+                <Script src="https://www.googletagmanager.com/gtag/js?id=AW-11100467416" strategy="lazyOnload" />
+                <Script id="google-tag" strategy="lazyOnload">
                     {`
                       window.dataLayer = window.dataLayer || [];
                       function gtag(){dataLayer.push(arguments);}

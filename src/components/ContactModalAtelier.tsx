@@ -47,7 +47,6 @@ const ContactModalAtelier = () => {
         }
 
         setStatus("loading");
-        setMessage("");
 
         // 3. Extract UTM from current URL
         const params = new URLSearchParams(window.location.search);
@@ -70,7 +69,6 @@ const ContactModalAtelier = () => {
 
             if (response.ok) {
                 setStatus("success");
-                setMessage("已收到，我們會盡快聯繫您");
 
                 // --- Analytics: Form Success Conversion ---
                 if (typeof window !== 'undefined') {
@@ -83,22 +81,12 @@ const ContactModalAtelier = () => {
                 }
 
                 setWechatId("");
-                setTimeout(() => {
-                    setIsOpen(false);
-                    setTimeout(() => {
-                        setStatus("idle");
-                        setMessage("");
-                    }, 500);
-                }, 2000);
             } else {
-                // Handle non-200 responses
                 throw new Error(`Server returned ${response.status}`);
             }
         } catch (err) {
-            // Catch network errors and server errors
             console.error("Submission error:", err);
             setStatus("error");
-            setMessage("發送失敗，請稍後再試。");
         }
     };
 
@@ -113,11 +101,15 @@ const ContactModalAtelier = () => {
 
     if (!isOpen && status === "idle") return null;
 
+    const isSuccess = status === "success";
+    const isError = status === "error";
+    const isSubmitting = status === "loading";
+
     return (
         <div
             id="contact-modal-overlay"
             className={cn(isOpen && "active")}
-            onClick={() => status !== "loading" && setIsOpen(false)}
+            onClick={() => !isSubmitting && setIsOpen(false)}
         >
             <div
                 id="contact-modal-container"
@@ -127,7 +119,7 @@ const ContactModalAtelier = () => {
                 <button
                     onClick={() => setIsOpen(false)}
                     className="absolute top-6 right-6 text-atelier-text opacity-30 hover:opacity-100 transition-opacity z-20 p-2"
-                    disabled={status === "loading"}
+                    disabled={isSubmitting}
                 >
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                         <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -149,58 +141,68 @@ const ContactModalAtelier = () => {
                         <span className="text-xs font-display tracking-[0.15em] text-atelier-muted uppercase opacity-60">掃碼聯繫詳情</span>
                     </div>
 
-                    {/* Right: Direct Inquiry */}
-                    <div className="w-full md:w-[58%] p-8 pt-10 md:p-12 md:pt-20 lg:p-16 flex flex-col justify-center">
-                        <header className="mb-12 md:mb-8">
-                            <h2 className="font-chinese text-2xl text-atelier-text mb-4 font-normal tracking-tight md:text-left">私人妝髮諮詢</h2>
-                            <p className="font-chinese font-light text-base text-atelier-muted leading-relaxed md:text-left">
-                                歡迎留下您的微信號，我會與您聯絡。
-                            </p>
-                        </header>
-
-                        <form onSubmit={handleSubmit} className="space-y-8">
-                            {/* Honeypot */}
-                            <input
-                                type="text"
-                                value={honeypot}
-                                onChange={(e) => setHoneypot(e.target.value)}
-                                style={{ display: 'none' }}
-                            />
-
-                            <div className="space-y-6 flex justify-center md:justify-start">
-                                <input
-                                    type="text"
-                                    value={wechatId}
-                                    onChange={(e) => setWechatId(e.target.value)}
-                                    required
-                                    disabled={status === "loading" || status === "success"}
-                                    className="modal-input font-chinese w-[75%] max-w-[280px] md:max-w-full text-center md:text-left"
-                                    placeholder="您的微信號 (WeChat ID)"
-                                />
+                    {/* Right: Direct Inquiry / Success View */}
+                    <div className="w-full md:w-[58%] p-8 pt-10 md:p-12 md:pt-20 lg:p-16 flex flex-col justify-center min-h-[460px]">
+                        {isSuccess ? (
+                            <div className="flex flex-col items-center md:items-start transition-all duration-500 animate-in fade-in slide-in-from-bottom-4">
+                                <h2 className="font-chinese text-2xl text-atelier-text font-normal tracking-tight">已收到您的諮詢 ✨</h2>
                             </div>
+                        ) : (
+                            <>
+                                <header className="mb-12 md:mb-8">
+                                    <h2 className="font-chinese text-2xl text-atelier-text mb-4 font-normal tracking-tight md:text-left">私人妝髮諮詢</h2>
+                                    <p className="font-chinese font-light text-base text-atelier-muted leading-relaxed md:text-left">
+                                        歡迎留下您的微信號，我會與您聯絡。
+                                    </p>
+                                </header>
 
-                            <div className="flex justify-center md:justify-start">
-                                <button
-                                    type="submit"
-                                    disabled={status === "loading" || status === "success"}
-                                    className="w-[75%] max-w-[280px] md:w-full bg-atelier-cta hover:bg-atelier-cta-hover text-atelier-bg font-display text-[15px] font-medium py-5 px-10 md:px-8 tracking-wide transition-all uppercase disabled:opacity-50"
-                                >
-                                    {status === "loading" ? "提交中..." : status === "success" ? "已提交" : "發送"}
-                                </button>
-                            </div>
+                                <form onSubmit={handleSubmit} className="space-y-6">
+                                    {/* Honeypot */}
+                                    <input
+                                        type="text"
+                                        value={honeypot}
+                                        onChange={(e) => setHoneypot(e.target.value)}
+                                        style={{ display: 'none' }}
+                                    />
 
-                            {message && (
-                                <p className={cn(
-                                    "text-xs font-display tracking-wide text-center",
-                                    status === "error" ? "text-red-500 opacity-100" : "text-atelier-muted opacity-60"
-                                )}>
-                                    {message}
+                                    <div className="space-y-6 flex justify-center md:justify-start">
+                                        <input
+                                            type="text"
+                                            value={wechatId}
+                                            onChange={(e) => setWechatId(e.target.value)}
+                                            required
+                                            disabled={isSubmitting}
+                                            className="modal-input font-chinese w-[75%] max-w-[280px] md:max-w-full text-center md:text-left"
+                                            placeholder="您的微信號 (WeChat ID)"
+                                        />
+                                    </div>
+
+                                    {/* Error Message Area - Reserved height to prevent layout shift */}
+                                    <div className="min-h-[32px] flex items-center justify-center md:justify-start">
+                                        <div className={cn(
+                                            "text-xs font-chinese tracking-wide leading-relaxed transition-all duration-300",
+                                            isError ? "text-red-500 opacity-100 translate-y-0" : "opacity-0 translate-y-1"
+                                        )}>
+                                            <p>發送失敗，請稍後再試。</p>
+                                            <p>或直接透過 WeChat 聯繫：Bbll6789</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex justify-center md:justify-start">
+                                        <button
+                                            type="submit"
+                                            disabled={isSubmitting}
+                                            className="w-[75%] max-w-[280px] md:w-full bg-atelier-cta hover:bg-atelier-cta-hover text-atelier-bg font-display text-[15px] font-medium py-5 px-10 md:px-8 tracking-wide transition-all uppercase disabled:opacity-50"
+                                        >
+                                            {isSubmitting ? "發送中..." : "發送"}
+                                        </button>
+                                    </div>
+                                </form>
+                                <p className="text-xs text-atelier-muted mt-6 text-center md:text-left font-display tracking-[0.3em] opacity-40 uppercase font-light">
+                                    一般於當日內回覆
                                 </p>
-                            )}
-                        </form>
-                        <p className="text-xs text-atelier-muted mt-6 text-center font-display tracking-wide opacity-40 uppercase">
-                            一般於當日內回覆
-                        </p>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
