@@ -29,16 +29,6 @@ const ContactModalAtelier = () => {
         return () => window.removeEventListener("open-contact-modal", handleOpen);
     }, []);
 
-    // --- UTM Logic ---
-    const getStoredUTM = () => {
-        if (typeof window === 'undefined') return null;
-        const utmRaw = localStorage.getItem('utm_data');
-        try {
-            return utmRaw ? JSON.parse(utmRaw) : null;
-        } catch (e) {
-            return null;
-        }
-    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -59,18 +49,23 @@ const ContactModalAtelier = () => {
         setStatus("loading");
         setMessage("");
 
-        const utmData = getStoredUTM();
+        // 3. Extract UTM from current URL
+        const params = new URLSearchParams(window.location.search);
+
+        const payload = {
+            wechat: wechatId,
+            utm_source: params.get("utm_source"),
+            utm_medium: params.get("utm_medium"),
+            utm_campaign: params.get("utm_campaign"),
+            utm_content: params.get("utm_content"),
+            utm_term: params.get("utm_term")
+        };
 
         try {
-            const response = await fetch("/api/form", {
+            const response = await fetch("https://form.phuketmua.site", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    wechat: wechatId,
-                    timestamp: new Date().toISOString(),
-                    source: window.location.href,
-                    utm: utmData
-                }),
+                body: JSON.stringify(payload),
             });
 
             if (response.ok) {
@@ -96,9 +91,12 @@ const ContactModalAtelier = () => {
                     }, 500);
                 }, 2000);
             } else {
-                throw new Error("Server error");
+                // Handle non-200 responses
+                throw new Error(`Server returned ${response.status}`);
             }
         } catch (err) {
+            // Catch network errors and server errors
+            console.error("Submission error:", err);
             setStatus("error");
             setMessage("發送失敗，請稍後再試。");
         }
