@@ -79,11 +79,6 @@ const ContactModalAtelier = () => {
                 }
 
                 setWechatId("");
-                // Auto-close after 2 seconds
-                setTimeout(() => {
-                    setIsOpen(false);
-                    setTimeout(() => setStatus("idle"), 500);
-                }, 2000);
             } else {
                 throw new Error(`Server returned ${response.status}`);
             }
@@ -181,23 +176,28 @@ const ContactModalAtelier = () => {
                                 />
                             </div>
 
-                            {/* Button area: error replaces button, no layout shift */}
+                            {/* Single button element — never remounted, zero layout shift */}
                             <div className="flex justify-center md:justify-start">
-                                {isError ? (
-                                    <div className="w-[75%] max-w-[280px] md:w-full py-5 px-10 md:px-8 flex items-center justify-center md:justify-start">
-                                        <p className="font-chinese text-[15px] text-atelier-muted leading-snug text-center md:text-left">
-                                            送出未成功，<br />請掃碼聯繫。
-                                        </p>
-                                    </div>
-                                ) : (
-                                    <button
-                                        type="submit"
-                                        disabled={isSubmitting || isSuccess}
-                                        className="w-[75%] max-w-[280px] md:w-full bg-atelier-cta hover:bg-atelier-cta-hover text-atelier-bg font-display text-[15px] font-medium py-5 px-10 md:px-8 tracking-wide transition-all uppercase disabled:opacity-50"
-                                    >
-                                        {isSubmitting ? "發送中..." : isSuccess ? "已提交 ✓" : "發送"}
-                                    </button>
-                                )}
+                                <button
+                                    type="submit"
+                                    disabled={isSubmitting || isError || isSuccess}
+                                    className={cn(
+                                        "w-[75%] max-w-[280px] md:w-full py-5 px-10 md:px-8 font-chinese text-[15px] font-medium transition-colors duration-200 border",
+                                        isError
+                                            ? "bg-red-50 border-red-200 text-red-600 cursor-default"
+                                            : isSuccess
+                                                ? "bg-emerald-50 border-emerald-200 text-emerald-700 cursor-default"
+                                                : "bg-atelier-cta border-transparent text-atelier-bg hover:opacity-90 tracking-wide uppercase font-display disabled:opacity-50"
+                                    )}
+                                >
+                                    {isError
+                                        ? "送出未成功，請掃碼聯繫。"
+                                        : isSuccess
+                                            ? "已收到諮詢 ✓"
+                                            : isSubmitting
+                                                ? "發送中..."
+                                                : "發送"}
+                                </button>
                             </div>
                         </form>
 
