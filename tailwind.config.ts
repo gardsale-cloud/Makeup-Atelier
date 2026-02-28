@@ -22,8 +22,8 @@ const config: Config = {
       },
       fontFamily: {
         "display": ["var(--font-manrope)", "sans-serif"],
-        "chinese": ["var(--font-noto-sans-hk)", "var(--font-noto-sans-sc)", "sans-serif"],
-        "chinese-sc": ["var(--font-noto-sans-sc)", "var(--font-noto-sans-hk)", "sans-serif"],
+        "chinese": ["var(--font-noto-hk)", "var(--font-noto-sc)", "sans-serif"],
+        "chinese-sc": ["var(--font-noto-sc)", "var(--font-noto-hk)", "sans-serif"],
         "serif": ["Times New Roman", "serif"],
       },
       borderRadius: {

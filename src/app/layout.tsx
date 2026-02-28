@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Manrope, Noto_Sans_SC, Noto_Sans_HK } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-import ThemeSwitcherAtelier from "@/components/ThemeSwitcherAtelier";
 import ContactModalAtelier from "@/components/ContactModalAtelier";
 import PrivacyModalAtelier from "@/components/PrivacyModalAtelier";
 import ClientTracker from "@/components/ClientTracker";
@@ -83,7 +82,6 @@ export default function RootLayout({
             <body className={`${manrope.variable} ${notoVariantSC.variable} ${notoVariantHK.variable} antialiased font-display`}>
                 <ClientTracker />
                 {children}
-                <ThemeSwitcherAtelier />
                 <ContactModalAtelier />
                 <PrivacyModalAtelier />
             </body>
