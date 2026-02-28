@@ -1,28 +1,8 @@
-"use client";
-
-import React, { useState } from "react";
-import { getAssetPath } from "@/utils/paths";
+import React from "react";
+import Image from "next/image";
 import { openContactModal } from "@/utils/contact";
 
-const heroImages = [
-    getAssetPath("/images/hero/hero_desktop.jpg"),
-    getAssetPath("/images/hero/hero_1.jpg"),
-    getAssetPath("/images/hero/hero_2.jpg"),
-    getAssetPath("/images/hero/hero_3.jpg"),
-    getAssetPath("/images/hero/hero_4.jpg"),
-];
-
 const HeroAtelier = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + heroImages.length) % heroImages.length);
-    };
-
     return (
         <section className="relative bg-atelier-bg overflow-hidden py-0 flex items-stretch min-h-[calc(100vh-6rem)] shadow-none border-0" id="hero">
             <div className="max-w-7xl mx-auto px-6 md:px-12 w-full flex items-center md:items-stretch">
@@ -55,40 +35,25 @@ const HeroAtelier = () => {
                     <div className="relative order-2 w-full flex items-center justify-center md:justify-start">
                         {/* Desktop Version: 4:5 Aspect Ratio */}
                         <div className="hidden md:block relative aspect-[4/5] w-full max-h-[75vh] overflow-hidden portfolio-image-wrapper">
-                            <img
-                                src={heroImages[currentIndex]}
+                            <Image
+                                src="/images/hero/hero_desktop.jpg"
                                 alt="Selected look desktop"
-                                className="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-500 ease-in-out"
+                                fill
+                                priority
+                                className="object-cover object-center atelier-img"
+                                sizes="(max-width: 768px) 100vw, 50vw"
                             />
-
-                            {/* Minimal Slider Controls */}
-                            <div className="absolute bottom-8 right-8 flex items-center gap-6 z-20">
-                                <button
-                                    onClick={prevSlide}
-                                    className="text-atelier-text opacity-40 hover:opacity-100 transition-opacity duration-300 ease-out"
-                                    aria-label="Previous"
-                                >
-                                    <span className="text-2xl">←</span>
-                                </button>
-                                <span className="text-atelier-text text-xs tracking-widest font-display opacity-40">
-                                    {currentIndex + 1} / {heroImages.length}
-                                </span>
-                                <button
-                                    onClick={nextSlide}
-                                    className="text-atelier-text opacity-40 hover:opacity-100 transition-opacity duration-300 ease-out"
-                                    aria-label="Next"
-                                >
-                                    <span className="text-2xl">→</span>
-                                </button>
-                            </div>
                         </div>
 
                         {/* Mobile Version: 3:4 Aspect Ratio */}
                         <div className="block md:hidden relative aspect-[3/4] w-full overflow-hidden portfolio-image-wrapper">
-                            <img
-                                src={getAssetPath("/images/hero/hero_mobile.jpg")}
+                            <Image
+                                src="/images/hero/hero_mobile.jpg"
                                 alt="Selected look mobile"
-                                className="absolute inset-0 w-full h-full object-cover object-center atelier-img"
+                                fill
+                                priority
+                                className="object-cover object-center atelier-img"
+                                sizes="100vw"
                             />
                         </div>
                     </div>
