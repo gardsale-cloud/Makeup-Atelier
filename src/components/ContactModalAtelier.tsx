@@ -153,9 +153,9 @@ const ContactModalAtelier = () => {
 
                     {/* Right: Direct Inquiry */}
                     <div className="w-full md:w-[58%] p-8 pt-10 md:p-12 md:pt-20 lg:p-16 flex flex-col justify-center">
-                        <header className="mb-6">
-                            <h2 className="font-chinese text-2xl text-atelier-text mb-4 font-normal tracking-tight md:text-center">私人妝髮諮詢</h2>
-                            <p className="font-chinese font-light text-base text-atelier-muted leading-relaxed md:text-center">
+                        <header className="mb-12 md:mb-8">
+                            <h2 className="font-chinese text-2xl text-atelier-text mb-4 font-normal tracking-tight md:text-left">私人妝髮諮詢</h2>
+                            <p className="font-chinese font-light text-base text-atelier-muted leading-relaxed md:text-left">
                                 歡迎留下您的微信號，我會與您聯絡。
                             </p>
                         </header>
@@ -169,23 +169,23 @@ const ContactModalAtelier = () => {
                                 style={{ display: 'none' }}
                             />
 
-                            <div className="space-y-6 flex justify-center">
+                            <div className="space-y-6 flex justify-center md:justify-start">
                                 <input
                                     type="text"
                                     value={wechatId}
                                     onChange={(e) => setWechatId(e.target.value)}
                                     required
                                     disabled={status === "loading" || status === "success"}
-                                    className="modal-input font-chinese w-[85%] max-w-[400px] md:max-w-full text-center md:text-left"
+                                    className="modal-input font-chinese w-[75%] max-w-[280px] md:max-w-full text-center md:text-left"
                                     placeholder="您的微信號 (WeChat ID)"
                                 />
                             </div>
 
-                            <div className="flex justify-center">
+                            <div className="flex justify-center md:justify-start">
                                 <button
                                     type="submit"
                                     disabled={status === "loading" || status === "success"}
-                                    className="w-[70%] max-w-[240px] md:w-full bg-atelier-cta hover:bg-atelier-cta-hover text-atelier-bg font-display text-[15px] font-medium py-5 px-10 md:px-8 tracking-wide transition-all uppercase disabled:opacity-50"
+                                    className="w-[75%] max-w-[280px] md:w-full bg-atelier-cta hover:bg-atelier-cta-hover text-atelier-bg font-display text-[15px] font-medium py-5 px-10 md:px-8 tracking-wide transition-all uppercase disabled:opacity-50"
                                 >
                                     {status === "loading" ? "提交中..." : status === "success" ? "已提交" : "發送"}
                                 </button>
