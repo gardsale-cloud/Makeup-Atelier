@@ -18,7 +18,7 @@ const ContactAtelierEn = () => {
                 <div className="pt-10">
                     <button
                         onClick={openContactModal}
-                        className="inline-block bg-atelier-cta text-atelier-bg px-14 py-5 text-[15px] tracking-[0.2em] transition-all duration-300 hover:opacity-90 font-medium uppercase font-display cursor-pointer"
+                        className="inline-block bg-atelier-cta text-atelier-bg px-14 py-5 text-sm md:text-[15px] tracking-[0.2em] transition-all duration-300 hover:opacity-90 font-medium uppercase font-display cursor-pointer"
                     >
                         INQUIRE VIA WECHAT
                     </button>
