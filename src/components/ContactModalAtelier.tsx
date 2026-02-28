@@ -14,7 +14,7 @@ declare global {
 
 const ContactModalAtelier = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error" | "empty">("idle");
     const [wechatId, setWechatId] = useState("");
     const [honeypot, setHoneypot] = useState("");
     const [pageLoadTime, setPageLoadTime] = useState(0);
@@ -32,6 +32,12 @@ const ContactModalAtelier = () => {
         e.preventDefault();
         if (status === "loading") return;
 
+        // 0. Empty field check
+        if (!wechatId.trim()) {
+            setStatus("empty");
+            return;
+        }
+
         // 1. Honeypot check
         if (honeypot) {
             console.log("Honeypot caught a bot.");
@@ -44,6 +50,7 @@ const ContactModalAtelier = () => {
             return;
         }
 
+        // Clear empty state when fetching
         setStatus("loading");
 
         // 3. Extract UTM from current URL
@@ -109,6 +116,7 @@ const ContactModalAtelier = () => {
     const isSubmitting = status === "loading";
     const isError = status === "error";
     const isSuccess = status === "success";
+    const isEmpty = status === "empty";
 
     return (
         <div
@@ -168,8 +176,10 @@ const ContactModalAtelier = () => {
                                 <input
                                     type="text"
                                     value={wechatId}
-                                    onChange={(e) => setWechatId(e.target.value)}
-                                    required
+                                    onChange={(e) => {
+                                        setWechatId(e.target.value);
+                                        if (status === "empty") setStatus("idle");
+                                    }}
                                     disabled={isSubmitting || isSuccess}
                                     className="modal-input font-chinese w-[75%] max-w-[280px] md:max-w-full text-center md:text-left"
                                     placeholder="您的微信號 (WeChat ID)"
@@ -187,16 +197,20 @@ const ContactModalAtelier = () => {
                                             ? "bg-red-50 border-red-200 text-red-600 cursor-default"
                                             : isSuccess
                                                 ? "bg-emerald-50 border-emerald-200 text-emerald-700 cursor-default"
-                                                : "bg-atelier-cta border-transparent text-atelier-bg hover:opacity-90 tracking-wide uppercase font-display disabled:opacity-50"
+                                                : isEmpty
+                                                    ? "bg-amber-50 border-amber-200 text-amber-700 cursor-pointer"
+                                                    : "bg-atelier-cta border-transparent text-atelier-bg hover:opacity-90 tracking-wide uppercase font-display disabled:opacity-50"
                                     )}
                                 >
                                     {isError
                                         ? "送出未成功，請掃碼聯繫。"
                                         : isSuccess
                                             ? "已收到諮詢 ✓"
-                                            : isSubmitting
-                                                ? "發送中..."
-                                                : "發送"}
+                                            : isEmpty
+                                                ? "請填寫微信號"
+                                                : isSubmitting
+                                                    ? "發送中..."
+                                                    : "發送"}
                                 </button>
                             </div>
                         </form>
