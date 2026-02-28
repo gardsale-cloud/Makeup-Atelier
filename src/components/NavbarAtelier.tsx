@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
+import { openContactModal } from "@/utils/contact";
 
 const NavbarAtelier = () => {
     return (
@@ -19,9 +19,12 @@ const NavbarAtelier = () => {
                         <Link className="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-sm tracking-widest" href="#process-atelier">預約流程</Link>
                     </div>
                     <div>
-                        <Link className="text-atelier-text font-chinese text-sm tracking-widest font-medium border-b border-transparent hover:text-atelier-muted transition-colors duration-300 ease-out" href="#contact-atelier">
+                        <button
+                            onClick={openContactModal}
+                            className="text-atelier-text font-chinese text-sm tracking-widest font-medium border-b border-transparent hover:text-atelier-muted transition-colors duration-300 ease-out"
+                        >
                             聯繫我
-                        </Link>
+                        </button>
                     </div>
                 </div>
             </div>

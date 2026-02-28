@@ -11,6 +11,8 @@ const heroImages = [
     getAssetPath("/images/hero/hero_4.jpg"),
 ];
 
+import { openContactModal } from "@/utils/contact";
+
 const HeroAtelier = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -42,7 +44,10 @@ const HeroAtelier = () => {
                         </p>
 
                         <div className="flex items-center mb-12">
-                            <button className="bg-atelier-cta text-atelier-bg px-10 py-4 font-medium text-sm text-center">
+                            <button
+                                onClick={openContactModal}
+                                className="bg-atelier-cta text-atelier-bg px-10 py-4 font-medium text-sm text-center transition-all hover:opacity-90 active:scale-95"
+                            >
                                 查詢預約檔期
                             </button>
                         </div>

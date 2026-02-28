@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { openPrivacyModal } from "@/utils/contact";
 
 const FooterAtelier = () => {
     return (
@@ -53,7 +56,12 @@ const FooterAtelier = () => {
                         © 2026 Phuket Atelier Makeup. All Rights Reserved.
                     </p>
                     <div className="flex gap-8">
-                        <a href="#" className="text-[9px] text-atelier-muted uppercase tracking-[0.3em] font-display hover:text-atelier-text transition-colors">Privacy Policy</a>
+                        <button
+                            onClick={openPrivacyModal}
+                            className="text-[9px] text-atelier-muted uppercase tracking-[0.3em] font-display hover:text-atelier-text transition-colors"
+                        >
+                            Privacy Policy
+                        </button>
                         <a href="#" className="text-[9px] text-atelier-muted uppercase tracking-[0.3em] font-display hover:text-atelier-text transition-colors">Terms of Service</a>
                     </div>
                 </div>

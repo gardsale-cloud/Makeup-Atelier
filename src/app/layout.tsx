@@ -20,6 +20,8 @@ export const metadata: Metadata = {
 };
 
 import ThemeSwitcherAtelier from "@/components/ThemeSwitcherAtelier";
+import ContactModalAtelier from "@/components/ContactModalAtelier";
+import PrivacyModalAtelier from "@/components/PrivacyModalAtelier";
 
 export default function RootLayout({
     children,
@@ -35,6 +37,8 @@ export default function RootLayout({
             <body className={`${manrope.variable} ${notoVariant.variable} antialiased font-display`}>
                 {children}
                 <ThemeSwitcherAtelier />
+                <ContactModalAtelier />
+                <PrivacyModalAtelier />
             </body>
         </html>
     );
