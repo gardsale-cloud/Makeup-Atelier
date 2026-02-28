@@ -14,7 +14,7 @@ const manrope = Manrope({
 
 const notoVariantSC = Noto_Sans_SC({
     subsets: ["latin"],
-    weight: ["400", "500"],
+    weight: ["300", "400", "500", "700"],
     variable: "--font-noto-sc",
     display: "swap",
     preload: false,
@@ -22,7 +22,7 @@ const notoVariantSC = Noto_Sans_SC({
 
 const notoVariantHK = Noto_Sans_HK({
     subsets: ["latin"],
-    weight: ["400", "500"],
+    weight: ["300", "400", "500", "700"],
     variable: "--font-noto-hk",
     display: "swap",
     preload: false,
