@@ -1,60 +1,107 @@
+"use client";
+
 import React from "react";
 
 const steps = [
     {
         number: "01",
         title: "微信查詢檔期",
-        description: "透過微信提供日期、地點及服務類型，以確認檔期安排。"
+        description: "提供日期、地點與服務類型，<br />確認可預約的檔期。",
+        mobileReverse: false
     },
     {
         number: "02",
-        title: "確認服務內容與造型方向",
-        description: "溝通妝髮需求、風格偏好及時間安排，確定服務內容與費用。"
+        title: "確認內容與造型",
+        description: "溝通需求、風格及時間安排，<br />確定服務內容與費用。",
+        mobileReverse: true
     },
     {
         number: "03",
-        title: "支付訂金確認預約",
-        description: "收到訂金後正式保留檔期。"
+        title: "支付訂金確認",
+        description: "確認訂金後，正式保留當日服務檔期。",
+        mobileReverse: false
     },
     {
         number: "04",
         title: "服務當天",
-        description: "按約定時間到達提供專業妝髮服務。如需全天跟妝或團隊支援，可提前安排。"
+        description: "依約定時間到達，完成當天妝髮造型。",
+        mobileReverse: true
     }
 ];
 
 const ProcessAtelier = () => {
     return (
-        <section className="py-32 bg-atelier-bg border-t border-atelier-border" id="process-atelier">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12">
-                <div className="mb-24 text-center">
-                    <span className="text-atelier-accent text-xs tracking-[0.4em] uppercase font-display mb-6 block">Service Process</span>
-                    <h2 className="text-3xl lg:text-4xl font-chinese text-atelier-text leading-tight font-normal mb-8">
-                        預約流程
-                    </h2>
-                    <p className="text-atelier-muted font-chinese text-sm max-w-xl mx-auto leading-relaxed font-light">
-                        由初步查詢至服務當天，每個步驟清晰安排，讓您安心準備重要時刻。
-                    </p>
+        <section className="py-24 md:py-32 relative overflow-hidden bg-atelier-bg" id="process-atelier">
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+                <div className="absolute left-[20%] top-0 h-full w-px bg-atelier-border/40 hidden md:block"></div>
+                <div className="absolute left-[50%] top-0 h-full w-px bg-atelier-border/40 hidden md:block"></div>
+                <div className="absolute left-[80%] top-0 h-full w-px bg-atelier-border/40 hidden md:block"></div>
+            </div>
+            <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+                <div className="text-center mb-20 md:mb-32 relative">
+                    <span className="text-xs tracking-[0.3em] text-atelier-accent uppercase font-display block mb-6">Booking Process</span>
+                    <h2 className="text-4xl md:text-5xl font-chinese text-atelier-text font-normal mb-5">預約<span className="serif-font italic text-atelier-accent">流程</span></h2>
+                    <p className="text-atelier-muted font-chinese text-base font-light max-w-xl mx-auto leading-relaxed">由初步查詢至服務當天，流程清晰明確。</p>
+                    <div className="h-px w-20 bg-atelier-accent mx-auto mt-8"></div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
-                    {steps.map((step, index) => (
-                        <div key={index} className="flex flex-col items-center text-center">
-                            <div className="mb-10">
-                                <span className="text-6xl lg:text-7xl font-serif italic text-atelier-accent opacity-[0.08] leading-none tracking-tight">
-                                    {step.number}
-                                </span>
-                            </div>
-
-                            <h3 className="text-lg font-chinese text-atelier-text mb-4 font-medium">{step.title}</h3>
-                            <p className="text-sm text-atelier-muted leading-relaxed font-chinese font-light max-w-[240px]">
-                                {step.description}
+                <div className="relative w-full max-w-5xl mx-auto min-h-[600px] md:min-h-[800px]">
+                    {/* Step 1 */}
+                    <div className="flex flex-col relative mb-32 md:mb-0 md:ml-0 md:w-1/3 group items-start text-left">
+                        <div className="absolute -top-10 -left-4 md:-top-24 md:-left-12 font-serif italic text-[80px] md:text-[180px] text-atelier-accent opacity-[0.1] leading-none select-none pointer-events-none transition-opacity duration-500 group-hover:opacity-[0.2]">01</div>
+                        <div className="relative z-10 pl-6 md:pl-8 pt-6 md:pt-8 border-l border-atelier-border group-hover:border-atelier-accent transition-colors duration-500">
+                            <h3 className="text-2xl font-medium text-atelier-text font-chinese font-normal mb-2 md:mb-3">微信查詢檔期</h3>
+                            <p className="text-base text-atelier-muted font-chinese font-light leading-relaxed">
+                                提供日期、地點與服務類型，<br />確認可預約的檔期。
                             </p>
                         </div>
-                    ))}
-                </div>
+                    </div>
 
-                <div className="mt-24 h-px w-full bg-atelier-border max-w-4xl mx-auto opacity-50"></div>
+                    {/* Step 2 */}
+                    <div className="flex flex-col relative mb-32 md:mb-0 md:absolute md:left-[40%] md:top-16 md:w-1/3 group items-end md:items-start text-right md:text-left">
+                        <div className="absolute -top-10 -right-4 md:-top-24 md:-left-12 md:right-auto font-serif italic text-[80px] md:text-[180px] text-atelier-accent opacity-[0.1] leading-none select-none pointer-events-none transition-opacity duration-500 group-hover:opacity-[0.2]">02</div>
+                        <div className="relative z-10 pr-6 md:pr-0 pl-0 md:pl-8 pt-6 md:pt-8 border-r md:border-r-0 md:border-l border-atelier-border group-hover:border-atelier-accent transition-colors duration-500">
+                            <h3 className="text-2xl font-medium text-atelier-text font-chinese font-normal mb-2 md:mb-3">確認內容與造型</h3>
+                            <p className="text-base text-atelier-muted font-chinese font-light leading-relaxed">
+                                溝通需求、風格及時間安排，<br />確定服務內容與費用。
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Step 3 */}
+                    <div className="flex flex-col relative mb-32 md:mb-0 md:absolute md:left-[15%] md:top-80 md:w-1/3 group items-start text-left">
+                        <div className="absolute -top-10 -left-4 md:-top-24 md:-left-12 font-serif italic text-[80px] md:text-[180px] text-atelier-accent opacity-[0.1] leading-none select-none pointer-events-none transition-opacity duration-500 group-hover:opacity-[0.2]">03</div>
+                        <div className="relative z-10 pl-6 md:pl-8 pt-6 md:pt-8 border-l border-atelier-border group-hover:border-atelier-accent transition-colors duration-500">
+                            <h3 className="text-2xl font-medium text-atelier-text font-chinese font-normal mb-2 md:mb-3">支付訂金確認</h3>
+                            <p className="text-base text-atelier-muted font-chinese font-light leading-relaxed">
+                                確認訂金後，正式保留當日服務檔期。
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Step 4 */}
+                    <div className="flex flex-col relative md:absolute md:left-[60%] md:top-[480px] md:w-1/3 group items-end md:items-start text-right md:text-left pb-8">
+                        <div className="absolute -top-10 -right-4 md:-top-24 md:-left-12 md:right-auto font-serif italic text-[80px] md:text-[180px] text-atelier-accent opacity-[0.1] leading-none select-none pointer-events-none transition-opacity duration-500 group-hover:opacity-[0.2]">04</div>
+                        <div className="relative z-10 pr-6 md:pr-0 pl-0 md:pl-8 pt-6 md:pt-8 border-r md:border-r-0 md:border-l border-atelier-border group-hover:border-atelier-accent transition-colors duration-500">
+                            <h3 className="text-2xl font-medium text-atelier-text font-chinese font-normal mb-2 md:mb-3">服務當天</h3>
+                            <p className="text-base text-atelier-muted font-chinese font-light leading-relaxed">
+                                依約定時間到達，完成當天妝髮造型。
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* S-Curve Path */}
+                    <svg className="absolute top-0 left-0 w-full h-full pointer-events-none hidden md:block opacity-20 z-0" style={{ height: "100%" }}>
+                        <path
+                            className="text-atelier-accent"
+                            d="M 160 100 C 160 250, 600 200, 600 350 S 300 450, 300 600 S 800 700, 800 850"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeDasharray="4 4"
+                            strokeWidth="1"
+                        />
+                    </svg>
+                </div>
             </div>
         </section>
     );

@@ -1,70 +1,83 @@
+"use client";
+
 import React from "react";
 import { getAssetPath } from "@/utils/paths";
 
-const portfolioItems = [
-    {
-        title: "自然清透新娘妝",
-        subtitle: "Natural Bridal Look",
-        image: getAssetPath("/images/hero-main.jpg")
-    },
-    {
-        title: "海島戶外婚紗照",
-        subtitle: "Beach Pre-wedding",
-        image: getAssetPath("/images/avatars/avatar-2.jpg")
-    },
-    {
-        title: "晚宴精緻妝容",
-        subtitle: "Evening Glamour",
-        image: getAssetPath("/images/avatars/avatar-3.jpg")
-    },
-    {
-        title: "韓式清新妝感",
-        subtitle: "Korean Fresh Look",
-        image: getAssetPath("/images/avatars/avatar-1.jpg")
-    },
-    {
-        title: "泰式傳統婚禮",
-        subtitle: "Thai Traditional Ceremony",
-        image: getAssetPath("/images/hero-main.jpg")
-    },
-    {
-        title: "時尚雜誌拍攝",
-        subtitle: "Editorial Fashion",
-        image: getAssetPath("/images/avatars/avatar-2.jpg")
-    }
-];
-
 const PortfolioAtelier = () => {
     return (
-        <section className="py-32 bg-atelier-bg" id="portfolio-atelier">
-            <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-12">
-                <div className="mb-20">
-                    <span className="text-atelier-accent text-xs tracking-[0.4em] uppercase font-display mb-6 block">Selected Portfolio</span>
-                    <h2 className="text-3xl md:text-4xl font-chinese text-atelier-text leading-tight font-normal mb-6">
-                        婚禮與妝髮作品
+        <section className="py-24 md:py-32 bg-atelier-bg" id="portfolio-atelier">
+            <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+                <div className="mb-16 md:mb-24">
+                    <span className="text-atelier-accent text-xs tracking-[0.3em] uppercase font-display mb-6 block">Selected Portfolio</span>
+                    <h2 className="text-4xl md:text-5xl font-chinese text-atelier-text leading-tight font-normal mb-5">
+                        精選<span className="serif-font italic text-atelier-accent">作品</span>
                     </h2>
-                    <p className="text-atelier-muted font-chinese text-sm max-w-xl leading-relaxed font-light">
-                        自然細緻的妝髮呈現
+                    <p className="text-atelier-muted font-chinese font-light text-[15px] sm:text-base max-w-xl leading-relaxed">
+                        實際新娘妝髮呈現。
                     </p>
                     <div className="h-px w-20 bg-atelier-accent mt-8"></div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12 lg:gap-x-20">
-                    {portfolioItems.map((item, index) => (
-                        <div key={index} className="flex flex-col">
-                            <div className="aspect-[4/5] overflow-hidden">
-                                <img
-                                    alt={item.title}
-                                    className="w-full h-full object-cover grayscale-[15%] contrast-[95%]"
-                                    src={item.image}
-                                />
+                <div className="grid grid-cols-1 md:grid-cols-[5.8fr_4.2fr] gap-12 items-start">
+                    {/* Left: Anchor Column (Curated Primary - 58%) */}
+                    <div className="flex flex-col">
+                        <div className="aspect-[4/5] relative overflow-hidden portfolio-image-wrapper w-full">
+                            <img
+                                src={getAssetPath("/images/portfolio/portfolio_02.jpg")}
+                                alt="Minimal Bridal Portrait"
+                                className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Right: Curated Column (Gallery Stack - 42%) */}
+                    <div className="flex flex-col">
+                        <div className="flex flex-col gap-y-12 mb-12 md:mb-16">
+                            {/* Top Image (Clean Secondary Presence) */}
+                            <div className="w-full">
+                                <div className="aspect-[4/4.7] relative overflow-hidden portfolio-image-wrapper w-full">
+                                    <img
+                                        src={getAssetPath("/images/portfolio/portfolio_01.jpg")}
+                                        alt="Selected Look 1"
+                                        className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                                    />
+                                </div>
                             </div>
-                            <div className="mt-6 flex flex-col items-start">
-                                <h3 className="text-lg font-chinese text-atelier-text mb-2 font-medium">{item.title}</h3>
-                                <p className="text-[10px] text-atelier-muted font-medium uppercase tracking-[0.2em] font-display">{item.subtitle}</p>
+
+                            {/* Bottom Row (Symmetrical Pair) */}
+                            <div className="grid grid-cols-2 gap-8 items-stretch">
+                                {/* Bottom-Left */}
+                                <div className="relative overflow-hidden portfolio-image-wrapper aspect-[4/5]">
+                                    <img
+                                        src={getAssetPath("/images/portfolio/portfolio_03.jpg")}
+                                        alt="Support Look 1"
+                                        className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                                    />
+                                </div>
+                                {/* Bottom-Right */}
+                                <div className="relative overflow-hidden portfolio-image-wrapper aspect-[4/5]">
+                                    <img
+                                        src={getAssetPath("/images/portfolio/portfolio_04.jpg")}
+                                        alt="Support Look 2"
+                                        className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                                    />
+                                </div>
                             </div>
                         </div>
-                    ))}
+
+                        {/* Link to more works */}
+                        <div className="flex justify-center md:justify-end">
+                            <a
+                                className="group/link text-[10px] md:text-xs font-medium text-atelier-text hover:opacity-60 transition-opacity duration-300 ease-out tracking-[0.2em] uppercase flex items-center gap-3 font-chinese"
+                                href="https://www.xiaohongshu.com/user/profile/63d5ee2b0000000026010e28?utm_source=website&utm_medium=referral&utm_campaign=makeupphuket"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                完整紀錄亦可於小紅書查看
+                                <span className="transition-transform duration-300 ease-out group-hover/link:translate-x-1.5 inline-block text-atelier-accent">→</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

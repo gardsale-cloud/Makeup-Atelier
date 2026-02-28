@@ -1,68 +1,121 @@
-import React from "react";
+"use client";
 
-const services = [
-    {
-        title: "婚禮妝髮造型",
-        subtitle: "Wedding Makeup & Hair",
-        description: "為海外婚禮新娘提供定制妝髮服務，根據婚紗、場地與婚禮流程設計整體造型，自然精緻、上鏡持久。包含整體妝髮設計，可安排試妝及預約全天跟妝服務。",
-        price: "HK$ 4,800 起",
-    },
-    {
-        title: "旅拍 / 婚紗攝影妝髮",
-        subtitle: "Pre-Wedding & Photoshoot Styling",
-        description: "適合普吉島海島旅拍及婚紗攝影，妝容清透高級，在自然光下依然立体清晰。包含妝髮設計，可更換造型及提供補妝支援。",
-        price: "HK$ 3,800 起",
-    },
-    {
-        title: "活動及晚宴妝髮",
-        subtitle: "Event & Evening Styling",
-        description: "適合晚宴、派對及品牌活動等重要場合，妝容優雅得體，兼顧現場與拍攝效果。可按場合定制妝容，並提供上門服務。",
-        price: "HK$ 2,800 起",
-    }
-];
+import React from "react";
+import { openContactModal } from "@/utils/contact";
 
 const ServicesAtelier = () => {
     return (
-        <section className="py-32 bg-atelier-bg border-t border-atelier-border" id="services-atelier">
-            <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-12">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-                    <div className="max-w-2xl">
-                        <span className="text-atelier-accent text-xs tracking-[0.4em] uppercase font-display mb-6 block">My Services</span>
-                        <h2 className="text-3xl md:text-4xl font-chinese text-atelier-text leading-tight font-normal">
-                            私人定制 <span className="italic font-serif text-atelier-accent">妝髮服務</span>
-                        </h2>
+        <section className="py-24 md:py-32 bg-atelier-bg" id="services-atelier">
+            <div className="max-w-7xl mx-auto px-6 md:px-12">
+                {/* Header */}
+                <div className="mb-24 md:mb-24">
+                    <div className="flex items-center gap-4 mb-6">
+                        <span className="text-xs tracking-[0.3em] text-atelier-accent uppercase font-display">Styling Services</span>
                     </div>
-                    <div className="md:text-right">
-                        <p className="text-atelier-muted font-chinese text-sm max-w-xs leading-relaxed">
-                            為不同場合提供精緻、自然且持久的妝髮方案，展現您最真實動人的一面。
-                        </p>
-                    </div>
+                    <h2 className="text-4xl md:text-5xl font-chinese text-atelier-text leading-tight font-normal mb-5">
+                        妝髮<span className="serif-font italic text-atelier-accent">服務</span>項目
+                    </h2>
+                    <p className="text-atelier-muted font-chinese font-light text-[15px] sm:text-base max-w-xl leading-relaxed">
+                        根據不同場合與拍攝需求，設計合適的妝髮造型。
+                    </p>
+                    <div className="h-px w-20 bg-atelier-accent mt-8"></div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
-                    {services.map((service, index) => (
-                        <div key={index} className="flex flex-col items-start transition-opacity duration-300 ease-out">
-                            <div className="w-full h-px bg-atelier-border mb-10"></div>
-                            <div className="mb-8 overflow-hidden">
-                                <span className="text-atelier-accent text-xl font-serif italic opacity-20">0{index + 1}</span>
+                {/* Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-x-12 gap-y-28 md:gap-y-0">
+                    {/* Left: Main Service (7 cols) */}
+                    <div className="md:col-span-7 flex flex-col pr-0 md:pr-16 relative group">
+                        <div className="hidden md:block absolute right-0 top-0 h-full w-px bg-atelier-border/40"></div>
+                        <div className="mb-0">
+                            <span className="block text-8xl md:text-7xl font-serif text-atelier-accent opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500 mb-4 font-normal select-none italic">
+                                01
+                            </span>
+                            <h3 className="text-2xl md:text-4xl font-chinese text-atelier-text mb-2 font-normal">婚禮妝髮造型</h3>
+                            <div className="text-[10px] sm:text-xs tracking-[0.2em] text-atelier-accent uppercase font-display mb-8">
+                                Wedding Makeup & Hair
                             </div>
-
-                            <h3 className="text-xl font-chinese text-atelier-text mb-3 font-medium">{service.title}</h3>
-                            <p className="text-[10px] text-atelier-muted font-medium mb-6 uppercase tracking-[0.2em] font-display">{service.subtitle}</p>
-
-                            <p className="text-atelier-muted text-sm leading-[1.8] mb-10 font-chinese font-light">
-                                {service.description}
+                            <p className="text-atelier-muted font-chinese font-light text-base leading-[1.9] mb-8 md:mb-12 max-w-lg">
+                                服務海外婚禮新娘，根據禮服、場地與儀式流程設計整體妝髮方向。可預約試妝與全天跟妝服務。
                             </p>
+                        </div>
+                        <div className="flex flex-row items-end justify-between gap-4 pt-8 border-t border-atelier-border w-full md:w-[90%]">
+                            <div className="flex flex-col">
+                                <span className="text-[10px] uppercase tracking-widest text-atelier-muted opacity-60 mb-1 font-display">Starting From</span>
+                                <span className="text-lg font-display italic text-atelier-text">
+                                    ฿ 18,000 <span className="text-xs font-chinese text-atelier-muted ml-0.5">起</span>
+                                </span>
+                            </div>
+                            <button
+                                onClick={openContactModal}
+                                className="inline-flex items-center text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity pb-1 border-b border-atelier-border font-display uppercase"
+                            >
+                                查詢服務檔期 <span className="ml-2 transition-transform duration-300 ease-out group-hover:translate-x-1.5 inline-block">→</span>
+                            </button>
+                        </div>
+                    </div>
 
-                            <div className="mt-auto pt-4 flex items-center justify-between w-full border-t border-atelier-border/50">
-                                <span className="text-[10px] text-atelier-muted uppercase tracking-widest font-display">{service.price}</span>
-                                <a className="text-atelier-text text-sm font-medium transition-opacity duration-300 hover:opacity-50 flex items-center gap-2 group" href="#contact">
-                                    查詢檔期
-                                    <span className="material-icons-round text-sm group-hover:translate-x-1 transition-transform">east</span>
-                                </a>
+                    {/* Right: Two secondary services (5 cols) */}
+                    <div className="md:col-span-5 flex flex-col gap-28 md:gap-20 pl-0 md:pl-12 pt-0 md:pt-0 md:-mt-20">
+                        {/* Service 2 */}
+                        <div className="flex flex-col justify-between group">
+                            <div>
+                                <span className="block text-8xl md:text-4xl font-serif text-atelier-accent opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500 mb-4 font-normal select-none italic">
+                                    02
+                                </span>
+                                <h3 className="text-[20px] sm:text-2xl font-chinese text-atelier-text mb-1 font-normal">旅拍 / 婚紗攝影妝髮</h3>
+                                <div className="text-[10px] sm:text-xs tracking-[0.2em] text-atelier-accent uppercase font-display mb-5">
+                                    Pre-Wedding styling
+                                </div>
+                                <p className="text-atelier-muted font-chinese font-light text-base leading-relaxed mb-8">
+                                    適合婚紗攝影與旅拍拍攝。妝髮設計會考慮拍攝光線、場景與鏡頭呈現效果。可提供造型更換與補妝。
+                                </p>
+                            </div>
+                            <div className="flex flex-row items-end justify-between gap-2 pt-6 border-t border-atelier-border">
+                                <div className="flex flex-col">
+                                    <span className="text-[10px] uppercase tracking-widest text-atelier-muted opacity-60 mb-1 font-display">Starting From</span>
+                                    <span className="text-base font-display italic text-atelier-text">
+                                        ฿ 4,000 <span className="text-xs font-chinese text-atelier-muted ml-1">起</span>
+                                    </span>
+                                </div>
+                                <button
+                                    onClick={openContactModal}
+                                    className="inline-flex items-center text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity pb-1 border-b border-atelier-border font-display uppercase"
+                                >
+                                    查詢服務檔期 <span className="ml-2 transition-transform duration-300 ease-out group-hover:translate-x-1.5 inline-block">→</span>
+                                </button>
                             </div>
                         </div>
-                    ))}
+
+                        {/* Service 3 */}
+                        <div className="flex flex-col justify-between group">
+                            <div>
+                                <span className="block text-8xl md:text-4xl font-serif text-atelier-accent opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500 mb-4 font-normal select-none italic">
+                                    03
+                                </span>
+                                <h3 className="text-[20px] sm:text-2xl font-chinese text-atelier-text mb-1 font-normal">活動及晚宴妝髮</h3>
+                                <div className="text-[10px] sm:text-xs tracking-[0.2em] text-atelier-accent uppercase font-display mb-5">
+                                    Event & Evening Styling
+                                </div>
+                                <p className="text-atelier-muted font-chinese font-light text-base leading-relaxed mb-8">
+                                    適用於晚宴、品牌活動與正式場合。妝容方向依活動性質與服裝風格調整。可提供上門妝髮服務。
+                                </p>
+                            </div>
+                            <div className="flex flex-row items-end justify-between gap-2 pt-6 border-t border-atelier-border">
+                                <div className="flex flex-col">
+                                    <span className="text-[10px] uppercase tracking-widest text-atelier-muted opacity-60 mb-1 font-display">Starting From</span>
+                                    <span className="text-base font-display italic text-atelier-text">
+                                        ฿ 4,000 <span className="text-xs font-chinese text-atelier-muted ml-1">起</span>
+                                    </span>
+                                </div>
+                                <button
+                                    onClick={openContactModal}
+                                    className="inline-flex items-center text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity pb-1 border-b border-atelier-border font-display uppercase"
+                                >
+                                    查詢服務檔期 <span className="ml-2 transition-transform duration-300 ease-out group-hover:translate-x-1.5 inline-block">→</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

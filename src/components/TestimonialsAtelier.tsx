@@ -1,113 +1,84 @@
+"use client";
+
 import React from "react";
-import { getAssetPath } from "@/utils/paths";
 
 const testimonials = [
     {
-        name: "Chloe Zhang",
-        location: "Sri Panwa",
-        quote: "妝面太高級了",
-        text: "完全是我想要的泰式輕混血感，眼妝超級精緻。在普吉島這麼熱的天氣下，底妝居然一天都沒脫...",
-        xhsHandle: "Chloe.Z",
-        xhsText: "姐妹們！普吉島跟妝直接閉眼沖這家！💯 化妝老師太專業了，完全get到了我想要的泰式輕混血妝容，眼妝超級精緻，而且底妝 в 普吉島這麼熱的天氣下居然一天都沒脫，太厲害了！ #普吉島婚禮 #新娘跟妝",
-        avatar: getAssetPath("/images/avatars/avatar-1.jpg"),
-        hearts: 128,
-        comments: 32,
-        images: [
-            getAssetPath("/images/hero-main.jpg"),
-            getAssetPath("/images/avatars/avatar-3.jpg")
-        ]
+        name: "Lydia Chen",
+        platform: "小红书",
+        date: "2024.06",
+        location: "Singapore",
+        text: "“太感谢你了，多亏有你我们的婚礼才举办的这么顺利又漂亮！从头到尾你都特别细心，专业，而且超级好相处，我们很幸运能找到你做我们的化妆师。一开始没有试妆我还挺担心的，结果你化的妆简直完美，完全就是我心里想要的效果，而且比我想象中还要好！真的是太感谢你了。”",
+        staggered: false
     },
     {
-        name: "Emily Chen",
-        location: "The Shore",
-        quote: "像朋友一樣貼心",
-        text: "溝通非常順暢，試妝的時候就覺得很細心。婚禮當天早上不僅化得好，還一直幫我調整狀態...",
-        xhsHandle: "Emily_C",
-        xhsText: "真的是神仙化妝師！🧚‍♀️ 溝通非常順暢，試妝的時候就覺得很細心。婚禮當天早上不僅化得好，還一直幫我調整狀態，像朋友一樣貼心. 強烈推薦給來普吉島備婚的姐妹！ #普吉島旅拍 #海外婚禮",
-        avatar: getAssetPath("/images/avatars/avatar-2.jpg"),
-        hearts: 89,
-        comments: 14,
-        images: [
-            getAssetPath("/images/avatars/avatar-2.jpg")
-        ],
-        className: "md:translate-y-16"
+        name: "Kayla Wong",
+        platform: "小红书",
+        date: "2024.08",
+        location: "Canada",
+        text: "“你好！想要亲自谢谢你，我真的超满意你帮我化的妆。所有宾客都说我的妆真的好好看，好自然，好透亮。也要谢谢你全天都跟进我们的妆容，又帮忙拉裙尾，又打灯，又不停平复我忐忑的心情。”",
+        staggered: true
     },
     {
-        name: "Sarah Liu",
-        location: "Amanpuri",
-        quote: "自然又高級",
-        text: "非常喜歡老師化的妝，自然又高級，完全不是那種假面的感覺。朋友們都夸我那天美呆了...",
-        xhsHandle: "Sarah.Liu",
-        xhsText: "終於圓滿禮成！非常喜歡老師化的妝，自然又高級，完全不是那種假面的感覺。朋友們都夸我那天美呆了。而且老師用的化妝品都是大牌，敏感肌用在臉上很放心 ✨ #Amanpuri #普吉島婚禮",
-        avatar: getAssetPath("/images/avatars/avatar-3.jpg"),
-        hearts: 204,
-        comments: 45,
-        images: [
-            getAssetPath("/images/avatars/avatar-3.jpg"),
-            getAssetPath("/images/hero-main.jpg")
-        ]
+        name: "Janelle Tan",
+        platform: "小红书",
+        date: "2024.10",
+        location: "Hong Kong",
+        text: "“能够遇见你实在是太太太幸运啦～我的婚礼最强辅助非你莫属！有你属实是太舒心，太省心了。远远不止是化妆师，还是造型师，服装師，裁缝…最重要的是，婚礼当天你提供了無限的情緒價值，讓我們都無比的安心！謝謝你的專業，細心，細緻，你簡直太寶藏了！”",
+        staggered: false
+    },
+    {
+        name: "Emma Huang",
+        platform: "小红书",
+        date: "2024.12",
+        location: "Taiwan",
+        text: "“婚礼当天真的很安心，从早到晚你都在细心照顾每一个细节，帮我调整造型、整理裙摆、确认妆容状态，让我可以专心享受属于自己的时刻。所有造型都很适合我，自然又有质感，拍照出来也非常好看。有你在身边，一切都变得轻松而放心，谢谢你的专业与温柔陪伴，让这一天更加完整而难忘。”",
+        staggered: true
     }
 ];
 
 const TestimonialsAtelier = () => {
     return (
-        <section className="py-32 bg-atelier-bg border-t border-atelier-border" id="testimonials-atelier">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-                    <div className="lg:col-span-4 lg:sticky lg:top-32 lg:h-fit">
-                        <span className="text-atelier-accent text-xs tracking-[0.4em] uppercase font-display mb-6 block">Editorial Reviews</span>
-                        <h2 className="text-3xl lg:text-4xl font-chinese text-atelier-text leading-tight font-normal mb-8">
-                            她們的信任，<br />是 <span className="italic font-serif text-atelier-accent">最真實</span> 的肯定
+        <section className="py-24 pb-24 md:pt-40 md:pb-32 bg-atelier-bg" id="testimonials-atelier">
+            <div className="max-w-7xl mx-auto px-6 md:px-12">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-20 md:gap-20">
+                    <div className="md:col-span-4 md:sticky md:top-32 md:h-fit">
+                        <span className="text-atelier-accent text-xs tracking-[0.3em] uppercase font-display mb-6 block">Client Reviews</span>
+                        <h2 className="text-4xl md:text-5xl font-chinese text-atelier-text leading-tight font-normal mb-5">
+                            客戶回饋
                         </h2>
-                        <p className="text-atelier-muted font-chinese text-sm leading-relaxed max-w-sm">
-                            來自婚禮、旅拍及活動客戶的真實分享。自然、精緻且持久的妝髮，陪伴每個重要時刻。
+                        <p className="text-atelier-muted font-chinese font-light text-base leading-relaxed max-w-xl">
+                            來自婚禮與旅拍客戶的真實回饋，關於溝通與妝髮服務。
                         </p>
+                        <div className="h-px w-20 bg-atelier-accent mt-8"></div>
                     </div>
 
-                    <div className="lg:col-span-8">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div className="md:col-span-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-32 md:gap-x-32 md:gap-y-8">
                             {testimonials.map((item, index) => (
-                                <div key={index} className={`group relative flex flex-col ${item.className || ""}`}>
-                                    <div className="relative bg-atelier-bg p-10 aspect-[4/3] border border-atelier-border transition-all duration-300 ease-out overflow-hidden">
-                                        {/* Background Decoration */}
-                                        <div className="absolute top-0 left-2 font-serif text-[10rem] leading-none text-atelier-accent opacity-[0.05] pointer-events-none italic">“</div>
-
-                                        {/* Main Content (Quote) */}
-                                        <div className="relative z-10 flex flex-col h-full justify-between">
-                                            <div>
-                                                <h3 className="font-chinese font-medium text-lg text-atelier-text mb-4 italic">“{item.quote}”</h3>
-                                                <p className="text-atelier-muted font-chinese leading-relaxed text-sm font-light">
-                                                    {item.text}
-                                                </p>
-                                            </div>
+                                <div
+                                    key={index}
+                                    className={`group relative flex flex-col ${item.staggered ? "md:mt-48" : ""}`}
+                                >
+                                    <div className="hidden md:block absolute -left-12 top-0 bottom-0 w-px bg-atelier-border/40"></div>
+                                    <header className="flex flex-col mb-10">
+                                        <h3 className="font-chinese font-normal text-xl text-atelier-text mb-3">{item.name}</h3>
+                                        <div className="flex items-center gap-3 text-[10px] tracking-[0.2em] uppercase font-chinese font-light text-atelier-muted/60">
+                                            <span>{item.platform}</span>
+                                            <span className="text-atelier-accent/40">•</span>
+                                            <span>{item.date}</span>
+                                            <span className="text-atelier-accent/40">•</span>
+                                            <span>{item.location}</span>
                                         </div>
+                                    </header>
 
-                                        {/* Image Overlay with internal padding */}
-                                        <div className="absolute inset-0 z-20 bg-atelier-bg opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out overflow-hidden p-6">
-                                            <div className="w-full h-full overflow-hidden">
-                                                <img
-                                                    src={item.images[0]}
-                                                    alt="Review Highlight"
-                                                    className="w-full h-full object-cover grayscale-[40%] contrast-[110%] brightness-[95%]"
-                                                />
-                                            </div>
-                                            <div className="absolute inset-6 bg-atelier-bg/5 pointer-events-none"></div>
-                                        </div>
+                                    <div className="flex-grow">
+                                        <p className="text-base text-atelier-muted leading-relaxed font-chinese-sc font-light">
+                                            {item.text}
+                                        </p>
                                     </div>
                                 </div>
                             ))}
-
-                            {/* View More Card */}
-                            <div className="group relative flex flex-col md:translate-y-16 hidden md:flex">
-                                <div className="bg-atelier-bg p-10 aspect-[4/3] border border-atelier-border flex flex-col justify-center text-left">
-                                    <h3 className="font-chinese font-medium text-lg text-atelier-text mb-3">查看更多妝髮作品紀錄</h3>
-                                    <p className="text-atelier-muted text-xs font-chinese leading-relaxed mb-8 font-light">更多不同場景與風格 of 妝髮呈現，<br />收錄於小紅書。</p>
-                                    <a className="text-xs font-medium text-atelier-text hover:opacity-60 transition-opacity duration-300 ease-out tracking-widest uppercase flex items-center gap-2 group" href="#">
-                                        前往小紅書瀏覽
-                                        <span className="text-sm">→</span>
-                                    </a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

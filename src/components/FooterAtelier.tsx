@@ -6,64 +6,68 @@ import { openPrivacyModal } from "@/utils/contact";
 
 const FooterAtelier = () => {
     return (
-        <footer className="bg-atelier-bg py-32 border-t border-atelier-border">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start mb-24">
-                    <div className="lg:col-span-4">
-                        <div className="flex flex-col items-start">
-                            <span className="font-display font-medium text-xl tracking-[0.3em] text-atelier-text uppercase mb-4">PHUKET MUA</span>
-                            <span className="font-chinese text-sm text-atelier-muted tracking-widest font-light mb-10">普吉島專業化妝師</span>
-                        </div>
-                        <p className="text-atelier-muted text-xs leading-[2] font-chinese font-light max-w-xs uppercase tracking-wider">
-                            Dedicated to the art of subtle elegance and natural beauty for the modern Asian woman.
-                        </p>
+        <footer className="pt-20 pb-16 md:pt-24 md:pb-20 px-6 md:px-12 lg:px-24 bg-atelier-bg border-t border-atelier-border">
+            <div className="max-w-7xl mx-auto">
+                <div className="flex flex-col md:flex-row md:justify-between items-center md:items-start gap-12 md:gap-8 text-center md:text-left">
+
+                    {/* Navigation */}
+                    <div className="flex flex-col items-center md:items-start space-y-6">
+                        <p className="text-xs uppercase tracking-[0.3em] text-atelier-muted/60 font-display">Navigation</p>
+                        <nav className="flex flex-col space-y-4">
+                            <Link className="text-sm tracking-widest text-atelier-muted hover:text-atelier-text transition-colors font-chinese font-light" href="#services-atelier">服務</Link>
+                            <Link className="text-sm tracking-widest text-atelier-muted hover:text-atelier-text transition-colors font-chinese font-light" href="#portfolio-atelier">作品</Link>
+                            <Link className="text-sm tracking-widest text-atelier-muted hover:text-atelier-text transition-colors font-chinese font-light" href="#testimonials-atelier">評價</Link>
+                            <Link className="text-sm tracking-widest text-atelier-muted hover:text-atelier-text transition-colors font-chinese font-light" href="#process-atelier">流程</Link>
+                        </nav>
                     </div>
 
-                    <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-                        <div>
-                            <span className="text-[10px] text-atelier-text uppercase tracking-[0.4em] font-display font-medium mb-8 block opacity-40">Navigation</span>
-                            <ul className="space-y-4">
-                                <li><Link className="text-atelier-muted hover:text-atelier-text text-xs tracking-widest uppercase transition-colors" href="#services-atelier">服務 (Services)</Link></li>
-                                <li><Link className="text-atelier-muted hover:text-atelier-text text-xs tracking-widest uppercase transition-colors" href="#portfolio-atelier">作品 (Portfolio)</Link></li>
-                                <li><Link className="text-atelier-muted hover:text-atelier-text text-xs tracking-widest uppercase transition-colors" href="#testimonials-atelier">評價 (Reviews)</Link></li>
-                                <li><Link className="text-atelier-muted hover:text-atelier-text text-xs tracking-widest uppercase transition-colors" href="#process-atelier">流程 (Process)</Link></li>
-                                <li><Link className="text-atelier-muted hover:text-atelier-text text-xs tracking-widest uppercase transition-colors" href="#faq-atelier">常見問題 (FAQ)</Link></li>
-                            </ul>
+                    {/* Separator for Mobile */}
+                    <div className="w-8 h-px bg-atelier-accent/40 md:hidden"></div>
+
+                    {/* Social */}
+                    <div className="flex flex-col items-center md:items-start space-y-6">
+                        <p className="text-xs uppercase tracking-[0.3em] text-atelier-muted/60 font-display">Social</p>
+                        <div className="flex flex-col space-y-4">
+                            <a
+                                className="text-sm tracking-wider text-atelier-muted hover:text-atelier-text transition-colors flex items-center justify-center md:justify-start gap-2 group font-chinese font-light"
+                                href="https://www.xiaohongshu.com/user/profile/63d5ee2b0000000026010e28?utm_source=website&utm_medium=referral&utm_campaign=makeupphuket"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <span className="w-1 h-1 bg-transparent group-hover:bg-atelier-accent rounded-full transition-colors duration-300"></span>
+                                小紅書
+                            </a>
                         </div>
-                        <div>
-                            <span className="text-[10px] text-atelier-text uppercase tracking-[0.4em] font-display font-medium mb-8 block opacity-40">Contact</span>
-                            <ul className="space-y-4">
-                                <li className="text-atelier-muted text-xs tracking-widest uppercase">WeChat: PhuketMakeupArtist</li>
-                                <li className="text-atelier-muted text-xs tracking-widest uppercase">WhatsApp: +66 81 234 5678</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <span className="text-[10px] text-atelier-text uppercase tracking-[0.4em] font-display font-medium mb-8 block opacity-40">Social</span>
-                            <div className="flex gap-8 items-center">
-                                <a href="#" className="text-atelier-muted hover:text-atelier-text text-xs tracking-widest uppercase transition-colors duration-300 ease-out">
-                                    小紅書
-                                </a>
-                                <a href="#" className="text-atelier-muted hover:text-atelier-text text-xs tracking-widest uppercase transition-colors duration-300 ease-out">
-                                    Instagram
-                                </a>
-                            </div>
+                    </div>
+
+                    {/* Separator for Mobile */}
+                    <div className="w-8 h-px bg-atelier-accent/40 md:hidden"></div>
+
+                    {/* Contact */}
+                    <div className="flex flex-col items-center md:items-start space-y-6">
+                        <p className="text-xs uppercase tracking-[0.3em] text-atelier-muted/60 font-display">Contact</p>
+                        <div className="space-y-3 font-chinese font-light">
+                            <p className="text-sm text-atelier-muted tracking-wide">
+                                微信：<span className="text-atelier-text font-normal">Bbll6789</span>
+                            </p>
+                            <p className="text-sm text-atelier-muted tracking-wide">
+                                地區：<span className="text-atelier-text font-normal">Phuket, Thailand</span>
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <div className="pt-12 border-t border-atelier-border flex flex-col md:flex-row justify-between items-center gap-6">
-                    <p className="text-[9px] text-atelier-muted uppercase tracking-[0.3em] font-display">
-                        © 2026 Phuket Atelier Makeup. All Rights Reserved.
+                {/* Copyright */}
+                <div className="pt-20 text-center space-y-4">
+                    <p className="text-[10px] text-atelier-muted font-light opacity-60 tracking-[0.25em] font-display uppercase">
+                        © 2026 PHUKET ATELIER MAKEUP. <br />ALL RIGHTS RESERVED.
                     </p>
-                    <div className="flex gap-8">
-                        <button
-                            onClick={openPrivacyModal}
-                            className="text-[9px] text-atelier-muted uppercase tracking-[0.3em] font-display hover:text-atelier-text transition-colors"
-                        >
-                            Privacy Policy
-                        </button>
-                        <a href="#" className="text-[9px] text-atelier-muted uppercase tracking-[0.3em] font-display hover:text-atelier-text transition-colors">Terms of Service</a>
-                    </div>
+                    <button
+                        onClick={openPrivacyModal}
+                        className="text-[10px] text-atelier-muted hover:text-atelier-text transition-colors font-display tracking-[0.2em] uppercase opacity-40 hover:opacity-100"
+                    >
+                        Privacy Policy / 隱私政策
+                    </button>
                 </div>
             </div>
         </footer>
