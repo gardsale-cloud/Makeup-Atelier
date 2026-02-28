@@ -140,9 +140,9 @@ const ContactModalAtelier = () => {
                     </svg>
                 </button>
 
-                <div className="flex flex-col md:flex-row overflow-hidden bg-atelier-bg text-center md:text-left min-h-full">
+                <div className="flex flex-col md:flex-row md:overflow-hidden bg-atelier-bg text-center md:text-left min-h-full">
                     {/* Left: Identity & QR */}
-                    <div className="flex w-full md:w-[42%] bg-[#F2EFE9] flex-col items-center justify-center p-8 md:p-10 lg:p-12 border-b md:border-b-0 md:border-r border-[#EDEBE7]">
+                    <div className="flex w-full md:w-[42%] bg-[#F2EFE9] flex-col items-center justify-center p-8 md:p-10 lg:p-12 border-b md:border-b-0 md:border-r border-[#EDEBE7] order-2 md:order-1 flex-1 md:flex-none">
                         <div className="text-center mb-10">
                             <span className="font-display text-xs tracking-[0.15em] text-atelier-muted uppercase block mb-3 font-medium">微信聯絡</span>
                             <div className="font-serif italic text-2xl text-atelier-text">Bbll6789</div>
@@ -155,7 +155,7 @@ const ContactModalAtelier = () => {
                     </div>
 
                     {/* Right: Direct Inquiry */}
-                    <div className="w-full md:w-[58%] p-6 pt-8 md:p-12 md:pt-20 lg:p-16 flex flex-col justify-center">
+                    <div className="w-full md:w-[58%] p-6 pt-8 md:p-12 md:pt-20 lg:p-16 flex flex-col justify-center order-1 md:order-2">
                         <header className="mb-12 md:mb-8">
                             <h2 className="font-chinese text-2xl text-atelier-text mb-4 font-normal tracking-tight md:text-left">私人妝髮諮詢</h2>
                             <p className="font-chinese font-light text-base text-atelier-muted leading-relaxed md:text-left">

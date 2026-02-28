@@ -21,7 +21,7 @@ const HeroAtelierEn = () => {
                         </h1>
 
                         <p className="text-base md:text-lg text-atelier-muted font-display font-light mb-10 md:mb-14 tracking-normal max-w-xl mx-auto md:mx-0 leading-[1.8]">
-                            Personalized makeup and hair styling for destination weddings, photography, and private events. A refined approach to your aesthetic in Phuket.
+                            Refined makeup and hair styling for weddings and photography. Personalized one-on-one service in Phuket.
                         </p>
 
                         <div className="flex items-center mb-12 md:mb-0">

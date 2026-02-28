@@ -167,16 +167,18 @@ details[open] summary ~ * {
 
 @media (max-width: 767px) {
     #contact-modal-overlay {
-        align-items: flex-end;
+        align-items: stretch;
         padding: 0;
     }
     #contact-modal-container {
         max-width: 100%;
-        max-height: 92dvh;
-        height: auto;
+        height: 100dvh; /* Use dynamic height */
         transform: translateY(100%);
         border-radius: 0;
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        flex-direction: column;
     }
     #contact-modal-overlay.active #contact-modal-container {
         transform: translateY(0);

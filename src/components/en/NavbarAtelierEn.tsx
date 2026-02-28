@@ -18,7 +18,7 @@ const NavbarAtelierEn = () => {
                         <a onClick={handleScroll} className="cursor-pointer text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-display text-[13px] tracking-widest uppercase" href="#process">Process</a>
                         <button
                             onClick={openContactModal}
-                            className="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-display text-[13px] tracking-widest uppercase cursor-pointer"
+                            className="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-display text-[15px] tracking-widest uppercase cursor-pointer"
                         >
                             CONTACT
                         </button>
