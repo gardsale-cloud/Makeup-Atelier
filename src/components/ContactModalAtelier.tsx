@@ -156,7 +156,7 @@ const ContactModalAtelier = () => {
                                     </p>
                                 </header>
 
-                                <form onSubmit={handleSubmit} className="space-y-6">
+                                <form onSubmit={handleSubmit} className="space-y-8">
                                     {/* Honeypot */}
                                     <input
                                         type="text"
@@ -198,7 +198,7 @@ const ContactModalAtelier = () => {
                                         </button>
                                     </div>
                                 </form>
-                                <p className="text-xs text-atelier-muted mt-6 text-center md:text-left font-display tracking-[0.3em] opacity-40 uppercase font-light">
+                                <p className="text-xs text-atelier-muted mt-6 text-center font-display tracking-wide opacity-40 uppercase">
                                     一般於當日內回覆
                                 </p>
                             </>
