@@ -23,8 +23,8 @@ const ContactAtelierEn = () => {
                         INQUIRE VIA WECHAT
                     </button>
                 </div>
-                <p className="text-xs text-atelier-muted/60 pt-4 tracking-[0.3em] font-display uppercase font-light">
-                    Responses generally within 24h
+                <p className="text-[10px] text-atelier-muted/50 pt-4 tracking-[0.25em] font-display uppercase font-light">
+                    Typically replies within 24 hours
                 </p>
             </div>
         </section>

@@ -23,7 +23,7 @@ const ContactAtelier = () => {
                         微信諮詢
                     </button>
                 </div>
-                <p className="text-xs text-atelier-muted/60 pt-4 tracking-[0.3em] font-display uppercase font-light">
+                <p className="text-[10px] text-atelier-muted/50 pt-4 tracking-[0.2em] font-display uppercase font-light">
                     一般於當日內回覆
                 </p>
             </div>
