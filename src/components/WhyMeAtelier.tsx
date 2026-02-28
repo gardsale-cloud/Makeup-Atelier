@@ -27,7 +27,7 @@ const whyMeItems = [
 
 const WhyMeAtelier = () => {
     return (
-        <section className="py-24 md:py-32 bg-atelier-bg" id="why-me-atelier">
+        <section className="py-24 md:py-32 bg-atelier-bg" id="why-me">
             <div className="max-w-4xl mx-auto px-6 md:px-12">
                 {/* Header */}
                 <div className="text-center mb-16 md:mb-24">

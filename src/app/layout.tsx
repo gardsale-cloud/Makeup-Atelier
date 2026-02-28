@@ -1,27 +1,33 @@
 import type { Metadata } from "next";
-import { Manrope, Noto_Sans_SC } from "next/font/google";
+import { Manrope, Noto_Sans_SC, Noto_Sans_HK } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
+import ThemeSwitcherAtelier from "@/components/ThemeSwitcherAtelier";
+import ContactModalAtelier from "@/components/ContactModalAtelier";
+import PrivacyModalAtelier from "@/components/PrivacyModalAtelier";
+import ClientTracker from "@/components/ClientTracker";
 
 const manrope = Manrope({
     subsets: ["latin"],
     variable: "--font-manrope",
-    weight: ["300", "400", "500", "600", "700"],
 });
 
-const notoVariant = Noto_Sans_SC({
+const notoVariantSC = Noto_Sans_SC({
     subsets: ["latin"],
-    variable: "--font-noto-sans-sc",
     weight: ["300", "400", "500", "700"],
+    variable: "--font-noto-sc",
+});
+
+const notoVariantHK = Noto_Sans_HK({
+    subsets: ["latin"],
+    weight: ["300", "400", "500", "700"],
+    variable: "--font-noto-hk",
 });
 
 export const metadata: Metadata = {
-    title: "普吉島專業私人妝髮造型師 | Phuket Makeup Artist",
-    description: "常駐普吉島的華人專業私人妝髮造型師，專為亞洲女性打造清透自然的高級妝感。專注婚禮、旅拍及活動妝髮服務。",
+    title: "Phuket Private Makeup Artist | 普吉島私人妝髮造型師",
+    description: "Phuket Private Makeup Artist for overseas weddings, travel shoots, and special occasions. One-on-one service with a focus on quality and detail.",
 };
-
-import ThemeSwitcherAtelier from "@/components/ThemeSwitcherAtelier";
-import ContactModalAtelier from "@/components/ContactModalAtelier";
-import PrivacyModalAtelier from "@/components/PrivacyModalAtelier";
 
 export default function RootLayout({
     children,
@@ -33,8 +39,49 @@ export default function RootLayout({
             <head>
                 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+                {/* Yandex.Metrika counter */}
+                <Script id="yandex-metrika" strategy="afterInteractive">
+                    {`
+                        (function(m,e,t,r,i,k,a){
+                            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                            m[i].l=1*new Date();
+                            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+                        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+                        ym(92936100, 'init', {webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});
+                    `}
+                </Script>
+
+                {/* Meta Pixel Code */}
+                <Script id="fb-pixel" strategy="afterInteractive">
+                    {`
+                        !function(f,b,e,v,n,t,s)
+                        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                        n.queue=[];t=b.createElement(e);t.async=!0;
+                        t.src=v;s=b.getElementsByTagName(e)[0];
+                        s.parentNode.insertBefore(t,s)}(window, document,'script',
+                        'https://connect.facebook.net/en_US/fbevents.js');
+                        fbq('init', '667496576361531');
+                        fbq('track', 'PageView');
+                    `}
+                </Script>
+
+                {/* Google Tag */}
+                <Script src="https://www.googletagmanager.com/gtag/js?id=AW-11100467416" strategy="afterInteractive" />
+                <Script id="google-tag" strategy="afterInteractive">
+                    {`
+                      window.dataLayer = window.dataLayer || [];
+                      function gtag(){dataLayer.push(arguments);}
+                      gtag('js', new Date());
+                      gtag('config', 'AW-11100467416');
+                    `}
+                </Script>
             </head>
-            <body className={`${manrope.variable} ${notoVariant.variable} antialiased font-display`}>
+            <body className={`${manrope.variable} ${notoVariantSC.variable} ${notoVariantHK.variable} antialiased font-display`}>
+                <ClientTracker />
                 {children}
                 <ThemeSwitcherAtelier />
                 <ContactModalAtelier />

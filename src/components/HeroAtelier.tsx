@@ -24,7 +24,7 @@ const HeroAtelier = () => {
     };
 
     return (
-        <section className="relative bg-atelier-bg overflow-hidden py-0 flex items-stretch min-h-[calc(100vh-6rem)] shadow-none border-0" id="hero-atelier">
+        <section className="relative bg-atelier-bg overflow-hidden py-0 flex items-stretch min-h-[calc(100vh-6rem)] shadow-none border-0" id="hero">
             <div className="max-w-7xl mx-auto px-6 md:px-12 w-full flex items-center md:items-stretch">
                 <div className="grid grid-cols-1 md:grid-cols-[7fr_9fr] items-center md:items-stretch gap-12 md:gap-20 w-full pt-24 md:pt-0">
                     <div className="flex flex-col items-center md:items-start text-center md:text-left justify-center z-10 relative order-1 pt-0 pb-0 md:py-0">
@@ -33,7 +33,7 @@ const HeroAtelier = () => {
                             <span className="text-atelier-accent text-xs tracking-[0.3em] uppercase font-display">Phuket Makeup Artist</span>
                         </div>
 
-                        <h1 className="font-chinese text-5xl md:text-5xl lg:text-6xl font-normal mb-8 md:mb-12 text-atelier-text tracking-tight leading-[1.2]">
+                        <h1 className="font-chinese text-5xl md:text-5xl lg:text-6xl font-normal mb-8 md:mb-12 text-atelier-text tracking-tight" style={{ lineHeight: 1.2 }}>
                             普吉島私人<br />
                             <span className="text-atelier-accent">妝髮造型師</span>
                         </h1>
@@ -58,7 +58,7 @@ const HeroAtelier = () => {
                             <img
                                 src={heroImages[currentIndex]}
                                 alt="Selected look desktop"
-                                className="absolute inset-0 w-full h-full object-cover object-center grayscale-[15%] contrast-[95%] brightness-[102%] transition-opacity duration-500 ease-in-out"
+                                className="absolute inset-0 w-full h-full object-cover object-center atelier-img transition-opacity duration-500 ease-in-out"
                             />
 
                             {/* Minimal Slider Controls */}
@@ -88,7 +88,7 @@ const HeroAtelier = () => {
                             <img
                                 src={getAssetPath("/images/hero/hero_mobile.jpg")}
                                 alt="Selected look mobile"
-                                className="absolute inset-0 w-full h-full object-cover object-center grayscale-[15%] contrast-[95%] brightness-[102%]"
+                                className="absolute inset-0 w-full h-full object-cover object-center atelier-img"
                             />
                         </div>
                     </div>

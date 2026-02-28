@@ -2,20 +2,79 @@
 @config "../../tailwind.config.ts";
 
 :root {
-  --foreground-rgb: 31, 31, 31;
-  --background-start-rgb: 248, 247, 246;
-  --background-end-rgb: 248, 247, 246;
-  --accent: #811331;
+    --color-bg-base: #F6F4F1;
+    --color-bg-layer-1: #F2ECE6;
+    --color-bg-layer-2: #EEE6DE;
+    --color-surface: #EFE7DF;
+    --color-border-soft: #EDEBE7;
+    --color-text-primary: #3A332E;
+    --color-text-secondary: #7C7168;
+    --color-accent: #CBB7A6;
+    --color-accent-soft: #E8DED5;
+    --color-cta-bg: #CBB7A6;
+    --color-cta-text: #3A332E;
+}
+
+[data-theme="burgundy"] {
+    --color-bg-base: #F6F4F1;
+    --color-bg-layer-1: #F1ECE7;
+    --color-bg-layer-2: #EDE6DF;
+    --color-surface: #F9F6F0;
+    --color-border-soft: #EDEBE7;
+    --color-text-primary: #2A2A2A;
+    --color-text-secondary: #5A5855;
+    --color-accent: #811331;
+    --color-accent-soft: #F1ECE7;
+    --color-cta-bg: #2B2A28;
+    --color-cta-text: #F6F4F1;
+}
+
+[data-theme="mono-depth"] {
+    --color-bg-base: #F6F4F1;
+    --color-bg-layer-1: #F1ECE7;
+    --color-bg-layer-2: #EDE6DF;
+    --color-surface: #EFE9E3;
+    --color-border-soft: #E4DBD2;
+    --color-text-primary: #3C3530;
+    --color-text-secondary: #7A7068;
+    --color-accent: #3C3530;
+    --color-accent-soft: #EDE6DF;
+    --color-cta-bg: #3C3530;
+    --color-cta-text: #F6F4F1;
+}
+
+[data-theme="ochre-warm"] {
+    --color-bg-base: #F6F4F1;
+    --color-bg-layer-1: #F2EBE5;
+    --color-bg-layer-2: #EDE4DB;
+    --color-surface: #F4EFE9;
+    --color-border-soft: #E3D9CD;
+    --color-text-primary: #3D352E;
+    --color-text-secondary: #7D7065;
+    --color-accent: #A67C52;
+    --color-accent-soft: #EEE1D1;
+    --color-cta-bg: #A67C52;
+    --color-cta-text: #F6F4F1;
+}
+
+[data-theme="editorial-contrast"] {
+    --color-bg-base: #F6F4F1;
+    --color-bg-layer-1: #F1ECE7;
+    --color-bg-layer-2: #EDE6DF;
+    --color-surface: #EFE9E3;
+    --color-border-soft: #E2D8CF;
+    --color-text-primary: #3B342F;
+    --color-text-secondary: #786F67;
+    --color-accent: #3F3732;
+    --color-accent-soft: #4A423C;
+    --color-cta-bg: #3F3732;
+    --color-cta-text: #F1ECE7;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
-  font-family: var(--font-manrope), var(--font-noto-sans-sc), sans-serif;
-}
-
-h1, h2, h3, h4, .chinese-text {
-  font-family: var(--font-noto-sans-sc), sans-serif;
+    background-color: var(--color-bg-base);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
 }
 
 @layer base {
@@ -24,7 +83,41 @@ h1, h2, h3, h4, .chinese-text {
   }
 }
 
-/* Original animations from stitch.html */
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
+
+/* Atelier Signature Filters */
+.atelier-img {
+    filter: grayscale(15%) contrast(95%) brightness(102%);
+}
+
+.portfolio-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-image-wrapper img {
+    filter: 
+        brightness(1.04) 
+        contrast(0.94) 
+        saturate(0.86) 
+        sepia(0.12);
+    transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.portfolio-image-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #F8F5F0;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Animations */
 details > summary {
   list-style: none;
 }
@@ -42,26 +135,8 @@ details[open] summary ~ * {
   100%  {opacity: 1; margin-top: 0px}
 }
 
-.xhs-mockup {
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  transform: translateY(10px);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.group:hover .xhs-mockup {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.quote-content {
-  transition: filter 0.4s ease, opacity 0.4s ease;
-}
-
-.group:hover .quote-content {
-  filter: blur(2px);
-  opacity: 0.5;
+.faq-hover:hover {
+    opacity: 0.6;
 }
 
 /* Modal and Form Styles */
@@ -94,7 +169,7 @@ details[open] summary ~ * {
 }
 
 #contact-modal-container, #privacy-modal-container {
-    background-color: var(--color-bg-base, #F6F4F1);
+    background-color: var(--color-bg-base);
     width: 100%;
     position: relative;
     transform: translateY(20px);
@@ -123,34 +198,6 @@ details[open] summary ~ * {
     box-shadow: 0 50px 100px -20px rgba(0,0,0,0.08);
 }
 
-#privacy-modal-container .policy-section {
-    border-bottom: 1px solid #F5F5F5;
-    padding-bottom: 32px;
-    margin-bottom: 32px;
-}
-
-#privacy-modal-container .policy-section:last-child {
-    border-bottom: none;
-}
-
-@media (max-width: 767px) {
-    #contact-modal-overlay {
-        align-items: stretch;
-        padding: 0;
-    }
-    #contact-modal-container {
-        max-width: 100%;
-        height: 100%;
-        min-height: 100dvh;
-        transform: translateY(100%);
-        border-radius: 0;
-        overflow-y: auto;
-    }
-    #contact-modal-overlay.active #contact-modal-container {
-        transform: translateY(0);
-    }
-}
-
 .modal-input {
     background: transparent;
     border: none;
@@ -174,25 +221,20 @@ details[open] summary ~ * {
     letter-spacing: 0.1em;
 }
 
-/* Portfolio and UI Effects */
-.portfolio-image-wrapper {
-    position: relative;
-    overflow: hidden;
-    background-color: #EDEBE7;
-}
-
-.portfolio-image-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.02) 100%);
-    pointer-events: none;
-    z-index: 10;
-}
-
-.faq-hover:hover {
-    opacity: 0.6;
+@media (max-width: 767px) {
+    #contact-modal-overlay {
+        align-items: stretch;
+        padding: 0;
+    }
+    #contact-modal-container {
+        max-width: 100%;
+        height: 100%;
+        min-height: 100dvh;
+        transform: translateY(100%);
+        border-radius: 0;
+        overflow-y: auto;
+    }
+    #contact-modal-overlay.active #contact-modal-container {
+        transform: translateY(0);
+    }
 }

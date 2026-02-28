@@ -39,7 +39,7 @@ const testimonials = [
 
 const TestimonialsAtelier = () => {
     return (
-        <section className="py-24 pb-24 md:pt-40 md:pb-32 bg-atelier-bg" id="testimonials-atelier">
+        <section className="py-24 pb-24 md:pt-40 md:pb-32 bg-atelier-bg" id="testimonials">
             <div className="max-w-7xl mx-auto px-6 md:px-12">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-20 md:gap-20">
                     <div className="md:col-span-4 md:sticky md:top-32 md:h-fit">

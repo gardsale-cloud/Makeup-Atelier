@@ -5,7 +5,7 @@ import { getAssetPath } from "@/utils/paths";
 
 const PortfolioAtelier = () => {
     return (
-        <section className="py-24 md:py-32 bg-atelier-bg" id="portfolio-atelier">
+        <section className="py-24 md:py-32 bg-atelier-bg" id="portfolio">
             <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
                 <div className="mb-16 md:mb-24">
                     <span className="text-atelier-accent text-xs tracking-[0.3em] uppercase font-display mb-6 block">Selected Portfolio</span>
@@ -25,7 +25,7 @@ const PortfolioAtelier = () => {
                             <img
                                 src={getAssetPath("/images/portfolio/portfolio_02.jpg")}
                                 alt="Minimal Bridal Portrait"
-                                className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                                className="w-full h-full object-cover"
                             />
                         </div>
                     </div>
@@ -39,7 +39,7 @@ const PortfolioAtelier = () => {
                                     <img
                                         src={getAssetPath("/images/portfolio/portfolio_01.jpg")}
                                         alt="Selected Look 1"
-                                        className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                                        className="w-full h-full object-cover"
                                     />
                                 </div>
                             </div>
@@ -51,7 +51,7 @@ const PortfolioAtelier = () => {
                                     <img
                                         src={getAssetPath("/images/portfolio/portfolio_03.jpg")}
                                         alt="Support Look 1"
-                                        className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                                        className="w-full h-full object-cover"
                                     />
                                 </div>
                                 {/* Bottom-Right */}
@@ -59,7 +59,7 @@ const PortfolioAtelier = () => {
                                     <img
                                         src={getAssetPath("/images/portfolio/portfolio_04.jpg")}
                                         alt="Support Look 2"
-                                        className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                                        className="w-full h-full object-cover"
                                     />
                                 </div>
                             </div>

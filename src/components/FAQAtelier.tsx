@@ -32,7 +32,7 @@ const faqs = [
 
 const FAQAtelier = () => {
     return (
-        <section className="py-24 md:py-32 bg-atelier-bg" id="faq-atelier">
+        <section className="py-24 md:py-32 bg-atelier-bg" id="faq">
             <div className="max-w-3xl mx-auto px-6 md:px-12">
                 <div className="mb-16 md:mb-24 text-center">
                     <span className="text-atelier-accent text-xs tracking-[0.3em] uppercase font-display mb-6 block">Frequently Asked Questions</span>

@@ -13,10 +13,10 @@ const NavbarAtelier = () => {
                         <span className="font-display font-medium text-lg tracking-[0.25em] text-atelier-text uppercase">PHUKET MUA</span>
                     </div>
                     <div className="hidden md:flex items-center gap-x-14">
-                        <Link className="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#services-atelier">服務</Link>
-                        <Link className="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#portfolio-atelier">作品</Link>
-                        <Link className="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#testimonials-atelier">評價</Link>
-                        <Link className="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#process-atelier">流程</Link>
+                        <Link className="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#services">服務</Link>
+                        <Link className="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#portfolio">作品</Link>
+                        <Link className="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#testimonials">評價</Link>
+                        <Link className="text-atelier-muted hover:text-atelier-text transition-colors duration-300 ease-out font-chinese text-[15px] tracking-wide" href="#process">流程</Link>
                     </div>
                     <div>
                         <button

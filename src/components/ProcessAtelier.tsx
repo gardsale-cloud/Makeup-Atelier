@@ -31,7 +31,7 @@ const steps = [
 
 const ProcessAtelier = () => {
     return (
-        <section className="py-24 md:py-32 relative overflow-hidden bg-atelier-bg" id="process-atelier">
+        <section className="py-24 md:py-32 relative overflow-hidden bg-atelier-bg" id="process">
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
                 <div className="absolute left-[20%] top-0 h-full w-px bg-atelier-border/40 hidden md:block"></div>
                 <div className="absolute left-[50%] top-0 h-full w-px bg-atelier-border/40 hidden md:block"></div>
@@ -93,7 +93,7 @@ const ProcessAtelier = () => {
                     {/* S-Curve Path */}
                     <svg className="absolute top-0 left-0 w-full h-full pointer-events-none hidden md:block opacity-20 z-0" style={{ height: "100%" }}>
                         <path
-                            className="text-atelier-accent"
+                            className="text-atelier-border"
                             d="M 160 100 C 160 250, 600 200, 600 350 S 300 450, 300 600 S 800 700, 800 850"
                             fill="none"
                             stroke="currentColor"

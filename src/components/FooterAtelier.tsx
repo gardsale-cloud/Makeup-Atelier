@@ -14,10 +14,10 @@ const FooterAtelier = () => {
                     <div className="flex flex-col items-center md:items-start space-y-6">
                         <p className="text-xs uppercase tracking-[0.3em] text-atelier-muted/60 font-display">Navigation</p>
                         <nav className="flex flex-col space-y-4">
-                            <Link className="text-sm tracking-widest text-atelier-muted hover:text-atelier-text transition-colors font-chinese font-light" href="#services-atelier">服務</Link>
-                            <Link className="text-sm tracking-widest text-atelier-muted hover:text-atelier-text transition-colors font-chinese font-light" href="#portfolio-atelier">作品</Link>
-                            <Link className="text-sm tracking-widest text-atelier-muted hover:text-atelier-text transition-colors font-chinese font-light" href="#testimonials-atelier">評價</Link>
-                            <Link className="text-sm tracking-widest text-atelier-muted hover:text-atelier-text transition-colors font-chinese font-light" href="#process-atelier">流程</Link>
+                            <Link className="text-sm tracking-widest text-atelier-muted hover:text-atelier-text transition-colors font-chinese font-light" href="#services">服務</Link>
+                            <Link className="text-sm tracking-widest text-atelier-muted hover:text-atelier-text transition-colors font-chinese font-light" href="#portfolio">作品</Link>
+                            <Link className="text-sm tracking-widest text-atelier-muted hover:text-atelier-text transition-colors font-chinese font-light" href="#testimonials">評價</Link>
+                            <Link className="text-sm tracking-widest text-atelier-muted hover:text-atelier-text transition-colors font-chinese font-light" href="#process">流程</Link>
                         </nav>
                     </div>
 

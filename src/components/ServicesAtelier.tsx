@@ -5,7 +5,7 @@ import { openContactModal } from "@/utils/contact";
 
 const ServicesAtelier = () => {
     return (
-        <section className="py-24 md:py-32 bg-atelier-bg" id="services-atelier">
+        <section className="py-24 md:py-32 bg-atelier-bg" id="services">
             <div className="max-w-7xl mx-auto px-6 md:px-12">
                 {/* Header */}
                 <div className="mb-24 md:mb-24">

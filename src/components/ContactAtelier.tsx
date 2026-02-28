@@ -5,7 +5,7 @@ import { openContactModal } from "@/utils/contact";
 
 const ContactAtelier = () => {
     return (
-        <section className="py-32 md:py-48 px-6 md:px-12 lg:px-24 flex flex-col items-center text-center relative overflow-hidden bg-atelier-bg" id="contact-atelier">
+        <section className="py-32 md:py-48 px-6 md:px-12 lg:px-24 flex flex-col items-center text-center relative overflow-hidden bg-atelier-bg" id="contact">
             <div className="z-10 max-w-2xl mx-auto">
                 <p className="text-xs tracking-[0.3em] uppercase text-atelier-accent mb-6 font-display">Inquiry</p>
                 <h2 className="text-4xl md:text-6xl font-chinese text-atelier-text leading-tight font-normal mb-5">

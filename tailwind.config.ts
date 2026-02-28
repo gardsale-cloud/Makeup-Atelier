@@ -9,24 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "primary": "#e0b329",
-        "background-light": "#f8f7f6",
-        "background-dark": "#1f1f1f",
-        "neutral-dark": "#1f1f1f",
-        "neutral-medium": "#6b7280",
-        "border-light": "#e5e5e5",
-        // Atelier Palette
-        "atelier-bg": "#F6F4F1",
-        "atelier-text": "#2A2A2A",
-        "atelier-muted": "#6C6A67",
-        "atelier-border": "#EDEBE7",
-        "atelier-cta": "#2B2A28",
-        "atelier-cta-hover": "#3A3836",
-        "atelier-accent": "var(--accent)",
+        "atelier-bg": "var(--color-bg-base)",
+        "atelier-layer": "var(--color-bg-layer-1)",
+        "atelier-surface": "var(--color-surface)",
+        "atelier-text": "var(--color-text-primary)",
+        "atelier-muted": "var(--color-text-secondary)",
+        "atelier-border": "var(--color-border-soft)",
+        "atelier-accent": "var(--color-accent)",
+        "atelier-accent-soft": "var(--color-accent-soft)",
+        "atelier-cta": "var(--color-cta-bg)",
+        "atelier-cta-text": "var(--color-cta-text)",
       },
       fontFamily: {
         "display": ["var(--font-manrope)", "sans-serif"],
-        "chinese": ["var(--font-noto-sans-sc)", "sans-serif"],
+        "chinese": ["var(--font-noto-sans-hk)", "var(--font-noto-sans-sc)", "sans-serif"],
+        "chinese-sc": ["var(--font-noto-sans-sc)", "var(--font-noto-sans-hk)", "sans-serif"],
         "serif": ["Times New Roman", "serif"],
       },
       borderRadius: {
