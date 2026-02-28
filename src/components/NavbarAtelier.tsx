@@ -5,7 +5,7 @@ import { handleScroll } from "@/utils/scroll";
 
 const NavbarAtelier = () => {
     return (
-        <nav className="w-full bg-atelier-bg border-b border-atelier-border/40 sticky top-0 z-50">
+        <nav className="w-full bg-atelier-bg border-b border-atelier-border sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-6 md:px-12">
                 <div className="flex justify-between h-16 md:h-24 items-center">
                     <div className="flex-shrink-0 flex items-center">
