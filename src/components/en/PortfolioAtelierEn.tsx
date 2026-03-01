@@ -81,7 +81,7 @@ const PortfolioAtelierEn = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                More works available on Xiaohongshu
+                                More works available on 小紅書
                                 <span className="transition-transform duration-300 ease-out group-hover/link:translate-x-1.5 inline-block text-atelier-accent">→</span>
                             </a>
                         </div>

@@ -34,7 +34,7 @@ const FooterAtelierEn = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                XiaoHongShu
+                                小紅書
                             </a>
                         </div>
                     </div>
@@ -45,9 +45,9 @@ const FooterAtelierEn = () => {
                     {/* Contact */}
                     <div className="flex flex-col items-center md:items-start space-y-6">
                         <p className="text-xs uppercase tracking-[0.3em] text-atelier-muted/60 font-display">Contact</p>
-                        <div className="space-y-3 font-display font-light uppercase tracking-widest">
+                        <div className="space-y-3 font-display font-light tracking-widest">
                             <p className="text-sm text-atelier-muted">
-                                WeChat: <span className="text-atelier-text font-normal">Bbll6789</span>
+                                WeChat: <span className="text-atelier-text font-normal tracking-wider">Bbll6789</span>
                             </p>
                             <p className="text-sm text-atelier-muted">
                                 Region: <span className="text-atelier-text font-normal">Phuket, Thailand</span>

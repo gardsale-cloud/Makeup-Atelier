@@ -125,10 +125,10 @@ const ContactModalAtelierEn = () => {
 
                 <div className="flex flex-col md:flex-row md:overflow-hidden bg-atelier-bg text-center md:text-left min-h-full">
                     {/* Left: Identity & QR */}
-                    <div className="flex w-full md:w-[42%] bg-[#F2EFE9] flex-col items-center justify-center p-8 md:p-10 lg:p-12 border-b md:border-b-0 md:border-r border-[#EDEBE7] order-2 md:order-1 flex-1 md:flex-none">
-                        <div className="text-center mb-10">
+                    <div className="flex w-full md:w-[42%] bg-[#F2EFE9] flex-col items-center justify-center p-8 md:p-12 lg:p-16 border-b md:border-b-0 md:border-r border-[#EDEBE7] order-2 md:order-1 flex-1 md:flex-none">
+                        <div className="text-center mb-12">
                             <span className="font-display text-xs tracking-[0.15em] text-atelier-muted uppercase block mb-3 font-medium">Connect via WeChat</span>
-                            <div className="font-serif italic text-2xl text-atelier-text">Bbll6789</div>
+                            <div className="text-atelier-text tracking-wider text-2xl">Bbll6789</div>
                         </div>
 
                         <div className="bg-white p-4 shadow-sm mb-6 border border-atelier-border/50">
@@ -138,8 +138,8 @@ const ContactModalAtelierEn = () => {
                     </div>
 
                     {/* Right: Direct Inquiry */}
-                    <div className="w-full md:w-[58%] p-6 pt-8 md:p-12 md:pt-20 lg:p-16 flex flex-col justify-center order-1 md:order-2">
-                        <header className="mb-12 md:mb-8">
+                    <div className="w-full md:w-[58%] p-8 md:p-12 lg:p-16 flex flex-col justify-center order-1 md:order-2">
+                        <header className="mb-12">
                             <h2 className="font-display text-2xl text-atelier-text mb-4 font-normal tracking-tight md:text-left uppercase">Private Inquiry</h2>
                             <p className="font-display font-light text-base text-atelier-muted leading-relaxed md:text-left">
                                 Leave your WeChat ID, and I will contact you shortly.
@@ -196,8 +196,8 @@ const ContactModalAtelierEn = () => {
                             </div>
                         </form>
 
-                        <p className="text-xs text-atelier-muted mt-6 text-center font-display tracking-wide opacity-40 uppercase">
-                            Responses generally within 24h
+                        <p className="text-xs text-atelier-muted mt-6 text-center font-display tracking-wide opacity-40">
+                            Personal response within 24 hours
                         </p>
                     </div>
                 </div>

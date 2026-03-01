@@ -30,7 +30,7 @@ const ServicesAtelier = () => {
                             <span className="block text-8xl md:text-7xl font-serif text-atelier-accent opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500 mb-4 font-normal select-none italic">
                                 01
                             </span>
-                            <h3 className="text-2xl md:text-4xl font-chinese text-atelier-text mb-2 font-normal">婚禮妝髮造型</h3>
+                            <h3 className="text-2xl md:text-4xl font-chinese text-atelier-text mb-4 font-normal">婚禮妝髮造型</h3>
                             <div className="text-[10px] sm:text-xs tracking-[0.2em] text-atelier-accent uppercase font-display mb-8">
                                 Wedding Makeup & Hair
                             </div>
@@ -62,7 +62,7 @@ const ServicesAtelier = () => {
                                 <span className="block text-8xl md:text-4xl font-serif text-atelier-accent opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500 mb-4 font-normal select-none italic">
                                     02
                                 </span>
-                                <h3 className="text-[20px] sm:text-2xl font-chinese text-atelier-text mb-1 font-normal">旅拍 / 婚紗攝影妝髮</h3>
+                                <h3 className="text-[20px] sm:text-2xl font-chinese text-atelier-text mb-3 font-normal">旅拍 / 婚紗攝影妝髮</h3>
                                 <div className="text-[10px] sm:text-xs tracking-[0.2em] text-atelier-accent uppercase font-display mb-5">
                                     Pre-Wedding styling
                                 </div>
@@ -92,7 +92,7 @@ const ServicesAtelier = () => {
                                 <span className="block text-8xl md:text-4xl font-serif text-atelier-accent opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500 mb-4 font-normal select-none italic">
                                     03
                                 </span>
-                                <h3 className="text-[20px] sm:text-2xl font-chinese text-atelier-text mb-1 font-normal">活動及晚宴妝髮</h3>
+                                <h3 className="text-[20px] sm:text-2xl font-chinese text-atelier-text mb-3 font-normal">活動及晚宴妝髮</h3>
                                 <div className="text-[10px] sm:text-xs tracking-[0.2em] text-atelier-accent uppercase font-display mb-5">
                                     Event & Evening Styling
                                 </div>

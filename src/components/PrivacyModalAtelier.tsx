@@ -98,8 +98,8 @@ const PrivacyModalAtelier = () => {
 
                         <section className="policy-section">
                             <h4 className="text-xs uppercase tracking-[0.2em] font-display font-semibold mb-4">7. Contact Us / 聯絡我們</h4>
-                            <p className="mb-4">If you have any questions about this Privacy Policy, please contact us via WeChat (ID: Bbll6789).</p>
-                            <p>如果您對本隱私政策有任何疑問，請通過微信（ID：Bbll6789）與我們聯絡。</p>
+                            <p className="mb-4">If you have any questions about this Privacy Policy, please contact us via WeChat (ID: <span className="tracking-wider font-normal">Bbll6789</span>).</p>
+                            <p>如果您對本隱私政策有任何疑問，請通過微信（ID：<span className="tracking-wider font-normal">Bbll6789</span>）與我們聯絡。</p>
                         </section>
 
                         <footer className="pt-10 border-t border-atelier-border/10">

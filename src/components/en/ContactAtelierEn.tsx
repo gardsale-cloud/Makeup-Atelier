@@ -12,7 +12,7 @@ const ContactAtelierEn = () => {
                     <span className="text-atelier-accent italic serif-font">Private</span> Consultation
                 </h2>
                 <p className="text-atelier-muted font-display font-light max-w-md mx-auto leading-relaxed">
-                    For any styling questions or bookings, please contact me via WeChat.
+                    For any styling questions or availability, please contact me via WeChat.
                 </p>
                 <div className="h-px w-20 bg-atelier-accent mx-auto mt-10"></div>
                 <div className="pt-10">
@@ -23,8 +23,8 @@ const ContactAtelierEn = () => {
                         INQUIRE VIA WECHAT
                     </button>
                 </div>
-                <p className="text-[10px] text-atelier-muted/50 pt-4 tracking-[0.25em] font-display uppercase font-light">
-                    Typically replies within 24 hours
+                <p className="text-[10px] text-atelier-muted/50 pt-4 tracking-[0.25em] font-display font-light">
+                    Personal response within 24 hours
                 </p>
             </div>
         </section>

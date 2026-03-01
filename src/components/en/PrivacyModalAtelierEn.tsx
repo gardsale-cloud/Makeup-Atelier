@@ -58,7 +58,7 @@ const PrivacyModalAtelierEn = () => {
 
                         <section>
                             <h3 className="text-atelier-text font-medium uppercase tracking-widest text-xs mb-3">5. Contact</h3>
-                            <p>For questions regarding this policy, please contact Phuket Atelier Makeup via WeChat (ID: Bbll6789).</p>
+                            <p>For questions regarding this policy, please contact Phuket Atelier Makeup via WeChat (ID: <span className="tracking-wider font-normal">Bbll6789</span>).</p>
                         </section>
 
                         <p className="pt-8 border-t border-atelier-border/40 text-[10px] uppercase tracking-widest opacity-50">

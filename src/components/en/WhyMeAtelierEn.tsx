@@ -4,23 +4,23 @@ import React from "react";
 
 const whyMeItems = [
     {
-        title: "Bespoke Service",
-        description: "Direct one-on-one communication to ensure your styling is perfectly tailored to your vision.",
+        title: "Private One-on-One Service",
+        description: "Direct communication throughout preparation. Each detail is discussed and confirmed in advance to ensure confidence on the day.",
         align: "start"
     },
     {
         title: "Local Expertise",
-        description: "Familiar with Phuket venues and lighting conditions to optimize your look for the environment.",
+        description: "Familiar with hotels, private villas, and beachfront venues in Phuket. Styling is adapted to humidity, lighting, and environment.",
         align: "end"
     },
     {
-        title: "Aesthetic Mastery",
-        description: "Specializing in Asian features and refined styling. Native Mandarin consultations for a seamless, nuanced experience.",
+        title: "Understanding of Asian Features",
+        description: "Experienced with Asian skin tones, facial structure, and aesthetic balance.",
         align: "start"
     },
     {
-        title: "On-Site Care",
-        description: "Providing professional service at your hotel, villa, or venue for a seamless experience.",
+        title: "On-Location Service",
+        description: "Professional service provided at your hotel, villa, or venue for a smooth and comfortable experience.",
         align: "end"
     }
 ];
@@ -31,9 +31,9 @@ const WhyMeAtelierEn = () => {
             <div className="max-w-4xl mx-auto px-6 md:px-12">
                 {/* Header */}
                 <div className="mb-14">
-                    <span className="text-atelier-accent text-xs tracking-[0.3em] uppercase font-display mb-6 block">Professional Standards</span>
+                    <span className="text-atelier-accent text-xs tracking-[0.3em] uppercase font-display mb-6 block">Professional Approach</span>
                     <h2 className="text-4xl md:text-5xl font-display text-atelier-text leading-tight font-normal mb-8 uppercase tracking-tight">
-                        Why <span className="serif-font italic text-atelier-accent">Choose Me</span>
+                        Why Choose Me
                     </h2>
                     <p className="text-atelier-muted font-display font-light text-[15px] sm:text-base max-w-xl mx-auto leading-relaxed">
                         Dedicated to providing a refined, precise styling experience for weddings and travel shoots.

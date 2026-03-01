@@ -12,7 +12,7 @@ const HeroAtelierEn = () => {
                     <div className="flex flex-col items-center md:items-start text-center md:text-left justify-center z-10 relative order-1 pt-0 pb-0 md:py-0">
                         <div className="inline-flex items-center gap-3 mb-4 md:mb-10">
                             <div className="h-px w-8 bg-atelier-text opacity-30"></div>
-                            <span className="text-atelier-accent text-xs tracking-[0.3em] uppercase font-display">Tailored Expertise</span>
+                            <span className="text-atelier-accent text-xs tracking-[0.2em] uppercase font-display">中文 · Mandarin-Speaking</span>
                         </div>
 
                         <h1 className="font-display text-5xl md:text-5xl lg:text-6xl font-normal mb-8 md:mb-12 text-atelier-text tracking-tight uppercase" style={{ lineHeight: 1.1 }}>
@@ -21,7 +21,7 @@ const HeroAtelierEn = () => {
                         </h1>
 
                         <p className="text-base md:text-lg text-atelier-muted font-display font-light mb-10 md:mb-14 tracking-normal max-w-xl mx-auto md:mx-0 leading-[1.8]">
-                            Refined makeup and hair styling for weddings and photography. Personalized one-on-one service in Phuket.
+                            Refined makeup and hair styling for weddings and photography. Personalized one-on-one service.
                         </p>
 
                         <div className="flex items-center mb-12 md:mb-0">

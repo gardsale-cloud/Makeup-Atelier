@@ -13,7 +13,7 @@ const ServicesAtelierEn = () => {
                         <span className="text-xs tracking-[0.3em] text-atelier-accent uppercase font-display">Styling Expertise</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-display text-atelier-text leading-tight font-normal mb-5 uppercase tracking-tight">
-                        Tailored <span className="serif-font italic text-atelier-accent">Services</span>
+                        Makeup & Hair <span className="serif-font italic text-atelier-accent">Services</span>
                     </h2>
                     <p className="text-atelier-muted font-display font-light text-[15px] sm:text-base max-w-xl leading-relaxed">
                         Thoughtful makeup and hair design tailored to your specific occasion and lighting environment.
@@ -30,12 +30,12 @@ const ServicesAtelierEn = () => {
                             <span className="block text-8xl md:text-7xl font-serif text-atelier-accent opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500 mb-4 font-normal select-none italic">
                                 01
                             </span>
-                            <h3 className="text-2xl md:text-4xl font-display text-atelier-text mb-2 font-normal uppercase tracking-wide">Wedding Styling</h3>
+                            <h3 className="text-2xl md:text-4xl font-display text-atelier-text mb-4 font-normal uppercase tracking-wide">Wedding Styling</h3>
                             <div className="text-[10px] sm:text-xs tracking-[0.2em] text-atelier-accent uppercase font-display mb-8">
                                 Exceptional Detail
                             </div>
                             <p className="text-atelier-muted font-display font-light text-base leading-[1.8] mb-8 md:mb-12 max-w-lg">
-                                Focused styling for ceremonies and receptions. Includes thorough consultation to refine the aesthetic direction. Full day bridal accompaniment and trial sessions available.
+                                Styling for wedding ceremonies and receptions. The overall aesthetic is aligned with your dress, venue atmosphere and event flow. Trial sessions and full-day attendance are available.
                             </p>
                         </div>
                         <div className="flex flex-row items-end justify-between gap-4 pt-8 border-t border-atelier-border w-full md:w-[90%]">
@@ -62,12 +62,12 @@ const ServicesAtelierEn = () => {
                                 <span className="block text-8xl md:text-4xl font-serif text-atelier-accent opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500 mb-4 font-normal select-none italic">
                                     02
                                 </span>
-                                <h3 className="text-[20px] sm:text-2xl font-display text-atelier-text mb-1 font-normal uppercase tracking-wide">Travel & Photography</h3>
+                                <h3 className="text-[20px] sm:text-2xl font-display text-atelier-text mb-3 font-normal uppercase tracking-wide">Pre-Wedding & Photography</h3>
                                 <div className="text-[10px] sm:text-xs tracking-[0.2em] text-atelier-accent uppercase font-display mb-5">
                                     Photography-Ready Styling
                                 </div>
                                 <p className="text-atelier-muted font-display font-light text-base leading-relaxed mb-8">
-                                    Ideal for pre-wedding and lifestyle shoots. Styling is optimized for natural lighting and on-camera definition.
+                                    Designed for pre-wedding photography and destination shoots. Adjusted for lighting conditions and outdoor environments.
                                 </p>
                             </div>
                             <div className="flex flex-row items-end justify-between gap-2 pt-6 border-t border-atelier-border">
@@ -92,12 +92,12 @@ const ServicesAtelierEn = () => {
                                 <span className="block text-8xl md:text-4xl font-serif text-atelier-accent opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500 mb-4 font-normal select-none italic">
                                     03
                                 </span>
-                                <h3 className="text-[20px] sm:text-2xl font-display text-atelier-text mb-1 font-normal uppercase tracking-wide">Events & Gala</h3>
+                                <h3 className="text-[20px] sm:text-2xl font-display text-atelier-text mb-3 font-normal uppercase tracking-wide">Event & Evening Makeup</h3>
                                 <div className="text-[10px] sm:text-xs tracking-[0.2em] text-atelier-accent uppercase font-display mb-5">
                                     Professional Appearance
                                 </div>
                                 <p className="text-atelier-muted font-display font-light text-base leading-relaxed mb-8">
-                                    Custom styling for dinners, brand events, and formal occasions. On-site service available at your villa or hotel.
+                                    Suitable for gala dinners, brand events, and formal gatherings. Direction is adapted according to dress code and event tone.
                                 </p>
                             </div>
                             <div className="flex flex-row items-end justify-between gap-2 pt-6 border-t border-atelier-border">

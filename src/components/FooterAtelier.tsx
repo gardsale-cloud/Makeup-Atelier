@@ -47,7 +47,7 @@ const FooterAtelier = () => {
                         <p className="text-xs uppercase tracking-[0.3em] text-atelier-muted/60 font-display">Contact</p>
                         <div className="space-y-3 font-chinese font-light">
                             <p className="text-sm text-atelier-muted tracking-wide">
-                                微信：<span className="text-atelier-text font-normal">Bbll6789</span>
+                                微信：<span className="text-atelier-text font-normal tracking-wider">Bbll6789</span>
                             </p>
                             <p className="text-sm text-atelier-muted tracking-wide">
                                 地區：<span className="text-atelier-text font-normal">Phuket, Thailand</span>
