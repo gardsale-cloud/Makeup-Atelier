@@ -49,7 +49,7 @@ const ServicesAtelierEn = () => {
                                 onClick={openContactModal}
                                 className="inline-flex items-center text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity pb-1 border-b border-atelier-border font-display uppercase cursor-pointer"
                             >
-                                Inquire <span className="ml-2 transition-transform duration-300 ease-out group-hover:translate-x-1.5 inline-block">→</span>
+                                Check Availability <span className="ml-2 transition-transform duration-300 ease-out group-hover:translate-x-1.5 inline-block">→</span>
                             </button>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ const ServicesAtelierEn = () => {
                                     onClick={openContactModal}
                                     className="inline-flex items-center text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity pb-1 border-b border-atelier-border font-display uppercase cursor-pointer"
                                 >
-                                    Inquire <span className="ml-2 transition-transform duration-300 ease-out group-hover:translate-x-1.5 inline-block">→</span>
+                                    Check Availability <span className="ml-2 transition-transform duration-300 ease-out group-hover:translate-x-1.5 inline-block">→</span>
                                 </button>
                             </div>
                         </div>
@@ -111,7 +111,7 @@ const ServicesAtelierEn = () => {
                                     onClick={openContactModal}
                                     className="inline-flex items-center text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity pb-1 border-b border-atelier-border font-display uppercase cursor-pointer"
                                 >
-                                    Inquire <span className="ml-2 transition-transform duration-300 ease-out group-hover:translate-x-1.5 inline-block">→</span>
+                                    Check Availability <span className="ml-2 transition-transform duration-300 ease-out group-hover:translate-x-1.5 inline-block">→</span>
                                 </button>
                             </div>
                         </div>
