@@ -145,7 +145,7 @@ const ContactModalAtelier = () => {
                     <div className="flex w-full md:w-[42%] bg-[#F2EFE9] flex-col items-center justify-center p-8 md:p-12 lg:p-16 border-b md:border-b-0 md:border-r border-[#EDEBE7] order-2 md:order-1 flex-1 md:flex-none">
                         <div className="text-center mb-12">
                             <span className="font-display text-xs tracking-[0.15em] text-atelier-muted uppercase block mb-3 font-medium">微信聯絡</span>
-                            <div className="text-2xl text-atelier-text tracking-wider">Bbll6789</div>
+                            <div className="text-2xl text-atelier-text font-chinese font-normal tracking-wider">Bbll6789</div>
                         </div>
 
                         <div className="bg-white p-4 shadow-sm mb-6 border border-atelier-border/50">
