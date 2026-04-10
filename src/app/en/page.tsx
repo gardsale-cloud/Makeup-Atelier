@@ -14,6 +14,9 @@ import PrivacyModalAtelierEn from "@/components/en/PrivacyModalAtelierEn";
 export const metadata = {
     title: "Phuket Private Makeup & Hair Artist | Destination Wedding Styling",
     description: "Professional private makeup and hair styling services for weddings and travel shoots in Phuket. One-on-one refined styling experience.",
+    alternates: {
+        canonical: "/en/",
+    },
 };
 
 export default function EnglishHome() {

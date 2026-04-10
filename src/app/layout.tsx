@@ -29,12 +29,15 @@ const notoVariantHK = Noto_Sans_HK({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL("https://phuketmua.site"),
     title: "Phuket Private Makeup Artist | 普吉島私人妝髮造型師",
     description: "Phuket Private Makeup Artist for overseas weddings, travel shoots, and special occasions. One-on-one service with a focus on quality and detail.",
+    keywords: ["Phuket Makeup Artist", "Phuket Hair Stylist", "Bridal Makeup Phuket", "Wedding Stylist Thailand", "Editorial Makeup"],
     alternates: {
+        canonical: "/",
         languages: {
             "zh-HK": "/",
-            "en": "/en",
+            "en": "/en/",
         },
     },
 };
@@ -47,10 +50,6 @@ export default function RootLayout({
     return (
         <html lang="zh-HK" className="scroll-smooth">
             <head>
-                {/* Preconnect for fonts */}
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
                 {/* Yandex.Metrika counter */}
                 <Script id="yandex-metrika" strategy="lazyOnload">
                     {`
