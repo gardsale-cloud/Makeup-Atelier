@@ -40,6 +40,7 @@ body {
 .portfolio-image-wrapper {
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .portfolio-image-wrapper img {

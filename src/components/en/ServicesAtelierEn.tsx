@@ -39,12 +39,6 @@ const ServicesAtelierEn = () => {
                             </p>
                         </div>
                         <div className="flex flex-row items-end justify-between gap-4 pt-8 border-t border-atelier-border w-full md:w-[90%]">
-                            <div className="flex flex-col">
-                                <span className="text-[10px] uppercase tracking-widest text-atelier-muted opacity-60 mb-1 font-display">Starting From</span>
-                                <span className="text-lg font-display italic text-atelier-text">
-                                    ฿ 18,000
-                                </span>
-                            </div>
                             <button
                                 onClick={openContactModal}
                                 className="inline-flex items-center text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity pb-1 border-b border-atelier-border font-display uppercase cursor-pointer"
@@ -71,12 +65,6 @@ const ServicesAtelierEn = () => {
                                 </p>
                             </div>
                             <div className="flex flex-row items-end justify-between gap-2 pt-6 border-t border-atelier-border">
-                                <div className="flex flex-col">
-                                    <span className="text-[10px] uppercase tracking-widest text-atelier-muted opacity-60 mb-1 font-display">Starting From</span>
-                                    <span className="text-base font-display italic text-atelier-text">
-                                        ฿ 4,000
-                                    </span>
-                                </div>
                                 <button
                                     onClick={openContactModal}
                                     className="inline-flex items-center text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity pb-1 border-b border-atelier-border font-display uppercase cursor-pointer"
@@ -101,12 +89,6 @@ const ServicesAtelierEn = () => {
                                 </p>
                             </div>
                             <div className="flex flex-row items-end justify-between gap-2 pt-6 border-t border-atelier-border">
-                                <div className="flex flex-col">
-                                    <span className="text-[10px] uppercase tracking-widest text-atelier-muted opacity-60 mb-1 font-display">Starting From</span>
-                                    <span className="text-base font-display italic text-atelier-text">
-                                        ฿ 4,000
-                                    </span>
-                                </div>
                                 <button
                                     onClick={openContactModal}
                                     className="inline-flex items-center text-xs tracking-widest text-atelier-text hover:opacity-60 transition-opacity pb-1 border-b border-atelier-border font-display uppercase cursor-pointer"
