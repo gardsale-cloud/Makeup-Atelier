@@ -5,21 +5,18 @@ const services = [
         title: "婚禮妝髮造型",
         subtitle: "Wedding Makeup & Hair",
         description: "為海外婚禮新娘提供定制妝髮服務，根據婚紗、場地與婚禮流程設計整體造型，自然精緻、上鏡持久。包含整體妝髮設計，可安排試妝及預約全天跟妝服務。",
-        price: "HK$ 4,800 起",
         link: "#contact"
     },
     {
         title: "旅拍 / 婚紗攝影妝髮",
         subtitle: "Pre-Wedding & Photoshoot Styling",
         description: "適合普吉島海島旅拍及婚紗攝影，妝容清透高級，在自然光下依然立體清晰。包含妝髮設計，可更換造型及提供補妝支援。",
-        price: "HK$ 3,800 起",
         link: "#contact"
     },
     {
         title: "活動及晚宴妝髮",
         subtitle: "Event & Evening Styling",
         description: "適合晚宴、派對及品牌活動等重要場合，妝容優雅得體，兼顧現場與拍攝效果。可按场合定制妝容，並提供上門服務。",
-        price: "HK$ 2,800 起",
         link: "#contact"
     }
 ];
@@ -47,7 +44,6 @@ const Services = () => {
                                 {service.description}
                             </p>
                             <div className="mt-auto w-full">
-                                <p className="text-xs text-neutral-medium mb-4 font-chinese">{service.price}</p>
                                 <a className="inline-flex items-center text-neutral-dark font-medium transition-opacity duration-300 hover:opacity-70 group/link" href={service.link}>
                                     查詢檔期
                                     <span className="material-icons-round text-base ml-1 transition-transform group-hover/link:translate-x-1">arrow_forward</span>
