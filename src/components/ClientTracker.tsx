@@ -55,25 +55,11 @@ const ClientTracker = () => {
             }
         }, activityOptions.timer * 1000);
 
-        // --- Xiaohongshu Click Tracking ---
-        const handleXhsClick = (e: MouseEvent) => {
-            const link = (e.target as HTMLElement).closest('a[href*="xiaohongshu.com/user/profile/63d5ee2b0000000026010e28"]');
-            if (!link) return;
-            const linkEl = link as HTMLElement;
-            if (linkEl.dataset.sent === '1') return;
-            linkEl.dataset.sent = '1';
-
-            if (window.gtag) window.gtag('event', 'conversion', { 'send_to': 'AW-11100467416/x6CCCODg7N8aENjhjq0p' });
-            if (window.ym) window.ym(92936100, 'reachGoal', 'xhs_click');
-        };
-        document.addEventListener('click', handleXhsClick);
-
         return () => {
             clearInterval(interval);
             ['scroll', 'click', 'dblclick', 'mousemove', 'keydown', 'keyup'].forEach(event => {
                 document.removeEventListener(event, recordActivity);
             });
-            document.removeEventListener('click', handleXhsClick);
         };
     }, []);
 

@@ -33,7 +33,7 @@ const Footer = () => {
                 <div className="mb-12 flex flex-col sm:flex-row gap-4 sm:gap-8 text-sm text-neutral-medium font-display">
                     <div className="flex items-center gap-2">
                         <span className="w-2 h-2 rounded-full bg-primary"></span>
-                        <span>WeChat: PhuketMakeupArtist</span>
+                        <span>Region: Phuket, Thailand</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <span className="w-2 h-2 rounded-full bg-primary"></span>

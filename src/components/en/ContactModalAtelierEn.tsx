@@ -109,12 +109,12 @@ const ContactModalAtelierEn = () => {
         >
             <div
                 id="contact-modal-container"
-                className="max-w-[720px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)]"
+                className="max-w-[480px] w-full shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] bg-atelier-bg"
                 onClick={(e) => e.stopPropagation()}
             >
                 <button
                     onClick={() => setIsOpen(false)}
-                    className="absolute top-6 right-6 text-atelier-text opacity-30 hover:opacity-100 transition-opacity z-20 p-2"
+                    className="absolute top-6 right-6 text-atelier-text opacity-30 hover:opacity-100 transition-opacity z-20 p-2 cursor-pointer"
                     disabled={isSubmitting}
                 >
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -123,83 +123,68 @@ const ContactModalAtelierEn = () => {
                     </svg>
                 </button>
 
-                <div className="flex flex-col md:flex-row md:overflow-hidden bg-atelier-bg text-center md:text-left min-h-full">
-                    {/* Left: Identity & QR */}
-                    <div className="flex w-full md:w-[42%] bg-[#F2EFE9] flex-col items-center justify-center p-8 md:p-12 lg:p-16 border-b md:border-b-0 md:border-r border-[#EDEBE7] order-2 md:order-1 flex-1 md:flex-none">
-                        <div className="text-center mb-12">
-                            <span className="font-display text-xs tracking-[0.15em] text-atelier-muted uppercase block mb-3 font-medium">Connect via WeChat</span>
-                            <div className="text-atelier-text tracking-wider text-2xl">Bbll6789</div>
-                        </div>
+                <div className="p-8 sm:p-12 lg:p-14 flex flex-col justify-center text-center">
+                    <header className="mb-8">
+                        <span className="text-xs uppercase tracking-[0.3em] text-atelier-accent mb-4 font-display block">Inquiry</span>
+                        <h2 className="font-display text-2xl text-atelier-text mb-3 font-normal tracking-tight uppercase">Private Inquiry</h2>
+                        <p className="font-display font-light text-sm text-atelier-muted leading-relaxed max-w-sm mx-auto">
+                            Leave your WeChat ID, and I will contact you shortly.
+                        </p>
+                    </header>
 
-                        <div className="bg-white p-4 shadow-sm mb-6 border border-atelier-border/50">
-                            <img src={getAssetPath("/images/WeChatQR.jpg")} alt="WeChat QR Code" className="w-28 h-28 object-contain opacity-90" />
-                        </div>
-                        <span className="text-xs font-display tracking-[0.15em] text-atelier-muted uppercase opacity-60">Scan to chat</span>
-                    </div>
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                        <input
+                            type="text"
+                            value={honeypot}
+                            onChange={(e) => setHoneypot(e.target.value)}
+                            style={{ display: "none" }}
+                        />
 
-                    {/* Right: Direct Inquiry */}
-                    <div className="w-full md:w-[58%] p-8 md:p-12 lg:p-16 flex flex-col justify-center order-1 md:order-2">
-                        <header className="mb-12">
-                            <h2 className="font-display text-2xl text-atelier-text mb-4 font-normal tracking-tight md:text-left uppercase">Private Inquiry</h2>
-                            <p className="font-display font-light text-base text-atelier-muted leading-relaxed md:text-left">
-                                Leave your WeChat ID, and I will contact you shortly.
-                            </p>
-                        </header>
-
-                        <form onSubmit={handleSubmit} className="space-y-8">
+                        <div className="flex justify-center">
                             <input
                                 type="text"
-                                value={honeypot}
-                                onChange={(e) => setHoneypot(e.target.value)}
-                                style={{ display: "none" }}
+                                value={wechatId}
+                                onChange={(e) => {
+                                    setWechatId(e.target.value);
+                                    if (status === "empty") setStatus("idle");
+                                }}
+                                disabled={isSubmitting || isSuccess}
+                                className="modal-input font-display w-full text-center"
+                                placeholder="Your WeChat ID"
                             />
+                        </div>
 
-                            <div className="space-y-6 flex justify-center md:justify-start">
-                                <input
-                                    type="text"
-                                    value={wechatId}
-                                    onChange={(e) => {
-                                        setWechatId(e.target.value);
-                                        if (status === "empty") setStatus("idle");
-                                    }}
-                                    disabled={isSubmitting || isSuccess}
-                                    className="modal-input font-display w-[75%] max-w-[280px] md:max-w-full text-center md:text-left"
-                                    placeholder="Your WeChat ID"
-                                />
-                            </div>
-
-                            <div className="flex justify-center md:justify-start">
-                                <button
-                                    type="submit"
-                                    disabled={isSubmitting || isError || isSuccess}
-                                    className={cn(
-                                        "w-[75%] max-w-[280px] md:w-full py-5 px-10 md:px-8 font-display text-[15px] font-medium transition-colors duration-200 border uppercase tracking-widest",
-                                        isError
-                                            ? "bg-red-50 border-red-200 text-red-600 cursor-default"
-                                            : isSuccess
-                                                ? "bg-emerald-50 border-emerald-200 text-emerald-700 cursor-default"
-                                                : isEmpty
-                                                    ? "bg-amber-50 border-amber-200 text-amber-700 cursor-pointer"
-                                                    : "bg-atelier-cta border-transparent text-atelier-bg hover:opacity-90 disabled:opacity-50"
-                                    )}
-                                >
-                                    {isError
-                                        ? "Failed. Please scan QR."
+                        <div className="flex justify-center">
+                            <button
+                                type="submit"
+                                disabled={isSubmitting || isError || isSuccess}
+                                className={cn(
+                                    "w-full py-4 px-8 font-display text-[15px] font-medium transition-colors duration-200 border uppercase tracking-widest cursor-pointer",
+                                    isError
+                                        ? "bg-red-50 border-red-200 text-red-600 cursor-default"
                                         : isSuccess
-                                            ? "Inquiry Received ✓"
+                                            ? "bg-emerald-50 border-emerald-200 text-emerald-700 cursor-default"
                                             : isEmpty
-                                                ? "Enter WeChat ID"
-                                                : isSubmitting
-                                                    ? "Sending..."
-                                                    : "Send"}
-                                </button>
-                            </div>
-                        </form>
+                                                ? "bg-amber-50 border-amber-200 text-amber-700 cursor-pointer"
+                                                : "bg-atelier-cta border-transparent text-atelier-bg hover:opacity-90 disabled:opacity-50"
+                                )}
+                            >
+                                {isError
+                                    ? "Failed. Please try again later."
+                                    : isSuccess
+                                        ? "Inquiry Received ✓"
+                                        : isEmpty
+                                            ? "Enter WeChat ID"
+                                            : isSubmitting
+                                                ? "Sending..."
+                                                : "Send"}
+                            </button>
+                        </div>
+                    </form>
 
-                        <p className="text-xs text-atelier-muted mt-6 text-center font-display tracking-wide opacity-40">
-                            Personal response within 24 hours
-                        </p>
-                    </div>
+                    <p className="text-xs text-atelier-muted mt-6 text-center font-display tracking-wide opacity-40">
+                        Personal response within 24 hours
+                    </p>
                 </div>
             </div>
         </div>

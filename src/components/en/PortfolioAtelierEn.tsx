@@ -73,18 +73,6 @@ const PortfolioAtelierEn = () => {
                             </div>
                         </div>
 
-                        {/* Link to more works */}
-                        <div className="flex justify-center md:justify-end">
-                            <a
-                                className="group/link text-[10px] md:text-xs font-medium text-atelier-text hover:opacity-60 transition-opacity duration-300 ease-out tracking-[0.2em] uppercase flex items-center gap-3 font-display"
-                                href="https://www.xiaohongshu.com/user/profile/63d5ee2b0000000026010e28?utm_source=website&utm_medium=referral&utm_campaign=makeupphuket"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                More works available on 小紅書
-                                <span className="transition-transform duration-300 ease-out group-hover/link:translate-x-1.5 inline-block text-atelier-accent">→</span>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>

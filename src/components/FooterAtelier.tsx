@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { openPrivacyModal } from "@/utils/contact";
+import { openContactModal, openPrivacyModal } from "@/utils/contact";
 import { handleScroll } from "@/utils/scroll";
 
 const FooterAtelier = () => {
@@ -21,33 +21,18 @@ const FooterAtelier = () => {
                         </nav>
                     </div>
 
-                    {/* Separator for Mobile */}
-                    <div className="w-8 h-px bg-atelier-accent/40 md:hidden"></div>
-
-                    {/* Social */}
-                    <div className="flex flex-col items-center md:items-start space-y-6">
-                        <p className="text-xs uppercase tracking-[0.3em] text-atelier-muted/60 font-display">Social</p>
-                        <div className="flex flex-col space-y-4">
-                            <a
-                                className="text-sm tracking-wider text-atelier-muted hover:text-atelier-text transition-colors flex items-center justify-center md:justify-start gap-2 group font-chinese font-light"
-                                href="https://www.xiaohongshu.com/user/profile/63d5ee2b0000000026010e28?utm_source=website&utm_medium=referral&utm_campaign=makeupphuket"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                小紅書
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Separator for Mobile */}
-                    <div className="w-8 h-px bg-atelier-accent/40 md:hidden"></div>
-
                     {/* Contact */}
                     <div className="flex flex-col items-center md:items-start space-y-6">
                         <p className="text-xs uppercase tracking-[0.3em] text-atelier-muted/60 font-display">Contact</p>
                         <div className="space-y-3 font-chinese font-light">
-                            <p className="text-sm text-atelier-muted tracking-wide">
-                                微信：<span className="text-atelier-text font-normal tracking-wider">Bbll6789</span>
+                            <p className="text-sm text-atelier-muted tracking-wide flex items-center gap-1.5 justify-center md:justify-start">
+                                <span>諮詢：</span>
+                                <button
+                                    onClick={openContactModal}
+                                    className="text-atelier-text hover:text-atelier-accent transition-colors underline underline-offset-4 cursor-pointer font-normal"
+                                >
+                                    預約私人妝髮
+                                </button>
                             </p>
                             <p className="text-sm text-atelier-muted tracking-wide">
                                 地區：<span className="text-atelier-text font-normal">Phuket, Thailand</span>
